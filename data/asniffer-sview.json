@@ -1,0 +1,208 @@
+{
+  "name": "asniffer",
+  "children": [
+    {
+      "name": "annotationtest",
+      "children": [
+        {
+          "name": "com.google.errorprone.annotations.concurrent",
+          "size": 1
+        },
+        {
+          "name": "com.google.j2objc.annotations",
+          "size": 4
+        },
+        {
+          "name": "java.lang",
+          "size": 37
+        },
+        {
+          "name": "org.junit",
+          "size": 5
+        },
+        {
+          "name": "org.checkerframework.checker.nullness.qual",
+          "size": 2
+        },
+        {
+          "name": "com.google.common.annotations",
+          "size": 2
+        },
+        {
+          "name": "com.google.errorprone.annotations",
+          "size": 5
+        },
+        {
+          "name": "javax.persistence",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.test.ouput",
+      "children": [
+        {
+          "name": "org.junit",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.test.parameter",
+      "children": [
+        {
+          "name": "org.junit",
+          "size": 7
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.test.asniffer",
+      "children": [
+        {
+          "name": "org.junit",
+          "size": 12
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer",
+      "children": [
+        {
+          "name": "java.lang",
+          "size": 6
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.output.xml",
+      "children": [
+        {
+          "name": "java.lang",
+          "size": 1
+        },
+        {
+          "name": "javax.xml.bind.annotation.adapters",
+          "size": 1
+        },
+        {
+          "name": "javax.xml.bind.annotation",
+          "size": 25
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.output.xml.adapter",
+      "children": [
+        {
+          "name": "java.lang",
+          "size": 2
+        },
+        {
+          "name": "javax.xml.bind.annotation",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.output.json",
+      "children": [
+        {
+          "name": "java.lang",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.output.json.adapter",
+      "children": [
+        {
+          "name": "java.lang",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.output.json.d3hierarchy",
+      "children": [
+        {
+          "name": "br.inpe.cap.asniffer.annotations",
+          "size": 2
+        },
+        {
+          "name": "java.lang",
+          "size": 1
+        },
+        {
+          "name": "com.google.gson.annotations",
+          "size": 14
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.systemview",
+      "children": [
+        {
+          "name": "java.lang",
+          "size": 1
+        },
+        {
+          "name": "com.google.gson.annotations",
+          "size": 6
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.annotations",
+      "children": [
+        {
+          "name": "net.sf.esfinge.metadata.annotation.validator.field",
+          "size": 2
+        },
+        {
+          "name": "java.lang.annotation",
+          "size": 12
+        },
+        {
+          "name": "net.sf.esfinge.metadata.annotation.validator",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.parameters.container",
+      "children": [
+        {
+          "name": "net.sf.esfinge.metadata.annotation.container",
+          "size": 11
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.parameters",
+      "children": [
+        {
+          "name": "br.inpe.cap.asniffer.annotations",
+          "size": 9
+        },
+        {
+          "name": "java.lang",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "br.inpe.cap.asniffer.metric",
+      "children": [
+        {
+          "name": "br.inpe.cap.asniffer.annotations",
+          "size": 8
+        },
+        {
+          "name": "java.lang",
+          "size": 27
+        }
+      ]
+    }
+  ]
+}
