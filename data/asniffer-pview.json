@@ -1,0 +1,2656 @@
+{
+    "name": "asniffer",
+    "children": [
+      {
+        "name": "annotationtest",
+        "type": "package",
+        "data": {},
+        "children": [
+          {
+            "name": "annotationtest.AnnotationTest",
+            "type": "class",
+            "data": {},
+            "children": [
+              {
+                "name": "Entity",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Entity",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Before",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "org.junit"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Id",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Test",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "org.junit"
+                },
+                "children": []
+              },
+              {
+                "name": "AssociationOverrides",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "AssociationOverride",
+                "type": "annotation",
+                "value": 2,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "JoinColumn",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "AssociationOverride",
+                "type": "annotation",
+                "value": 2,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "JoinColumn",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "NamedQuery",
+                "type": "annotation",
+                "value": 2,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Test",
+                "type": "annotation",
+                "value": 3,
+                "data": {
+                  "schema": "org.junit"
+                },
+                "children": []
+              },
+              {
+                "name": "Annotation0",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Annotation2",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Entity",
+                "type": "annotation",
+                "value": 2,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Inheritance",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Annotation0",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Id",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "javax.persistence"
+                },
+                "children": []
+              },
+              {
+                "name": "Test",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "org.junit"
+                },
+                "children": []
+              },
+              {
+                "name": "Test",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "org.junit"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "annotationtest.AbstractService",
+            "type": "class",
+            "data": {},
+            "children": [
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "CanIgnoreReturnValue",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.errorprone.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Nullable",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "org.checkerframework.checker.nullness.qual"
+                },
+                "children": []
+              },
+              {
+                "name": "GwtIncompatible",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.common.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Beta",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.common.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "ForOverride",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.errorprone.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "ForOverride",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.errorprone.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "ForOverride",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.errorprone.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "WeakOuter",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.j2objc.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "WeakOuter",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.j2objc.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "CanIgnoreReturnValue",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.errorprone.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "WeakOuter",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.j2objc.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "GuardedBy",
+                "type": "annotation",
+                "value": 1,
+                "data": {
+                  "schema": "com.google.errorprone.annotations.concurrent"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              },
+              {
+                "name": "WeakOuter",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "com.google.j2objc.annotations"
+                },
+                "children": []
+              },
+              {
+                "name": "Override",
+                "type": "annotation",
+                "value": 0,
+                "data": {
+                  "schema": "java.lang"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "br.inpe.cap",
+        "type": "package",
+        "data": {},
+        "children": [
+          {
+            "name": "br.inpe.cap.asniffer",
+            "type": "package",
+            "data": {},
+            "children": [
+              {
+                "name": "br.inpe.cap.asniffer.MetricsExecutor",
+                "type": "class",
+                "data": {},
+                "children": [
+                  {
+                    "name": "Override",
+                    "type": "annotation",
+                    "value": 0,
+                    "data": {
+                      "schema": "java.lang"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.ClassInfo",
+                "type": "class",
+                "data": {},
+                "children": [
+                  {
+                    "name": "Override",
+                    "type": "annotation",
+                    "value": 0,
+                    "data": {
+                      "schema": "java.lang"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Override",
+                    "type": "annotation",
+                    "value": 0,
+                    "data": {
+                      "schema": "java.lang"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Override",
+                    "type": "annotation",
+                    "value": 0,
+                    "data": {
+                      "schema": "java.lang"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Override",
+                    "type": "annotation",
+                    "value": 0,
+                    "data": {
+                      "schema": "java.lang"
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Override",
+                    "type": "annotation",
+                    "value": 0,
+                    "data": {
+                      "schema": "java.lang"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.annotations",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.IsParameterPresent",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ValidFieldTypes",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "net.sf.esfinge.metadata.annotation.validator.field"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.AnnotationMetric",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Target",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.TextValue",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ValidFieldTypes",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "net.sf.esfinge.metadata.annotation.validator.field"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.CodeElementMetric",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Target",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.ClassMetric",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Target",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.ExcludeSerialisation",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Target",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.annotations.Mandatory",
+                    "type": "annotation-declaration",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Retention",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Target",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "java.lang.annotation"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "NeedsToHave",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "net.sf.esfinge.metadata.annotation.validator"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.exceptions",
+                "type": "package",
+                "data": {},
+                "children": []
+              },
+              {
+                "name": "br.inpe.cap.asniffer.interfaces",
+                "type": "package",
+                "data": {},
+                "children": []
+              },
+              {
+                "name": "br.inpe.cap.asniffer.metric",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.AED",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "CodeElementMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.ANL",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "AnnotationMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.NAEC",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "ClassMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.UAC",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ClassMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.AA",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "AnnotationMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.AC",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ClassMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.LOCAD",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "AnnotationMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.metric.ASC",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ClassMetric",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.model",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.asniffer.model.PackageModel",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Override",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "java.lang"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.output",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.asniffer.output.json",
+                    "type": "package",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "br.inpe.cap.asniffer.output.json.JSONReport",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "Override",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "java.lang"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.json.adapter",
+                        "type": "package",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.adapter.ExcludeFieldsJSON",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "Override",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "java.lang"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "Override",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "java.lang"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.json.d3hierarchy",
+                        "type": "package",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.AnnotationMetricJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.JSONReportD3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "Override",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "java.lang"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.CodeElementJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "ExcludeSerialisation",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "br.inpe.cap.asniffer.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.ClassMetricJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.ClassReportJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "ExcludeSerialisation",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "br.inpe.cap.asniffer.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.PackageReportJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.AnnotationJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.ProjectReportJSOND3",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "SerializedName",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "com.google.gson.annotations"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.packageview",
+                            "type": "package",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.packageview.Children",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.packageview.JSONReportPV",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "Override",
+                                    "type": "annotation",
+                                    "value": 0,
+                                    "data": {
+                                      "schema": "java.lang"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.packageview.ProjectReportPV",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.systemview",
+                            "type": "package",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.systemview.ProjectReportSystemView",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.systemview.JSONReportSV",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "Override",
+                                    "type": "annotation",
+                                    "value": 0,
+                                    "data": {
+                                      "schema": "java.lang"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.systemview.PackageContentSV",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "Override",
+                                    "type": "annotation",
+                                    "value": 0,
+                                    "data": {
+                                      "schema": "java.lang"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "br.inpe.cap.asniffer.output.json.d3hierarchy.systemview.AnnotationReportSystemView",
+                                "type": "class",
+                                "data": {},
+                                "children": [
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "name": "SerializedName",
+                                    "type": "annotation",
+                                    "value": 1,
+                                    "data": {
+                                      "schema": "com.google.gson.annotations"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.output.xml",
+                    "type": "package",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.XMLReport",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "Override",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "java.lang"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.ClassMetricXML",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAccessorType",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.AnnotationXMLReport",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlJavaTypeAdapter",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation.adapters"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.PackageReportXML",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAccessorType",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.CodeElementXMLReport",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.ProjectReportXML",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlRootElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAccessorType",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.ClassReportXML",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElementWrapper",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlAttribute",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "XmlElement",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "javax.xml.bind.annotation"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.output.xml.adapter",
+                        "type": "package",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "br.inpe.cap.asniffer.output.xml.adapter.MapXMLAdapter",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "Override",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "java.lang"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "Override",
+                                "type": "annotation",
+                                "value": 0,
+                                "data": {
+                                  "schema": "java.lang"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "br.inpe.cap.asniffer.output.xml.adapter.MapXMLModel",
+                            "type": "class",
+                            "data": {},
+                            "children": [
+                              {
+                                "name": "XmlAttribute",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "javax.xml.bind.annotation"
+                                },
+                                "children": []
+                              },
+                              {
+                                "name": "XmlAttribute",
+                                "type": "annotation",
+                                "value": 1,
+                                "data": {
+                                  "schema": "javax.xml.bind.annotation"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.parameters",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.asniffer.parameters.ParamMapper",
+                    "type": "class",
+                    "data": {},
+                    "children": []
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.parameters.Parameters",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "IsParameterPresent",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "IsParameterPresent",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "TextValue",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "TextValue",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "TextValue",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Mandatory",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "TextValue",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "IsParameterPresent",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "IsParameterPresent",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "br.inpe.cap.asniffer.annotations"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.asniffer.parameters.container",
+                    "type": "package",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "br.inpe.cap.asniffer.parameters.container.TextValueContainer",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "ContainsAnnotation",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "AnnotationProperty",
+                            "type": "annotation",
+                            "value": 2,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ContainerFor",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ElementName",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.parameters.container.ParamMapperContainer",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "AllFieldsWith",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ContainerFor",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ReflectionReference",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "AllFieldsWith",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "br.inpe.cap.asniffer.parameters.container.IsParameterPresentContainer",
+                        "type": "class",
+                        "data": {},
+                        "children": [
+                          {
+                            "name": "AnnotationProperty",
+                            "type": "annotation",
+                            "value": 2,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ContainerFor",
+                            "type": "annotation",
+                            "value": 1,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "ElementName",
+                            "type": "annotation",
+                            "value": 0,
+                            "data": {
+                              "schema": "net.sf.esfinge.metadata.annotation.container"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.asniffer.utils",
+                "type": "package",
+                "data": {},
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "br.inpe.cap.test",
+            "type": "package",
+            "data": {},
+            "children": [
+              {
+                "name": "br.inpe.cap.test.asniffer",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.test.asniffer.TestAnnotationMetrics",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "BeforeClass",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.test.asniffer.TestCodeElementMetric",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "BeforeClass",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.test.asniffer.TestAnnotationSchema",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "BeforeClass",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.test.asniffer.TestClassMetrics",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "BeforeClass",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.test.ouput",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.test.ouput.TestJSONOutput",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "BeforeClass",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "br.inpe.cap.test.ouput.TestReport",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "br.inpe.cap.test.parameter",
+                "type": "package",
+                "data": {},
+                "children": [
+                  {
+                    "name": "br.inpe.cap.test.parameter.TestParameters",
+                    "type": "class",
+                    "data": {},
+                    "children": [
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 1,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Test",
+                        "type": "annotation",
+                        "value": 0,
+                        "data": {
+                          "schema": "org.junit"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
