@@ -5,7 +5,7 @@ const d3 = require("d3");
 const width = 960;
 const height = 650;
 
-const svg = d3.select("#svg-container")
+const svg = d3.select("#svg-container-sv")
     .append("svg")
     .attr("width", width)
     .attr("height",height);
@@ -23,7 +23,7 @@ const div = d3.select("body").append("div")
       .style("opacity", 0);
 
 //Read JSON
-d3.json("data/asniffer-sview.json").then(data => {
+d3.json("data/SpaceWeatherTSI-SV.json").then(data => {
 
     const root = d3.hierarchy(data)
         .sum(d => d.size)
@@ -72,20 +72,22 @@ d3.json("data/asniffer-sview.json").then(data => {
                 });
 
     //obtain a list o schemas
-    const schemas = root.descendants().filter(d => d.data.type=="schema");
+    const schemasNode = root.descendants().filter(d => d.data.type=="schema");
     const schemaSet = new Set();
-    schemas.forEach(d => schemaSet.add(d.data.name));
+    schemasNode.forEach(d => schemaSet.add(d.data.name));
 
-    const color = d3.scaleOrdinal(d3.schemeAccent);
+    const schemas = Array.from(schemaSet);
+    schemas.sort();
 
+    const myColor = d3.scaleSequential().domain([0,schemas.length])
+      .interpolator(d3.interpolateSpectral);
+    
     let schemaMapArray = [];
     const schemaMap = new Map();
-    schemaSet.forEach((value,i) => {
-      schemaMap.set(value, color(i));
-      schemaMapArray.push({ "schema" : value, "color" : color(i)});
+    schemas.forEach((value,i) => {
+      schemaMap.set(value, d3.color(myColor(i)).formatHex());
+      schemaMapArray.push({ "schema" : value, "color" : d3.color(myColor(i)).formatHex()});
     });
-
-    console.log(schemaMapArray);
 
    
     //get the table with schemas
@@ -109,7 +111,7 @@ d3.json("data/asniffer-sview.json").then(data => {
       if(String(d.value).includes("."))
         return "background-color:#FFFFFF";
       else
-        return "background-color:"+String(d.value);
+        return "background-color:"+d.value;
     })
     .text(d => d.value);
  

@@ -1,8 +1,8 @@
 div.tooltip {	
     position: absolute;			
-    text-align: center;			
+    text-align: left;			
     width: auto;					
-    height: 28px;					
+    height: auto;					
     padding: 2px;				
     font: 12px sans-serif;		
     background: lightsteelblue;	
