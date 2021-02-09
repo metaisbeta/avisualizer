@@ -4,6 +4,7 @@ import { SchemaTableComponent } from '../schema-table/schema-table.component';
 import { AnnotationSchemas } from '../utils/AnnotationSchemas';
 import { CircleUtils } from '../utils/CircleUtils';
 import { SVGUtils } from '../utils/SVGUtils';
+import { ZoomUtils } from '../utils/ZoomUtils';
 
 @Component({
   selector: 'package-view',
@@ -17,16 +18,17 @@ export class PackageViewComponent implements OnInit {
   private root;
   private width = 960;
   private height = 960;
-  private focus;
-  private view;
   private schemasMap;
+  private zoomProp: ZoomProp = {};
+   
  
-  constructor() { }
+  constructor() {  }
 
   ngOnInit(): void {
     //read data from JSON
     d3.json("./assets/SpaceWeatherTSI-PV.json").then(data => this.readPackageView(data as any[]))
                                                .catch(error => console.log(error));
+                        
        
   }
 
@@ -46,7 +48,7 @@ export class PackageViewComponent implements OnInit {
     
     pack(this.root); 
     
-    this.focus = this.root;
+    this.zoomProp.focus = this.root;
     
     //Fetch Annotations Schemas
     const anot = new AnnotationSchemas(this.root);
@@ -58,24 +60,19 @@ export class PackageViewComponent implements OnInit {
     this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height);
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
-    this.zoomTo([this.root.x, this.root.y, this.root.r * 2]);
+    ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
     //Color all circles
+    
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
                           .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
-   
+    //Apply zoom to all circles in this specific view
+    this.svg.selectAll("circle")
+        .on("click", (event, d) => this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation()));
   }
+ 
+}
 
-  private zoom(event,root){
-
-  }
-
-  private zoomTo(v: any[]){
-    const k = this.width / v[2];
-
-    this.view = v;
-
-    this.node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-    this.node.attr("r", d => d.r * k);
-  }
+interface ZoomProp{
+  [focus: string]: any
 }
