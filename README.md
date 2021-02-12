@@ -1,27 +1,45 @@
-# Avisualizer
+<h1 align = "center">Annotation Visualizer</h1>
+<h2 align = "center"> A Tool to Visualize Code Annotations Metrics Distribution </h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+Annotation Metrics
+==================
 
-## Development server
+The Annotation Visualizer (AVisualizer) is a software visualization tool that aims to aid researches and developers in analyzing and comprehending code annotations distributions. The visualization is generated based on a suite software metrics dedicated to code annotations.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The suite is composed of 9 metrics proposed and defined in the the paper [A Metrics Suite for Code Annoation Assessment](https://www.sciencedirect.com/science/article/pii/S016412121730273X)
 
-## Code scaffolding
+### Code Annotation Metrics 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* AC: Annotations in Class
+* UAC: Unique Annotations in Class
+* ASC: Annotation Schema in Class
+* AED: Annotation in Element Declaration
+* AA: Attributes in Annotation
+* ANL: Annotation Nesting Level
+* LOCAD: LOC in Annotation Declaration
+* NEC: Number of Elements in Class
+* NAEC: Number of Annotated Elements in Class
 
-## Build
+Collecting the Metrics
+==================
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The collection of the metrics values is performed by the [Annotation Sniffer (ASniffer)](https://github.com/phillima/asniffer). The generated JSON report is used as input for the AVisualizer.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Annotations Visualization
+==================
 
-## Running end-to-end tests
+We are proposing three different polymetrics views for code annotations. They are all hierarchical view based on circle packs.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* System View: In this view we are interested in observing how annotation schemas are distributed in the packages. This view has no information of classes.
 
-## Further help
+* Package View: In this view we are interested in observing how annotations are distributed inside a class, based on their schema. In this view we have no information of how the annotations are distributed between the code elements.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Class View: In this view we group the annotation inside a class based on their code elements.
+
+
+<h2> Status </h2>
+ <p> 🚧 Work In Progress... 🚧</p>
+ 
+<h2> License </h2>
+<img alt="GitHub" src="https://img.shields.io/github/license/phillima/avisualizer">
