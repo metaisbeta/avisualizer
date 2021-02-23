@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 import { AnnotationSchemas } from '../utils/AnnotationSchemas';
-
+import {SVGUtils} from '../utils/SVGUtils'
 @Component({
   selector: 'schema-table',
   templateUrl: './schema-table.component.html',
@@ -39,5 +39,20 @@ export class SchemaTableComponent implements OnInit {
         return "background-color:"+d.value;
     })
     .text(d => d.value);
+
+    let i=0;   
+    rows.append("input").property('checked',true)
+       .attr('type','checkbox')
+       .attr("id",function(d,i){  return annotationSchemas.getSchemasObjectArray()[i].schema})
+       .on("click",function(d){
+	console.log(this.checked);
+        SVGUtils.hideCircles(this.id,this.checked);
+       	
+	});
+        
+	
+
+
+
     }
 }

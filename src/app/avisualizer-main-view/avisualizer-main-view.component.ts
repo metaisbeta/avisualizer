@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {SVGUtils} from '../utils/SVGUtils';
 @Component({
   selector: 'avisualizer-main-view',
   templateUrl: './avisualizer-main-view.component.html',
@@ -10,8 +10,8 @@ export class AvisualizerMainViewComponent implements OnInit {
   isPVHidden: boolean;
   isSVHidden: boolean;
   constructor() { 
-    this.isSVHidden = false;
-    this.isPVHidden = true;
+    this.isSVHidden = true;
+    this.isPVHidden = false;
   }
 
   ngOnInit(): void {
@@ -20,11 +20,15 @@ export class AvisualizerMainViewComponent implements OnInit {
   selectSystemView(){
     this.isSVHidden = false;
     this.isPVHidden = true;
+    SVGUtils.resetSystemView();
   }
 
   selectPackageView(){
     this.isSVHidden = true;
     this.isPVHidden = false;
+    SVGUtils.resetPackageView();
   }
+  
+
 
 }

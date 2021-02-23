@@ -57,7 +57,7 @@ export class PackageViewComponent implements OnInit {
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);
 
-    this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height);
+    this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height,"pacote");
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);

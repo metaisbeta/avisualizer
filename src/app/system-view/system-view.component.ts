@@ -12,15 +12,14 @@ import { ZoomUtils } from '../utils/ZoomUtils';
   styleUrls: ['./system-view.component.css']
 })
 export class SystemViewComponent implements OnInit {
-
+  private view;
+  private schemasMap;
   private svg;
   private node;
   private root;
   private width = 960;
   private height = 960;
   private focus: any;
-  private view;
-  private schemasMap;
   private zoomProp: ZoomProp = {};
  
   constructor() { }
@@ -53,7 +52,7 @@ export class SystemViewComponent implements OnInit {
     this.schemasMap = anot.getSchemasColorMap();
     
     //Create the SVG
-    this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height);
+    this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height,"sistema");
     //Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
