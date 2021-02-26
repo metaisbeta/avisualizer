@@ -22,7 +22,7 @@ export class SVGUtils{
     }
 
     public static createNode(svg: any, root: any){
-
+ 
         const node = svg.append("g")
         .selectAll("circle")
         .data(root.descendants())
@@ -32,37 +32,9 @@ export class SVGUtils{
         })
         .attr("name",function(d){ return d.data.name})
         .attr("schema",function(d){  return  d.data.type =="annotation" ? d.data.properties.schema : d.data.type })
-        // //.attr("pointer-events", d => !d.children ? "none" : null)
-        // .on("mouseover", function(event, d) {	
-        //     //Creating the label
-        //     divTooltip.transition()		
-        //         .duration(200)		
-        //         .style("opacity", .9);
-        //     divTooltip.html(buildTooltip(d) + "<br/>")	
-        //         .style("left", (event.pageX) + "px")		
-        //         .style("top", (event.pageY - 28) + "px");
 
-        //     //highlight the node
-        //     //const circle = svg.select("g").append("circle").attr("r",d.r).attr("fill", "red").attr("cx",this.attr("cx")).attr("cy",this.attr("cy"));
-        //     console.log(event);
-        //     console.log(d);  
-        //     console.log(this);
-
-        //   })
-        //   .on("mouseout", function() { 
-        //     divTooltip.transition()		
-        //         .duration(500)		
-        //         .style("opacity", 0);
-            
-        //     //unhighlight the node
-        //   })
-        //.on("click", (event, d) => focus !== d && (this.zoom(event, d), event.stopPropagation()));
-
-    // this.zoomTo([this.root.x, this.root.y, this.root.r * 2]);
-
-    // d3.selectAll("circle").attr("stroke", d => this.addCircleStroke(d))
-    //                       .attr("stroke-dasharray", d=> this.addCircleDashArray(d))
-    //                       .attr("fill", d => this.colorCircles(d));
+	
+	
     return node;
     }
 
@@ -120,4 +92,29 @@ export class SVGUtils{
 	});
         d3.selectAll("input").property('checked',true);
    }
+
+    public static createPopUp(d: any, svg: any, event: any){
+	console.log(d);
+        if(d.data.type=="schema"){
+		const divTooltip = d3.select("body").append("div")	
+    			.attr("class", "tooltip") 				
+    		        .style("opacity", 1)
+		       	.style("left", (event.pageX) + "px")		
+        		.style("top", (event.pageY - 28) + "px")
+			.style("background","#BCC5F7")
+			.html("Schema Name: "+d.data.name+"<br/>"+"Package Name "+d.parent.data.name+"<br/>"+"Number of Annotations: "+d.data.size)
+		        .transition()		
+        		.duration(200);		
+        	
+       }	
+ 	
+    }
+    
+    public static destroyPopUp(svg: any){
+	d3.selectAll(".tooltip").remove()
+    }  
+	
+
+
+
 }
