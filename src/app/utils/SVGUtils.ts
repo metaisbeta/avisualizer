@@ -31,7 +31,7 @@ export class SVGUtils{
             return d.data.type;
         })
         .attr("name",function(d){ return d.data.name})
-        .attr("schema",function(d){ d.data.type =="annotation" ? console.log(d.data.properties.schema) : console.log("error"); return  d.data.type =="annotation" ? d.data.properties.schema : d.data.type })
+        .attr("schema",function(d){  return  d.data.type =="annotation" ? d.data.properties.schema : d.data.type })
         // //.attr("pointer-events", d => !d.children ? "none" : null)
         // .on("mouseover", function(event, d) {	
         //     //Creating the label
