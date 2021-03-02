@@ -68,7 +68,10 @@ export class PackageViewComponent implements OnInit {
                           .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
-        .on("click", (event, d) => this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation()));
+        .on("click", (event, d) => this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation()))
+	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
+	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
+	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event));
   }
  
 }

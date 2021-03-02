@@ -1,0 +1,132 @@
+[
+  {
+    "id": "vertical_line_0",
+    "geom": "rect",
+    "width": 5,
+    "height": 8,
+    "rotate": 0,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "vertical_line_1",
+    "geom": "rect",
+    "width": 4,
+    "height": 8,
+    "rotate": 0,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "vertical_line_2",
+    "geom": "rect",
+    "width": 3,
+    "height": 8,
+    "rotate": 0,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "line_45_0",
+    "geom": "rect",
+    "width": 5,
+    "height": 8,
+    "rotate": 45,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "line_45_1",
+    "geom": "rect",
+    "width": 4,
+    "height": 8,
+    "rotate": 45,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "line_45_2",
+    "geom": "rect",
+    "width": 3,
+    "height": 8,
+    "rotate": 45,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "horizontal_line_0",
+    "geom": "rect",
+    "width": 5,
+    "height": 8,
+    "rotate": 90,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "horizontal_line_1",
+    "geom": "rect",
+    "width": 4,
+    "height": 8,
+    "rotate": 90,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "horizontal_line_2",
+    "geom": "rect",
+    "width": 3,
+    "height": 8,
+    "rotate": 90,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "line_m45_0",
+    "geom": 5,
+    "width": 8,
+    "height": "rect",
+    "rotate": -45,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "line_m45_1",
+    "geom": 4,
+    "width": 8,
+    "height": "rect",
+    "rotate": -45,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "line_m45_2",
+    "geom": 3,
+    "width": 8,
+    "height": "rect",
+    "rotate": -45,
+    "cx": "",
+    "cy": "",
+    "r": ""
+  },
+  {
+    "id": "circle_0",
+    "geom": "circle",
+    "width": "",
+    "height": "",
+    "rotate": "",
+    "cx": 1,
+    "cy": 1,
+    "r": 2
+  }
+]

@@ -18,6 +18,8 @@ export class SVGUtils{
         .style("background", "lightblue")
         .style("cursor", "pointer")
         //.on("click", (event) => this.zoom(event, this.root));
+
+
         return svg;
     }
 
@@ -100,20 +102,34 @@ export class SVGUtils{
     			.attr("class", "tooltip") 				
     		        .style("opacity", 1)
 		       	.style("left", (event.pageX) + "px")		
-        		.style("top", (event.pageY - 28) + "px")
+        		.style("top", (event.pageY - 70) + "px")
 			.style("background","#BCC5F7")
 			.html("Schema Name: "+d.data.name+"<br/>"+"Package Name "+d.parent.data.name+"<br/>"+"Number of Annotations: "+d.data.size)
 		        .transition()		
         		.duration(200);		
         	
+       }else if(d.data.type=="annotation"){
+		const divTooltip = d3.select("body").append("div")	
+    			.attr("class", "tooltip") 				
+    		        .style("opacity", 1)
+		       	.style("left", (event.pageX +10) + "px")		
+        		.style("top", (event.pageY - 60) + "px")
+			.style("background","#BCC5F7")
+			.html("Package Name: "+d.parent.parent.data.name+"<br/>"+"Class Name "+d.parent.data.name+"<br/>"+"Annotation name: "+d.data.properties.schema+"<br/>"+"Number of Annotation Metrics: "+d.data.value)
+		        .transition()		
+        		.duration(200);		
+        
        }	
  	
     }
     
     public static destroyPopUp(svg: any){
-	d3.selectAll(".tooltip").remove()
+	d3.selectAll(".tooltip").remove();
     }  
-	
+    public static movePopUp(d: any, svg: any, event: any){
+	SVGUtils.destroyPopUp(svg);
+	SVGUtils.createPopUp(d,svg,event);	
+    }	
 
 
 
