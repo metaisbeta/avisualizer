@@ -38,14 +38,14 @@ export class SchemaTableComponent implements OnInit {
       else
         return "background-color:"+d.value;
     })
-    .text(d => d.value);
+    .text(d => {if(d.value.includes(".")) return d.value; else return "";});
 
     let i=0;   
     rows.append("input").property('checked',true)
        .attr('type','checkbox')
        .attr("id",function(d,i){  return annotationSchemas.getSchemasObjectArray()[i].schema})
        .on("click",function(d){
-	console.log(this.checked);
+	
         SVGUtils.hideCircles(this.id,this.checked);
        	
 	});
