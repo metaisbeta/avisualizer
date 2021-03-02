@@ -33,6 +33,7 @@ export class PackageViewComponent implements OnInit {
   }
 
   private readPackageView(data: any[]): void{
+    
     this.root = d3.hierarchy(data);
     
     this.root.descendants().forEach(d => {
@@ -58,9 +59,15 @@ export class PackageViewComponent implements OnInit {
     SchemaTableComponent.populateSchemasTable(anot);
 
     this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height,"pacote");
+    var title = d3.select("#headerPV").text()+": Project "+this.root.data.name;
+    d3.select("#headerPV").select("h1").text(title);
+    console.log(title);
+    
+    	
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
+    
     //Color all circles
     
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))

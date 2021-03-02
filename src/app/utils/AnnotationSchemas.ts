@@ -46,9 +46,9 @@ export class AnnotationSchemas{
       
     const colorArr = d3.scaleOrdinal(d3.schemeCategory10).domain(colorsArray);
     const coress = d3.scaleSequential(d3.interpolateRgb(cors[0],corslight[0])).domain([0,4]);
-    console.log(d3.color(coress(3)).formatHex());		
+    //console.log(d3.color(coress(3)).formatHex());		
     for(let s in colorsArray){
-        console.log(colorsArray[s]+" "+groupsMap.get(colorsArray[s]).length); 
+        //console.log(colorsArray[s]+" "+groupsMap.get(colorsArray[s]).length); 
 	
         const cores = d3.scaleSequential(d3.interpolateRgbBasis([String(cors[s]),String(corslight[s])])).domain([0,groupsMap.get(colorsArray[s]).length]);
     	for(let r=0; r< groupsMap.get(colorsArray[s]).length;r++){
@@ -56,9 +56,7 @@ export class AnnotationSchemas{
 	}
        
     } 	
-    console.log(hexColors.length);
-    for(let j=0;j<hexColors.length;j++)
-	console.log(hexColors[j]);	
+    	
     this.schemasOrdered.forEach((value,i) => {
       	const myColor = d3.scaleSequential(d3.interpolateRgb(cors[i],corslight[i])).domain([0,this.schemasOrdered.length]);
       this.schemasColorMap.set(value, hexColors[i]);

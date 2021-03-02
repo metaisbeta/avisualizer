@@ -96,7 +96,6 @@ export class SVGUtils{
    }
 
     public static createPopUp(d: any, svg: any, event: any){
-	console.log(d);
         if(d.data.type=="schema"){
 		const divTooltip = d3.select("body").append("div")	
     			.attr("class", "tooltip") 				

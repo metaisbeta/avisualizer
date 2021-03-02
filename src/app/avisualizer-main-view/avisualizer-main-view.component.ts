@@ -31,13 +31,5 @@ export class AvisualizerMainViewComponent implements OnInit {
     this.isPVHidden = false;
     SVGUtils.resetPackageView();
   }
-  changeView(){
-	if(this.selectedView=="Package View"){
-		this.selectedView="System View";
-	}else{
-		this.selectedView="Package View";
-	}
-  }
-
 
 }

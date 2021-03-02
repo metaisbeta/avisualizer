@@ -30,7 +30,7 @@ export class SystemViewComponent implements OnInit {
                                                .catch(error => console.log(error));
        
   }
-
+  
   private readPackageView(data: any[]): void{
     
     this.root = d3.hierarchy(data);
@@ -57,6 +57,9 @@ export class SystemViewComponent implements OnInit {
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
+    var title = d3.select("#headerSV").text()+": Project "+this.root.data.name;
+    d3.select("#headerSV").select("h1").text(title);
+	
     
     //Color all circles
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
