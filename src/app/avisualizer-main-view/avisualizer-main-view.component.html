@@ -1,8 +1,11 @@
+<div [hidden]="isSVHidden"><h1>Annotation Visualizer - System View </h1></div> 
+<div [hidden]="isPVHidden"><h1>Annotation Visualizer - Package View </h1></div> 
 <div class="container-fluid">
-    <h1>Annotation Visualizer</h1>
+    
     <div class="row">
         <div class="col-sm">
-            <button class="btn btn-primary" (click)="selectSystemView()">System View</button>
+	 
+            <button class="btn btn-primary" (click)="selectSystemView()" >System View</button>
             <button class="btn btn-primary" (click)="selectPackageView()">Package View</button>
         </div>
         <div class="col-sm">

@@ -9,9 +9,12 @@ export class AvisualizerMainViewComponent implements OnInit {
 
   isPVHidden: boolean;
   isSVHidden: boolean;
+  selectedView: String;
+
   constructor() { 
     this.isSVHidden = true;
     this.isPVHidden = false;
+    this.selectedView = "Package View";	
   }
 
   ngOnInit(): void {
@@ -28,7 +31,13 @@ export class AvisualizerMainViewComponent implements OnInit {
     this.isPVHidden = false;
     SVGUtils.resetPackageView();
   }
-  
+  changeView(){
+	if(this.selectedView=="Package View"){
+		this.selectedView="System View";
+	}else{
+		this.selectedView="Package View";
+	}
+  }
 
 
 }
