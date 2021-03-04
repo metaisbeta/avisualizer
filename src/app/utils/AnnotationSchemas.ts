@@ -6,7 +6,8 @@ export class AnnotationSchemas{
   schemasColorMap: Map<any,any>;
   schemasOrdered: string[];
   schemasObjectArray: any[];
-
+  schemasGroups: string[];
+  schemasTotalAnnotations: Map<any,any>
   //root is the root node after running d3.hierarchy
   constructor(root){
     this.schemasColorMap = new Map();
@@ -14,20 +15,41 @@ export class AnnotationSchemas{
 
     //obtain a list o schemas
     const schemasNode = root.descendants().filter(d => !loDash.isEmpty(d.data.properties));
-    
+
     //To not get repeated schemas
     const schemaSet = new Set();
     schemasNode.forEach(d => schemaSet.add(d.data.properties.schema));
-    var cors = ["green","red","blue","cyan","yellow","orange","magenta","purple"];
-    var corslight = ["lightgreen","tomato","lightblue","teal","chocolate","Maroon","orchid","mediumpurple"]
-    
+    //var cors = ["green","red","blue","cyan","yellow","orange","magenta","purple"];
+    //var corslight = ["lightgreen","tomato","lightblue","teal","chocolate","Maroon","orchid","mediumpurple"]
+    var cors = ['#1f78b4','#a6cee3','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
+    var corslight = ['#80b1d3','#8dd3c7','#ccebc5','#b3de69','#fccde5','#fb8072','#fdb462','#ffffb3','#d9d9d9','#bc80bd','#ffed6f','#bebada'];
     //Sort the array with the schemas
     this.schemasOrdered = Array.from(schemaSet) as string[];
     this.schemasOrdered.sort();
-    var schemasGroups = [];
+    this.schemasGroups = [];
+    this.schemasTotalAnnotations = new Map();    
+        //for(var i=0;i<root.descendants().length;i++){
+	//if(root.descendants()[i].data.type=="annotation")
+	//	console.log(root.descendants()[i].data.value);    
+    //}
+    //counting total annotations of each schema
+    for(var i=0;i<this.schemasOrdered.length;i++){
+    	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);	
+    }
+    for(var i=0;i<root.descendants().length;i++){
+	if(root.descendants()[i].data.type=="annotation"){
+                var total = this.schemasTotalAnnotations.get(root.descendants()[i].data.properties.schema);
+                var toSum = root.descendants()[i].data.value;
+                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+toSum));  
+		
+	}
+		    
+    }
+    //build schemas families
     var groupsMap = new Map();
     var colorsArray = [];
     var hexColors = [];
+    
     this.schemasOrdered.forEach((value,i)=>{ // monta as famílias de schemas
 		var schema = value.split("."); // divide o nome do schema a cada "."
                 var family = schema[0]+"."+schema[1] // junta os dois primeiros termos; ex: org+"."+junit;

@@ -20,7 +20,7 @@ export class SchemaTableComponent implements OnInit {
     //populate table
     var rows = schema_table.select("tbody").selectAll("tr").
           data(annotationSchemas.getSchemasObjectArray()).enter().append("tr");
-
+     
     var cells = rows.selectAll("td").data(function(row) {
       return ["schema","color"].map(function(column){
           return {column: column, value: row[column]};
@@ -39,11 +39,15 @@ export class SchemaTableComponent implements OnInit {
         return "background-color:"+d.value;
     })
     .text(d => {if(d.value.includes(".")) return d.value; else return "";});
-
-    let i=0;   
+    
+    //column for total annotations of each schema
+    rows.append("td").text(function(d,i){
+		return annotationSchemas.schemasTotalAnnotations.get(annotationSchemas.getSchemasObjectArray()[i].schema)
+    });
+    //column with checkboxes
     rows.append("input").property('checked',true)
        .attr('type','checkbox')
-       .attr("id",function(d,i){  return annotationSchemas.getSchemasObjectArray()[i].schema})
+       .attr("id",function(d,i){   return annotationSchemas.getSchemasObjectArray()[i].schema})
        .on("click",function(d){
 	
         SVGUtils.hideCircles(this.id,this.checked);

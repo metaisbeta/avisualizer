@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SVGUtils} from '../utils/SVGUtils';
+import { PackageViewComponent } from '../package-view/package-view.component';
+import * as d3 from 'd3';
 @Component({
   selector: 'avisualizer-main-view',
   templateUrl: './avisualizer-main-view.component.html',
@@ -14,7 +16,7 @@ export class AvisualizerMainViewComponent implements OnInit {
   constructor() { 
     this.isSVHidden = true;
     this.isPVHidden = false;
-    this.selectedView = "Package View";	
+    this.selectedView = "Package";	
   }
 
   ngOnInit(): void {
@@ -23,13 +25,27 @@ export class AvisualizerMainViewComponent implements OnInit {
   selectSystemView(){
     this.isSVHidden = false;
     this.isPVHidden = true;
-    SVGUtils.resetSystemView();
+    //reset workspace on change. SHOULD NOT BE IT!!!!!
+    SVGUtils.resetView(".svg-container-sv");
+    //transition between zoomed views
+    
+    if(!(this.selectedView=="System")){
+	SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-sv"); 
+    }
+    this.selectedView="System";
   }
 
   selectPackageView(){
     this.isSVHidden = true;
     this.isPVHidden = false;
-    SVGUtils.resetPackageView();
+    //reset workspace on change. SHOULD NOT BE IT!!!!!
+    SVGUtils.resetView(".svg-container-pv");
+    //transition between zoomed views
+    console.log(this.isSVHidden,this.isPVHidden);
+    if(!(this.selectedView=="Package")){
+    	SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
+    }
+    this.selectedView="Package";	
   }
-
+   
 }

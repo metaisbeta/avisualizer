@@ -21,8 +21,11 @@ export class SystemViewComponent implements OnInit {
   private height = 960;
   private focus: any;
   private zoomProp: ZoomProp = {};
- 
-  constructor() { }
+  private selectedNode: any;
+  constructor() { 
+	this.node=null;
+        this.root=null;
+  }
 
   ngOnInit(): void {
     //read data from JSON
@@ -53,28 +56,38 @@ export class SystemViewComponent implements OnInit {
     
     //Create the SVG
     this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height,"sistema");
+    d3.select(".svg-container-sv").attr("lastSelected",String(this.root.data.name));
+    d3.select(".svg-container-sv").attr("rootName",this.root.data.name);
+    console.log(d3.select(".svg-container-sv").attr("lastSelected"));
     //Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
     var title = d3.select("#headerSV").text()+": Project "+this.root.data.name;
     d3.select("#headerSV").select("h1").text(title);
-	
-    
+
+    //this.svg.selectAll("circle").each(function(d){if(d.data.type=="schema")console.log(d.data.size);}) 	
     //Color all circles
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
-                          .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
-    
+                          //.attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
+                            .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap)); 
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
-        .on("click", (event, d) => this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation()))
+        .on("click", (event, d) => {this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"))})
 	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
 	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
 	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event));
 	
   }
+  
+	
 }
+
+
+
+
+
 
 interface ZoomProp{
   [focus: string]: any

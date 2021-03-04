@@ -20,7 +20,7 @@ export class PackageViewComponent implements OnInit {
   private height = 960;
   private schemasMap;
   private zoomProp: ZoomProp = {};
-   
+  private selectedNode: any; 
  
   constructor() {  }
 
@@ -55,13 +55,19 @@ export class PackageViewComponent implements OnInit {
     const anot = new AnnotationSchemas(this.root);
     this.schemasMap = anot.getSchemasColorMap();
     
+    for(var i=0;i<this.root.descendants().length;i++){
+	//if(this.root.descendants()[i].data.type=="annotation")
+		//console.log(this.root.descendants()[i].data);    
+    }
+    	
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);
 
     this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height,"pacote");
+    d3.select(".svg-container-pv").attr("lastSelected",this.root.data.name);
+    d3.select(".svg-container-pv").attr("rootName",this.root.data.name);
     var title = d3.select("#headerPV").text()+": Project "+this.root.data.name;
     d3.select("#headerPV").select("h1").text(title);
-    console.log(title);
     
     	
     this.node = SVGUtils.createNode(this.svg, this.root);
@@ -69,18 +75,20 @@ export class PackageViewComponent implements OnInit {
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
     
     //Color all circles
-    
+    //this.svg.selectAll("circle").each(function(d){if(d.data.type=="annotation")console.log(d.data.value);});	
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
                           .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
-        .on("click", (event, d) => this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation()))
+        .on("click", (event, d) =>  this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(String(d.data.type)=="class" ? d.parent.data.name: d.data.name,".svg-container-pv")))
 	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
 	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
 	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event));
+       
+       
   }
- 
+  
 }
 
 interface ZoomProp{
