@@ -9,29 +9,32 @@ export class AnnotationSchemas{
   schemasGroups: string[];
   schemasTotalAnnotations: Map<any,any>
   //root is the root node after running d3.hierarchy
-  constructor(root){
+  constructor(root,name){
     this.schemasColorMap = new Map();
     this.schemasObjectArray = [];
-
     //obtain a list o schemas
-    const schemasNode = root.descendants().filter(d => !loDash.isEmpty(d.data.properties));
+   const schemaSet = new Set();     
+   if(name=="class"){
+      root.descendants().forEach(d=>{if(d.data.type=="annotation") { schemaSet.add(d.data.properties.schema);}});
 
+   console.log("class",schemaSet.size);
+   }
+   else{
+    const schemasNode = root.descendants().filter(d => !loDash.isEmpty(d.data.properties));
+    console.log(schemasNode.length);
     //To not get repeated schemas
-    const schemaSet = new Set();
-    schemasNode.forEach(d => schemaSet.add(d.data.properties.schema));
-    //var cors = ["green","red","blue","cyan","yellow","orange","magenta","purple"];
-    //var corslight = ["lightgreen","tomato","lightblue","teal","chocolate","Maroon","orchid","mediumpurple"]
-    var cors = ['#1f78b4','#a6cee3','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
-    var corslight = ['#80b1d3','#8dd3c7','#ccebc5','#b3de69','#fccde5','#fb8072','#fdb462','#ffffb3','#d9d9d9','#bc80bd','#ffed6f','#bebada'];
+    schemasNode.forEach(d =>  schemaSet.add(d.data.properties.schema));
+     console.log("a",schemaSet.size);
+   }
+    
+    
+    var cors = ['#1f78b4','#a6cee3','#b2df8a','#33a02c','#fb9a99','#e31a1c','#40004b','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
+    var corslight = ['#80b1d3','#8dd3c7','#ccebc5','#b3de69','#fccde5','#fb8072','#fdb462','#ffffb3','#9970ab','#bc80bd','#ffed6f','#bebada'];
     //Sort the array with the schemas
     this.schemasOrdered = Array.from(schemaSet) as string[];
     this.schemasOrdered.sort();
     this.schemasGroups = [];
     this.schemasTotalAnnotations = new Map();    
-        //for(var i=0;i<root.descendants().length;i++){
-	//if(root.descendants()[i].data.type=="annotation")
-	//	console.log(root.descendants()[i].data.value);    
-    //}
     //counting total annotations of each schema
     for(var i=0;i<this.schemasOrdered.length;i++){
     	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);	

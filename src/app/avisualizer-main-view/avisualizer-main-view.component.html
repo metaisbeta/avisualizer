@@ -1,15 +1,20 @@
 <div id="headerSV" [hidden]="isSVHidden"><h1>Annotation Visualizer - System View </h1></div> 
 <div id="headerPV" [hidden]="isPVHidden"><h1>Annotation Visualizer - Package View </h1></div> 
+<div id="headerCV" [hidden]="isCVHidden"><h1>Annotation Visualizer - Class View </h1></div> 
 <div class="container-fluid">    
     <div class="row">
         <div class="col-sm">
 	 
             <button class="btn btn-primary" (click)="selectSystemView()" >System View</button>
             <button class="btn btn-primary" (click)="selectPackageView()">Package View</button>
+	    <button class="btn btn-primary" (click)="selectClassView()">Class View</button>
+	    <button class="btn btn-primary" [hidden]="isCVHidden" (click)="changeToLOCAD()">LOCAD</button>
+	    <button class="btn btn-primary" [hidden]="isCVHidden" (click)="changeToAA()">AA</button>	 
         </div>
         <div class="col-sm">
             <system-view [hidden]="isSVHidden"></system-view>
             <package-view [hidden]="isPVHidden"></package-view>
+            <class-view [hidden]="isCVHidden" ></class-view>
         </div>
         <div class="col-sm">
             <schema-table></schema-table>

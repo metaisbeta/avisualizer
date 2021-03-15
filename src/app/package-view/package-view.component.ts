@@ -37,6 +37,7 @@ export class PackageViewComponent implements OnInit {
     this.root = d3.hierarchy(data);
     
     this.root.descendants().forEach(d => {
+        
         d.data.value = d.data.value+1;//adding 1 to each AA, to avoid 0
     });
    
@@ -52,13 +53,9 @@ export class PackageViewComponent implements OnInit {
     this.zoomProp.focus = this.root;
     
     //Fetch Annotations Schemas
-    const anot = new AnnotationSchemas(this.root);
+    const anot = new AnnotationSchemas(this.root,"aa");
     this.schemasMap = anot.getSchemasColorMap();
     
-    for(var i=0;i<this.root.descendants().length;i++){
-	//if(this.root.descendants()[i].data.type=="annotation")
-		//console.log(this.root.descendants()[i].data);    
-    }
     	
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);

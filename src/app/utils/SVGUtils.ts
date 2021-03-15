@@ -41,6 +41,8 @@ export class SVGUtils{
     	 
     return node;
     }
+
+    //view related methods
     public static viewTransition(origin,view){
         
         d3.select(String(view)).selectAll("circle").each(function(d,i){
@@ -59,7 +61,6 @@ export class SVGUtils{
 	console.log(view,d3.select(String(view)).attr("lastSelected")); 
     }	
 
-    
     public static hideCircles(id: String,show: boolean){
           if(d3.selectAll("system-view").attr("hidden")!==""){
 	  	  var view = d3.selectAll(".svg-container-sv").select("svg");
@@ -111,6 +112,8 @@ export class SVGUtils{
    }
 
 
+
+    //popUp methods
     public static createPopUp(d: any, svg: any, event: any){
         if(d.data.type=="schema"){
 		const divTooltip = d3.select("body").append("div")	
@@ -148,6 +151,11 @@ export class SVGUtils{
 	SVGUtils.createPopUp(d,svg,event);	
     }	
 
-
-
+    //class view options
+    public static toLOCAD(name: string){
+	
+    }
+    public static toAA(name: string){
+	 
+    }	
 }

@@ -25,8 +25,10 @@ export class CircleUtils{
         else if(node.data.type =="schema")
             return schemasMap.get(node.data.name);
 		//return "url('#green-pattern')";
+        else if(node.data.type=="method")
+ 	    return "#E0E0E0";
         else
-            return "white";
+	    return "white";
     }
 
 }
