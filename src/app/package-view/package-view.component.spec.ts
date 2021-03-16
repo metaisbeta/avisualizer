@@ -10,6 +10,7 @@ describe('PackageViewComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ PackageViewComponent ]
     })
+
     .compileComponents();
   });
 
@@ -17,9 +18,14 @@ describe('PackageViewComponent', () => {
     fixture = TestBed.createComponent(PackageViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
 
+  });
+    it("has 14 schemas",()=>{
+        
+    	expect(component.width).toEqual(960);
+    });
   it('should create', () => {
+  
     expect(component).toBeTruthy();
   });
 });

@@ -6,6 +6,7 @@ import { CircleUtils } from '../utils/CircleUtils';
 import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
 
+
 @Component({
   selector: 'system-view',
   templateUrl: './system-view.component.html',
@@ -53,7 +54,7 @@ export class SystemViewComponent implements OnInit {
     //Fetch Annotations Schemas
     const anot = new AnnotationSchemas(this.root,"aa");
     this.schemasMap = anot.getSchemasColorMap();
-    
+
     //Create the SVG
     this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height,"sistema");
     d3.select(".svg-container-sv").attr("lastSelected",String(this.root.data.name));

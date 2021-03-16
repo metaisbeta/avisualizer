@@ -46,9 +46,9 @@ private readPackageView(data: any[]): void{
         d.data.value = d.data.value+1;//adding 1 to each AA, to avoid 0
     });
     this.root.sum(d => {d.value;if(d.type=="annotation") d.value=parseInt(d.properties.aa)+1; else if(Number.isNaN(d.value)) d.value=0;})
-    .sort((a, b) => { b.value - a.value; console.log(b.value,a.value)});
+    .sort((a, b) => { b.value - a.value; });
+    this.root.sum(d=>d.value);
     
-    console.log(this.root.sum(d=>d.value),"error");
     const pack = d3.pack()
       .size([this.width - 2, this.height - 10])
       .padding(3);
@@ -65,7 +65,7 @@ private readPackageView(data: any[]): void{
     this.svg = SVGUtils.createSvg(".svg-container-cv",this.width,this.height,"classe");
     d3.select(".svg-container-cv").attr("lastSelected",String(this.root.data.name));
     d3.select(".svg-container-cv").attr("rootName",this.root.data.name);
-    d3.select(".svg-container-cv").selectAll("circle").each(d=>console.log(d));
+ 
     //Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
@@ -79,7 +79,7 @@ private readPackageView(data: any[]): void{
                             .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap)); 
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
-        .on("click", (event, d) => {this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"))})
+        .on("click", (event, d) => {this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))})
 	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
 	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
 	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event));
@@ -89,9 +89,7 @@ private readPackageView(data: any[]): void{
 	
     
   }
-  public setaaa():void{
-	this.width=0;
-  }
+
 	
 }
 

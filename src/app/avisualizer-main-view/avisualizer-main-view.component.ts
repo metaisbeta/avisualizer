@@ -32,7 +32,11 @@ export class AvisualizerMainViewComponent implements OnInit {
     //transition between zoomed views
     
     if(!(this.selectedView=="System")){
-	SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-sv"); 
+	if(this.selectedView=="Package")      
+		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-sv");
+	else{
+		SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-sv");
+	}			 
     }
     this.selectedView="System";
   }
@@ -46,7 +50,10 @@ export class AvisualizerMainViewComponent implements OnInit {
     //transition between zoomed views
     console.log(this.isSVHidden,this.isPVHidden);
     if(!(this.selectedView=="Package")){
-    	SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
+	if(this.selectedView=="System")       
+    		SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
+    	else
+     		SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-pv");   			
     }
     this.selectedView="Package";	
   }
@@ -56,7 +63,10 @@ export class AvisualizerMainViewComponent implements OnInit {
     this.isCVHidden = false;	
     SVGUtils.resetView(".svg-container-cv");
     if(!(this.selectedView=="Class")){
-    	SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
+    	if(this.selectedView=="System")
+    		SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-cv");
+    	else
+     		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-cv");   			
     }    
     this.selectedView="Class";
  } 

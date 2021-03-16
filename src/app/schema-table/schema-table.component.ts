@@ -49,8 +49,8 @@ export class SchemaTableComponent implements OnInit {
        .attr('type','checkbox')
        .attr("id",function(d,i){   return annotationSchemas.getSchemasObjectArray()[i].schema})
        .on("click",function(d){
-	
-        SVGUtils.hideCircles(this.id,this.checked);
+	console.log(d3.select("system-view").attr("hidden"),d3.select("package-view").attr("hidden"),d3.select("class-view").attr("hidden"))
+        SVGUtils.hideCircles(".svg-container-pv",this.id,this.checked);
        	
 	});
         

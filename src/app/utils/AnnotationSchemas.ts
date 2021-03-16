@@ -33,6 +33,7 @@ export class AnnotationSchemas{
     //Sort the array with the schemas
     this.schemasOrdered = Array.from(schemaSet) as string[];
     this.schemasOrdered.sort();
+
     this.schemasGroups = [];
     this.schemasTotalAnnotations = new Map();    
     //counting total annotations of each schema

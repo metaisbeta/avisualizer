@@ -16,9 +16,9 @@ export class PackageViewComponent implements OnInit {
   private svg;
   private node;
   private root;
-  private width = 960;
+  public width = 960;
   private height = 960;
-  private schemasMap;
+  public schemasMap;
   private zoomProp: ZoomProp = {};
   private selectedNode: any; 
  
@@ -55,7 +55,7 @@ export class PackageViewComponent implements OnInit {
     //Fetch Annotations Schemas
     const anot = new AnnotationSchemas(this.root,"aa");
     this.schemasMap = anot.getSchemasColorMap();
-    
+    console.log(this.schemasMap.size);
     	
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);
@@ -85,7 +85,7 @@ export class PackageViewComponent implements OnInit {
        
        
   }
-  
+
 }
 
 interface ZoomProp{

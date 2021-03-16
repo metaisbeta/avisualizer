@@ -47,8 +47,8 @@ export class SVGUtils{
         
         d3.select(String(view)).selectAll("circle").each(function(d,i){
                 if(String(d3.select(this).attr("name"))==origin){
-                        d3.select(this).dispatch("click");
-						
+                       d3.select(this).dispatch("click");
+			SVGUtils.setFocus(origin,view);			
 			return this;
 		} 
 			
@@ -61,8 +61,8 @@ export class SVGUtils{
 	console.log(view,d3.select(String(view)).attr("lastSelected")); 
     }	
 
-    public static hideCircles(id: String,show: boolean){
-          if(d3.selectAll("system-view").attr("hidden")!==""){
+    public static hideCircles(container: string, id: String,show: boolean){
+          if(d3.selectAll("system-view").attr("hidden")!==""){ // hide circles for system-view
 	  	  var view = d3.selectAll(".svg-container-sv").select("svg");
 		  view.selectAll("circle").each(function(d,i){
 		       
@@ -78,7 +78,7 @@ export class SVGUtils{
 			}
 				
 		  }); 
-	  }else{
+	  }else if(d3.selectAll("system-view").attr("hidden")=="" && d3.selectAll("class-view").attr("hidden")==""){
 	  	  var view = d3.selectAll(".svg-container-pv").select("svg");
 		  view.selectAll("circle").each(function(d,i){
 		       
@@ -94,6 +94,24 @@ export class SVGUtils{
 			}
 				
 		  });
+	  }else if(d3.selectAll("system-view").attr("hidden")=="" && d3.selectAll("package-view").attr("hidden")==""){
+	  	  var view = d3.selectAll(".svg-container-cv").select("svg");
+		  view.selectAll("circle").each(function(d,i){
+		       
+			if(String(d3.select(this).attr("schema"))==id){ //schema se for package name se for system
+				if(!show){
+		                        //console.log(d3.select(this).attr("name")+" "+id);
+					d3.select(this).style("visibility","hidden");			
+				}else{
+					//console.log(d3.select(this).attr("name")+" "+id+" hide");
+					d3.select(this).style("visibility","visible");			
+				}
+
+			}
+				
+		  });	  
+	  
+	  
 	  }
 		
 	
@@ -115,7 +133,7 @@ export class SVGUtils{
 
     //popUp methods
     public static createPopUp(d: any, svg: any, event: any){
-        if(d.data.type=="schema"){
+        if(d.data.type=="schema"){//system view
 		const divTooltip = d3.select("body").append("div")	
     			.attr("class", "tooltip") 				
     		        .style("opacity", 1)
@@ -126,9 +144,9 @@ export class SVGUtils{
 		        .transition()		
         		.duration(200);		
         	
-       }else if(d.data.type=="annotation"){
+       }else if(d.data.type=="annotation" && d.parent.data.type=="class"){ // package view
                 var classname=d.parent.data.name.split(".");
-                 
+                console.log("class but showing package",d.parent.data.type); 
 		const divTooltip = d3.select("body").append("div")	
     			.attr("class", "tooltip") 				
     		        .style("opacity", 1)
@@ -139,7 +157,20 @@ export class SVGUtils{
 		        .transition()		
         		.duration(200);		
         
-       }	
+       }else if(d.data.type=="annotation" && ((d.parent.data.type=="field" || d.parent.data.type=="method") || d.parent.data.type=="interface")){ // package view
+                var componentname=d.parent.data.name.split(".");
+                var classname =  d.parent.parent.data.name.split(".");
+		const divTooltip = d3.select("body").append("div")	
+    			.attr("class", "tooltip") 				
+    		        .style("opacity", 1)
+		       	.style("left", (event.pageX +10) + "px")		
+        		.style("top", (event.pageY - 60) + "px")
+			.style("background","#BCC5F7")
+			.html("Package Name: "+d.parent.parent.parent.data.name+"<br/>"+"Class Name: "+classname[classname.length-1]+"<br/>"+d.parent.data.type+" Name "+componentname[componentname.length-1]+"<br/>"+"Annotation name: "+d.data.name+"<br/>"+"AA: "+d.data.properties.aa)
+		        .transition()		
+        		.duration(200);		
+        
+       }		
  	
     }
     
@@ -153,6 +184,7 @@ export class SVGUtils{
 
     //class view options
     public static toLOCAD(name: string){
+        
 	
     }
     public static toAA(name: string){

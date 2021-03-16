@@ -26,7 +26,11 @@ export class CircleUtils{
             return schemasMap.get(node.data.name);
 		//return "url('#green-pattern')";
         else if(node.data.type=="method")
- 	    return "#E0E0E0";
+ 	    return "cyan";
+ 	else if(node.data.type=="field")
+ 	    return "magenta";
+ 	else if(node.data.type=="interface")
+ 	    return "lightgrey"; 	    	    	
         else
 	    return "white";
     }

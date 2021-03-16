@@ -16,6 +16,7 @@ import { ClassViewComponent } from './class-view/class-view.component';
     SchemaTableComponent,
     SystemViewComponent,
     ClassViewComponent,
+   
   ],
   imports: [
     BrowserModule
