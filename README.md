@@ -33,7 +33,11 @@ We are proposing three different polymetrics views for code annotations. They ar
 
 * System View: In this view we are interested in observing how annotation schemas are distributed in the packages. This view has no information of classes.
 
+![System View Example](/images/sv-example.PNG)
+
 * Package View: In this view we are interested in observing how annotations are distributed inside a class, based on their schema. In this view we have no information of how the annotations are distributed between the code elements.
+
+![Package View Example](/images/pv-example.PNG)
 
 * Class View: In this view we group the annotation inside a class based on their code elements.
 
