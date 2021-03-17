@@ -14,8 +14,8 @@ export class AvisualizerMainViewComponent implements OnInit {
   selectedView: String;
 
   constructor() { 
-    this.isSVHidden = true;
-    this.isPVHidden = false;
+    this.isSVHidden = false;
+    this.isPVHidden = true;
     this.isCVHidden = true;  
     this.selectedView = "Package";	
   }

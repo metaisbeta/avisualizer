@@ -6,7 +6,7 @@ import { CircleUtils } from '../utils/CircleUtils';
 import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
 import * as loDash from 'lodash';
-
+import {contextMenu} from 'd3-context-menu';
 @Component({
   selector: 'class-view',
   templateUrl: './class-view.component.html',
@@ -79,10 +79,36 @@ private readPackageView(data: any[]): void{
                             .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap)); 
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
-        .on("click", (event, d) => {this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))})
+        .on("click", (event, d) => {
+        	if(d.data.type=="package"){
+        		d3.select("package-view").attr("hidden",null);
+        		d3.select("class-view").attr("hidden","");
+        		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
+        	}else
+        	this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))
+        
+        })
 	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
 	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
-	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event));
+	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event))
+	.on("contextmenu", function (event) {
+                    var popup = d3.select(".svg-container-cv")
+            .append("div")
+            .attr("class", "popup")
+            .style("position","fixed")
+            .style("left",(event.pageX)+ "px")
+            .style("top",(event.pageY)+ "px")
+            .style("background-color","#fff")
+            .style("width",200)
+            .style("overflow","auto");
+        popup.append("h2").text("Testando popup");
+        popup.append("p").html(
+            "The popUp display"+"<br/>")
+        popup.append("select").append("option").text("aa");
+       
+            event.preventDefault();
+           // react on right-clicking
+        });
 
 
 

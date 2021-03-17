@@ -20,8 +20,14 @@ export class SVGUtils{
         .style("cursor", "pointer")
         
         //.on("click", (event) => this.zoom(event, this.root));
-
-
+	 var dropDown = d3.select("svg").append("select")
+    	.attr("name", "View-list")
+    	.attr("id","selectbox")
+ 	.append("option")
+ 	.text("System")
+ 	.append("option")
+ 	.text("Package")
+ 	.style("visibility","visible");
         return svg;
     }
 
@@ -58,7 +64,7 @@ export class SVGUtils{
     public static setFocus(toZoom,view){
                 
         d3.select(String(view)).attr("lastSelected",String(toZoom));
-	console.log(view,d3.select(String(view)).attr("lastSelected")); 
+	console.log(view,d3.select(String(view)).attr("lastSelected"),"focus"); 
     }	
 
     public static hideCircles(container: string, id: String,show: boolean){

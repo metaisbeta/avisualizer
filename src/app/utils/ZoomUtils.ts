@@ -10,7 +10,7 @@ export class ZoomUtils{
     zoomProp.focus = d;
     
     svg.transition()
-      .duration(event.altKey ? 7500 : 750)
+      .duration(event.altKey ? 7500 : 0)
       .tween("zoom", d => {
         const i = d3.interpolateZoom(zoomProp.view, [zoomProp.focus.x, zoomProp.focus.y, zoomProp.focus.r * 2]);
 	
