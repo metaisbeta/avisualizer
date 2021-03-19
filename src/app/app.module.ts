@@ -7,7 +7,6 @@ import { AvisualizerMainViewComponent } from './avisualizer-main-view/avisualize
 import { SchemaTableComponent } from './schema-table/schema-table.component';
 import { SystemViewComponent } from './system-view/system-view.component';
 import { ClassViewComponent } from './class-view/class-view.component';
-
 @NgModule({
   declarations: [
     AppComponent,

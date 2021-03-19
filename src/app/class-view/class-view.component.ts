@@ -76,7 +76,7 @@ private readPackageView(data: any[]): void{
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
                           //.attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
-                            .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap)); 
+                            .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
@@ -84,7 +84,7 @@ private readPackageView(data: any[]): void{
         		d3.select("package-view").attr("hidden",null);
         		d3.select("class-view").attr("hidden","");
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
-        	}else
+        	}else 
         	this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))
         
         })

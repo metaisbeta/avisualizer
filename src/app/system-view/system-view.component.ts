@@ -59,7 +59,6 @@ export class SystemViewComponent implements OnInit {
     this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height,"sistema");
     d3.select(".svg-container-sv").attr("lastSelected",String(this.root.data.name));
     d3.select(".svg-container-sv").attr("rootName",this.root.data.name);
-    console.log(d3.select(".svg-container-sv").attr("lastSelected"));
     //Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
@@ -68,23 +67,22 @@ export class SystemViewComponent implements OnInit {
     d3.select("#headerSV").select("h1").text(title);
 
     //Color all circles
-    d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
+    d3.select(".svg-container-sv").selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
                           //.attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
-                            .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap)); 
+                            .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
         	if(d.data.type=="schema"){
         		       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-sv"),console.log(d.data.type))
-        		       console.log(d3.select("system-view").attr("hidden"));
         		       d3.select("package-view").attr("hidden",null);
         		       d3.select("system-view").attr("hidden","");
         		       SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
         		       	
         	}else{
         	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"),console.log(d.data.type))
-        		console.log("package");
+        		
         	}
 
         })
@@ -92,26 +90,32 @@ export class SystemViewComponent implements OnInit {
 	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
 	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event))
 	.on("contextmenu", (event,d)=> {
-	    var data = ["aa","b","c"]  
-            var popup = d3.select(".svg-container-sv")
-            .append("div")
-            .attr("id","display-box")
-            .attr("class", "option")
-            .style("position","fixed")
-            .style("left",0+ "px")
-            .style("top",110+ "px")
-            .style("background-color","#fff")
-            .style("width",200)
-            .style("overflow","auto");
-        popup.append("h2").text("Testando popup");
-        popup.append("p").html(
-            "The popUp display"+"<br/>"+d.data.name)
-        popup.append("select").append("option").text("Package View");
-
             event.preventDefault();
            // react on right-clicking
         });
-	
+	var packages = SVGUtils.getPackagesName(this.svg);
+	packages.sort();	
+	d3.select(".svg-container-sv")
+            .append("div")
+            .attr("class", "nav-bar")
+            .style("position","fixed")
+            .style("left",0+ "px")
+            .style("top",80+ "px")
+            .style("background-color","#fff")
+            .style("width",400)
+            .style("overflow","auto")
+            .append("h5").html("Package List: <br/>")
+            .append("select").attr("label","Package List").style("width","400px");
+            for(var i=0;i<packages.length;i++){
+            	d3.select("select").append("option")
+            			    .text(packages[i])
+            			    .attr("value",packages[i]);
+            			    
+            }
+            d3.select("select").on("change",(d,i)=>{
+			CircleUtils.highlightNode(".svg-container-sv",String(d3.select("select option:checked").text()));
+
+	     });
   }
   
 	

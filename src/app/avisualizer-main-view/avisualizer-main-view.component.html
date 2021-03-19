@@ -3,13 +3,8 @@
 <div id="headerCV" [hidden]="isCVHidden"><h1>Annotation Visualizer - Class View </h1></div> 
 <div class="container-fluid">    
     <div class="row">
-        <div class="col-sm">
-	 
-            <button class="btn btn-primary" (click)="selectSystemView()" >System View</button>
-            <button class="btn btn-primary" (click)="selectPackageView()">Package View</button>
-	    <button class="btn btn-primary" (click)="selectClassView()">Class View</button>
-	    <button class="btn btn-primary" [hidden]="isCVHidden" (click)="changeToLOCAD()">LOCAD</button>
-	    <button class="btn btn-primary" [hidden]="isCVHidden" (click)="changeToAA()">AA</button>	 
+	<div class="col-sm" id="navigation">
+	    	 
         </div>
         <div class="col-sm">
             <system-view [hidden]="isSVHidden"></system-view>

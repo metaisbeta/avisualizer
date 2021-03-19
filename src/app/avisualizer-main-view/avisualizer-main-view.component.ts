@@ -17,7 +17,10 @@ export class AvisualizerMainViewComponent implements OnInit {
     this.isSVHidden = false;
     this.isPVHidden = true;
     this.isCVHidden = true;  
-    this.selectedView = "Package";	
+    this.selectedView = "Package";
+   
+
+        
   }
 
   ngOnInit(): void {
@@ -70,12 +73,6 @@ export class AvisualizerMainViewComponent implements OnInit {
     }    
     this.selectedView="Class";
  } 
- changeToLOCAD(){
-  SVGUtils.toLOCAD(".svg-container-cv");
 
- }
- changeToAA(){
-  SVGUtils.toAA(".svg-container-cv");
- }
      
 }

@@ -13,6 +13,7 @@ export class SVGUtils{
         .attr("width",width)
         .attr("height",height)
         .attr("name",nome)
+        .attr("highlightedNode","")
         .attr("preserveAspectRatio", "xMidYMid meet")
         .style("display", "block")
         .style("margin", "0 -14px")
@@ -20,14 +21,7 @@ export class SVGUtils{
         .style("cursor", "pointer")
         
         //.on("click", (event) => this.zoom(event, this.root));
-	 var dropDown = d3.select("svg").append("select")
-    	.attr("name", "View-list")
-    	.attr("id","selectbox")
- 	.append("option")
- 	.text("System")
- 	.append("option")
- 	.text("Package")
- 	.style("visibility","visible");
+
         return svg;
     }
 
@@ -188,12 +182,18 @@ export class SVGUtils{
 	SVGUtils.createPopUp(d,svg,event);	
     }	
 
-    //class view options
-    public static toLOCAD(name: string){
-        
-	
+    public static getPackagesName(svg:any): string[]{
+        var names = [];
+    	svg.selectAll("circle").each(d=>{
+    		if(d.data.type=="package" && d.data.children.length>0){
+    			names.push(d.data.name);
+    			
+    		}
+    			
+    	});
+    	return names;
     }
-    public static toAA(name: string){
-	 
-    }	
+
+
+	
 }
