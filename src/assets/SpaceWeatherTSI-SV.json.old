@@ -4,51 +4,43 @@
     {
       "name": "br.inpe.climaespacial.tsi",
       "type": "package",
-      "properties": {},
       "children": [
         {
           "name": "java.lang",
           "type": "schema",
-          "value": 3,
-          "properties": {},
+          "size": 3,
           "children": []
         },
         {
           "name": "br.inpe.climaespacial.tsi.business",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "javax.ejb",
               "type": "schema",
-              "value": 3,
-              "properties": {},
+              "size": 3,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.business.impl",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 55,
-                  "properties": {},
+                  "size": 55,
                   "children": []
                 },
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 36,
-                  "properties": {},
+                  "size": 36,
                   "children": []
                 },
                 {
                   "name": "javax.annotation",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
                   "children": []
                 }
               ]
@@ -56,27 +48,56 @@
             {
               "name": "br.inpe.climaespacial.tsi.business.msg",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 2,
-                  "properties": {},
+                  "size": 2,
                   "children": []
                 },
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 6,
-                  "properties": {},
+                  "size": 6,
                   "children": []
                 },
                 {
                   "name": "javax.annotation",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.inpe.climaespacial.tsi.businesscli",
+              "type": "package",
+              "children": [
+                {
+                  "name": "br.inpe.climaespacial.tsi.businesscli.constants",
+                  "type": "package",
+                  "children": []
+                },
+                {
+                  "name": "br.inpe.climaespacial.tsi.businesscli.exceptions",
+                  "type": "package",
+                  "children": []
+                },
+                {
+                  "name": "br.inpe.climaespacial.tsi.businesscli.interfaces",
+                  "type": "package",
+                  "children": [
+                    {
+                      "name": "javax.ejb",
+                      "type": "schema",
+                      "size": 14,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.inpe.climaespacial.tsi.businesscli.locator",
+                  "type": "package",
                   "children": []
                 }
               ]
@@ -84,65 +105,28 @@
           ]
         },
         {
-          "name": "br.inpe.climaespacial.tsi.businesscli.constants",
-          "type": "package",
-          "properties": {},
-          "children": []
-        },
-        {
-          "name": "br.inpe.climaespacial.tsi.businesscli.exceptions",
-          "type": "package",
-          "properties": {},
-          "children": []
-        },
-        {
-          "name": "br.inpe.climaespacial.tsi.businesscli.interfaces",
-          "type": "package",
-          "properties": {},
-          "children": [
-            {
-              "name": "javax.ejb",
-              "type": "schema",
-              "value": 14,
-              "properties": {},
-              "children": []
-            }
-          ]
-        },
-        {
-          "name": "br.inpe.climaespacial.tsi.businesscli.locator",
-          "type": "package",
-          "properties": {},
-          "children": []
-        },
-        {
           "name": "br.inpe.climaespacial.tsi.collector",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "br.inpe.climaespacial.tsi.collector.constants",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.collector.download",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 3,
-                  "properties": {},
+                  "size": 3,
                   "children": []
                 },
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 5,
-                  "properties": {},
+                  "size": 5,
                   "children": []
                 }
               ]
@@ -150,53 +134,45 @@
             {
               "name": "br.inpe.climaespacial.tsi.collector.scheduler",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 13,
-                  "properties": {},
+                  "size": 13,
                   "children": []
                 },
                 {
                   "name": "br.inpe.climaespacial.tsi.collector.scheduler.missing",
                   "type": "package",
-                  "properties": {},
                   "children": [
                     {
                       "name": "javax.enterprise.context",
                       "type": "schema",
-                      "value": 7,
-                      "properties": {},
+                      "size": 7,
                       "children": []
                     },
                     {
                       "name": "java.lang",
                       "type": "schema",
-                      "value": 14,
-                      "properties": {},
+                      "size": 14,
                       "children": []
                     },
                     {
                       "name": "javax.ejb",
                       "type": "schema",
-                      "value": 4,
-                      "properties": {},
+                      "size": 4,
                       "children": []
                     },
                     {
                       "name": "org.junit",
                       "type": "schema",
-                      "value": 19,
-                      "properties": {},
+                      "size": 19,
                       "children": []
                     },
                     {
                       "name": "javax.inject",
                       "type": "schema",
-                      "value": 3,
-                      "properties": {},
+                      "size": 3,
                       "children": []
                     }
                   ]
@@ -208,93 +184,85 @@
         {
           "name": "br.inpe.climaespacial.tsi.collectorcli",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "javax.ejb",
               "type": "schema",
-              "value": 3,
-              "properties": {},
+              "size": 3,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.collectorcli.exception",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.collectorcli.locator",
               "type": "package",
-              "properties": {},
               "children": []
             }
           ]
         },
         {
-          "name": "br.inpe.climaespacial.tsi.consumer.ejb",
+          "name": "br.inpe.climaespacial.tsi.consumer",
           "type": "package",
-          "properties": {},
           "children": [
             {
-              "name": "java.lang",
-              "type": "schema",
-              "value": 8,
-              "properties": {},
-              "children": []
-            },
-            {
-              "name": "javax.ejb",
-              "type": "schema",
-              "value": 3,
-              "properties": {},
-              "children": []
+              "name": "br.inpe.climaespacial.tsi.consumer.ejb",
+              "type": "package",
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "size": 8,
+                  "children": []
+                },
+                {
+                  "name": "javax.ejb",
+                  "type": "schema",
+                  "size": 3,
+                  "children": []
+                }
+              ]
             }
           ]
         },
         {
           "name": "br.inpe.climaespacial.tsi.core",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "java.lang",
               "type": "schema",
-              "value": 16,
-              "properties": {},
+              "size": 16,
               "children": []
             },
             {
               "name": "javax.ejb",
               "type": "schema",
-              "value": 16,
-              "properties": {},
+              "size": 16,
               "children": []
             },
             {
               "name": "javax.persistence",
               "type": "schema",
-              "value": 2,
-              "properties": {},
+              "size": 2,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.core.impl",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 36,
-                  "properties": {},
+                  "size": 36,
                   "children": []
                 },
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 38,
-                  "properties": {},
+                  "size": 38,
                   "children": []
                 }
               ]
@@ -304,37 +272,31 @@
         {
           "name": "br.inpe.climaespacial.tsi.corecli",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "javax.ejb",
               "type": "schema",
-              "value": 13,
-              "properties": {},
+              "size": 13,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.corecli.dao",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.corecli.enums",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.corecli.exception",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.corecli.locator",
               "type": "package",
-              "properties": {},
               "children": []
             }
           ]
@@ -342,51 +304,43 @@
         {
           "name": "br.inpe.climaespacial.tsi.entity",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "javax.persistence",
               "type": "schema",
-              "value": 7,
-              "properties": {},
+              "size": 7,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.entity.constants",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.entity.enums",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.entity.model",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "javax.persistence.metamodel",
                   "type": "schema",
-                  "value": 4,
-                  "properties": {},
+                  "size": 4,
                   "children": []
                 },
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 16,
-                  "properties": {},
+                  "size": 16,
                   "children": []
                 },
                 {
                   "name": "javax.persistence",
                   "type": "schema",
-                  "value": 159,
-                  "properties": {},
+                  "size": 159,
                   "children": []
                 }
               ]
@@ -394,7 +348,6 @@
             {
               "name": "br.inpe.climaespacial.tsi.entity.vo",
               "type": "package",
-              "properties": {},
               "children": []
             }
           ]
@@ -402,42 +355,35 @@
         {
           "name": "br.inpe.climaespacial.tsi.fitsreader3",
           "type": "package",
-          "properties": {},
           "children": []
         },
         {
           "name": "br.inpe.climaespacial.tsi.irradiancecalc",
           "type": "package",
-          "properties": {},
           "children": []
         },
         {
           "name": "br.inpe.climaespacial.tsi.opencv",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "br.inpe.climaespacial.tsi.opencv.constant",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.opencv.exception",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.opencv.utils",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 4,
-                  "properties": {},
+                  "size": 4,
                   "children": []
                 }
               ]
@@ -447,65 +393,55 @@
         {
           "name": "br.inpe.climaespacial.tsi.scheduler",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "java.lang",
               "type": "schema",
-              "value": 1,
-              "properties": {},
+              "size": 1,
               "children": []
             },
             {
               "name": "javax.ejb",
               "type": "schema",
-              "value": 15,
-              "properties": {},
+              "size": 15,
               "children": []
             },
             {
               "name": "javax.annotation",
               "type": "schema",
-              "value": 1,
-              "properties": {},
+              "size": 1,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.scheduler.constant",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.scheduler.exceptions",
               "type": "package",
-              "properties": {},
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.scheduler.impl",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 8,
-                  "properties": {},
+                  "size": 8,
                   "children": []
                 },
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 12,
-                  "properties": {},
+                  "size": 12,
                   "children": []
                 },
                 {
                   "name": "javax.annotation",
                   "type": "schema",
-                  "value": 2,
-                  "properties": {},
+                  "size": 2,
                   "children": []
                 }
               ]
@@ -513,13 +449,11 @@
             {
               "name": "br.inpe.climaespacial.tsi.scheduler.interfaces",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 3,
-                  "properties": {},
+                  "size": 3,
                   "children": []
                 }
               ]
@@ -529,60 +463,51 @@
         {
           "name": "br.inpe.climaespacial.tsi.viewer",
           "type": "package",
-          "properties": {},
           "children": [
             {
               "name": "java.lang",
               "type": "schema",
-              "value": 2,
-              "properties": {},
+              "size": 2,
               "children": []
             },
             {
               "name": "org.springframework.web.servlet.config.annotation",
               "type": "schema",
-              "value": 1,
-              "properties": {},
+              "size": 1,
               "children": []
             },
             {
               "name": "javax.annotation",
               "type": "schema",
-              "value": 1,
-              "properties": {},
+              "size": 1,
               "children": []
             },
             {
               "name": "org.springframework.context.annotation",
               "type": "schema",
-              "value": 6,
-              "properties": {},
+              "size": 6,
               "children": []
             },
             {
               "name": "br.inpe.climaespacial.tsi.viewer.rest",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "org.springframework.beans.factory.annotation",
                   "type": "schema",
-                  "value": 3,
-                  "properties": {},
+                  "size": 3,
                   "children": []
                 },
                 {
                   "name": "org.springframework.web.bind.annotation",
                   "type": "schema",
-                  "value": 7,
-                  "properties": {},
+                  "size": 7,
                   "children": []
                 },
                 {
                   "name": "javax.inject",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
                   "children": []
                 }
               ]
@@ -590,27 +515,23 @@
             {
               "name": "br.inpe.climaespacial.tsi.viewer.security",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "org.springframework.beans.factory.annotation",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
                   "children": []
                 },
                 {
                   "name": "org.springframework.stereotype",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
                   "children": []
                 },
                 {
                   "name": "org.springframework.web.context.annotation",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
                   "children": []
                 }
               ]
@@ -618,20 +539,17 @@
             {
               "name": "br.inpe.climaespacial.tsi.viewer.singleton",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "java.lang",
                   "type": "schema",
-                  "value": 2,
-                  "properties": {},
+                  "size": 2,
                   "children": []
                 },
                 {
                   "name": "javax.ejb",
                   "type": "schema",
-                  "value": 11,
-                  "properties": {},
+                  "size": 11,
                   "children": []
                 }
               ]
@@ -639,13 +557,11 @@
             {
               "name": "br.inpe.climaespacial.tsi.viewer.utils",
               "type": "package",
-              "properties": {},
               "children": [
                 {
                   "name": "org.springframework.stereotype",
                   "type": "schema",
-                  "value": 1,
-                  "properties": {},
+                  "size": 1,
                   "children": []
                 }
               ]
@@ -655,40 +571,40 @@
       ]
     },
     {
-      "name": "br.inpe.constant",
+      "name": "br.inpe",
       "type": "package",
-      "properties": {},
-      "children": []
-    },
-    {
-      "name": "br.inpe.enums",
-      "type": "package",
-      "properties": {},
-      "children": []
-    },
-    {
-      "name": "br.inpe.fitsreader",
-      "type": "package",
-      "properties": {},
-      "children": []
-    },
-    {
-      "name": "br.inpe.model",
-      "type": "package",
-      "properties": {},
-      "children": []
-    },
-    {
-      "name": "br.inpe.rna",
-      "type": "package",
-      "properties": {},
-      "children": []
-    },
-    {
-      "name": "br.inpe.utils",
-      "type": "package",
-      "properties": {},
-      "children": []
+      "children": [
+        {
+          "name": "br.inpe.constant",
+          "type": "package",
+          "children": []
+        },
+        {
+          "name": "br.inpe.enums",
+          "type": "package",
+          "children": []
+        },
+        {
+          "name": "br.inpe.fitsreader",
+          "type": "package",
+          "children": []
+        },
+        {
+          "name": "br.inpe.model",
+          "type": "package",
+          "children": []
+        },
+        {
+          "name": "br.inpe.rna",
+          "type": "package",
+          "children": []
+        },
+        {
+          "name": "br.inpe.utils",
+          "type": "package",
+          "children": []
+        }
+      ]
     }
   ]
 }

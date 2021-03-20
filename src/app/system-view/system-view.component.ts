@@ -39,8 +39,8 @@ export class SystemViewComponent implements OnInit {
     
     this.root = d3.hierarchy(data);
     
-    this.root.sum(d => d.size)
-             .sort((a, b) =>  b.size - a.size);
+    this.root.sum(d => d.value)
+             .sort((a, b) =>  b.value - a.value);
 
       
     const pack = d3.pack()
