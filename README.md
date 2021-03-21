@@ -1,3 +1,4 @@
+[![Travis CI Build Status](https://travis-ci.com/phillima/avisualizer.svg?branch=main)](https://travis-ci.com/phillima/avisualizer)
 <h1 align = "center">Annotation Visualizer</h1>
 <h2 align = "center"> A Tool to Visualize Code Annotations Metrics Distribution </h2>
 
