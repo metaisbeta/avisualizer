@@ -2,4 +2,7 @@ language: node_js
 node_js: "15"
 sudo: required
 before_script: npm install -g @angular/cli
-script: ng build
+script: 
+  - ng lint
+  - npm run test-headless
+  - ng build
