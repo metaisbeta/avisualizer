@@ -35,10 +35,12 @@ export class AnnotationSchemas{
     this.schemasOrdered.sort();
 
     this.schemasGroups = [];
-    this.schemasTotalAnnotations = new Map();    
+    this.schemasTotalAnnotations = new Map(); 
+    var somatotal = new Map();   
     //counting total annotations of each schema
     for(var i=0;i<this.schemasOrdered.length;i++){
-    	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);	
+    	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);
+    	somatotal.set(this.schemasOrdered[i],0);	
     }
     for(var i=0;i<root.descendants().length;i++){
 	if(root.descendants()[i].data.type=="annotation"){

@@ -37,6 +37,7 @@ export class SVGUtils{
         .attr("name",function(d){ return d.data.name})
         .attr("schema",function(d){  return  d.data.type =="annotation" ? d.data.properties.schema : d.data.type })
         .attr("zoom","a")
+        .attr("value",function(d){  return  d.data.type =="schema" ? d.data.value : 0 })
 	
     	 
     return node;
@@ -140,7 +141,7 @@ export class SVGUtils{
 		       	.style("left", (event.pageX) + "px")		
         		.style("top", (event.pageY - 70) + "px")
 			.style("background","#BCC5F7")
-			.html("Schema Name: "+d.data.name+"<br/>"+"Package Name "+d.parent.data.name+"<br/>"+"Number of Annotations: "+d.data.size)
+			.html("Schema Name: "+d.data.name+"<br/>"+"Package Name "+d.parent.data.name+"<br/>"+"Number of Annotation occurrence: "+d.data.value)
 		        .transition()		
         		.duration(200);		
         	
@@ -182,17 +183,6 @@ export class SVGUtils{
 	SVGUtils.createPopUp(d,svg,event);	
     }	
 
-    public static getPackagesName(svg:any): string[]{
-        var names = [];
-    	svg.selectAll("circle").each(d=>{
-    		if(d.data.type=="package" && d.data.children.length>0){
-    			names.push(d.data.name);
-    			
-    		}
-    			
-    	});
-    	return names;
-    }
 
 
 	

@@ -5,7 +5,7 @@ import { AnnotationSchemas } from '../utils/AnnotationSchemas';
 import { CircleUtils } from '../utils/CircleUtils';
 import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
-
+import { NavUtils } from '../utils/NavUtils';
 
 @Component({
   selector: 'system-view',
@@ -69,21 +69,34 @@ export class SystemViewComponent implements OnInit {
     //Color all circles
     d3.select(".svg-container-sv").selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
-                          //.attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
+                          
                             .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
+                d3.select("#packagesList").selectAll("option").each(function(e,i){
+        		if(d3.select(this).attr("value")==d.parent.data.name && d.data.type=="schema")
+        			return d3.select(this).property("selected",true);
+        		else if (d3.select(this).attr("value")==d.data.name)	
+        			return d3.select(this).property("selected",true);
+        	})
+        	d3.select("#classList").selectAll("option").remove();
+		d3.select("#classes").select("select").append("option").text("Select Class").attr("value","select class");
         	if(d.data.type=="schema"){
+				var classes = NavUtils.getClassName(d3.select(".svg-container-pv"),d.parent.data.name);
+				NavUtils.insertOptions(".svg-container-pv","classes","classList",classes);	
+				CircleUtils.highlightNode(".svg-container-sv",d.parent.data.name); 
         		       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-sv"),console.log(d.data.type))
         		       d3.select("package-view").attr("hidden",null);
         		       d3.select("system-view").attr("hidden","");
         		       SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
+        		       d3.select("#headerSV").attr("hidden","");
+			       d3.select("#headerPV").attr("hidden",null);
         		       	
-        	}else{
-        	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"),console.log(d.data.type))
-        		
-        	}
+        	}else{       	        			
+		      CircleUtils.highlightNode(".svg-container-sv",d.data.name); 
+        	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"))
+        	     }
 
         })
 	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
@@ -91,31 +104,11 @@ export class SystemViewComponent implements OnInit {
 	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event))
 	.on("contextmenu", (event,d)=> {
             event.preventDefault();
-           // react on right-clicking
+        
         });
-	var packages = SVGUtils.getPackagesName(this.svg);
-	packages.sort();	
-	d3.select(".svg-container-sv")
-            .append("div")
-            .attr("class", "nav-bar")
-            .style("position","fixed")
-            .style("left",0+ "px")
-            .style("top",80+ "px")
-            .style("background-color","#fff")
-            .style("width",400)
-            .style("overflow","auto")
-            .append("h5").html("Package List: <br/>")
-            .append("select").attr("label","Package List").style("width","400px");
-            for(var i=0;i<packages.length;i++){
-            	d3.select("select").append("option")
-            			    .text(packages[i])
-            			    .attr("value",packages[i]);
-            			    
-            }
-            d3.select("select").on("change",(d,i)=>{
-			CircleUtils.highlightNode(".svg-container-sv",String(d3.select("select option:checked").text()));
+        NavUtils.createSelectBox("packages","packagesList","Select Package","select package","Package List",80,400,".svg-container-sv");
+	NavUtils.createSelectBox("classes","classList","Select Class","select class","Class List",200,400,".svg-container-pv");
 
-	     });
   }
   
 	
