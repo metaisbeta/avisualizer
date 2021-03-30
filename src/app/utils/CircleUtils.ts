@@ -42,8 +42,10 @@ export class CircleUtils{
     						d3.select(container).selectAll("circle").each(function(d,i){
     						//var splitter = String(d3.select(this).attr("name").split(".");
 if(String(d3.select(this).attr("name"))==String(d3.select(container).attr("highlightedNode"))){
-								
-    								d3.select(this).style("stroke","black");
+								if(d3.select(this).attr("class")=="package")
+    									d3.select(this).style("stroke","black");
+    								else
+    									d3.select(this).style("stroke","blue");	
     								d3.select(this).style("stroke-width","1px");
     								d3.select(this).style("fill","");	
     							}

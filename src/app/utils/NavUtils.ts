@@ -25,11 +25,24 @@ export class NavUtils{
     			
     		}
     			
-    	});
-    	
+    	});   	
     	return names;
     }
-    
+    public static getElementName(svg:any, classe:string,element:string): string[]{
+        var names = [];
+    	svg.selectAll("circle").each(d=>{
+    		
+    		if(d.data.type==element){
+    			//var split =d.data.name.split("."); 
+    			if(d.parent.data.name==classe)
+    				names.push(d.data.name);
+    			
+    		}
+    			
+    	});   	
+    	return names;
+    }
+
     public static createSelectBox(divName:string,selectBoxId:string,defaultBoxText:string,defaultBoxValue:string,label:string,top:number,width:number,svg:string){
     	d3.select("body")
             .append("div")
@@ -63,7 +76,7 @@ export class NavUtils{
     
     public static insertOptions(svg:string,div:string,boxId:string,options:string[]){
     		options.sort();
-    		if(svg==".svg-container-sv"){
+    		if(svg==".svg-container-sv" || svg==".svg-container-cv"){
  		    for(var i=0;i<options.length;i++){
             		d3.select("#"+div).select("select").append("option")
            			.text(options[i])
@@ -78,8 +91,7 @@ export class NavUtils{
                      		.attr("value",options[i]);
             		             			    
         	    }     		
-    		
-    		}  
+    	        }		
    
     }
   

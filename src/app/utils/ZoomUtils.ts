@@ -5,7 +5,7 @@ export class ZoomUtils{
   
   public static zoom(event,d, zoomProp,svg,node){
      
-    if(d.data.type=="annotation" || d.data.type=="schema")
+    if((d.data.type=="annotation" || d.data.type=="schema") ||  (d.data.type=="method" || d.data.type=="field"))
         return;
     zoomProp.focus = d;
     
