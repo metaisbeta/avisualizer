@@ -88,7 +88,7 @@ export class SystemViewComponent implements OnInit {
 				var classes = NavUtils.getClassName(d3.select(".svg-container-pv"),d.parent.data.name);
 				NavUtils.insertOptions(".svg-container-pv","classes","classList",classes);	
 				CircleUtils.highlightNode(".svg-container-sv",d.parent.data.name); 
-        		       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-sv"),console.log(d.data.type))
+        		       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-sv"))
         		       d3.select("package-view").attr("hidden",null);
         		       d3.select("system-view").attr("hidden","");
         		       SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
@@ -110,7 +110,7 @@ export class SystemViewComponent implements OnInit {
         });
         NavUtils.createSelectBox("packages","packagesList","Select Package","select package","Package List",80,400,".svg-container-sv");
 	NavUtils.createSelectBox("classes","classList","Select Class","select class","Class List",200,400,".svg-container-pv");
-	NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-cv");
+	NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-pv");
 	NavUtils.createSelectBox("methods","methodList","Select Method","select method","Method List",440,400,".svg-container-cv");
 	NavUtils.createSelectBox("fields","fieldList","Select Field","select field","Field List",560,400,".svg-container-cv");
 	

@@ -80,7 +80,7 @@ private readPackageView(data: any[]): void{
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
-        	console.log(d3.select('#interfaceList option:checked').attr("value"),d.data.name,d.data.type,"on interfaces");
+        	
         	
         	if(d.data.type=="package"){
         		d3.select("package-view").attr("hidden",null);
@@ -88,22 +88,33 @@ private readPackageView(data: any[]): void{
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
         		d3.select("#methodList").selectAll("option").remove();
 			d3.select("#methods").select("select").append("option").text("Select Method").attr("value","select method");
-			d3.select("#interfaceList").selectAll("option").remove();
-			d3.select("#interfaces").select("select").append("option").text("Select Interface").attr("value","select interface");
+
 			d3.select("#fieldList").selectAll("option").remove();
 			d3.select("#fields").select("select").append("option").text("Select Field").attr("value","select field");
 			d3.select("#classList").selectAll("option").each(function(e,i){
 				if (d3.select(this).attr("value")=="select class")	
 					return d3.select(this).property("selected",true);
 			}) 
+			d3.select("#interfaceList").selectAll("option").each(function(e,i){
+				if (d3.select(this).attr("value")=="select interface")	
+					return d3.select(this).property("selected",true);
+			}) 
         	}else if (d.data.type=="method" || d.data.type=="field"){
         		if(d.parent.data.name.includes(String(d3.select('#classList option:checked').attr("value"))))
         			CircleUtils.highlightNode(".svg-container-cv",d.data.name);
+        		d3.select("#methodList").selectAll("option").each(function(e,i){
+				if (d3.select(this).attr("value")==d.data.name)	
+					return d3.select(this).property("selected",true);
+			})
+			d3.select("#fieldList").selectAll("option").each(function(e,i){
+				if (d3.select(this).attr("value")==d.data.name)	
+					return d3.select(this).property("selected",true);
+			})	
         	}
         	else if(d.data.type=="class" && d.data.name==String(d3.select('#classList option:checked').attr("value"))){
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))
         	}else if(d.data.type=="interface" && d.data.name==String(d3.select('#interfaceList option:checked').attr("value"))){
-        		console.log("interface",d.data.name);
+        		
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))
         	}
         

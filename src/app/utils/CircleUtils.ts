@@ -38,7 +38,7 @@ export class CircleUtils{
 	    return "white";
     }
     public static highlightNode(container: any, name: string){
-    						console.log("name = ",name);
+    						
     						d3.select(container).selectAll("circle").each(function(d,i){
     						//var splitter = String(d3.select(this).attr("name").split(".");
 if(String(d3.select(this).attr("name"))==String(d3.select(container).attr("highlightedNode"))){
@@ -54,9 +54,9 @@ if(String(d3.select(this).attr("name"))==String(d3.select(container).attr("highl
 	            				d3.select(container).selectAll("circle").each(function(d,i){
 		       
 						if(String(d3.select(this).attr("name"))==name){
-							console.log("found node",d3.select(this).attr("name"))	 
+							
 							d3.select(container).attr("highlightedNode",String(d3.select(this).attr("name")));
-							//console.log(d3.select(this).attr("name")+" "+id+" hide");
+							
 							d3.select(this).style("stroke","blue");
 							d3.select(this).style("stroke-width","2px");
 							d3.select(this).style("fill","blue");	

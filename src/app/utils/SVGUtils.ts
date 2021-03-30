@@ -59,7 +59,7 @@ export class SVGUtils{
     public static setFocus(toZoom,view){
                 
         d3.select(String(view)).attr("lastSelected",String(toZoom));
-	console.log(view,d3.select(String(view)).attr("lastSelected"),"focus"); 
+	
     }	
 
     public static hideCircles(container: string, id: String,show: boolean){
@@ -147,7 +147,7 @@ export class SVGUtils{
         	
        }else if(d.data.type=="annotation" && d.parent.data.type=="class"){ // package view
                 var classname=d.parent.data.name.split(".");
-                console.log("class but showing package",d.parent.data.type); 
+                
 		const divTooltip = d3.select("body").append("div")	
     			.attr("class", "tooltip") 				
     		        .style("opacity", 1)

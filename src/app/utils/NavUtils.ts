@@ -64,10 +64,11 @@ export class NavUtils{
 
     	    }
     	    d3.select("#"+selectBoxId).on("change",(d,event)=>{
-    	    	console.log(selectBoxId,divName,svg);			
+			
 		d3.select(svg).selectAll("circle").each(function(d,i){
 				if(d3.select(this).attr("name")==d3.select("#"+divName).select("select option:checked").attr("value")){ 
 					d3.select(this).dispatch("click");
+					    	    	console.log(selectBoxId,divName,svg,"on change",d3.select("#"+divName).select("select option:checked").attr("value"),d3.select(this).attr("name"));
 					console.log(divName);	
 				}		
 			});		

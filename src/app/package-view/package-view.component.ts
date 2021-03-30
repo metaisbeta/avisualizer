@@ -55,7 +55,7 @@ export class PackageViewComponent implements OnInit {
     //Fetch Annotations Schemas
     const anot = new AnnotationSchemas(this.root,"aa");
     this.schemasMap = anot.getSchemasColorMap();
-    console.log(this.schemasMap.size);
+    //console.log(this.schemasMap.size);
     	
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);
@@ -80,7 +80,7 @@ export class PackageViewComponent implements OnInit {
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
                 if( d.data.name==String(d3.select(".svg-container-sv").attr("lastSelected")) ||(d.data.type=="package" && d.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected"))))){
-                if(d.data.type!="class"){
+                if(d.data.type!="class" && d.data.type!="interface"){
         		
         		d3.select(".svg-container-pv").attr("lastSelected",d.data.name)
 			CircleUtils.highlightNode(".svg-container-pv","Select Class"); 
@@ -105,16 +105,20 @@ export class PackageViewComponent implements OnInit {
         	}else if(d.data.type=="package" && (!d.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected"))) && d.data.name !=String(d3.select(".svg-container-pv").attr("lastSelected")))){
         		 d3.select(".svg-container-sv").attr("lastSelected",d.data.name)
         		 CircleUtils.highlightNode(".svg-container-sv",d.data.name); 
-        		 d3.select("#classList").selectAll("option").remove();
+			
         		 d3.select("#packagesList").selectAll("option").each(function(e,i){
 				if (d3.select(this).attr("value")==d.data.name)	
 					return d3.select(this).property("selected",true);
 			})
+			d3.select("#classList").selectAll("option").remove();
 		        d3.select("#classes").select("select").append("option").text("Select Class").attr("value","select class");
+		        d3.select("#interfaceList").selectAll("option").remove();
+		        d3.select("#interfaces").select("select").append("option").text("Select Interface").attr("value","select interface");
         		d3.select("system-view").attr("hidden",null);
         		d3.select("package-view").attr("hidden","");
         		
         	}else if(d.data.type=="annotation" && d.parent.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected")))){
+                       
                        d3.select(".svg-container-sv").attr("lastSelected",d.parent.parent.data.name)
         		CircleUtils.highlightNode(".svg-container-sv",d.parent.parent.data.name); 
         		d3.select("#classList").selectAll("option").each(function(e,i){
@@ -138,7 +142,7 @@ export class PackageViewComponent implements OnInit {
 			NavUtils.insertOptions(".svg-container-pv","interfaces","interfaceList",interfaces);
 			
         		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-cv");
-                }else if ((d.data.type=="class"|| d.data.type=="annotation" || d.data.type=="interface") && d.parent.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected")))){
+                }else if ((d.data.type=="class"|| d.data.type=="annotation") || d.data.type=="interface" && d.parent.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected")))){
 		        d3.select("#classList").selectAll("option").each(function(e,i){
 				if (d3.select(this).attr("value")==d.data.name)	
 					return d3.select(this).property("selected",true);
@@ -146,7 +150,8 @@ export class PackageViewComponent implements OnInit {
 			d3.select("#interfaceList").selectAll("option").each(function(e,i){
 				if (d3.select(this).attr("value")==d.data.name)	
 					return d3.select(this).property("selected",true);
-			})	
+			})
+			
                      CircleUtils.highlightNode(".svg-container-pv",d.data.name); 
         	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
                 }
