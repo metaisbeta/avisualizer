@@ -70,8 +70,7 @@ private readPackageView(data: any[]): void{
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
-    var title = d3.select("#headerCV").text()+": Project "+this.root.data.name;
-    d3.select("#headerCV").select("h1").text(title);
+
     //Color all circles
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
                           .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
@@ -99,6 +98,11 @@ private readPackageView(data: any[]): void{
 				if (d3.select(this).attr("value")=="select interface")	
 					return d3.select(this).property("selected",true);
 			}) 
+			d3.select("#header").attr("view","Package");
+        		
+        		d3.select("#header").attr("class","");
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/";
+        		d3.select("#header").select("h2").text(title);
         	}else if (d.data.type=="method" || d.data.type=="field"){
         		if(d.parent.data.name.includes(String(d3.select('#classList option:checked').attr("value"))))
         			CircleUtils.highlightNode(".svg-container-cv",d.data.name);
@@ -109,12 +113,19 @@ private readPackageView(data: any[]): void{
 			d3.select("#fieldList").selectAll("option").each(function(e,i){
 				if (d3.select(this).attr("value")==d.data.name)	
 					return d3.select(this).property("selected",true);
-			})	
+			})
+			d3.select("#header").attr("element",d.data.name);
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/"+d3.select("#header").attr("class")+"/"+d3.select("#header").attr("element");
+        		d3.select("#header").select("h2").text(title);
+				
         	}
         	else if(d.data.type=="class" && d.data.name==String(d3.select('#classList option:checked').attr("value"))){
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))
-        	}else if(d.data.type=="interface" && d.data.name==String(d3.select('#interfaceList option:checked').attr("value"))){
-        		
+        	}else if(d.data.type=="interface" && d.data.name==String(d3.select("#interfaces").select('#interfaceList option:checked').attr("value"))){
+        		d3.select("#header").attr("class",d.data.name);
+        		console.log("clicked");
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/"+d3.select("#header").attr("class")+"/";
+        		d3.select("#header").select("h2").text(title);
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-cv"))
         	}
         

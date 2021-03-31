@@ -63,8 +63,7 @@ export class PackageViewComponent implements OnInit {
     this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height,"pacote");
     d3.select(".svg-container-pv").attr("lastSelected",this.root.data.name);
     d3.select(".svg-container-pv").attr("rootName",this.root.data.name);
-    var title = d3.select("#headerPV").text()+": Project "+this.root.data.name;
-    d3.select("#headerPV").select("h1").text(title);
+
     
     	
     this.node = SVGUtils.createNode(this.svg, this.root);
@@ -79,9 +78,10 @@ export class PackageViewComponent implements OnInit {
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
+        	
                 if( d.data.name==String(d3.select(".svg-container-sv").attr("lastSelected")) ||(d.data.type=="package" && d.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected"))))){
                 if(d.data.type!="class" && d.data.type!="interface"){
-        		
+        		console.log("here???")
         		d3.select(".svg-container-pv").attr("lastSelected",d.data.name)
 			CircleUtils.highlightNode(".svg-container-pv","Select Class"); 
         		d3.select("#classList").selectAll("option").remove();
@@ -98,11 +98,16 @@ export class PackageViewComponent implements OnInit {
         			return d3.select(this).property("selected",true);
         		
         		})
+        		
+		        d3.select("#header").attr("package",d.data.name);
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/";
+    			d3.select("#header").select("h2").text(title);
         	       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(String(d.data.type)=="class" ? d.parent.data.name: d.data.name,".svg-container-pv"))
         	 	
                 }    		
         		       
         	}else if(d.data.type=="package" && (!d.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected"))) && d.data.name !=String(d3.select(".svg-container-pv").attr("lastSelected")))){
+        		console.log("here????")
         		 d3.select(".svg-container-sv").attr("lastSelected",d.data.name)
         		 CircleUtils.highlightNode(".svg-container-sv",d.data.name); 
 			
@@ -116,9 +121,20 @@ export class PackageViewComponent implements OnInit {
 		        d3.select("#interfaces").select("select").append("option").text("Select Interface").attr("value","select interface");
         		d3.select("system-view").attr("hidden",null);
         		d3.select("package-view").attr("hidden","");
-        		
+        		d3.select("#header").attr("view","System");
+		        d3.select("#header").attr("package","");
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/";
+    			d3.select("#header").select("h2").text(title);
         	}else if(d.data.type=="annotation" && d.parent.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected")))){
-                       
+                       console.log("here??")
+                       if(d.parent.parent.name!=String(d3.select(".svg-container-pv").attr("lastSelected"))){
+                       	
+                       	d3.select("#classList").selectAll("option").remove();
+		        	d3.select("#classes").select("select").append("option").text("Select Class").attr("value","select class");
+		        	var classes = NavUtils.getClassName(d3.select(".svg-container-pv"),d.parent.parent.data.name);
+				NavUtils.insertOptions(".svg-container-pv","classes","classList",classes);
+		        	
+                       }
                        d3.select(".svg-container-sv").attr("lastSelected",d.parent.parent.data.name)
         		CircleUtils.highlightNode(".svg-container-sv",d.parent.parent.data.name); 
         		d3.select("#classList").selectAll("option").each(function(e,i){
@@ -142,7 +158,14 @@ export class PackageViewComponent implements OnInit {
 			NavUtils.insertOptions(".svg-container-pv","interfaces","interfaceList",interfaces);
 			
         		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-cv");
-                }else if ((d.data.type=="class"|| d.data.type=="annotation") || d.data.type=="interface" && d.parent.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected")))){
+        		d3.select("#header").attr("view","Class");
+        		d3.select("#header").attr("package",d.parent.parent.data.name);
+        		var split = d.parent.data.name.split("."); 
+        		d3.select("#header").attr("class",split[split.length-1]);
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/"+d3.select("#header").attr("class")+"/";
+        		d3.select("#header").select("h2").text(title);
+                }else if (((d.data.type=="class"|| d.data.type=="annotation") || d.data.type=="interface")  && d.parent.data.name.includes(String(d3.select(".svg-container-pv").attr("lastSelected")))){
+                	
 		        d3.select("#classList").selectAll("option").each(function(e,i){
 				if (d3.select(this).attr("value")==d.data.name)	
 					return d3.select(this).property("selected",true);
@@ -151,7 +174,10 @@ export class PackageViewComponent implements OnInit {
 				if (d3.select(this).attr("value")==d.data.name)	
 					return d3.select(this).property("selected",true);
 			})
-			
+			var split = d.data.name.split("."); 
+        		d3.select("#header").attr("class",split[split.length-1]);
+			var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/"+d3.select("#header").attr("class")+"/";
+        		d3.select("#header").select("h2").text(title);
                      CircleUtils.highlightNode(".svg-container-pv",d.data.name); 
         	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
                 }

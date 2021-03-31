@@ -27,13 +27,9 @@ export class CircleUtils{
             return schemasMap.get(node.data.name);
 		//return "url('#green-pattern')";
         else if(node.data.type=="method")
- 	    return "#969696";
+ 	    return "#D2D2D2";
  	else if(node.data.type=="field")
- 	    return "#737373";
- 	else if(node.data.type=="interface")
- 	    return "#d9d9d9"; 	    	    	
-        else if (node.data.type=="class")
-           return "#525252";
+ 	    return "#e3e3e3";
        else    	
 	    return "white";
     }
@@ -45,7 +41,7 @@ if(String(d3.select(this).attr("name"))==String(d3.select(container).attr("highl
 								if(d3.select(this).attr("class")=="package")
     									d3.select(this).style("stroke","black");
     								else
-    									d3.select(this).style("stroke","blue");	
+    								d3.select(this).style("stroke","blue");	
     								d3.select(this).style("stroke-width","1px");
     								d3.select(this).style("fill","");	
     							}

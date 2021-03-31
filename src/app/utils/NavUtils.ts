@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import { svg } from "d3";
+import { CircleUtils } from '../utils/CircleUtils';
 export class NavUtils{
   
   
@@ -59,17 +60,27 @@ export class NavUtils{
             d3.select("#"+divName).select("select").append("option").text(defaultBoxText).attr("value",defaultBoxText);
     	    if(svg==".svg-container-sv"){
     	    	var options = NavUtils.getPackagesName(d3.select(svg));
-    	    	console.log(options);
+    	    	//console.log(options);
     	    	NavUtils.insertOptions(".svg-container-sv",divName,selectBoxId,options);
 
     	    }
     	    d3.select("#"+selectBoxId).on("change",(d,event)=>{
-			
+		if(d3.select("#"+divName).select("select option:checked").attr("value")=="Select Package"){
+			CircleUtils.highlightNode(".svg-container-sv","select package"); 
+		}else if(d3.select("#"+divName).select("select option:checked").attr("value")=="Select Class"){
+			CircleUtils.highlightNode(".svg-container-pv","select class"); 
+		}else if(d3.select("#"+divName).select("select option:checked").attr("value")=="Select Method"){
+			CircleUtils.highlightNode(".svg-container-cv","select method"); 
+		}else if(d3.select("#"+divName).select("select option:checked").attr("value")=="Select Field"){
+			CircleUtils.highlightNode(".svg-container-cv","select field"); 
+		}else if(d3.select("#"+divName).select("select option:checked").attr("value")=="Select Interface"){
+			CircleUtils.highlightNode(".svg-container-pv","select interface"); 
+		}	
 		d3.select(svg).selectAll("circle").each(function(d,i){
 				if(d3.select(this).attr("name")==d3.select("#"+divName).select("select option:checked").attr("value")){ 
 					d3.select(this).dispatch("click");
-					    	    	console.log(selectBoxId,divName,svg,"on change",d3.select("#"+divName).select("select option:checked").attr("value"),d3.select(this).attr("name"));
-					console.log(divName);	
+					    	    	
+					
 				}		
 			});		
 	    });	

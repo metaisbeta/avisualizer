@@ -63,8 +63,9 @@ export class SystemViewComponent implements OnInit {
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
-    var title = d3.select("#headerSV").text()+": Project "+this.root.data.name;
-    d3.select("#headerSV").select("h1").text(title);
+
+    var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/";
+    d3.select("#header").select("h2").text(title);
 
     //Color all circles
     d3.select(".svg-container-sv").selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
@@ -92,8 +93,10 @@ export class SystemViewComponent implements OnInit {
         		       d3.select("package-view").attr("hidden",null);
         		       d3.select("system-view").attr("hidden","");
         		       SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
-        		       d3.select("#headerSV").attr("hidden","");
-			       d3.select("#headerPV").attr("hidden",null);
+			       d3.select("#header").attr("view","Package");
+			       d3.select("#header").attr("package",d.parent.data.name);
+			       var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/";
+    			       d3.select("#header").select("h2").text(title);	
         		       	
         	}else{       	        			
 		      CircleUtils.highlightNode(".svg-container-sv",d.data.name); 
