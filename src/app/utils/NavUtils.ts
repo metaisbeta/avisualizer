@@ -78,6 +78,7 @@ export class NavUtils{
 		}	
 		d3.select(svg).selectAll("circle").each(function(d,i){
 				if(d3.select(this).attr("name")==d3.select("#"+divName).select("select option:checked").attr("value")){ 
+					
 					d3.select(this).dispatch("click");
 					    	    	
 					
@@ -106,6 +107,28 @@ export class NavUtils{
     	        }		
    
     }
-  
+    
+    public static refreshBox(boxName:string,divName:string,defaultBoxText:string,defaultValue:string,element:string,container:string,component:string){
+    	           d3.select("#"+boxName).selectAll("option").remove();
+		   d3.select("#"+divName).select("select").append("option").text(defaultBoxText).attr("value",defaultValue);
+		   if(divName=="classes")	
+		   	var options = NavUtils.getClassName(d3.select(container),element);
+		   else if (divName=="interfaces" ||divName=="fields" || divName=="methods")
+		   	var options = NavUtils.getElementName(d3.select(container),element,component);	
+	           NavUtils.insertOptions(container,divName,boxName,options);
+    }
+    public static resetBox(boxName:string,divName:string,defaultBoxText:string,defaultValue:string){
+    	d3.select("#"+boxName).selectAll("option").remove();
+    	d3.select("#"+divName).select("select").append("option").text(defaultBoxText).attr("value",defaultValue);
+    }
+    
+    public static updateSelectBoxText(boxName:string,option:string){
+    	d3.select("#"+boxName).selectAll("option").each(function(e,i){
+	if (d3.select(this).attr("value")==option)	
+		return d3.select(this).property("selected",true);
+	})
+    	
+    }
+    
 
 }

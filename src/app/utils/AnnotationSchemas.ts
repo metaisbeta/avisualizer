@@ -17,14 +17,14 @@ export class AnnotationSchemas{
    if(name=="class"){
       root.descendants().forEach(d=>{if(d.data.type=="annotation") { schemaSet.add(d.data.properties.schema);}});
 
-   console.log("class",schemaSet.size);
+   
    }
    else{
     const schemasNode = root.descendants().filter(d => !loDash.isEmpty(d.data.properties));
-    console.log(schemasNode.length);
+   
     //To not get repeated schemas
     schemasNode.forEach(d =>  schemaSet.add(d.data.properties.schema));
-     console.log("a",schemaSet.size);
+     
    }
     
     

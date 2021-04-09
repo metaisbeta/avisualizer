@@ -38,11 +38,36 @@ export class SVGUtils{
         .attr("schema",function(d){  return  d.data.type =="annotation" ? d.data.properties.schema : d.data.type })
         .attr("zoom","a")
         .attr("value",function(d){  return  d.data.type =="schema" ? d.data.value : 0 })
-	
-    	 
+	.attr("parent",d=>{return d.parent==null ? "" : d.parent.data.name})
+    	.attr("grandfather",d=>{
+    		if(d.parent==null)
+    			return "";
+    		else if(d.parent.parent==null)
+    			return "";
+    		else{
+    			
+    			return d.parent.parent.data.name;
+    		}		
+    			
+    	})
+    	.attr("grandgrandfather",d=>{
+    		if(d.parent==null)
+    			return "";
+    		else if(d.parent.parent==null)
+    			return "";
+    		else if(d.parent.parent.parent==null) {
+    			return "";
+    			
+    		}else
+    			return d.parent.parent.parent.data.name;			
+    			
+    	})  
     return node;
     }
-
+    public static showView(origin:string,view:string){
+    	d3.select(view).attr("hidden",null);
+    	d3.select(origin).attr("hidden","");
+    }	
     //view related methods
     public static viewTransition(origin,view){
         
@@ -61,7 +86,52 @@ export class SVGUtils{
         d3.select(String(view)).attr("lastSelected",String(toZoom));
 	
     }	
-
+    public static hide(container: string, name:string){
+    	
+    	d3.select(container).selectAll("circle").each(function(d,i){
+    			
+		       if(container==".svg-container-pv"){
+		       	if((d3.select(this).attr("class")=="class" || d3.select(this).attr("class")=="interface") && d3.select(this).attr("parent")==name){
+		       		d3.select(this).style("visibility","visible");
+		       	}else if (d3.select(this).attr("name")==name){
+		       		d3.select(this).style("visibility","visible");
+		       	}else if(d3.select(this).attr("class")=="annotation" && d3.select(this).attr("grandfather")==name)
+		       		d3.select(this).style("visibility","visible");
+		       	else if (d3.select(this).attr("name")==d3.select(container).attr("rootName"))
+		       		d3.select(this).style("visibility","visible");
+		       	else
+		       		d3.select(this).style("visibility","hidden");		
+		       	
+		       }else if (container==".svg-container-cv"){
+		       	var split = name.split(".");
+		       	var pacote="";
+		       	for(var i=0;i<split.length-1;i++){
+		       		if(i<split.length-2)
+		       			pacote=pacote+split[i]+"."
+		       		else
+		       			pacote=pacote+split[i];	
+		       	}
+		       	
+		       	if((d3.select(this).attr("class")=="class" || d3.select(this).attr("class")=="interface") && String(d3.select(this).attr("name"))==name){
+		       		d3.select(this).style("visibility","visible");
+		       	}else if (String(d3.select(this).attr("parent"))==name){
+		       		d3.select(this).style("visibility","visible");
+		       	}else if(String(d3.select(this).attr("class"))=="annotation" && String(d3.select(this).attr("grandfather"))==name){
+		       		d3.select(this).style("visibility","visible");
+		       	}else if (String(d3.select(this).attr("name"))==d3.select(container).attr("rootName")){
+		       		d3.select(this).style("visibility","visible");
+		       	}else if ((String(d3.select(this).attr("class"))=="field" || String(d3.select(this).attr("class"))=="method") && String(d3.select(this).attr("grandfather"))==name)
+		       		d3.select(this).style("visibility","visible");
+		       	else if (d3.select(this).attr("name")==pacote)
+		       		d3.select(this).style("visibility","visible");
+		       	else{
+		       		d3.select(this).style("visibility","hidden");			
+		       	}
+		       } 
+				
+		  }); 
+    
+    }	
     public static hideCircles(container: string, id: String,show: boolean){
           if(d3.selectAll("system-view").attr("hidden")!==""){ // hide circles for system-view
 	  	  var view = d3.selectAll(".svg-container-sv").select("svg");
@@ -83,7 +153,7 @@ export class SVGUtils{
 	  	  var view = d3.selectAll(".svg-container-pv").select("svg");
 		  view.selectAll("circle").each(function(d,i){
 		       
-			if(String(d3.select(this).attr("schema"))==id){ //schema se for package name se for system
+			if(String(d3.select(this).attr("schema"))==id && d3.select(this).attr("grandfather")==d3.select("#packagesList").select("select option:checked").text()){ //schema se for package name se for system
 				if(!show){
 		                        //console.log(d3.select(this).attr("name")+" "+id);
 					d3.select(this).style("visibility","hidden");			
@@ -99,7 +169,7 @@ export class SVGUtils{
 	  	  var view = d3.selectAll(".svg-container-cv").select("svg");
 		  view.selectAll("circle").each(function(d,i){
 		       
-			if(String(d3.select(this).attr("schema"))==id){ //schema se for package name se for system
+			if(String(d3.select(this).attr("schema"))==id &&( d3.select(this).attr("grandfather")==d3.select("#classList").select("select option:checked").attr("value") ||d3.select(this).attr("parent")==d3.select("#classList").select("select option:checked").attr("value"))){ //schema se for package name se for system
 				if(!show){
 		                        //console.log(d3.select(this).attr("name")+" "+id);
 					d3.select(this).style("visibility","hidden");			
@@ -145,7 +215,7 @@ export class SVGUtils{
 		        .transition()		
         		.duration(200);		
         	
-       }else if(d.data.type=="annotation" && d.parent.data.type=="class"){ // package view
+       }else if(d.data.type=="annotation" && (d.parent.data.type=="class" || d.parent.data.type=="interface")){ // package view
                 var classname=d.parent.data.name.split(".");
                 
 		const divTooltip = d3.select("body").append("div")	
@@ -154,11 +224,11 @@ export class SVGUtils{
 		       	.style("left", (event.pageX +10) + "px")		
         		.style("top", (event.pageY - 60) + "px")
 			.style("background","#BCC5F7")
-			.html("Package Name: "+d.parent.parent.data.name+"<br/>"+"Class Name "+classname[classname.length-1]+"<br/>"+"Annotation name: "+d.data.name+"<br/>"+"AA: "+d.data.value)
+			.html("Package Name: "+d.parent.parent.data.name+"<br/>"+d.parent.data.type+" Name "+classname[classname.length-1]+"<br/>"+"Annotation name: "+d.data.name+"<br/>"+"AA: "+d.data.value)
 		        .transition()		
         		.duration(200);		
         
-       }else if(d.data.type=="annotation" && ((d.parent.data.type=="field" || d.parent.data.type=="method") || d.parent.data.type=="interface")){ // package view
+       }else if(d.data.type=="annotation" && ((d.parent.data.type=="field" || d.parent.data.type=="method"))){ // package view
                 var componentname=d.parent.data.name.split(".");
                 var classname =  d.parent.parent.data.name.split(".");
 		const divTooltip = d3.select("body").append("div")	
@@ -171,6 +241,18 @@ export class SVGUtils{
 		        .transition()		
         		.duration(200);		
         
+       }else if(d.data.type=="class" || d.data.type=="interface"){
+       
+                var classname =  d.data.name.split(".");
+		const divTooltip = d3.select("body").append("div")	
+    			.attr("class", "tooltip") 				
+    		        .style("opacity", 1)
+		       .style("left", (event.pageX +10) + "px")		
+        		.style("top", (event.pageY - 60) + "px")
+			.style("background","#BCC5F7")
+			.html( d.data.type+" Name: "+classname[classname.length-1]+"<br/>")
+		        .transition()		
+        		.duration(200);		
        }		
  	
     }

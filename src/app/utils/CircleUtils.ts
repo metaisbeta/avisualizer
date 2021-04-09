@@ -30,7 +30,8 @@ export class CircleUtils{
  	    return "#D2D2D2";
  	else if(node.data.type=="field")
  	    return "#e3e3e3";
-       else    	
+
+       else	   	
 	    return "white";
     }
     public static highlightNode(container: any, name: string){
@@ -55,10 +56,19 @@ if(String(d3.select(this).attr("name"))==String(d3.select(container).attr("highl
 							
 							d3.select(this).style("stroke","blue");
 							d3.select(this).style("stroke-width","2px");
-							d3.select(this).style("fill","blue");	
+							var color = d3.select(this).style("fill");
+							d3.select(this).transition()
+  									.duration(1000)
+  									.style("fill","blue")
+									.transition()
+  									.duration(1000)
+  									.style("fill",String(d3.color(color).formatHex()));	
 							
-							d3.select("#headerSV").attr("hidden","");
-							d3.select("#headerPV").attr("hidden",null);
+							if(d3.select(this).attr("class")=="package")
+								d3.select(this).style("stroke","black");
+							else
+								d3.select(this).style("stroke","blue");
+							d3.select(this).style("stroke-width","1px");		
 							//d3.select(this).dispatch("click");		
 						}
 

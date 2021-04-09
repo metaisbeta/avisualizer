@@ -6,7 +6,7 @@ import { CircleUtils } from '../utils/CircleUtils';
 import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
 import { NavUtils } from '../utils/NavUtils';
-
+import { HeaderUtils } from '../utils/HeaderUtils';
 @Component({
   selector: 'system-view',
   templateUrl: './system-view.component.html',
@@ -58,14 +58,14 @@ export class SystemViewComponent implements OnInit {
     //Create the SVG
     this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height,"sistema");
     d3.select(".svg-container-sv").attr("lastSelected",String(this.root.data.name));
-    d3.select(".svg-container-sv").attr("rootName",this.root.data.name);
+    d3.select(".svg-container-sv").attr("rootName",this.root.children[0].data.name);
+   
     //Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
-
-    var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/";
-    d3.select("#header").select("h2").text(title);
+	
+    HeaderUtils.setSystemViewHeader(this.root.data.name);
 
     //Color all circles
     d3.select(".svg-container-sv").selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
@@ -81,23 +81,13 @@ export class SystemViewComponent implements OnInit {
         		else if (d3.select(this).attr("value")==d.data.name)	
         			return d3.select(this).property("selected",true);
         	})
-        	d3.select("#classList").selectAll("option").remove();
-		d3.select("#classes").select("select").append("option").text("Select Class").attr("value","select class");
-        	if(d.data.type=="schema"){
-	
-        	
-				var classes = NavUtils.getClassName(d3.select(".svg-container-pv"),d.parent.data.name);
-				NavUtils.insertOptions(".svg-container-pv","classes","classList",classes);	
+        	if(d.data.type=="schema"){	
+        			SVGUtils.hide(".svg-container-pv",d.parent.data.name);
 				CircleUtils.highlightNode(".svg-container-sv",d.parent.data.name); 
         		       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-sv"))
-        		       d3.select("package-view").attr("hidden",null);
-        		       d3.select("system-view").attr("hidden","");
+        		       SVGUtils.showView("system-view","package-view");
         		       SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
-			       d3.select("#header").attr("view","Package");
-			       d3.select("#header").attr("package",d.parent.data.name);
-			       var title = d3.select("#header").attr("view")+" View"+": Project "+String(this.root.data.name)+"/"+d3.select("#header").attr("package")+"/";
-    			       d3.select("#header").select("h2").text(title);	
-        		       	
+        		       HeaderUtils.setPackageViewHeader("Package",d.parent.data.name,this.root.data.name)        		       	
         	}else{       	        			
 		      CircleUtils.highlightNode(".svg-container-sv",d.data.name); 
         	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"))
@@ -116,7 +106,8 @@ export class SystemViewComponent implements OnInit {
 	NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-pv");
 	NavUtils.createSelectBox("methods","methodList","Select Method","select method","Method List",440,400,".svg-container-cv");
 	NavUtils.createSelectBox("fields","fieldList","Select Field","select field","Field List",560,400,".svg-container-cv");
-	
+
+			
 
   }
   
