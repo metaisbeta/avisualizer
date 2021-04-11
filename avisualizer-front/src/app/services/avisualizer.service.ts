@@ -11,7 +11,7 @@ export class AvisualizerService {
   constructor(private httpClient: HttpClient) { }
 
   getWelComeMessage(): Observable<SimpleResponse>{
-    return this.httpClient.get<SimpleResponse>('http://localhost:8080/rest');
+    return this.httpClient.get<SimpleResponse>('/rest');
   }
 
   // async generateJson(url:string, projectModel: ProjectModel){

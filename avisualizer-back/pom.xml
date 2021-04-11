@@ -8,36 +8,36 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>avisualizer-back</artifactId>
-  <name>avisualizer-backend</name>
-  <packaging>war</packaging>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java-version>11</java-version>
-    <start-class>io.github.phillima.avisualizer.AvisualizerApplication</start-class>
-  </properties>
+    <artifactId>avisualizer-back</artifactId>
+    <name>avisualizer-backend</name>
+    <packaging>war</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java-version>11</java-version>
+        <start-class>io.github.phillima.avisualizer.AvisualizerApplication</start-class>
+    </properties>
 
 	<dependencies>
 		<dependency>
-       <groupId>io.github.phillima</groupId>
-       <artifactId>avisualizer-front</artifactId>
-       <version>${project.parent.version}</version>
-       <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-    </dependency>
-  	<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+            <groupId>io.github.phillima</groupId>
+            <artifactId>avisualizer-front</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 <!--		<dependency>-->
 <!--		<groupId>io.github.phillima</groupId>-->
 <!--			<artifactId>asniffer</artifactId>-->
@@ -60,14 +60,14 @@
             <groupId>io.github.phillima</groupId>
             <artifactId>asniffer</artifactId>
             <version>2.4.2</version>
-            </dependency>
+        </dependency>
 	</dependencies>
 
-		<build>
+    <build>
       <plugins>
-         <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
 <!--          <configuration>-->
 <!--            <mainClass>io.github.phillima.avisualizer.AvisualizerApplication</mainClass>-->
 <!--          </configuration>-->
@@ -79,7 +79,7 @@
 <!--            </execution>-->
 <!--          </executions>-->
         </plugin>
-          <plugin>
+        <plugin>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>
@@ -96,7 +96,7 @@
                 </configuration>
               </execution>
             </executions>
-          </plugin>
+        </plugin>
       </plugins>
     </build>
 </project>
