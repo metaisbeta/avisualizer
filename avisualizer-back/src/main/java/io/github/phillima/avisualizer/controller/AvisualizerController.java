@@ -1,21 +1,8 @@
 package io.github.phillima.avisualizer.controller;
 
-import com.github.phillima.asniffer.ASniffer;
-import com.github.phillima.asniffer.model.AMReport;
-import com.github.phillima.asniffer.output.json.d3hierarchy.JSONReportAvisuIMP;
-import com.github.phillima.asniffer.output.json.d3hierarchy.classview.JSONReportCV;
-import com.github.phillima.asniffer.output.json.d3hierarchy.packageview.JSONReportPV;
-import com.github.phillima.asniffer.output.json.d3hierarchy.systemview.JSONReportSV;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import io.github.phillima.avisualizer.model.ProjectModel;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 public class AvisualizerController {
 
   private String projectPath = "/home/phillima/Documentos/Doutorado/Embrace/repositorios/SpaceWeatherTSI/";
