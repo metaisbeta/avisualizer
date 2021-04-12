@@ -11,7 +11,7 @@
 
     <artifactId>avisualizer-back</artifactId>
     <name>avisualizer-backend</name>
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,11 +61,11 @@
             <artifactId>asniffer</artifactId>
             <version>2.4.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-tomcat</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
 	</dependencies>
 
     <build>
@@ -112,6 +112,17 @@
               </execution>
             </executions>
         </plugin>
+        <plugin>
+          <groupId>com.heroku.sdk</groupId>
+          <artifactId>heroku-maven-plugin</artifactId>
+          <version>3.0.4</version>
+          <configuration>
+              <appName>avisualizer</appName>
+              <processTypes>
+                  <web>java $JAVA_OPTS  -Dserver.port=$PORT -cp target/classes:target/dependency/* io.github.phillima.avisualizer.AvisualizerApplication</web>
+              </processTypes>
+          </configuration>
+        </plugin>
 <!--            <plugin>-->
 <!--              <groupId>com.heroku.sdk</groupId>-->
 <!--              <artifactId>heroku-maven-plugin</artifactId>-->
@@ -120,26 +131,35 @@
 <!--                  <appName>avisualizer</appName>-->
 <!--              </configuration>-->
 <!--            </plugin>-->
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-dependency-plugin</artifactId>
-              <executions>
-                  <execution>
-                      <phase>package</phase>
-                      <goals><goal>copy</goal></goals>
-                      <configuration>
-                          <artifactItems>
-                              <artifactItem>
-                                  <groupId>com.heroku</groupId>
-                                  <artifactId>webapp-runner</artifactId>
-                                  <version>9.0.41.0</version>
-                                  <destFileName>webapp-runner.jar</destFileName>
-                              </artifactItem>
-                          </artifactItems>
-                      </configuration>
-                  </execution>
-              </executions>
-          </plugin>
+<!--          <plugin>-->
+<!--              <groupId>org.apache.maven.plugins</groupId>-->
+<!--              <artifactId>maven-dependency-plugin</artifactId>-->
+<!--              <executions>-->
+<!--                  <execution>-->
+<!--                      <phase>package</phase>-->
+<!--                      <goals><goal>copy</goal></goals>-->
+<!--                      <configuration>-->
+<!--                          <artifactItems>-->
+<!--                              <artifactItem>-->
+<!--                                  <groupId>com.heroku</groupId>-->
+<!--                                  <artifactId>webapp-runner</artifactId>-->
+<!--                                  <version>9.0.41.0</version>-->
+<!--                                  <destFileName>webapp-runner.jar</destFileName>-->
+<!--                              </artifactItem>-->
+<!--                          </artifactItems>-->
+<!--                      </configuration>-->
+<!--                  </execution>-->
+<!--              </executions>-->
+<!--          </plugin>-->
       </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>otherOutputDir</id>
+            <build>
+                <directory>${project.parent}/target</directory>
+            </build>
+        </profile>
+    </profiles>
 </project>
