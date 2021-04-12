@@ -1,4 +1,6 @@
 [![Travis CI Build Status](https://travis-ci.com/phillima/avisualizer.svg?branch=main)](https://travis-ci.com/phillima/avisualizer)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](https://avisualizer.herokuapp.com/)
+
 <h1 align = "center">Annotation Visualizer</h1>
 <h2 align = "center"> A Tool to Visualize Code Annotations Metrics Distribution </h2>
 
