@@ -8,3 +8,6 @@ after_install:
 deploy:
   provider: script 
   script: "mvn clean heroku:deploy"
+  
+  on:
+    branches: main
