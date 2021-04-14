@@ -2,12 +2,6 @@ language: java
 version: openjdk11
 script: mvn clean package
 
-after_install:
+after_script:
 - cd avisualizer-back/
-
-deploy:
-  provider: script 
-  script: "mvn clean heroku:deploy"
-  
-  on:
-    branches: main
+- mvn clean heroku:deploy
