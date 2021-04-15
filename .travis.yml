@@ -4,11 +4,5 @@ install: true
 script: mvn clean package
 
 after_script:
-- mv avisualizer-back/target .
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: $SECURE_KEY
-  on: 
-    branch: main
+- cd avisualizer-back/
+- mvn clean heroku:deploy
