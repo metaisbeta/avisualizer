@@ -1,8 +1,7 @@
 language: java
 version: openjdk11
 install: true
-script: mvn clean package
-
-after_script:
-- cd avisualizer-back/
-- mvn clean heroku:deploy
+script: 
+  - mvn clean package
+  - cd avisualizer-back/
+  - mvn clean heroku:deploy
