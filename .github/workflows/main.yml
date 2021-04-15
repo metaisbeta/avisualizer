@@ -13,8 +13,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+          heroku_api_key: ${{secrets.HEROKU_API_SECRET}}
+          heroku_app_name: "avisualizer"
       - name: Build with Maven
         run: |
             mvn clean package
             cd avisualizer-back/
-            mvn clean heroku:deploy
+            heroku deploy:jar target/avisualizer-back.jar --app avisualizer
