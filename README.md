@@ -1,4 +1,5 @@
 [![Travis CI Build Status](https://travis-ci.com/phillima/avisualizer.svg?branch=main)](https://travis-ci.com/phillima/avisualizer)
+[![AVisualizer-Actions-Build](https://github.com/phillima/avisualizer/workflows/AVisualizer/badge.svg)](https://github.com/phillima/AVisualizer/actions)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](https://avisualizer.herokuapp.com/)
 
 <h1 align = "center">Annotation Visualizer</h1>
