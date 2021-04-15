@@ -19,4 +19,5 @@ jobs:
         run: |
             mvn clean package
             cd avisualizer-back/
+            heroku plugins:install java
             heroku deploy:jar target/avisualizer-back.jar --app avisualizer
