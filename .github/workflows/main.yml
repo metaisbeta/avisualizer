@@ -13,7 +13,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          heroku_api_key: ${{secrets.HEROKU_API_SECRET}}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "avisualizer"
       - name: Build with Maven
         run: |
