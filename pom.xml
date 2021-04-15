@@ -20,4 +20,44 @@
 		<module>avisualizer-front</module>
 		<module>avisualizer-back</module>
 	</modules>
+
+	<!-- <build>
+		<plugins>
+			<plugin>
+			<groupId>com.heroku.sdk</groupId>
+			<artifactId>heroku-maven-plugin</artifactId>
+			<version>3.0.4</version>
+			<configuration>
+				<appName>avisualizer</appName>
+				<processTypes>
+					<web>java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes:target/dependency/* io.github.phillima.avisualizer.AvisualizerApplication</web>
+				</processTypes>
+			</configuration>
+			</plugin>
+		</plugins>
+	</build> -->
+	<!-- <build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+				<execution>
+					<phase>initialize</phase>
+				</execution>
+				</executions>
+				<configuration>
+				<filesets>
+					<fileset>
+					<directory>${project.basedir}/target</directory>
+					</fileset>
+				</filesets>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build> -->
+	
+	
+	
+	
 </project>

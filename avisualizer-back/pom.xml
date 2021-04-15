@@ -20,11 +20,11 @@
     </properties>
 
 	<dependencies>
-		<dependency>
-            <groupId>io.github.phillima</groupId>
-            <artifactId>avisualizer-front</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
+<!--		<dependency>-->
+<!--            <groupId>io.github.phillima</groupId>-->
+<!--            <artifactId>avisualizer-front</artifactId>-->
+<!--            <version>${project.parent.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -97,17 +97,17 @@
               </execution>
             </executions>
         </plugin>
-        <plugin>
-          <groupId>com.heroku.sdk</groupId>
-          <artifactId>heroku-maven-plugin</artifactId>
-          <version>3.0.4</version>
-          <configuration>
-              <appName>avisualizer</appName>
-              <processTypes>
-                  <web>java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes:target/dependency/* io.github.phillima.avisualizer.AvisualizerApplication</web>
-              </processTypes>
-          </configuration>
-        </plugin>
+          <plugin>
+              <groupId>com.heroku.sdk</groupId>
+              <artifactId>heroku-maven-plugin</artifactId>
+              <version>3.0.4</version>
+              <configuration>
+                  <appName>avisualizer</appName>
+                  <processTypes>
+                      <web>java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes:target/dependency/* io.github.phillima.avisualizer.AvisualizerApplication</web>
+                  </processTypes>
+              </configuration>
+          </plugin>
       </plugins>
     </build>
 </project>
