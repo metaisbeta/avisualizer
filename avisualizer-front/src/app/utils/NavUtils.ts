@@ -120,10 +120,11 @@ export class NavUtils{
     public static refreshBox(boxName:string,divName:string,defaultBoxText:string,defaultValue:string,element:string,container:string,component:string){
     	           d3.select("#"+boxName).selectAll("option").remove();
 		   d3.select("#"+divName).select("select").append("option").text(defaultBoxText).attr("value",defaultValue);
-		   if(divName=="classes" || "interfaces")	
-		   	var options = NavUtils.getClassName(d3.select(container),element,divName);
-		   else if (divName=="fields" || divName=="methods")
+		   if (divName=="fields" || divName=="methods")
 		   	var options = NavUtils.getElementName(d3.select(container),element,component);	
+		   	
+		   else if(divName=="classes" || "interfaces")	
+		   	var options = NavUtils.getClassName(d3.select(container),element,divName);
 	           NavUtils.insertOptions(container,divName,boxName,options);
     }
     public static resetBox(boxName:string,divName:string,defaultBoxText:string,defaultValue:string){
