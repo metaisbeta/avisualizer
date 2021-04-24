@@ -23,97 +23,107 @@ export class SystemViewComponent implements OnInit {
   private focus: any;
   private zoomProp: ZoomProp = {};
   private selectedNode: any;
-  constructor() { 
-	this.node=null;
-        this.root=null;
+
+  packageName: string;
+
+  constructor() {
+	this.node = null;
+ this.root = null;
   }
 
   ngOnInit(): void {
-    //read data from JSON
-    d3.json("./assets/SpaceWeatherTSI-SV.json").then(data => this.readPackageView(data as any[]))
+    // read data from JSON
+    d3.json('./assets/SpaceWeatherTSI-SV.json').then(data => this.readPackageView(data as any[]))
                                                .catch(error => console.log(error));
-       
+
   }
-  
+
   private readPackageView(data: any[]): void{
-    
+
     this.root = d3.hierarchy(data);
-    
+
     this.root.sum(d => d.value)
              .sort((a, b) =>  b.value - a.value);
 
-      
+
     const pack = d3.pack()
       .size([this.width - 2, this.height - 10])
       .padding(3);
-    
-    pack(this.root); 
+
+    pack(this.root);
 
     this.zoomProp.focus = this.root;
-    
-    //Fetch Annotations Schemas
-    const anot = new AnnotationSchemas(this.root,"aa");
+
+    // Fetch Annotations Schemas
+    const anot = new AnnotationSchemas(this.root, 'aa');
     this.schemasMap = anot.getSchemasColorMap();
 
-    //Create the SVG
-    this.svg = SVGUtils.createSvg(".svg-container-sv",this.width,this.height,"sistema");
-    d3.select(".svg-container-sv").attr("lastSelected",String(this.root.data.name));
-    d3.select(".svg-container-sv").attr("rootName",this.root.children[0].data.name);
-   
-    //Create the nodes
+    // Create the SVG
+    this.svg = SVGUtils.createSvg('.svg-container-sv', this.width, this.height, 'sistema');
+    d3.select('.svg-container-sv').attr('lastSelected', String(this.root.data.name));
+    d3.select('.svg-container-sv').attr('rootName', this.root.children[0].data.name);
+
+    // Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
-    //Initial Zoom
-    ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
-	
+    // Initial Zoom
+    ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2], this.svg, this.zoomProp, this.node);
+
     HeaderUtils.setSystemViewHeader(this.root.data.name);
 
-    //Color all circles
-    d3.select(".svg-container-sv").selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
-                          .attr("stroke-dasharray", d=> CircleUtils.addCircleDashArray(d))
-                          
-                            .attr("fill", d => CircleUtils.colorCircles(d,this.schemasMap));
-    //Apply zoom to all circles in this specific view
-    this.svg.selectAll("circle")
-        .on("click", (event, d) => {
-                d3.select("#packagesList").selectAll("option").each(function(e,i){
-        		if(d3.select(this).attr("value")==d.parent.data.name && d.data.type=="schema")
-        			return d3.select(this).property("selected",true);
-        		else if (d3.select(this).attr("value")==d.data.name)	
-        			return d3.select(this).property("selected",true);
-        	})
-        	if(d.data.type=="schema"){	
-        			SVGUtils.hide(".svg-container-pv",d.parent.data.name);
-				CircleUtils.highlightNode(".svg-container-sv",d.parent.data.name); 
-        		       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-sv"))
-        		       SVGUtils.showView("system-view","package-view");
-        		       SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
-        		       HeaderUtils.setPackageViewHeader("Package",d.parent.data.name,this.root.data.name);
-        		       SVGUtils.resetView(".svg-container-sv")
-        		       console.log(d3.select(".svg-container-sv").attr("lastSelected"))        		       	
-        	}else{       	        			
-		      CircleUtils.highlightNode(".svg-container-sv",d.data.name); 
-        	      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),	event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-sv"))
-        	     }
+    this.packageName = this.root.children[0].data.name;
+
+
+    // Color all circles
+    d3.select('.svg-container-sv').selectAll('circle').attr('stroke', d => CircleUtils.addCircleStroke(d))
+                          .attr('stroke-dasharray', d => CircleUtils.addCircleDashArray(d))
+
+                            .attr('fill', d => CircleUtils.colorCircles(d, this.schemasMap));
+    // Apply zoom to all circles in this specific view
+    this.svg.selectAll('circle')
+        .on('click', (event, d) => {
+                d3.select('#packagesList').selectAll('option').each(function(e, i){
+        		if (d3.select(this).attr('value') == d.parent.data.name && d.data.type == 'schema') {
+        			return d3.select(this).property('selected', true);
+        		}
+        		else if (d3.select(this).attr('value') == d.data.name) {
+        			return d3.select(this).property('selected', true);
+ }
+        	});
+        	       if (d.data.type == 'schema'){
+        			SVGUtils.hide('.svg-container-pv', d.parent.data.name);
+				       CircleUtils.highlightNode('.svg-container-sv', d.parent.data.name);
+        		 this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.parent.data.name, '.svg-container-sv'));
+        		 SVGUtils.showView('system-view', 'package-view');
+        		 SVGUtils.viewTransition(String(d3.select('.svg-container-sv').attr('lastSelected')), '.svg-container-pv');
+        		 HeaderUtils.setPackageViewHeader('Package', d.parent.data.name, this.root.data.name);
+        		 SVGUtils.resetView('.svg-container-sv');
+        		 console.log(d3.select('.svg-container-sv').attr('lastSelected'));
+        	}else{
+		      CircleUtils.highlightNode('.svg-container-sv', d.data.name);
+		      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.data.name, '.svg-container-sv'));
+		      //keep the current package root name on top
+                   this.packageName = d.data.name;
+        	       }
 
         })
-	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
-	.on("mouseout", (event,d) => SVGUtils.destroyPopUp(this.svg))
-	.on("mousemove",(event,d)=>SVGUtils.movePopUp(d,this.svg,event))
-	.on("contextmenu", (event,d)=> {
+	.on('mouseover', (event, d) => SVGUtils.createPopUp(d, this.svg, event))
+	.on('mouseout', (event, d) => SVGUtils.destroyPopUp(this.svg))
+	.on('mousemove', (event, d) => SVGUtils.movePopUp(d, this.svg, event))
+	.on('contextmenu', (event, d) => {
             event.preventDefault();
-        
-        });
-        NavUtils.createSelectBox("packages","packagesList","Select Package","select package","Package List",80,400,".svg-container-sv");
-	NavUtils.createSelectBox("classes","classList","Select Class","select class","Class List",200,400,".svg-container-pv");
-	NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-pv");
-	NavUtils.createSelectBox("methods","methodList","Select Method","select method","Method List",440,400,".svg-container-cv");
-	NavUtils.createSelectBox("fields","fieldList","Select Field","select field","Field List",560,400,".svg-container-cv");
 
-			
+        });
+  //       NavUtils.createSelectBox("packages","packagesList","Select Package","select package","Package List",80,400,".svg-container-sv");
+	// NavUtils.createSelectBox("classes","classList","Select Class","select class","Class List",200,400,".svg-container-pv");
+	// NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-pv");
+	// NavUtils.createSelectBox("methods","methodList","Select Method","select method","Method List",440,400,".svg-container-cv");
+	// NavUtils.createSelectBox("fields","fieldList","Select Field","select field","Field List",560,400,".svg-container-cv");
+  //
+  //
 
   }
-  
-	
+
+
 }
 
 
@@ -122,5 +132,5 @@ export class SystemViewComponent implements OnInit {
 
 
 interface ZoomProp{
-  [focus: string]: any
+  [focus: string]: any;
 }

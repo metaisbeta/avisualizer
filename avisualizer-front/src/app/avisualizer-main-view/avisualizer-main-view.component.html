@@ -1,17 +1,19 @@
-
-<div id="header" view="System" package="" class="" element="" [hidden]="isSVHidden"><h2> </h2></div>  
-<div class="container-fluid">    
+<h1 align='center'>Annotation Visualizer: A Tool to Visualize Code Annotations Distribution</h1>
+<h1 align='left'>Project Under Analysis: {{projectName}}</h1>
+<!--<div id="header" view="System" package="" class="" element="" [hidden]="isSVHidden"><h2> </h2></div>-->
+<div id="header"></div>
+<div class="container-fluid">
     <div class="row">
-	<div class="col-sm" id="navigation">
-	    	 
-        </div>
+<!--	<div class="col-sm" id="navigation">-->
+
+<!--        </div>-->
         <div class="col-sm">
             <system-view [hidden]="isSVHidden"></system-view>
             <package-view [hidden]="isPVHidden"></package-view>
             <class-view [hidden]="isCVHidden" ></class-view>
         </div>
         <div class="col-sm">
-            <schema-table></schema-table>
+          <schema-table></schema-table>
         </div>
     </div>
 </div>

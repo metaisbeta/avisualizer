@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SVGUtils} from '../utils/SVGUtils';
 import * as d3 from 'd3';
+import {HeaderUtils} from '../utils/HeaderUtils';
 @Component({
   selector: 'avisualizer-main-view',
   templateUrl: './avisualizer-main-view.component.html',
@@ -12,18 +13,20 @@ export class AvisualizerMainViewComponent implements OnInit {
   isSVHidden: boolean;
   isCVHidden: boolean;
   selectedView: String;
+  projectName: String;
 
-  constructor() { 
+  constructor() {
     this.isSVHidden = false;
     this.isPVHidden = true;
-    this.isCVHidden = true;  
+    this.isCVHidden = true;
     this.selectedView = "Package";
-   
 
-        
+
+
   }
 
   ngOnInit(): void {
+    this.projectName = HeaderUtils.getProjectName();
   }
 
   selectSystemView(){
@@ -33,13 +36,13 @@ export class AvisualizerMainViewComponent implements OnInit {
     //reset workspace on change. SHOULD NOT BE IT!!!!!
     SVGUtils.resetView(".svg-container-sv");
     //transition between zoomed views
-    
+
     if(!(this.selectedView=="System")){
-	if(this.selectedView=="Package")      
-		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-sv");
-	else{
-		SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-sv");
-	}			 
+      if(this.selectedView=="Package")
+        SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-sv");
+      else{
+        SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-sv");
+      }
     }
     this.selectedView="System";
   }
@@ -53,26 +56,26 @@ export class AvisualizerMainViewComponent implements OnInit {
     //transition between zoomed views
     console.log(this.isSVHidden,this.isPVHidden);
     if(!(this.selectedView=="Package")){
-	if(this.selectedView=="System")       
+	if(this.selectedView=="System")
     		SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-pv");
     	else
-     		SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-pv");   			
+     		SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-pv");
     }
-    this.selectedView="Package";	
+    this.selectedView="Package";
   }
   selectClassView(){
     this.isSVHidden = true;
     this.isPVHidden = true;
-    this.isCVHidden = false;	
+    this.isCVHidden = false;
     SVGUtils.resetView(".svg-container-cv");
     if(!(this.selectedView=="Class")){
     	if(this.selectedView=="System")
     		SVGUtils.viewTransition(String(d3.select(".svg-container-sv").attr("lastSelected")),".svg-container-cv");
     	else
-     		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-cv");   			
-    }    
+     		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-cv");
+    }
     this.selectedView="Class";
- } 
+ }
 
-     
+
 }
