@@ -45,4 +45,9 @@ export class HeaderUtils{
     // tslint:disable-next-line:indent
 	  return 'SpaceWeatherTSI';
   }
+
+  public static headerUpdate(viewName: string, elementInfo: string){
+    d3.select('#viewName').text(viewName);
+    d3.select('#elementInfo').text(elementInfo);
+  }
 }

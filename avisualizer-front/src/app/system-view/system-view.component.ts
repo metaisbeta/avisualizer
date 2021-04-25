@@ -24,8 +24,6 @@ export class SystemViewComponent implements OnInit {
   private zoomProp: ZoomProp = {};
   private selectedNode: any;
 
-  packageName: string;
-
   constructor() {
 	this.node = null;
  this.root = null;
@@ -69,9 +67,7 @@ export class SystemViewComponent implements OnInit {
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2], this.svg, this.zoomProp, this.node);
 
     HeaderUtils.setSystemViewHeader(this.root.data.name);
-
-    this.packageName = this.root.children[0].data.name;
-
+    HeaderUtils.headerUpdate('System View', 'Package View: ' + this.root.children[0].data.name);
 
     // Color all circles
     d3.select('.svg-container-sv').selectAll('circle').attr('stroke', d => CircleUtils.addCircleStroke(d))
@@ -102,7 +98,7 @@ export class SystemViewComponent implements OnInit {
 		      CircleUtils.highlightNode('.svg-container-sv', d.data.name);
 		      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.data.name, '.svg-container-sv'));
 		      //keep the current package root name on top
-                   this.packageName = d.data.name;
+                   HeaderUtils.headerUpdate('System View', 'Package View: ' + d.data.name);
         	       }
 
         })
