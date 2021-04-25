@@ -43,11 +43,11 @@ export class ClassViewComponent implements OnInit {
 private readPackageView(data: any[]): void{
 
     this.root = d3.hierarchy(data);
-        this.root.descendants().forEach(d => {
-
-        d.data.value = d.data.value+1;//adding 1 to each AA, to avoid 0
-    });
-    this.root.sum(d => {d.value;if(d.type=="annotation") d.value=parseInt(d.properties.aa)+1; else if(Number.isNaN(d.value)) d.value=0;})
+    //     this.root.descendants().forEach(d => {
+    //
+    //     d.data.value = d.data.value+1;//adding 1 to each AA, to avoid 0
+    // });
+    this.root.sum(d => {d.value;if(d.type=="annotation") d.value=parseInt(d.properties.locad); else if(Number.isNaN(d.value)) d.value=0;})
     .sort((a, b) => { b.value - a.value; });
     this.root.sum(d=>d.value);
 

@@ -37,10 +37,11 @@ export class PackageViewComponent implements OnInit {
 
     this.root = d3.hierarchy(data);
 
-    this.root.descendants().forEach(d => {
-
-        d.data.value = d.data.value+1;//adding 1 to each AA, to avoid 0
-    });
+    //Now using LOCAD, no need to add 1 anymore
+    // this.root.descendants().forEach(d => {
+    //
+    //     d.data.value = d.data.value+1;//adding 1 to each AA, to avoid 0
+    // });
 
     this.root.sum(d => d.value)
     .sort((a, b) =>  b.value - a.value);
@@ -54,7 +55,7 @@ export class PackageViewComponent implements OnInit {
     this.zoomProp.focus = this.root;
 
     //Fetch Annotations Schemas
-    const anot = new AnnotationSchemas(this.root,"aa");
+    const anot = new AnnotationSchemas(this.root,'locad');
     this.schemasMap = anot.getSchemasColorMap();
     //console.log(this.schemasMap.size);
 

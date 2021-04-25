@@ -53,7 +53,7 @@ export class SystemViewComponent implements OnInit {
     this.zoomProp.focus = this.root;
 
     // Fetch Annotations Schemas
-    const anot = new AnnotationSchemas(this.root, 'aa');
+    const anot = new AnnotationSchemas(this.root, 'locad');
     this.schemasMap = anot.getSchemasColorMap();
 
     // Create the SVG
