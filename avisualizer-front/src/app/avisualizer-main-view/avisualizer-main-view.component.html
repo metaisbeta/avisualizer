@@ -5,8 +5,14 @@
 <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
-          <h1 id="viewName"></h1>
+          <h1 id="viewName">{{initialViewName}}</h1>
           <h2 id="elementInfo"></h2>
+        </div>
+        <div class="col-sm">
+          <select (change)="selectViewHandler($event)">
+            <option value="systemView">System View</option>
+            <option value="packageView">Package View</option>
+          </select>
         </div>
       </div>
       <div class="row">

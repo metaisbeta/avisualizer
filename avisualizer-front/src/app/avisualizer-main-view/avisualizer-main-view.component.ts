@@ -12,16 +12,15 @@ export class AvisualizerMainViewComponent implements OnInit {
   isPVHidden: boolean;
   isSVHidden: boolean;
   isCVHidden: boolean;
-  selectedView: String;
-  projectName: String;
+  selectedView: string;
+  projectName: string;
+  initialViewName = 'System View';
 
   constructor() {
     this.isSVHidden = false;
     this.isPVHidden = true;
     this.isCVHidden = true;
-    this.selectedView = "Package";
-
-
+    this.selectedView = 'Package';
 
   }
 
@@ -45,6 +44,7 @@ export class AvisualizerMainViewComponent implements OnInit {
       }
     }
     this.selectedView="System";
+    this.initialViewName = 'System View';
   }
 
   selectPackageView(){
@@ -62,6 +62,7 @@ export class AvisualizerMainViewComponent implements OnInit {
      		SVGUtils.viewTransition(String(d3.select(".svg-container-cv").attr("lastSelected")),".svg-container-pv");
     }
     this.selectedView="Package";
+    this.initialViewName = 'Package View';
   }
   selectClassView(){
     this.isSVHidden = true;
@@ -75,7 +76,17 @@ export class AvisualizerMainViewComponent implements OnInit {
      		SVGUtils.viewTransition(String(d3.select(".svg-container-pv").attr("lastSelected")),".svg-container-cv");
     }
     this.selectedView="Class";
+    this.initialViewName = 'Class View';
  }
 
 
+ selectViewHandler(view: any){
+    // update view
+    if (view.target.value === 'systemView') {
+      this.selectSystemView();
+    }
+    if (view.target.value === 'packageView') {
+      this.selectPackageView();
+    }
+  }
 }
