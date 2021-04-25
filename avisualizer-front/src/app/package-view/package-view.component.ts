@@ -125,7 +125,8 @@ export class PackageViewComponent implements OnInit {
 			NavUtils.refreshBox("methodList","methods","Select Method","select method",d.parent.data.name,".svg-container-cv","method");
 			var split=d.parent.data.name.split(".");
 			d3.select(".svg-container-pv").attr("lastSelected",d.parent.parent.data.name);
-        		HeaderUtils.setClassViewHeader("Class",split[split.length-1],d3.select(".svg-container-pv").attr("lastSelected"),this.root.data.name);
+        		//HeaderUtils.setClassViewHeader("Class",split[split.length-1],d3.select(".svg-container-pv").attr("lastSelected"),this.root.data.name);
+            HeaderUtils.headerUpdate('Class View', 'Class: ' + d.parent.data.name);
         		SVGUtils.resetView(".svg-container-pv")
         		NavUtils.updateSelectBoxText("packagesList",d.parent.parent.data.name);
 
