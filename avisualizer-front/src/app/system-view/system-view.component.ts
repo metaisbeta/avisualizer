@@ -67,7 +67,7 @@ export class SystemViewComponent implements OnInit {
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2], this.svg, this.zoomProp, this.node);
 
     HeaderUtils.setSystemViewHeader(this.root.data.name);
-    HeaderUtils.headerUpdate('System View', 'Package View: ' + this.root.children[0].data.name);
+    HeaderUtils.headerUpdate('System View', 'Package: ' + this.root.children[0].data.name);
 
     // Color all circles
     d3.select('.svg-container-sv').selectAll('circle').attr('stroke', d => CircleUtils.addCircleStroke(d))
@@ -91,14 +91,14 @@ export class SystemViewComponent implements OnInit {
         		 this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.parent.data.name, '.svg-container-sv'));
         		 SVGUtils.showView('system-view', 'package-view');
         		 SVGUtils.viewTransition(String(d3.select('.svg-container-sv').attr('lastSelected')), '.svg-container-pv');
-        		 HeaderUtils.setPackageViewHeader('Package', d.parent.data.name, this.root.data.name);
-        		 SVGUtils.resetView('.svg-container-sv');
+        		 //HeaderUtils.setPackageViewHeader('Package', d.parent.data.name, this.root.data.name);
+             HeaderUtils.headerUpdate('Package View', 'Package: ' + d.parent.data.name);
+             SVGUtils.resetView('.svg-container-sv');
         		 console.log(d3.select('.svg-container-sv').attr('lastSelected'));
         	}else{
 		      CircleUtils.highlightNode('.svg-container-sv', d.data.name);
 		      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.data.name, '.svg-container-sv'));
-		      //keep the current package root name on top
-                   HeaderUtils.headerUpdate('System View', 'Package View: ' + d.data.name);
+                   HeaderUtils.headerUpdate('System View', 'Package: ' + d.data.name);
         	       }
 
         })

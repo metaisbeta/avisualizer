@@ -22,7 +22,6 @@ export class PackageViewComponent implements OnInit {
   public schemasMap;
   private zoomProp: ZoomProp = {};
   private selectedNode: any;
-  packageName: string;
 
   constructor() {  }
 
@@ -71,8 +70,6 @@ export class PackageViewComponent implements OnInit {
     //Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2],this.svg, this.zoomProp,this.node);
 
-    this.packageName = this.root.children[0].data.name;
-
     //Color all circles
     //this.svg.selectAll("circle").each(function(d){if(d.data.type=="annotation")console.log(d.data.value);});
     d3.selectAll("circle").attr("stroke", d => CircleUtils.addCircleStroke(d))
@@ -81,25 +78,24 @@ export class PackageViewComponent implements OnInit {
     //Apply zoom to all circles in this specific view
     this.svg.selectAll("circle")
         .on("click", (event, d) => {
-          //keep the current package root name on top
-          this.packageName = 'Package: ' + d.data.name;
-        	console.log(d.data.name,d3.select(".svg-container-sv").attr("lastSelected"))
-        	if(d.data.type=="package" && (d.data.name.includes(d3.select(".svg-container-sv").attr("lastSelected")) || d.data.name==d3.select(".svg-container-sv").attr("lastSelected"))){
+        	if(d.data.type=="package" && (d.data.name.includes(d3.select(".svg-container-sv").
+            attr("lastSelected")) ||
+            d.data.name==d3.select(".svg-container-sv").attr("lastSelected"))){
 
         	       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-pv"))
         	       CircleUtils.highlightNode(".svg-container-pv",d.data.name);
         	       d3.select(".svg-container-pv").attr("lastSelected",d.data.name);
         	       if(d.data.name==d3.select(".svg-container-sv").attr("lastSelected")){
         	       	NavUtils.refreshBox("classList","classes","Select Class","select class",d.data.name,".svg-container-pv","");
-				NavUtils.refreshBox("interfaceList","interfaces","Select Interface","select interface",d.data.name,".svg-container-pv","interface");
+				          NavUtils.refreshBox("interfaceList","interfaces","Select Interface","select interface",d.data.name,".svg-container-pv","interface");
         	       }
 		       NavUtils.updateSelectBoxText("packagesList",d.data.name);
-		       HeaderUtils.setPackageViewHeader("Package",d.data.name,this.root.data.name);
+		       //HeaderUtils.setPackageViewHeader("Package",d.data.name,this.root.data.name);
+		       HeaderUtils.headerUpdate('Package View', 'Package: ' + d.data.name);
 
-        	}else if(d.data.type=="class" || d.data.type=="interface"){
-        		HeaderUtils.setPackageViewHeader("Package",d.parent.data.name,this.root.data.name);
-            //keep the current class/interface name on top
-            this.packageName = d.data.type.charAt(0).toUpperCase() + d.data.type.slice(1) +  ': ' + d.data.name;
+          }else if(d.data.type=="class" || d.data.type=="interface"){
+        		//HeaderUtils.setPackageViewHeader("Package",d.parent.data.name,this.root.data.name);
+            HeaderUtils.headerUpdate('Package View', d.data.type.charAt(0).toUpperCase() + d.data.type.slice(1) +  ': ' + d.data.name);
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
         		if(d.data.type=="class")
         			NavUtils.updateSelectBoxText("classList",d.data.name);
@@ -108,16 +104,14 @@ export class PackageViewComponent implements OnInit {
                        CircleUtils.highlightNode(".svg-container-pv",d.data.name);
 
         	}else if(d.data.type=="package" && !d3.select(".svg-container-sv").attr("lastSelected").includes(d.parent.data.name)){
-			HeaderUtils.setSystemViewHeader(this.root.data.name);
-
+			//HeaderUtils.setSystemViewHeader(this.root.data.name);
+            HeaderUtils.headerUpdate('System View', 'Package: ' + d.data.name);
  			SVGUtils.showView("package-view","system-view");
 			NavUtils.resetBox("interfaceList","interfaces","Select Interface","select interface");
 			NavUtils.resetBox("classList","classes","Select Class","select class");
 			NavUtils.updateSelectBoxText("packagesList",d.data.name);
 			d3.select(".svg-container-pv").attr("lastSelected",d.data.name)
         	}else if(d.data.type=="annotation"){
-            //keep the current package root name on top
-            this.packageName = d.data.name;
         		CircleUtils.highlightNode(".svg-container-sv",d.parent.parent.data.name);
         		if(d.parent.data.type=="class")
         			NavUtils.updateSelectBoxText("classList",d.parent.data.name);
