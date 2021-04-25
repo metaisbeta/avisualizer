@@ -10,14 +10,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm">
           <system-view [hidden]="isSVHidden"></system-view>
           <package-view [hidden]="isPVHidden"></package-view>
           <class-view [hidden]="isCVHidden" ></class-view>
-        </div>
-        <div class="col-sm">
-          <schema-table></schema-table>
-        </div>
+          <div class="col-1">
+            <schema-table></schema-table>
+          </div>
       </div>
 </div>
 
