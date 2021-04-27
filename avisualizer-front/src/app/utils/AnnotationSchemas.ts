@@ -61,7 +61,7 @@ export class AnnotationSchemas{
 		var schema = value.split("."); // divide o nome do schema a cada "."]
 
 		if (schema[0]=="javax"){
-			if(schema[1]=="persistence")
+			if(schema[1]=="persistence" || schema[1]=="ejb")
                 		var family = schema[0]+"."+schema[1];
                 	else
                 		var family = schema[0];
@@ -87,8 +87,8 @@ export class AnnotationSchemas{
  	var startColors = new Map();
   var endColors = new Map();
   var schemasArr= ["java.lang","javax.persistence","org.hibernate","org.springframework","org.junit","org.mockito","javax.ejb"];
-  var startArr = ["#146FF2","#b2df8a","#b2df8a","#ff7f00","#40004b","#6B00B8","#F2DE14"];
-  var endArr = ["#146FF2","#ccebc5","#ccebc5","#ffffb3","#3E05A8","#C77EFB","#F2DE14"];
+  var startArr = ["#146FF2","#F214EF","#F214EF","#ff7f00","#40004b","#6B00B8","#32F214"];
+  var endArr = ["#146FF2","#F214C0","#F214C0","#ffffb3","#3E05A8","#C77EFB","#32F214"];
   for(var i=0;i<schemasArr.length;i++){
     	startColors.set(schemasArr[i],startArr[i]);
     	endColors.set(schemasArr[i],endArr[i]);
