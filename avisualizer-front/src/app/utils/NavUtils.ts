@@ -65,7 +65,7 @@ export class NavUtils{
             .style("width",400)
             .style("overflow","auto")
             .append("h5").html(label +" <br/>")
-            .append("select").attr("id",selectBoxId).attr("label",label).style("width","400px");
+            .append("select").attr("id",selectBoxId).attr("label",label).style("width","20vw").style("left","5vw");
             d3.select("#"+divName).select("select").append("option").text(defaultBoxText).attr("value",defaultBoxText);
     	    if(svg==".svg-container-sv"){
     	    	var options = NavUtils.getPackagesName(d3.select(svg));
