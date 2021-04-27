@@ -15,20 +15,20 @@ export class AnnotationSchemas{
     this.schemasColorMap = new Map();
     this.schemasObjectArray = [];
     //obtain a list o schemas
-   const schemaSet = new Set();     
+   const schemaSet = new Set();
    if(name=="class"){
       root.descendants().forEach(d=>{if(d.data.type=="annotation") { schemaSet.add(d.data.properties.schema);}});
 
-   
+
    }
    else{
     const schemasNode = root.descendants().filter(d => !loDash.isEmpty(d.data.properties));
-   
+
     //To not get repeated schemas
     schemasNode.forEach(d =>  schemaSet.add(d.data.properties.schema));
-     
+
    }
-  	
+
     var cors = ['#1f78b4','#33a02c','#fb9a99','#e31a1c','#40004b','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
     var corslight = ['#80b1d3','#B9D48C','#fccde5','#fb8072','#fdb462','#ffffb3','#9970ab','#bc80bd','#ffed6f','#bebada'];
     //Sort the array with the schemas
@@ -36,30 +36,30 @@ export class AnnotationSchemas{
     this.schemasOrdered.sort();
 
     this.schemasGroups = [];
-    this.schemasTotalAnnotations = new Map(); 
-    var somatotal = new Map();   
+    this.schemasTotalAnnotations = new Map();
+    var somatotal = new Map();
     //counting total annotations of each schema
     for(var i=0;i<this.schemasOrdered.length;i++){
     	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);
-    	somatotal.set(this.schemasOrdered[i],0);	
+    	somatotal.set(this.schemasOrdered[i],0);
     }
     for(var i=0;i<root.descendants().length;i++){
 	if(root.descendants()[i].data.type=="annotation"){
                 var total = this.schemasTotalAnnotations.get(root.descendants()[i].data.properties.schema);
                 var toSum = root.descendants()[i].data.value;
-                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+toSum));  
-		
+                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+toSum));
+
 	}
-		    
+
     }
     //build schemas families
     var groupsMap = new Map();
     var colorsArray = [];
     var hexColors = new Map();
-    
+
     this.schemasOrdered.forEach((value,i)=>{ // monta as famílias de schemas
 		var schema = value.split("."); // divide o nome do schema a cada "."]
-		
+
 		if (schema[0]=="javax"){
 			if(schema[1]=="persistence")
                 		var family = schema[0]+"."+schema[1];
@@ -70,71 +70,71 @@ export class AnnotationSchemas{
                 	//console.log(family);
                 	var family = schema[0]+"."+schema[1];
                 }
-                //console.log(value,family)	
-                
+                //console.log(value,family)
+
                 if(groupsMap.has(family)){ // se já existe família; ex: org.springframework
 
 			var elem = groupsMap.get(family); // busca o array de elementos desta família
                         elem.push(value); // insere o valor ex: javax.persistence.metamodel na família javax.persistence
                         groupsMap.set(family,elem);
 		}else{
-                        colorsArray.push(family); 
+                        colorsArray.push(family);
 			groupsMap.set(family,[value]);
-		}          
+		}
 	});
-	
-      
+
+
  	var startColors = new Map();
   var endColors = new Map();
-  var schemasArr= ["javax.persistence","org.hibernate","org.springframework","org.junit","org.mockito","javax.ejb"];
-  var startArr = ["#b2df8a","#b2df8a","#ff7f00","#40004b","#6B00B8","#FFFF00"];
-  var endArr = ["#ccebc5","#ccebc5","#ffffb3","#3E05A8","#C77EFB","#FFFF99"];
+  var schemasArr= ["java.lang","javax.persistence","org.hibernate","org.springframework","org.junit","org.mockito","javax.ejb"];
+  var startArr = ["#146FF2","#b2df8a","#b2df8a","#ff7f00","#40004b","#6B00B8","#F2DE14"];
+  var endArr = ["#146FF2","#ccebc5","#ccebc5","#ffffb3","#3E05A8","#C77EFB","#F2DE14"];
   for(var i=0;i<schemasArr.length;i++){
     	startColors.set(schemasArr[i],startArr[i]);
     	endColors.set(schemasArr[i],endArr[i]);
   }
- 			
+
     for(let s in colorsArray){
-    
+
 	if(startColors.has(colorsArray[s])){
-		
+
 		const cores = d3.scaleSequential(d3.interpolateRgbBasis([String(startColors.get(colorsArray[s])),String(endColors.get(colorsArray[s]))])).domain([0,groupsMap.get(colorsArray[s]).length]);
 		//console.log(groupsMap.get(colorsArray[s]),startColors.get(colorsArray[s]),endColors.get(colorsArray[s]),startColors.has(colorsArray[s]))
 	    	for(let r=0; r< groupsMap.get(colorsArray[s]).length;r++){
-	  	    		
-			hexColors.set(groupsMap.get(colorsArray[s])[r],d3.color(cores(r)).formatHex());	
-		}	
-		
+
+			hexColors.set(groupsMap.get(colorsArray[s])[r],d3.color(cores(r)).formatHex());
+		}
+
 	}else if(colorsArray[s]=="javax"){
 		//console.log(groupsMap.get(colorsArray[s]),cors[s],corslight[s])
 		const cores = d3.scaleSequential(d3.interpolateRgbBasis([String("red"),String("#FEBAB8")])).domain([0,groupsMap.get(colorsArray[s]).length]);
 	    	for(let r=0; r< groupsMap.get(colorsArray[s]).length;r++){
-	    		
-			hexColors.set(groupsMap.get(colorsArray[s])[r],d3.color(cores(r)).formatHex());	
+
+			hexColors.set(groupsMap.get(colorsArray[s])[r],d3.color(cores(r)).formatHex());
 		}
 	}else{
 			//console.log(groupsMap.get(colorsArray[s]),cors[s],corslight[s])
 		const cores = d3.scaleSequential(d3.interpolateRgbBasis([String("#23201F"),String("#B6B5B4")])).domain([0,groupsMap.get(colorsArray[s]).length]);
 	    	for(let r=0; r< groupsMap.get(colorsArray[s]).length;r++){
 	    		//console.log(d3.color(cores(r)).formatHex(),groupsMap.get(colorsArray[s])[r]);
-			hexColors.set(groupsMap.get(colorsArray[s])[r],d3.color(cores(r)).formatHex());	
+			hexColors.set(groupsMap.get(colorsArray[s])[r],d3.color(cores(r)).formatHex());
 		}
 	}
 
-	
 
-       
-    } 		
+
+
+    }
     this.schemasOrdered.forEach((value,i) => {
-      	
+
       this.schemasColorMap.set(value, hexColors.get(value));
       this.schemasObjectArray.push({ "schema" : value, "color" : hexColors.get(value)});
     });
-    
+
   }
 
   public getSchemasOrdered(): string[]{
-    
+
     return this.schemasOrdered;
 
   }
