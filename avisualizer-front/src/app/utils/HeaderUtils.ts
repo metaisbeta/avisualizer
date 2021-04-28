@@ -47,9 +47,9 @@ export class HeaderUtils{
 	  if(viewName === 'System View') {
       annotMetric = annotMetric.concat('Number of Annotations');
     } else if (viewName === 'Package View'){
-      annotMetric = annotMetric.concat('Arguments in Annotations (AA)');
-    }else{
       annotMetric = annotMetric.concat('LOC in Annotation Declaration (LOCAD)');
+    }else{
+      annotMetric = annotMetric.concat('Arguments in Annotations (AA)');
     }
 	  d3.select('#viewName').text(viewName);
     var color = d3.select('#elementInfo').style("fill");
