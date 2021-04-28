@@ -41,17 +41,23 @@ export class HeaderUtils{
 	}
 
   public static headerUpdate(viewName: string, elementInfo: string){
-    d3.select('#viewName').text(viewName);
+
+	  let annotMetric = 'Annotation Metric: ';
+
+	  if(viewName === 'System View') {
+      annotMetric = annotMetric.concat('Number of Annotations');
+    } else if (viewName === 'Package View'){
+      annotMetric = annotMetric.concat('Arguments in Annotations (AA)');
+    }else{
+      annotMetric = annotMetric.concat('LOC in Annotation Declaration (LOCAD)');
+    }
+	  d3.select('#viewName').text(viewName);
     var color = d3.select('#elementInfo').style("fill");
     d3.select('#elementInfo').text(elementInfo);
-    // d3.select('#elementInfo').transition().duration(100).style('color','red');
-    // d3.select('#elementInfo').transition().duration(100).style('color',d3.color(color).formatHex());
-    //   // .duration(100)
-    //   // .style("fill","red")
-    //   // .transition()
-    //   // .duration(100)
-    //   // .style("fill",String(d3.color(color).formatHex()))
-    //   // .text(elementInfo);
+    d3.select('#elementInfo').
+             transition().duration(100).style('fill','white')
+             .transition().duration(100).style('fill',d3.color(color).formatHex());
+    d3.select('#annotMetric').text(annotMetric);
   }
 
   public static setProjectName(projectName: string){
