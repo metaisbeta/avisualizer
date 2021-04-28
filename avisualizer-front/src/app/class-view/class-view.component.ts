@@ -36,9 +36,9 @@ export class ClassViewComponent implements OnInit {
     // read data from JSON
     d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[]))
                                               .catch(error => console.log(error));
-
-     // d3.json("./assets/guj/Guj-CV.json").then(data => this.readPackageView(data as any[]))
-      // .catch(error => console.log(error));
+    //
+    //  d3.json("./assets/guj/Guj-CV.json").then(data => this.readPackageView(data as any[]))
+    //   .catch(error => console.log(error));
 
      // d3.json('./assets/geostore/Geostore-CV.json').then(data => this.readPackageView(data as any[]))
      //  .catch(error => console.log(error));

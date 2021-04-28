@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SVGUtils} from '../utils/SVGUtils';
 import * as d3 from 'd3';
-import {HeaderUtils} from '../utils/HeaderUtils';
 @Component({
   selector: 'avisualizer-main-view',
   templateUrl: './avisualizer-main-view.component.html',
@@ -13,7 +12,6 @@ export class AvisualizerMainViewComponent implements OnInit {
   isSVHidden: boolean;
   isCVHidden: boolean;
   selectedView: string;
-  projectName: string;
   initialViewName = 'System View';
 
   constructor() {
@@ -25,7 +23,6 @@ export class AvisualizerMainViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projectName = HeaderUtils.getProjectName();
   }
 
   selectSystemView(){

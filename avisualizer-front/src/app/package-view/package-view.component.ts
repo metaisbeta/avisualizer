@@ -30,7 +30,7 @@ export class PackageViewComponent implements OnInit {
     d3.json("./assets/SpaceWeatherTSI-PV.json").then(data => this.readPackageView(data as any[]))
                                                .catch(error => console.log(error));
 
-     //d3.json("./assets/guj/Guj-PV.json").then(data => this.readPackageView(data as any[]))
+     // d3.json("./assets/guj/Guj-PV.json").then(data => this.readPackageView(data as any[]))
      //  .catch(error => console.log(error));
 
     //

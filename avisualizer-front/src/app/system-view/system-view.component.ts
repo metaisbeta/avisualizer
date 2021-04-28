@@ -33,9 +33,9 @@ export class SystemViewComponent implements OnInit {
     // read data from JSON
     d3.json('./assets/SpaceWeatherTSI-SV.json').then(data => this.readPackageView(data as any[]))
                                                .catch(error => console.log(error));
-     //d3.json('./assets/guj/Guj-SV.json').then(data => this.readPackageView(data as any[]))
-     //  .catch(error => console.log(error));
-    //
+    //  d3.json('./assets/guj/Guj-SV.json').then(data => this.readPackageView(data as any[]))
+    //   .catch(error => console.log(error));
+
      //d3.json('./assets/geostore/Geostore-SV.json').then(data => this.readPackageView(data as any[]))
      //  .catch(error => console.log(error));
 
@@ -73,8 +73,10 @@ export class SystemViewComponent implements OnInit {
     // Initial Zoom
     ZoomUtils.zoomTo([this.root.x, this.root.y, this.root.r * 2], this.svg, this.zoomProp, this.node);
 
+    //Initial header setup
     HeaderUtils.setSystemViewHeader(this.root.data.name);
     HeaderUtils.headerUpdate('System View', 'Package: ' + this.root.children[0].data.name);
+    HeaderUtils.setProjectName(this.root.data.name);
 
     // Color all circles
     d3.select('.svg-container-sv').selectAll('circle').attr('stroke', d => CircleUtils.addCircleStroke(d))

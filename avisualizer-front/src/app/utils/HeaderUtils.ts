@@ -40,14 +40,22 @@ export class HeaderUtils{
 		d3.select('#header').attr('element', element);
 	}
 
-  // tslint:disable-next-line:indent
-	public static getProjectName(): string{
-    // tslint:disable-next-line:indent
-	  return 'SpaceWeatherTSI';
-  }
-
   public static headerUpdate(viewName: string, elementInfo: string){
     d3.select('#viewName').text(viewName);
+    var color = d3.select('#elementInfo').style("fill");
     d3.select('#elementInfo').text(elementInfo);
+    // d3.select('#elementInfo').transition().duration(100).style('color','red');
+    // d3.select('#elementInfo').transition().duration(100).style('color',d3.color(color).formatHex());
+    //   // .duration(100)
+    //   // .style("fill","red")
+    //   // .transition()
+    //   // .duration(100)
+    //   // .style("fill",String(d3.color(color).formatHex()))
+    //   // .text(elementInfo);
+  }
+
+  public static setProjectName(projectName: string){
+	  d3.select('#projectUnderAnalysis').text('Project Under Analysis: ' + projectName);
+
   }
 }
