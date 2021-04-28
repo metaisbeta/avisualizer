@@ -5,6 +5,7 @@ import { svg } from 'd3';
 export class SVGUtils{
 
     static pvPropertiesSize = 1;
+    static popUpTransition = 200;
 
     constructor() {}
 
@@ -234,7 +235,7 @@ export class SVGUtils{
 			.style('background', '#BCC5F7')
 			.html('Schema Name: ' + d.data.name + '<br/>' + 'Package Name ' + d.parent.data.name + '<br/>' + 'Number of Annotation occurrence: ' + d.data.value)
 		        .transition()
-        		.duration(200);
+        		.duration(this.popUpTransition);
 
        }else if (d.data.type === 'annotation' && (d.parent.data.type === 'class' || d.parent.data.type === 'interface')){// type definition label (interface/class)
                 const classname = d.parent.data.name.split('.');
@@ -251,12 +252,12 @@ export class SVGUtils{
                 const divTooltip = d3.select('body').append('div')
     			        .attr('class', 'tooltip')
     		          .style('opacity', 1)
-		       	      .style('left', (event.pageX + 10) + 'px')
+		       	      .style('left', (event.pageX + 30) + 'px')
         		      .style('top', (event.pageY - 60) + 'px')
 			            .style('background', '#BCC5F7')
 			            .html(label)
                   .transition()
-        		      .duration(200);
+        		      .duration(this.popUpTransition);
 
        }else if (d.data.type == 'annotation' && ((d.parent.data.type == 'field' || d.parent.data.type == 'method'))){
                 let componentname = d.parent.data.name.split('.');
@@ -269,7 +270,7 @@ export class SVGUtils{
 			.style('background', '#BCC5F7')
 			.html('Package Name: ' + d.parent.parent.parent.data.name + '<br/>' + 'Class Name: ' + classname[classname.length - 1] + '<br/>' + d.parent.data.type + ' Name ' + componentname[componentname.length - 1] + '<br/>' + 'Annotation name: ' + d.data.name + '<br/>' + 'AA: ' + d.data.properties.aa)
 		        .transition()
-        		.duration(200);
+        		.duration(this.popUpTransition);
 
        }else if (d.data.type == 'class' || d.data.type == 'interface'){
 
@@ -282,7 +283,7 @@ export class SVGUtils{
 			.style('background', '#BCC5F7')
 			.html( d.data.type + ' Name: ' + classname[classname.length - 1] + '<br/>')
 		        .transition()
-        		.duration(200);
+        		.duration(this.popUpTransition);
        }
 
     }
