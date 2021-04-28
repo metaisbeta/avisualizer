@@ -87,8 +87,8 @@ export class AnnotationSchemas{
  	var startColors = new Map();
   var endColors = new Map();
   var schemasArr= ["java.lang","javax.persistence","org.hibernate","org.springframework","org.junit","org.mockito","javax.ejb"];
-  var startArr = ["#146FF2","#F214EF","#F214EF","#ff7f00","#40004b","#6B00B8","#32F214"];
-  var endArr = ["#146FF2","#F214C0","#F214C0","#ffffb3","#3E05A8","#C77EFB","#32F214"];
+  var startArr = ["#146FF2","#FF95FE","#B64DB5","#ff7f00","#40004b","#6B00B8","#32F214"];
+  var endArr = ["#146FF2","#FABBFA","#B64DB5","#ffffb3","#3E05A8","#C77EFB","#32F214"];
   for(var i=0;i<schemasArr.length;i++){
     	startColors.set(schemasArr[i],startArr[i]);
     	endColors.set(schemasArr[i],endArr[i]);
@@ -121,12 +121,8 @@ export class AnnotationSchemas{
 		}
 	}
 
-
-
-
     }
     this.schemasOrdered.forEach((value,i) => {
-
       this.schemasColorMap.set(value, hexColors.get(value));
       this.schemasObjectArray.push({ "schema" : value, "color" : hexColors.get(value)});
     });

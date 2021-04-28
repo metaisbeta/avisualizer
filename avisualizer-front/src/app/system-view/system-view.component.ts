@@ -32,7 +32,7 @@ export class SystemViewComponent implements OnInit {
   ngOnInit(): void {
     // read data from JSON
     d3.json('./assets/SpaceWeatherTSI-SV.json').then(data => this.readPackageView(data as any[]))
-                                               .catch(error => console.log(error));
+                                                .catch(error => console.log(error));
     //  d3.json('./assets/guj/Guj-SV.json').then(data => this.readPackageView(data as any[]))
     //   .catch(error => console.log(error));
 
