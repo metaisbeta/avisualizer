@@ -115,6 +115,7 @@ export class PackageViewComponent implements OnInit {
         	}else if(d.data.type=="package" && !d3.select(".svg-container-sv").attr("lastSelected").includes(d.parent.data.name)){
 			//HeaderUtils.setSystemViewHeader(this.root.data.name);
             HeaderUtils.headerUpdate('System View', 'Package: ' + d.data.name);
+            		NavUtils.updateSelectBoxText("SelectViewBox","systemView");
  			SVGUtils.showView("package-view","system-view");
 			NavUtils.resetBox("interfaceList","interfaces","Select Interface","select interface");
 			NavUtils.resetBox("classList","classes","Select Class","select class");

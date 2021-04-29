@@ -40,7 +40,7 @@ export class SystemViewComponent implements OnInit {
      //  .catch(error => console.log(error));
 
      //d3.json("./assets/shopizer/Shopizer-SV.json").then(data => this.readPackageView(data as any[]))
-     //  .catch(error => console.log(error));
+     //  .c atch(error => console.log(error));
   }
 
   private readPackageView(data: any[]): void{
@@ -64,8 +64,9 @@ export class SystemViewComponent implements OnInit {
     this.schemasMap = anot.getSchemasColorMap();
 
     // Create the SVG
+    console.log(this.root.descendants()[1].data.name)
     this.svg = SVGUtils.createSvg('.svg-container-sv', this.width, this.height, 'sistema');
-    d3.select('.svg-container-sv').attr('lastSelected', String(this.root.data.name));
+    d3.select('.svg-container-sv').attr('lastSelected', String(this.root.descendants()[1].data.name));
     d3.select('.svg-container-sv').attr('rootName', this.root.children[0].data.name);
 
     // Create the nodes
@@ -95,6 +96,7 @@ export class SystemViewComponent implements OnInit {
  }
         	});
         	       if (d.data.type == 'schema'){
+        	       	NavUtils.updateSelectBoxText("SelectViewBox","packageView");
         			SVGUtils.hide('.svg-container-pv', d.parent.data.name);
 				       CircleUtils.highlightNode('.svg-container-sv', d.parent.data.name);
         		 this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.parent.data.name, '.svg-container-sv'));

@@ -147,6 +147,38 @@ export class SVGUtils{
 		  });
 
     }
+    public static hideAllCircles(container: string){
+	  	  d3.select(container).selectAll('circle').each(function(d, i){
+			if(container==".svg-container-sv"){
+				if (String(d3.select(this).attr('class')) == "schema"){ // schema se for package name se for system
+					d3.select(this).style('visibility', 'hidden');
+				}
+			}else{
+				if (String(d3.select(this).attr('class')) == "annotation"){ // schema se for package name se for system
+					d3.select(this).style('visibility', 'hidden');
+				}
+			}
+
+
+		  });
+		 	
+    }
+    public static displayAllCircles(container: string){
+    		console.log(d3.select(".svg-container-sv").attr("lastSelected"))
+	  	  d3.select(container).selectAll('circle').each(function(d, i){
+			if(container==".svg-container-sv"){
+				if (String(d3.select(this).attr('class')) == "schema"){ // schema se for package name se for system
+					d3.select(this).style('visibility', 'visible');
+				}
+			}else{
+				if (String(d3.select(this).attr('class')) == "annotation" && (d3.select(this).attr('parent').includes(d3.select(".svg-container-sv").attr("lastSelected"))|| d3.select(this).attr('name')==d3.select(".svg-container-sv").attr("lastSelected"))){ // schema se for package name se for system
+					d3.select(this).style('visibility', 'visible');
+				}
+			}
+
+
+		  });
+    }
     public static hideCircles(container: string, id: String, show: boolean){
           if (d3.selectAll('system-view').attr('hidden') !== ''){ // hide circles for system-view
 	  	  let view = d3.selectAll('.svg-container-sv').select('svg');
@@ -219,7 +251,12 @@ export class SVGUtils{
         	}
 
 	});
- d3.selectAll('input').property('checked', true);
+       d3.select("#schemas-table").selectAll("input").each(function(d,i){
+       		if(d3.select(this).attr("id")!="UnselectAllBox")
+       			d3.select(this).property("checked",true);
+       		else
+       			d3.select(this).property("checked",false);		
+       });
    }
 
 

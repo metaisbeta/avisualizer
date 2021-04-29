@@ -16,7 +16,7 @@ export class SchemaTableComponent implements OnInit {
   public static populateSchemasTable(annotationSchemas: AnnotationSchemas){
     //get the table with schemas
     const schema_table = d3.select("#schemas-table");
-
+      
     //populate table
     var rows = schema_table.select("tbody").selectAll("tr").
           data(annotationSchemas.getSchemasObjectArray()).enter().append("tr");
@@ -49,11 +49,61 @@ export class SchemaTableComponent implements OnInit {
        .attr('type','checkbox')
        .attr("id",function(d,i){   return annotationSchemas.getSchemasObjectArray()[i].schema})
        .on("click",function(d){
-	console.log(d3.select("system-view").attr("hidden"),d3.select("package-view").attr("hidden"),d3.select("class-view").attr("hidden"))
-        SVGUtils.hideCircles(".svg-container-pv",this.id,this.checked);
-       	
+	//console.log(d3.select("system-view").attr("hidden"),d3.select("package-view").attr("hidden"),d3.select("class-view").attr("hidden"))
+	var container = String(d3.select("#SelectViewBox").select("select option:checked").attr("value"));
+        SVGUtils.hideCircles(container,this.id,this.checked);
+        d3.select("#UnselectAllBox").property("checked",false);		
 	});
-        
+
+d3.select("#schemas-table").select("tbody").append("tr").attr("id","selectAllRow").append("td").text("Select All");
+      d3.select("#selectAllRow").append("td").text(" ");
+      d3.select("#selectAllRow").append("td").text(" ");
+      d3.select("#selectAllRow").append("input").property('checked',true)
+       .attr('type','checkbox')
+       .attr("id","selectAllBox")
+       .on("click",(event, d) =>{
+   		var container = String(d3.select("#SelectViewBox").select("select option:checked").attr("value"));
+       	if(container=="systemView"){
+       		
+       		SVGUtils.displayAllCircles(".svg-container-sv");
+       	}else if (container=="packageView"){
+       		console.log("package view")
+       		SVGUtils.displayAllCircles(".svg-container-pv");
+       	}else{
+       		SVGUtils.displayAllCircles(".svg-container-cv");
+       	}
+       	d3.select("#schemas-table").selectAll("input").each(function(d,i){
+       		if(d3.select(this).attr("id")!="UnselectAllBox")
+       			d3.select(this).property("checked",true);
+       		else
+       			d3.select(this).property("checked",false);	
+       	});
+       });
+      d3.select("#schemas-table").select("tbody").append("tr").attr("id","UnselectAllRow").append("td").text("Remove All");
+      d3.select("#UnselectAllRow").append("td").text(" ");
+      d3.select("#UnselectAllRow").append("td").text(" ");
+      d3.select("#UnselectAllRow").append("input").property('checked',false)
+       .attr('type','checkbox')
+       .attr("id","UnselectAllBox")
+       .on("click",(event, d) =>{
+       	
+		var container = String(d3.select("#SelectViewBox").select("select option:checked").attr("value"));
+       	if(container=="systemView"){
+       		
+       		SVGUtils.hideAllCircles(".svg-container-sv");
+       	}else if (container=="packageView"){
+       		SVGUtils.hideAllCircles(".svg-container-pv");
+       	}else{
+       		SVGUtils.hideAllCircles(".svg-container-cv");
+       	}
+       	d3.select("#schemas-table").selectAll("input").each(function(d,i){
+       		if(d3.select(this).attr("id")!="UnselectAllBox")
+       			d3.select(this).property("checked",false);
+       		else
+       			d3.select(this).property("checked",true);		
+       	});
+      	
+       });
 	
 
 
