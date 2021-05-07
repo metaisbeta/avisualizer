@@ -72,6 +72,30 @@ export class SVGUtils{
     	});
         return node;
     }
+    
+    public static hideAnnotations(container: string, id: String, show: boolean){
+    	if(container=="systemView")
+    		var view = ".svg-container-sv";
+    	else
+    		var view = ".svg-container-pv";
+    	//console.log(id,show,view)	
+    	d3.select(view).selectAll("circle").each(function(d, i){
+
+			if (String(d3.select(this).attr('name')) == id){ // schema se for package name se for system
+				
+				if (!show){
+		                        // console.log(d3.select(this).attr("name")+" "+id);
+					d3.select(this).style('visibility', 'hidden');
+				}else{
+					// console.log(d3.select(this).attr("name")+" "+id+" hide");
+					d3.select(this).style('visibility', 'visible');
+				}
+
+			}
+
+		  });		
+    }
+    
     public static showView(origin: string, view: string){
     	d3.select(view).attr('hidden', null);
     	d3.select(origin).attr('hidden', '');
@@ -164,7 +188,7 @@ export class SVGUtils{
 		 	
     }
     public static displayAllCircles(container: string){
-    		console.log(d3.select(".svg-container-sv").attr("lastSelected"))
+    		
 	  	  d3.select(container).selectAll('circle').each(function(d, i){
 			if(container==".svg-container-sv"){
 				if (String(d3.select(this).attr('class')) == "schema"){ // schema se for package name se for system

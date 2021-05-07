@@ -53,9 +53,11 @@ export class HeaderUtils{
     }
 	  d3.select('#viewName').text(viewName);
     var color = d3.select('#elementInfo').style("fill");
+    console.log(color)
     d3.select('#elementInfo').text(elementInfo);
     d3.select('#elementInfo').
              transition().duration(100).style('fill','white')
+             //.transition().duration(100).style('fill',d3.color(color).formatHex());
              .transition().duration(100).style('fill',d3.color(color).formatHex());
     d3.select('#annotMetric').text(annotMetric);
   }

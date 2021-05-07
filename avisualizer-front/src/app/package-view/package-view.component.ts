@@ -90,17 +90,32 @@ export class PackageViewComponent implements OnInit {
         	if(d.data.type=="package" && (d.data.name.includes(d3.select(".svg-container-sv").
             attr("lastSelected")) ||
             d.data.name==d3.select(".svg-container-sv").attr("lastSelected"))){
+		       if(d.data.name==this.root.descendants()[1].data.name){
+		       	var node = d.descendants()[0].data.children[0].name;
+		       	console.log(node);
+		       	d3.select(".svg-container-pv").selectAll('circle').each(function(d, i){
+					if (String(d3.select(this).attr('name')) == node){
+						console.log("click")
+						d3.select(this).dispatch('click');
+						
+						return this;
+					}
 
-        	       this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-pv"))
-        	       CircleUtils.highlightNode(".svg-container-pv",d.data.name);
-        	       d3.select(".svg-container-pv").attr("lastSelected",d.data.name);
-        	       if(d.data.name==d3.select(".svg-container-sv").attr("lastSelected")){
-        	       	NavUtils.refreshBox("classList","classes","Select Class","select class",d.data.name,".svg-container-pv","");
-				          NavUtils.refreshBox("interfaceList","interfaces","Select Interface","select interface",d.data.name,".svg-container-pv","interface");
-        	       }
-		       NavUtils.updateSelectBoxText("packagesList",d.data.name);
-		       //HeaderUtils.setPackageViewHeader("Package",d.data.name,this.root.data.name);
-		       HeaderUtils.headerUpdate('Package View', 'Package: ' + d.data.name);
+				});
+				d3.select(".svg-container-sv").attr("lastSelected",node);
+		       }else{
+		      		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node),event.stopPropagation(),SVGUtils.setFocus(d.data.name,".svg-container-pv"))
+			       CircleUtils.highlightNode(".svg-container-pv",d.data.name);
+			       d3.select(".svg-container-pv").attr("lastSelected",d.data.name);
+			       if(d.data.name==d3.select(".svg-container-sv").attr("lastSelected")){
+			       	NavUtils.refreshBox("classList","classes","Select Class","select class",d.data.name,".svg-container-pv","");
+						  NavUtils.refreshBox("interfaceList","interfaces","Select Interface","select interface",d.data.name,".svg-container-pv","interface");
+			       }
+			       NavUtils.updateSelectBoxText("packagesList",d.data.name);
+			       //HeaderUtils.setPackageViewHeader("Package",d.data.name,this.root.data.name);
+			       HeaderUtils.headerUpdate('Package View', 'Package: ' + d.data.name);
+		     } 	
+
 
           }else if(d.data.type=="class" || d.data.type=="interface"){
         		//HeaderUtils.setPackageViewHeader("Package",d.parent.data.name,this.root.data.name);
@@ -114,7 +129,7 @@ export class PackageViewComponent implements OnInit {
 
         	}else if(d.data.type=="package" && !d3.select(".svg-container-sv").attr("lastSelected").includes(d.parent.data.name)){
 			//HeaderUtils.setSystemViewHeader(this.root.data.name);
-            HeaderUtils.headerUpdate('System View', 'Package: ' + d.data.name);
+            		HeaderUtils.headerUpdate('System View', 'Package: ' + d.data.name);
             		NavUtils.updateSelectBoxText("SelectViewBox","systemView");
  			SVGUtils.showView("package-view","system-view");
 			NavUtils.resetBox("interfaceList","interfaces","Select Interface","select interface");
@@ -124,10 +139,10 @@ export class PackageViewComponent implements OnInit {
         	}else if(d.data.type=="annotation"){
         		CircleUtils.highlightNode(".svg-container-sv",d.parent.parent.data.name);
         		if(d.parent.data.type=="class") {
-              NavUtils.updateSelectBoxText("classList", d.parent.data.name);
-            }else {
-              NavUtils.updateSelectBoxText("interfaceList", d.parent.data.name);
-            }
+              			NavUtils.updateSelectBoxText("classList", d.parent.data.name);
+            		}else {
+             			 NavUtils.updateSelectBoxText("interfaceList", d.parent.data.name);
+            		}
                 	this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(String(d.parent.data.name),".svg-container-pv"))
 			SVGUtils.hide(".svg-container-cv",d.parent.data.name);
 			SVGUtils.showView("package-view","class-view");
@@ -143,10 +158,10 @@ export class PackageViewComponent implements OnInit {
 
 
         	}else{
-            CircleUtils.highlightNode('.svg-container-sv', d.data.name);
-            this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.data.name, '.svg-container-sv'));
-            HeaderUtils.headerUpdate('Package View', 'Package: ' + d.data.name);
-          }
+            		CircleUtils.highlightNode('.svg-container-sv', d.data.name);
+            		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.data.name, '.svg-container-sv'));
+            		HeaderUtils.headerUpdate('Package View', 'Package: ' + d.data.name);
+          	}
 
         })
 	.on("mouseover", (event,d) => SVGUtils.createPopUp(d,this.svg,event))
