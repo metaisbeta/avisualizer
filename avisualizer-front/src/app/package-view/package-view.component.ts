@@ -66,7 +66,7 @@ export class PackageViewComponent implements OnInit {
     const anot = new AnnotationSchemas(this.root,'locad');
     this.schemasMap = anot.getSchemasColorMap();
     //console.log(this.schemasMap.size);
-
+    
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);
 
@@ -202,6 +202,7 @@ export class PackageViewComponent implements OnInit {
             event.preventDefault();
 
         });
+	
 
 
   }

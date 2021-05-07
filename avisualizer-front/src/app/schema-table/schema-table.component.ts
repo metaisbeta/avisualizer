@@ -17,6 +17,7 @@ export class SchemaTableComponent implements OnInit {
     //get the table with schemas
     const schema_table = d3.select("#schemas-table");
      var annotations =  annotationSchemas.getAnnotationsList();
+     var counts = annotationSchemas.getAnnotationsCount();
     //populate table
     var rows = schema_table.select("tbody").selectAll("tr").
           data(annotationSchemas.getSchemasObjectArray()).enter().append("tr");
@@ -72,7 +73,7 @@ export class SchemaTableComponent implements OnInit {
 			
 			var ul = d3.select(this).append('ul').attr("name",String(d3.select(this).attr('name'))).style("display","none");
 			for(var e in names){
-				ul.append("li").text(names[e]).attr("id",names[e]).attr("schema",schema)
+				ul.append("li").html(names[e]+" ("+counts.get(names[e].replace(" ",""))+") ").attr("id",names[e]).attr("schema",schema)
 			}
 
                        
@@ -185,7 +186,12 @@ d3.select("#schemas-table").select("tbody").append("tr").attr("id","selectAllRow
        	});
       	
        });
-	
+	d3.select("tbody").selectAll("ul").each(function(d,i){
+		d3.select(this).selectAll("li").each(function(d,i){
+			console.log(d3.select(this).attr("id"))
+		})
+		
+	})
 
 
 

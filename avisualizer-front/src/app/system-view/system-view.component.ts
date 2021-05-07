@@ -63,6 +63,8 @@ export class SystemViewComponent implements OnInit {
     const anot = new AnnotationSchemas(this.root, 'locad');
     this.schemasMap = anot.getSchemasColorMap();
     const colorsMap = 	anot.getSchemasColorMap();
+    
+    
     // Create the SVG
     console.log(this.root.descendants()[1].data.name)
     this.svg = SVGUtils.createSvg('.svg-container-sv', this.width, this.height, 'sistema');

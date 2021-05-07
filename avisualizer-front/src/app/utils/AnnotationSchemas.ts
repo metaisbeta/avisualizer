@@ -7,6 +7,7 @@ export class AnnotationSchemas{
   schemasOrdered: string[];
   schemasObjectArray: any[];
   annotationsList: Map<any,any>;
+  annotationsCount: Map<any,any>
   schemasGroups: string[];
   schemasTotalAnnotations: Map<any,any>;
   startColors: Map<any,any>;
@@ -30,7 +31,7 @@ export class AnnotationSchemas{
 
    }
    this.annotationsList = new Map();
-   	
+   this.annotationsCount = new Map();	
     var cors = ['#1f78b4','#33a02c','#fb9a99','#e31a1c','#40004b','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
     var corslight = ['#80b1d3','#B9D48C','#fccde5','#fb8072','#fdb462','#ffffb3','#9970ab','#bc80bd','#ffed6f','#bebada'];
     //Sort the array with the schemas
@@ -42,13 +43,21 @@ export class AnnotationSchemas{
     root.descendants().forEach(d=>{
     		if(d.data.type=="annotation" && d.data.properties.schema!=null){
     			var arr = this.annotationsList.get(d.data.properties.schema);
-    			if(!arr.includes(d.data.name))
+    			if(!arr.includes(d.data.name)){
     				arr.push(d.data.name)
+    				this.annotationsCount.set(d.data.name,d.data.value);
+    				
+    			}else{
+    				var value = this.annotationsCount.get(d.data.name);
+    				value=value+d.data.value;
+    				this.annotationsCount.set(d.data.name,value);
+    			}
+    				
     			this.annotationsList.set(d.data.properties.schema,arr);
     			
     		}
     	});
- 	
+    console.log(this.annotationsCount)	
     this.schemasGroups = [];
     this.schemasTotalAnnotations = new Map();
     var somatotal = new Map();
@@ -158,6 +167,9 @@ export class AnnotationSchemas{
   }
   public getAnnotationsList(): Map<any,any>{
   	return this.annotationsList;
+  }
+    public getAnnotationsCount(): Map<any,any>{
+  	return this.annotationsCount;
   }
  
 
