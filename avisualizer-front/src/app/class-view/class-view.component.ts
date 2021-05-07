@@ -128,8 +128,39 @@ private readPackageView(data: any[]): void{
 
 
         })
-	.on('mouseover', (event, d) => SVGUtils.createPopUp(d, this.svg, event))
-	.on('mouseout', (event, d) => SVGUtils.destroyPopUp(this.svg))
+	.on('mouseover', (event, d) => {
+		SVGUtils.createPopUp(d, this.svg, event)		
+		var name = d.data.properties.schema;		
+		d3.select(".svg-container-cv").selectAll("circle").each(function(d,i){
+			if(d3.select(this).attr("schema")==name){				
+				var color = d3.select(this).style("fill");
+				d3.select("tbody").selectAll("td").each(function(d,i){
+					if(d3.select(this).attr("class")=="td-schema" && d3.select(this).attr("name")==name){						
+						d3.select(this).style("color",color)
+					}
+						
+				});
+			}
+
+		});
+	})
+	.on('mouseout', (event, d) => {
+		SVGUtils.destroyPopUp(this.svg)
+		var name = d.data.properties.schema;		
+		d3.select(".svg-container-cv").selectAll("circle").each(function(d,i){
+			if(d3.select(this).attr("schema")==name){				
+				var color = d3.select(this).style("fill");
+				d3.select("tbody").selectAll("td").each(function(d,i){
+					if(d3.select(this).attr("class")=="td-schema" && d3.select(this).attr("name")==name){						
+						d3.select(this).style("color","black")
+					}
+						
+				});
+			}
+
+		});
+		
+	})
 	.on('mousemove', (event, d) => SVGUtils.movePopUp(d, this.svg, event))
 	.on('contextmenu', function(event) {
 

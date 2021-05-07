@@ -62,7 +62,7 @@ export class SystemViewComponent implements OnInit {
     // Fetch Annotations Schemas
     const anot = new AnnotationSchemas(this.root, 'locad');
     this.schemasMap = anot.getSchemasColorMap();
-
+    const colorsMap = 	anot.getSchemasColorMap();
     // Create the SVG
     console.log(this.root.descendants()[1].data.name)
     this.svg = SVGUtils.createSvg('.svg-container-sv', this.width, this.height, 'sistema');
@@ -113,13 +113,48 @@ export class SystemViewComponent implements OnInit {
         	       }
 
         })
-	.on('mouseover', (event, d) => SVGUtils.createPopUp(d, this.svg, event))
-	.on('mouseout', (event, d) => SVGUtils.destroyPopUp(this.svg))
+	.on('mouseover', (event, d) =>{ 
+		SVGUtils.createPopUp(d, this.svg, event);
+		var name= d.data.name;
+		//console.log(d.data)
+		d3.select(".svg-container-sv").selectAll("circle").each(function(d,i){
+			if(d3.select(this).attr("name")==name){
+				var color = d3.select(this).style("fill");
+				d3.select("tbody").selectAll("td").each(function(d,i){
+					if(d3.select(this).attr("class")=="td-schema" && d3.select(this).attr("name")==name){
+						
+						d3.select(this).style("color",color)
+					}
+						
+				});
+			}
+
+		});
+
+	})
+	.on('mouseout', (event, d) => {
+		SVGUtils.destroyPopUp(this.svg);
+		var name = d.data.name;
+		d3.select(".svg-container-sv").selectAll("circle").each(function(d,i){
+			if(d3.select(this).attr("name")==name){
+				var color = d3.select(this).style("fill");
+				d3.select("tbody").selectAll("td").each(function(d,i){
+					if(d3.select(this).attr("class")=="td-schema" && d3.select(this).attr("name")==name){
+						
+						d3.select(this).style("color","black")
+					}
+						
+				});
+			}
+
+		});
+	})
 	.on('mousemove', (event, d) => SVGUtils.movePopUp(d, this.svg, event))
 	.on('contextmenu', (event, d) => {
             event.preventDefault();
 
         });
+        
   //       NavUtils.createSelectBox("packages","packagesList","Select Package","select package","Package List",80,400,".svg-container-sv");
 	// NavUtils.createSelectBox("classes","classList","Select Class","select class","Class List",200,400,".svg-container-pv");
 	// NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-pv");
