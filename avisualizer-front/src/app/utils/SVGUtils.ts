@@ -76,9 +76,12 @@ export class SVGUtils{
     public static hideAnnotations(container: string, id: String, show: boolean){
     	if(container=="systemView")
     		var view = ".svg-container-sv";
-    	else
+    	else if (container=="packageView")
     		var view = ".svg-container-pv";
-    	//console.log(id,show,view)	
+    	else
+    		var view = ".svg-container-cv";
+    			
+    	console.log(id,show,view)	
     	d3.select(view).selectAll("circle").each(function(d, i){
 
 			if (String(d3.select(this).attr('name')) == id){ // schema se for package name se for system
@@ -239,8 +242,9 @@ export class SVGUtils{
 	  }else if (d3.selectAll('system-view').attr('hidden') == '' && d3.selectAll('package-view').attr('hidden') == ''){
 	  	  let view = d3.selectAll('.svg-container-cv').select('svg');
 		    view.selectAll('circle').each(function(d, i){
-
-			if (String(d3.select(this).attr('schema')) == id && ( d3.select(this).attr('grandfather') == d3.select('#classList').select('select option:checked').attr('value') || d3.select(this).attr('parent') == d3.select('#classList').select('select option:checked').attr('value'))){ // schema se for package name se for system
+			
+			//if (String(d3.select(this).attr('schema')) == id && ( d3.select(this).attr('grandfather') == d3.select('#classList').select('select option:checked').attr('value') || d3.select(this).attr('parent') == d3.select('#classList').select('select option:checked').attr('value'))){ // schema se for package name se for system
+			if (String(d3.select(this).attr('schema')) == id && (d3.select(this).attr("grandgrandfather")==d3.select(".svg-container-pv").attr("lastSelected") || d3.select(this).attr("grandfather")==d3.select(".svg-container-pv").attr("lastSelected"))){
 				if (!show){
 		                        // console.log(d3.select(this).attr("name")+" "+id);
 					d3.select(this).style('visibility', 'hidden');

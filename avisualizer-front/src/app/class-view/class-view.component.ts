@@ -90,7 +90,7 @@ private readPackageView(data: any[]): void{
     // Apply zoom to all circles in this specific view
     this.svg.selectAll('circle')
         .on('click', (event, d) => {
-
+			
 			if (d.data.type == 'class' || d.data.type == 'interface'){
 				this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node), event.stopPropagation(), SVGUtils.setFocus(String(d.data.name), '.svg-container-cv'));
 				CircleUtils.highlightNode('.svg-container-cv', d.data.name);
@@ -105,6 +105,7 @@ private readPackageView(data: any[]): void{
 				      	NavUtils.updateSelectBoxText('fieldList', d.data.name);
 				      }
 			}else if (d.data.type == 'package'){
+				NavUtils.updateSelectBoxText("SelectViewBox","packageView");
 				SVGUtils.showView('class-view', 'package-view');
 				NavUtils.resetBox('methodList', 'methods', 'Select Method', 'select method');
 				NavUtils.resetBox('fieldList', 'fields', 'Select Field', 'select field');

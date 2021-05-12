@@ -81,9 +81,10 @@ export class AvisualizerMainViewComponent implements OnInit {
     // update view
     if (view.target.value === 'systemView') {
       this.selectSystemView();
-    }
-    if (view.target.value === 'packageView') {
+    }else if (view.target.value === 'packageView') {
       this.selectPackageView();
+    }else{
+    	this.selectClassView();
     }
   }
 }

@@ -118,6 +118,7 @@ export class PackageViewComponent implements OnInit {
 
 
           }else if(d.data.type=="class" || d.data.type=="interface"){
+          		
         		//HeaderUtils.setPackageViewHeader("Package",d.parent.data.name,this.root.data.name);
             HeaderUtils.headerUpdate('Package View', d.data.type.charAt(0).toUpperCase() + d.data.type.slice(1) +  ': ' + d.data.name);
         		this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d,this.zoomProp,this.svg,this.node), event.stopPropagation(),SVGUtils.setFocus(d.parent.data.name,".svg-container-pv"))
@@ -155,7 +156,7 @@ export class PackageViewComponent implements OnInit {
             HeaderUtils.headerUpdate('Class View', 'Class: ' + d.parent.data.name);
         		SVGUtils.resetView(".svg-container-pv")
         		NavUtils.updateSelectBoxText("packagesList",d.parent.parent.data.name);
-
+			NavUtils.updateSelectBoxText("SelectViewBox","classView");
 
         	}else{
             		CircleUtils.highlightNode('.svg-container-sv', d.data.name);
