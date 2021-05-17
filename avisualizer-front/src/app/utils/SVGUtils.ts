@@ -105,9 +105,10 @@ export class SVGUtils{
     }
     // view related methods
     public static viewTransition(origin, view){
-
+	//console.log(origin,view)
         d3.select(String(view)).selectAll('circle').each(function(d, i){
                 if (String(d3.select(this).attr('name')) == origin){
+                	//console.log(d3.select(this).attr('name'))
                        d3.select(this).dispatch('click');
 			                    SVGUtils.setFocus(origin, view);
 			                    return this;
@@ -308,10 +309,31 @@ export class SVGUtils{
                               'Class Name: ' + classname[classname.length - 1] + '<br/>'  +
                               'Annotation name: ' + d.data.name + '<br/>';
 
-                if(Object.keys(d.data.properties).length === this.pvPropertiesSize){
-                  label = label.concat('LOCAD: ' + d.data.value); //in package view, the metrics is LOCAD
+                //if(Object.keys(d.data.properties).length === this.pvPropertiesSize){
+               //   label = label.concat('LOCAD: ' + d.data.value); //in package view, the metrics is LOCAD
+                //}else{
+                 // label = label.concat('AA: ' + d.data.properties.aa); //in class view, the metric is AA
+                //}
+                let metrics = d3.select("#annotMetric").text().split(" ");
+                let metric="";
+                let data;
+                console.log(metrics[metrics.length-1])
+                if(metrics[metrics.length-1]=="(ANL)"){
+                	metric = 'ANL';
+                	
+                	data = d.data.properties.anl;
+                	label = label.concat(metric+" "+data);
+                }else if(metrics[metrics.length-1]=="(LOCAD)"){
+                	metric = 'LOCAD';
+                	if(Object.keys(d.data.properties).length === this.pvPropertiesSize){
+                		data = d.data.value;
+                	}else
+                		data = d.data.properties.locad; 
+                	label = label.concat(metric+" "+data);               	
                 }else{
-                  label = label.concat('AA: ' + d.data.properties.aa); //in class view, the metric is AA
+                	metric = 'AA';
+                	data = d.data.properties.aa; 
+                	label = label.concat(metric+" "+data);                 
                 }
 
                 const divTooltip = d3.select('body').append('div')
@@ -327,13 +349,30 @@ export class SVGUtils{
        }else if (d.data.type == 'annotation' && ((d.parent.data.type == 'field' || d.parent.data.type == 'method'))){
                 let componentname = d.parent.data.name.split('.');
                 let classname =  d.parent.parent.data.name.split('.');
+                let metrics = d3.select("#annotMetric").text().split(" ");
+                let metric="";
+                let data;
+                console.log(metrics[metrics.length-1])
+                if(metrics[metrics.length-1]=="(ANL)"){
+                	metric = 'ANL';
+                	data = d.data.properties.anl;
+                	
+                }else if(metrics[metrics.length-1]=="(LOCAD)"){
+                	metric = 'LOCAD';
+                	data = d.data.properties.locad;                	
+                }else{
+                	metric = 'AA';
+                	data = d.data.properties.aa;                  
+                }
+
+                
 		              const divTooltip = d3.select('body').append('div')
     			            .attr('class', 'tooltip')
                       .style('opacity', 1)
 		       	.style('left', (event.pageX + 10) + 'px')
         		.style('top', (event.pageY - 60) + 'px')
 			.style('background', '#BCC5F7')
-			.html('Package Name: ' + d.parent.parent.parent.data.name + '<br/>' + 'Class Name: ' + classname[classname.length - 1] + '<br/>' + d.parent.data.type + ' Name ' + componentname[componentname.length - 1] + '<br/>' + 'Annotation name: ' + d.data.name + '<br/>' + 'AA: ' + d.data.properties.aa)
+			.html('Package Name: ' + d.parent.parent.parent.data.name + '<br/>' + 'Class Name: ' + classname[classname.length - 1] + '<br/>' + d.parent.data.type + ' Name ' + componentname[componentname.length - 1] + '<br/>' + 'Annotation name: ' + d.data.name + '<br/>' + metric+": "+ data)
 		        .transition()
         		.duration(this.popUpTransition);
 

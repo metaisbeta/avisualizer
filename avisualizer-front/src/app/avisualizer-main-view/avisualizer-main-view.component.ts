@@ -11,12 +11,14 @@ export class AvisualizerMainViewComponent implements OnInit {
   isPVHidden: boolean;
   isSVHidden: boolean;
   isCVHidden: boolean;
+  isCVANLHidden: boolean;
   selectedView: string;
   initialViewName = 'System View';
 
   constructor() {
     this.isSVHidden = false;
     this.isPVHidden = true;
+    this.isCVHidden = true;
     this.isCVHidden = true;
     this.selectedView = 'Package';
 
@@ -29,6 +31,7 @@ export class AvisualizerMainViewComponent implements OnInit {
     this.isSVHidden = false;
     this.isPVHidden = true;
     this.isCVHidden = true;
+
     //reset workspace on change. SHOULD NOT BE IT!!!!!
     SVGUtils.resetView(".svg-container-sv");
     //transition between zoomed views
@@ -48,6 +51,7 @@ export class AvisualizerMainViewComponent implements OnInit {
     this.isSVHidden = true;
     this.isPVHidden = false;
     this.isCVHidden = true;
+
     //reset workspace on change. SHOULD NOT BE IT!!!!!
     SVGUtils.resetView(".svg-container-pv");
     //transition between zoomed views

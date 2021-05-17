@@ -34,7 +34,7 @@ export class ClassViewComponent implements OnInit {
 
   ngOnInit(): void {
     // read data from JSON
-    d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[]))
+    d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[],0,""))
                                               .catch(error => console.log(error));
 
     //  d3.json("./assets/guj/Guj-CV.json").then(data => this.readPackageView(data as any[]))
@@ -47,7 +47,7 @@ export class ClassViewComponent implements OnInit {
      //  .catch(error => console.log(error));
   }
 
-private readPackageView(data: any[]): void{
+private readPackageView(data: any[],metric:number,lastSelected:string): void{
 
 
     // For class view use the AA metric
@@ -56,14 +56,31 @@ private readPackageView(data: any[]): void{
     //
     //     d.data.value = d.data.value + 1; // adding 1 to each AA, to avoid 0
     // });
-    this.root.sum(d => {d.value; if (d.type == 'annotation') { d.value = (parseInt(d.properties.aa)+1); } else if (Number.isNaN(d.value)) { d.value = 0; }})
-    .sort((a, b) => { b.value - a.value; });
-    this.root.sum(d => d.value);
+    console.log(metric)
+   if(metric==0){
+   	var newMetric="aa";
+	this.root.sum(d => {d.value; if (d.type == 'annotation') { d.value = (parseInt(d.properties.aa)+1); } else if (Number.isNaN(d.value)) { d.value = 0; }})
+    		.sort((a, b) => { b.value - a.value; });
+   	this.root.sum(d => d.value);
+   }else if(metric==1){
+   	var newMetric="anl";
+   	this.root.sum(d => {d.value; if (d.type == 'annotation') { d.value = (parseInt(d.properties.anl)+1); } else if (Number.isNaN(d.value)) { d.value = 0; }})
+    		.sort((a, b) => { b.value - a.value; });
+    	this.root.sum(d => d.value);	
+   }else{
+   	var newMetric="locad";
+	this.root.sum(d => {d.value; if (d.type == 'annotation') { d.value = (parseInt(d.properties.locad)+1); } else if (Number.isNaN(d.value)) { d.value = 0; }})
+    		.sort((a, b) => { b.value - a.value; });
+    	this.root.sum(d => d.value);   
+   } 
+
+	
+    
 
     const pack = d3.pack()
       .size([this.width - 2, this.height - 10])
       .padding(3);
-
+    	
     pack(this.root);
 
     this.zoomProp.focus = this.root;
@@ -74,9 +91,9 @@ private readPackageView(data: any[]): void{
     this.schemasMap = anot.getSchemasColorMap();
     // Create the SVG
     this.svg = SVGUtils.createSvg('.svg-container-cv', this.width, this.height, 'classe');
-    d3.select('.svg-container-cv').attr('lastSelected', String(this.root.data.name));
+    d3.select('.svg-container-cv').attr('lastSelected', lastSelected);
     d3.select('.svg-container-cv').attr('rootName', this.root.data.name);
-
+	
     // Create the nodes
     this.node = SVGUtils.createNode(this.svg, this.root);
     // Initial Zoom
@@ -90,7 +107,7 @@ private readPackageView(data: any[]): void{
     // Apply zoom to all circles in this specific view
     this.svg.selectAll('circle')
         .on('click', (event, d) => {
-			
+			//console.log("aa?")
 			if (d.data.type == 'class' || d.data.type == 'interface'){
 				this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node), event.stopPropagation(), SVGUtils.setFocus(String(d.data.name), '.svg-container-cv'));
 				CircleUtils.highlightNode('.svg-container-cv', d.data.name);
@@ -170,12 +187,31 @@ private readPackageView(data: any[]): void{
            // react on right-clicking
         });
 
+    	                                               
+                   d3.select(".svg-container-cv").selectAll('circle').each(function(d, i){
+                   
+		        if (String(d3.select(this).attr('name')) == lastSelected){
+		        	console.log(d3.select(this).attr('name'))
+		               d3.select(this).dispatch('click');
+					            SVGUtils.setFocus(lastSelected, ".svg-container-cv");
+					            return this;
+			}
 
-
-
+		});			
+		SVGUtils.hide(".svg-container-cv",lastSelected);
+		HeaderUtils.metricInfoUpdate(newMetric);
+		
 
   }
+  	public updateView(metric:number){
+		    d3.select(".svg-container-cv").selectAll("*").remove();
+		    console.log(d3.select(".svg-container-cv").attr("lastSelected"))
+		    d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[],metric,d3.select(".svg-container-cv").attr("lastSelected")))
+                                                .catch(error => console.log(error));
+	
+	}	
 
+	
 
 }
 

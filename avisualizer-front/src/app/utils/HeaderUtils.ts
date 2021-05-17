@@ -53,7 +53,7 @@ export class HeaderUtils{
     }
 	  d3.select('#viewName').text(viewName);
     var color = d3.select('#elementInfo').style("fill");
-    console.log(color)
+    
     d3.select('#elementInfo').text(elementInfo);
     d3.select('#elementInfo').
              transition().duration(100).style('fill','white')
@@ -61,7 +61,13 @@ export class HeaderUtils{
              .transition().duration(100).style('fill',d3.color(color).formatHex());
     d3.select('#annotMetric').text(annotMetric);
   }
-
+   public static metricInfoUpdate(metric:string){
+   	
+   	var metricName = d3.select("#annotMetric").text();
+   	var oldMetric = metricName.split(" ");
+   	console.log(oldMetric)
+   	d3.select('#annotMetric').text(metricName.replace(oldMetric[oldMetric.length-1],"("+metric.toUpperCase()+")"));
+   }
   public static setProjectName(projectName: string){
 	  d3.select('#projectUnderAnalysis').text('Project Under Analysis: ' + projectName);
 

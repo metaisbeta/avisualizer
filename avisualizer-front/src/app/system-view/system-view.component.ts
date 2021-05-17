@@ -7,6 +7,7 @@ import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
 import { NavUtils } from '../utils/NavUtils';
 import { HeaderUtils } from '../utils/HeaderUtils';
+
 @Component({
   selector: 'system-view',
   templateUrl: './system-view.component.html',
@@ -66,7 +67,7 @@ export class SystemViewComponent implements OnInit {
     
     
     // Create the SVG
-    console.log(this.root.descendants()[1].data.name)
+    //console.log(this.root.descendants()[1].data.name)
     this.svg = SVGUtils.createSvg('.svg-container-sv', this.width, this.height, 'sistema');
     d3.select('.svg-container-sv').attr('lastSelected', String(this.root.descendants()[1].data.name));
     d3.select('.svg-container-sv').attr('rootName', this.root.children[0].data.name);
@@ -82,6 +83,7 @@ export class SystemViewComponent implements OnInit {
     HeaderUtils.setProjectName(this.root.data.name);
 
     // Color all circles
+
     d3.select('.svg-container-sv').selectAll('circle').attr('stroke', d => CircleUtils.addCircleStroke(d))
                           .attr('stroke-dasharray', d => CircleUtils.addCircleDashArray(d))
 
@@ -100,14 +102,14 @@ export class SystemViewComponent implements OnInit {
         	       if (d.data.type == 'schema'){
         	       	NavUtils.updateSelectBoxText("SelectViewBox","packageView");
         			SVGUtils.hide('.svg-container-pv', d.parent.data.name);
-				       CircleUtils.highlightNode('.svg-container-sv', d.parent.data.name);
+				CircleUtils.highlightNode('.svg-container-sv', d.parent.data.name);
         		 this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.parent.data.name, '.svg-container-sv'));
         		 SVGUtils.showView('system-view', 'package-view');
         		 SVGUtils.viewTransition(String(d3.select('.svg-container-sv').attr('lastSelected')), '.svg-container-pv');
         		 //HeaderUtils.setPackageViewHeader('Package', d.parent.data.name, this.root.data.name);
              HeaderUtils.headerUpdate('Package View', 'Package: ' + d.parent.data.name);
              SVGUtils.resetView('.svg-container-sv');
-        		 console.log(d3.select('.svg-container-sv').attr('lastSelected'));
+        		 //console.log(d3.select('.svg-container-sv').attr('lastSelected'));
         	}else{
 		      CircleUtils.highlightNode('.svg-container-sv', d.data.name);
 		      this.zoomProp.focus !== d && (ZoomUtils.zoom(event, d, this.zoomProp, this.svg, this.node),	event.stopPropagation(), SVGUtils.setFocus(d.data.name, '.svg-container-sv'));

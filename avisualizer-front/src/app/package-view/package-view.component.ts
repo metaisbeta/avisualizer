@@ -72,6 +72,8 @@ export class PackageViewComponent implements OnInit {
 
     this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height,"pacote");
     d3.select(".svg-container-pv").attr("lastSelected",this.root.data.name);
+    d3.select(".svg-container-pv").attr("lastClicked","");
+    d3.select(".svg-container-pv").attr("lastClass","");
     d3.select(".svg-container-pv").attr("rootName",this.root.children[0].data.name);
 
 
@@ -138,6 +140,10 @@ export class PackageViewComponent implements OnInit {
 			NavUtils.updateSelectBoxText("packagesList",d.data.name);
 			d3.select(".svg-container-pv").attr("lastSelected",d.data.name)
         	}else if(d.data.type=="annotation"){
+        		
+        		d3.select(".svg-container-pv").attr("lastClicked",d.data.name);
+        		d3.select(".svg-container-pv").attr("lastClass",d.parent.data.name);
+        		//console.log(d3.select(".svg-container-pv").attr("lastClicked"))
         		CircleUtils.highlightNode(".svg-container-sv",d.parent.parent.data.name);
         		if(d.parent.data.type=="class") {
               			NavUtils.updateSelectBoxText("classList", d.parent.data.name);

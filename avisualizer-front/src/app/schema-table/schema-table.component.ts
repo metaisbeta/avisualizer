@@ -186,12 +186,7 @@ d3.select("#schemas-table").select("tbody").append("tr").attr("id","selectAllRow
        	});
       	
        });
-	d3.select("tbody").selectAll("ul").each(function(d,i){
-		d3.select(this).selectAll("li").each(function(d,i){
-			console.log(d3.select(this).attr("id"))
-		})
-		
-	})
+
 
 
 

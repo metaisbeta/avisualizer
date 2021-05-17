@@ -134,9 +134,9 @@ export class NavUtils{
     
     public static updateSelectBoxText(boxName:string,option:string){
     	d3.select("#"+boxName).selectAll("option").each(function(e,i){
-    	console.log(d3.select(this).attr("value"))
+    	//console.log(d3.select(this).attr("value"))
 	if (d3.select(this).attr("value")==option){
-		console.log(d3.select(this).attr("value"))
+		//console.log(d3.select(this).attr("value"))
 		return d3.select(this).property("selected",true);
 	}	
 		

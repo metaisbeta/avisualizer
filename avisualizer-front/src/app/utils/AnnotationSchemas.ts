@@ -57,7 +57,7 @@ export class AnnotationSchemas{
     			
     		}
     	});
-    console.log(this.annotationsCount)	
+    //console.log(this.annotationsCount)	
     this.schemasGroups = [];
     this.schemasTotalAnnotations = new Map();
     var somatotal = new Map();
