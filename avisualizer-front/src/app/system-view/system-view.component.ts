@@ -97,7 +97,7 @@ export class SystemViewComponent implements OnInit {
         		}
         		else if (d3.select(this).attr('value') == d.data.name) {
         			return d3.select(this).property('selected', true);
- }
+ 			}
         	});
         	       if (d.data.type == 'schema'){
         	       	NavUtils.updateSelectBoxText("SelectViewBox","packageView");

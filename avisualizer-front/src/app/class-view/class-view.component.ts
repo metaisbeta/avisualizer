@@ -199,7 +199,7 @@ private readPackageView(data: any[],metric:number,lastSelected:string): void{
 
 		});			
 		SVGUtils.hide(".svg-container-cv",lastSelected);
-		HeaderUtils.metricInfoUpdate(newMetric);
+		
 		
 
   }
@@ -208,6 +208,14 @@ private readPackageView(data: any[],metric:number,lastSelected:string): void{
 		    console.log(d3.select(".svg-container-cv").attr("lastSelected"))
 		    d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[],metric,d3.select(".svg-container-cv").attr("lastSelected")))
                                                 .catch(error => console.log(error));
+                   if(metric==0){
+                   	HeaderUtils.metricInfoUpdate("aa");
+                   }else if(metric==1){
+                   	HeaderUtils.metricInfoUpdate("anl");
+                   }else{
+                   	HeaderUtils.metricInfoUpdate("locad");
+                   }
+                                                
 	
 	}	
 

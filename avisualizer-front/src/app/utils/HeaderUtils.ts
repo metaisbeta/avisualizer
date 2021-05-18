@@ -43,7 +43,7 @@ export class HeaderUtils{
   public static headerUpdate(viewName: string, elementInfo: string){
 
 	  let annotMetric = 'Annotation Metric: ';
-
+		console.log(viewName)
 	  if(viewName === 'System View') {
       annotMetric = annotMetric.concat('Number of Annotations');
     } else if (viewName === 'Package View'){
@@ -62,11 +62,15 @@ export class HeaderUtils{
     d3.select('#annotMetric').text(annotMetric);
   }
    public static metricInfoUpdate(metric:string){
-   	
-   	var metricName = d3.select("#annotMetric").text();
-   	var oldMetric = metricName.split(" ");
-   	console.log(oldMetric)
-   	d3.select('#annotMetric').text(metricName.replace(oldMetric[oldMetric.length-1],"("+metric.toUpperCase()+")"));
+   	if(metric=="aa"){
+   		var metricName = "Annotation Metric: Arguments in Annotation (AA)"
+   	}else if(metric=="locad"){
+   		var metricName= "Annotation Metric: LOC in Annotation Declaration (LOCAD)";
+   	}else{
+   		var metricName = "Annotation Metric: Annotation Nesting Level (ANL)"
+   	}
+
+   	d3.select('#annotMetric').text(metricName);
    }
   public static setProjectName(projectName: string){
 	  d3.select('#projectUnderAnalysis').text('Project Under Analysis: ' + projectName);
