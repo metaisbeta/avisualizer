@@ -29,13 +29,40 @@ export class ClassViewComponent implements OnInit {
   private zoomProp: ZoomProp = {};
   private zoomProp_locad: ZoomProp = {};
   private selectedNode: any;
-
- constructor() {  }
+  private path;
+  private filepath;
+  private toload;
+ constructor() {  
+ 		this.node = null;
+ this.root = null;
+ 	try{
+ 		//this.toload = d3.select("#projectSelectBox option:checked").attr("value");
+ 		//console.log("build",this.toload)
+ 		var files = d3.select("#upload").property("value").split("\\");
+    		var file = files[files.length-1];
+    		var dir = files[files.length-1].split("-");
+    		var folder = dir[0].toLowerCase();
+ 		this.filepath = "./assets/"+folder+"/"+dir[0]+"-CV.json";
+ 		this.ngOnInit();
+ 	}catch (e) {
+   // declarações para manipular quaisquer exceções
+   	//this.toload=0; // passa o objeto de exceção para o manipulador de erro
+   	this.filepath = "./assets/spaceweathertsi/SpaceWeatherTSI-CV.json";
+}	
+ 	
+ }
 
   ngOnInit(): void {
     // read data from JSON
-    d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[],0,""))
-                                              .catch(error => console.log(error));
+
+   
+    this.path=["./assets/spaceweather/SpaceWeatherTSI-CV.json",'./assets/guj/Guj-CV.json','./assets/geostore/Geostore-CV.json'];
+    //d3.json(this.path[this.toload]).then(data => this.readPackageView(data as any[],0,""))
+    //                                          .catch(error => console.log(error));
+    console.log(this.filepath)
+    d3.json(this.filepath).then(data => this.readPackageView(data as any[],0,""))
+    //                                          .catch(error => console.log(error));
+    
 
     //  d3.json("./assets/guj/Guj-CV.json").then(data => this.readPackageView(data as any[]))
     //   .catch(error => console.log(error));
@@ -47,7 +74,7 @@ export class ClassViewComponent implements OnInit {
      //  .catch(error => console.log(error));
   }
 
-private readPackageView(data: any[],metric:number,lastSelected:string): void{
+public readPackageView(data: any[],metric:number,lastSelected:string): void{
 
 
     // For class view use the AA metric
@@ -199,14 +226,22 @@ private readPackageView(data: any[],metric:number,lastSelected:string): void{
 
 		});			
 		SVGUtils.hide(".svg-container-cv",lastSelected);
-		
+		                                             	
 		
 
   }
   	public updateView(metric:number){
 		    d3.select(".svg-container-cv").selectAll("*").remove();
-		    console.log(d3.select(".svg-container-cv").attr("lastSelected"))
-		    d3.json('./assets/SpaceWeatherTSI-CV.json').then(data => this.readPackageView(data as any[],metric,d3.select(".svg-container-cv").attr("lastSelected")))
+		    
+		    
+		    //this.toload = d3.select("#projectSelectBox option:checked").attr("value");
+		    		var files = d3.select("#upload").property("value").split("\\");
+    		var file = files[files.length-1];
+    		var dir = files[files.length-1].split("-");
+    		var folder = dir[0].toLowerCase();
+ 		this.filepath = "./assets/"+folder+"/"+dir[0]+"-CV.json";
+		   
+		    d3.json(this.filepath).then(data => this.readPackageView(data as any[],metric,d3.select(".svg-container-cv").attr("lastSelected")))
                                                 .catch(error => console.log(error));
                    if(metric==0){
                    	HeaderUtils.metricInfoUpdate("aa");

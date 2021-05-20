@@ -7,7 +7,8 @@ import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
 import { NavUtils } from '../utils/NavUtils';
 import { HeaderUtils } from '../utils/HeaderUtils';
-
+import {ClassViewComponent} from '../class-view/class-view.component'
+import {PackageViewComponent} from '../package-view/package-view.component'
 @Component({
   selector: 'system-view',
   templateUrl: './system-view.component.html',
@@ -24,16 +25,40 @@ export class SystemViewComponent implements OnInit {
   private focus: any;
   private zoomProp: ZoomProp = {};
   private selectedNode: any;
-
+  private path;
+  private toload
+  private filepath;	
   constructor() {
 	this.node = null;
  this.root = null;
+ 	try{
+ 		//this.toload = d3.select("#projectSelectBox option:checked").attr("value");
+ 		var files = d3.select("#upload").property("value").split("\\");
+    		var file = files[files.length-1];
+    		var dir = files[files.length-1].split("-");
+    		var folder = dir[0].toLowerCase();
+ 		this.filepath = "./assets/"+folder+"/"+dir[0]+"-SV.json";
+ 		this.ngOnInit();
+ 		
+ 	}catch (e) {
+   // declarações para manipular quaisquer exceções
+   	//this.toload=0; // passa o objeto de exceção para o manipulador de erro
+   	this.filepath="./assets/spaceweathertsi/SpaceWeatherTSI-SV.json";	
+}	
+ 	
+ 	
   }
 
   ngOnInit(): void {
     // read data from JSON
-    d3.json('./assets/SpaceWeatherTSI-SV.json').then(data => this.readPackageView(data as any[]))
+    this.path=["./assets/spaceweather/SpaceWeatherTSI-SV.json",'./assets/guj/Guj-SV.json','./assets/geostore/Geostore-SV.json'];
+    //d3.json(this.path[this.toload]).then(data => this.readPackageView(data as any[]))
+    //                                            .catch(error => console.log(error));
+	console.log(this.filepath)
+	d3.json(this.filepath).then(data => this.readPackageView(data as any[]))
                                                 .catch(error => console.log(error));
+
+                                                     
     //  d3.json('./assets/guj/Guj-SV.json').then(data => this.readPackageView(data as any[]))
     //   .catch(error => console.log(error));
 
@@ -61,10 +86,10 @@ export class SystemViewComponent implements OnInit {
     this.zoomProp.focus = this.root;
 
     // Fetch Annotations Schemas
-    const anot = new AnnotationSchemas(this.root, 'locad');
+    const anot = new AnnotationSchemas(this.root, 'system');
     this.schemasMap = anot.getSchemasColorMap();
     const colorsMap = 	anot.getSchemasColorMap();
-    
+    console.log(this.schemasMap)
     
     // Create the SVG
     //console.log(this.root.descendants()[1].data.name)
@@ -159,7 +184,7 @@ export class SystemViewComponent implements OnInit {
 
         });
         
-  //       NavUtils.createSelectBox("packages","packagesList","Select Package","select package","Package List",80,400,".svg-container-sv");
+
 	// NavUtils.createSelectBox("classes","classList","Select Class","select class","Class List",200,400,".svg-container-pv");
 	// NavUtils.createSelectBox("interfaces","interfaceList","Select Interface","select interface","Interface List",320,400,".svg-container-pv");
 	// NavUtils.createSelectBox("methods","methodList","Select Method","select method","Method List",440,400,".svg-container-cv");
@@ -177,6 +202,6 @@ export class SystemViewComponent implements OnInit {
 
 
 
-interface ZoomProp{
+ interface ZoomProp{
   [focus: string]: any;
 }
