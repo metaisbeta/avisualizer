@@ -37,7 +37,6 @@ export class AnnotationSchemas{
     //Sort the array with the schemas
     this.schemasOrdered = Array.from(schemaSet) as string[];
     this.schemasOrdered.sort();
-    //console.log(this.schemasOrdered)
     for(var s in this.schemasOrdered){
 	this.annotationsList.set(this.schemasOrdered[s],[]);
     }
@@ -46,19 +45,19 @@ export class AnnotationSchemas{
     			var arr = this.annotationsList.get(d.data.properties.schema);
     			if(!arr.includes(d.data.name)){
     				arr.push(d.data.name)
-    				this.annotationsCount.set(d.data.name,1);
+    				this.annotationsCount.set(d.data.name,d.data.value);
     				
     			}else{
     				var value = this.annotationsCount.get(d.data.name);
-    				//value=value+d.data.value;
-    				this.annotationsCount.set(d.data.name,(value+1));
+    				value=value+d.data.value;
+    				this.annotationsCount.set(d.data.name,value);
     			}
     				
     			this.annotationsList.set(d.data.properties.schema,arr);
     			
     		}
     	});
-   	
+    //console.log(this.annotationsCount)	
     this.schemasGroups = [];
     this.schemasTotalAnnotations = new Map();
     var somatotal = new Map();
@@ -71,12 +70,11 @@ export class AnnotationSchemas{
 	if(root.descendants()[i].data.type=="annotation"){
                 var total = this.schemasTotalAnnotations.get(root.descendants()[i].data.properties.schema);
                 var toSum = root.descendants()[i].data.value;
-                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+1));
+                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+toSum));
 
 	}
 
     }
-     console.log(this.schemasTotalAnnotations,name)
     //build schemas families
     var groupsMap = new Map();
     var colorsArray = [];

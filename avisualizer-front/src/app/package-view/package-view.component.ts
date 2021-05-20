@@ -7,8 +7,6 @@ import { SVGUtils } from '../utils/SVGUtils';
 import { ZoomUtils } from '../utils/ZoomUtils';
 import { NavUtils } from '../utils/NavUtils';
 import { HeaderUtils } from '../utils/HeaderUtils';
-import { SystemViewComponent } from '../system-view/system-view.component';
-import { ClassViewComponent } from '../class-view/class-view.component';
 @Component({
   selector: 'package-view',
   templateUrl: './package-view.component.html',
@@ -24,67 +22,14 @@ export class PackageViewComponent implements OnInit {
   public schemasMap;
   private zoomProp: ZoomProp = {};
   private selectedNode: any;
-  private path;
+
   constructor() {  }
 
   ngOnInit(): void {
     //read data from JSON
-     this.path=["./assets/spaceweather/SpaceWeatherTSI-PV.json",'./assets/guj/Guj-PV.json','./assets/geostore/Geostore-PV.json'];
-    d3.json(this.path[0]).then(data => this.readPackageView(data as any[]))
+    d3.json("./assets/SpaceWeatherTSI-PV.json").then(data => this.readPackageView(data as any[]))
                                                .catch(error => console.log(error));
-       	         //d3.select("#SelectViewBox").append("select").attr("id","projectSelectBox").append("option").text("SpaceWeather").attr("value",0);
-         //d3.select("#projectSelectBox").append("option").text("Guj").attr("value",1);
-         //d3.select("#projectSelectBox").append("option").text("Geostore").attr("value",2);
-         //d3.select("#projectSelectBox").on("change",(d,event)=>{
-         		//d3.select("tbody").selectAll("*").remove();
-         		//var value = d3.select("#projectSelectBox option:checked").attr("value");
-         		//d3.select(".svg-container-sv").attr('hidden', null);
-		       // d3.select(".svg-container-sv").selectAll("*").remove();
-		        // d3.select(".svg-container-pv").selectAll("*").remove();
-		        //  d3.select(".svg-container-cv").selectAll("*").remove();
-		          
-         		//d3.json(this.path[value]).then(data => this.readPackageView(data as any[]))
-                                              //  .catch(error => console.log(error));
-                                              // let test = new SystemViewComponent();
-                                              // let test1 = new ClassViewComponent();
-                                            	
-						//d3.select("class-view").attr("hidden",'');
-						//d3.select("package-view").attr("hidden",'');
-						//d3.select("system-view").attr("hidden",null);
-						//NavUtils.updateSelectBoxText("SelectViewBox","systemView");
-						
-                                               // });
-                     d3.select("#SelectViewBox").append("input").attr("type","file").attr("id","upload").attr("name","filename");
-                      d3.select("#SelectViewBox").append("input").attr("type","submit")
-                      					.on("click",(event,d)=>{
-                      						var files = d3.select("#upload").property("value").split("\\");
-                      						var file = files[files.length-1];
-                      						var dir = files[files.length-1].split("-");
-                      						var  folder = dir[0].toLowerCase();
-                      						
-                      						d3.select("tbody").selectAll("*").remove();
-								
-         		//var value = d3.select("#projectSelectBox option:checked").attr("value");
-         		d3.select(".svg-container-sv").attr('hidden', null);
-		        d3.select(".svg-container-sv").selectAll("*").remove();
-		         d3.select(".svg-container-pv").selectAll("*").remove();
-		          d3.select(".svg-container-cv").selectAll("*").remove();
-		          
-         		//d3.json(this.path[value]).then(data => this.readPackageView(data as any[]))
-                       //                        .catch(error => console.log(error));
-                       d3.json("./assets/"+folder+"/"+dir[0]+"-PV.json").then(data => this.readPackageView(data as any[]))
-                                               .catch(error => console.log(error));
-                                               //let test = new SystemViewComponent();
-                                               //let test1 = new ClassViewComponent();
-                                            	
-                                            	 let test = new SystemViewComponent();
-                                               let test1 = new ClassViewComponent();
-						d3.select("class-view").attr("hidden",'');
-						d3.select("package-view").attr("hidden",'');
-						d3.select("system-view").attr("hidden",null);
-						NavUtils.updateSelectBoxText("SelectViewBox","systemView");
-						
-                      					});                           
+    //
     //  d3.json("./assets/guj/Guj-PV.json").then(data => this.readPackageView(data as any[]))
     //   .catch(error => console.log(error));
 
@@ -120,11 +65,11 @@ export class PackageViewComponent implements OnInit {
     //Fetch Annotations Schemas
     const anot = new AnnotationSchemas(this.root,'locad');
     this.schemasMap = anot.getSchemasColorMap();
-    console.log(this.schemasMap);
+    //console.log(this.schemasMap.size);
     
     //Create the table with Annotation Schemas
     SchemaTableComponent.populateSchemasTable(anot);
-	
+
     this.svg = SVGUtils.createSvg(".svg-container-pv",this.width,this.height,"pacote");
     d3.select(".svg-container-pv").attr("lastSelected",this.root.data.name);
     d3.select(".svg-container-pv").attr("lastClicked","");
@@ -264,13 +209,11 @@ export class PackageViewComponent implements OnInit {
             event.preventDefault();
 
         });
+	
 
-                                              	
 
   }
-	
-		
-	
+
 }
 
 interface ZoomProp{

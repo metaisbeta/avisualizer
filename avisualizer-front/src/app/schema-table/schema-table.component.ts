@@ -18,7 +18,6 @@ export class SchemaTableComponent implements OnInit {
     const schema_table = d3.select("#schemas-table");
      var annotations =  annotationSchemas.getAnnotationsList();
      var counts = annotationSchemas.getAnnotationsCount();
-     console.log(annotations)
     //populate table
     var rows = schema_table.select("tbody").selectAll("tr").
           data(annotationSchemas.getSchemasObjectArray()).enter().append("tr");
