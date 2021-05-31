@@ -1,0 +1,357 @@
+{
+  "name": "advanced_java_annotations-master",
+  "children": [
+    {
+      "name": "ua.yet.adv.java.annotation",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "ua.yet.adv.java.annotation.Init",
+          "type": "annotation-declaration",
+          "properties": {},
+          "children": [
+            {
+              "name": "Documented",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Target",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Retention",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.Service",
+          "type": "annotation-declaration",
+          "properties": {},
+          "children": [
+            {
+              "name": "Documented",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Inherited",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Target",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Retention",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.NotesHolder",
+          "type": "annotation-declaration",
+          "properties": {},
+          "children": [
+            {
+              "name": "Documented",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Inherited",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Retention",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.Note",
+          "type": "annotation-declaration",
+          "properties": {},
+          "children": [
+            {
+              "name": "Documented",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Inherited",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Retention",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Repeatable",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang.annotation"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.JavaBuildInAnnotations",
+          "type": "class",
+          "properties": {},
+          "children": [
+            {
+              "name": "Deprecated",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Deprecated",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "FunctionalInterface",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "SafeVarargs",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Override",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Deprecated",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.processor",
+          "type": "package",
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.services",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "ua.yet.adv.java.annotation.services.SimpleService",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Init",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Init",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Init",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Service",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Note",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Note",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "ua.yet.adv.java.annotation.services.ThrowingService",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Service",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Init",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "ua.yet.adv.java.annotation.services.LazyService",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Service",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Init",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "ua.yet.adv.java.annotation"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ua.yet.adv.java.reflection",
+      "type": "package",
+      "properties": {},
+      "children": []
+    }
+  ]
+}

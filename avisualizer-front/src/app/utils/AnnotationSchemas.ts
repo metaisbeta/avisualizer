@@ -6,6 +6,8 @@ export class AnnotationSchemas{
   schemasColorMap: Map<any,any>;
   schemasOrdered: string[];
   schemasObjectArray: any[];
+  annotationsList: Map<any,any>;
+  annotationsCount: Map<any,any>
   schemasGroups: string[];
   schemasTotalAnnotations: Map<any,any>;
   startColors: Map<any,any>;
@@ -21,37 +23,69 @@ export class AnnotationSchemas{
 
 
    }
-   else{
+   else if (name=="package"){
     const schemasNode = root.descendants().filter(d => !loDash.isEmpty(d.data.properties));
 
     //To not get repeated schemas
     schemasNode.forEach(d =>  schemaSet.add(d.data.properties.schema));
 
-   }
+   }else{
+   	const schemasNode = root.descendants().filter(d => d.data.type=="schema");
 
+    //To not get repeated schemas
+    schemasNode.forEach(d =>  schemaSet.add(d.data.name));
+   }
+   this.annotationsList = new Map();
+   this.annotationsCount = new Map();	
     var cors = ['#1f78b4','#33a02c','#fb9a99','#e31a1c','#40004b','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
     var corslight = ['#80b1d3','#B9D48C','#fccde5','#fb8072','#fdb462','#ffffb3','#9970ab','#bc80bd','#ffed6f','#bebada'];
     //Sort the array with the schemas
     this.schemasOrdered = Array.from(schemaSet) as string[];
     this.schemasOrdered.sort();
-
-    this.schemasGroups = [];
-    this.schemasTotalAnnotations = new Map();
-    var somatotal = new Map();
-    //counting total annotations of each schema
-    for(var i=0;i<this.schemasOrdered.length;i++){
+    //console.log(this.schemasOrdered)
+    if(name=="package"){
+    	    for(var s in this.schemasOrdered){
+	this.annotationsList.set(this.schemasOrdered[s],[]);
+    }
+       this.schemasTotalAnnotations = new Map();
+        var somatotal = new Map();
+           for(var i=0;i<this.schemasOrdered.length;i++){
     	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);
     	somatotal.set(this.schemasOrdered[i],0);
     }
-    for(var i=0;i<root.descendants().length;i++){
-	if(root.descendants()[i].data.type=="annotation"){
-                var total = this.schemasTotalAnnotations.get(root.descendants()[i].data.properties.schema);
-                var toSum = root.descendants()[i].data.value;
-                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+toSum));
+        for(var i=0;i<this.schemasOrdered.length;i++){
+    	this.schemasTotalAnnotations.set(this.schemasOrdered[i],0);
+    	somatotal.set(this.schemasOrdered[i],0);
+    }
+    root.descendants().forEach(d=>{
+    		if(d.data.type=="annotation" && d.data.properties.schema!=null){
+    			var arr = this.annotationsList.get(d.data.properties.schema);
+    			if(!arr.includes(d.data.name)){
+    				arr.push(d.data.name)
+    				this.annotationsCount.set(d.data.name,1);
+    				
+    			}else{
+    				var value = this.annotationsCount.get(d.data.name);
+    				//value=value+d.data.value;
+    				this.annotationsCount.set(d.data.name,(value+1));
+    			}
+    				
+    			this.annotationsList.set(d.data.properties.schema,arr);
+    			var total = this.schemasTotalAnnotations.get(d.data.properties.schema);
+                
+                this.schemasTotalAnnotations.set(d.data.properties.schema,(total+1));
+    		}
+    	});
+   	
+    this.schemasGroups = [];
+ 
+   
+    //counting total annotations of each schema
 
-	}
 
     }
+
+     
     //build schemas families
     var groupsMap = new Map();
     var colorsArray = [];
@@ -82,13 +116,13 @@ export class AnnotationSchemas{
 			groupsMap.set(family,[value]);
 		}
 	});
-
+	
 
  	var startColors = new Map();
   var endColors = new Map();
   var schemasArr= ["java.lang","javax.persistence","org.hibernate","org.springframework","org.junit","org.mockito","javax.ejb"];
-  var startArr = ["#146FF2","#F214EF","#F214EF","#ff7f00","#40004b","#6B00B8","#32F214"];
-  var endArr = ["#146FF2","#F214C0","#F214C0","#ffffb3","#3E05A8","#C77EFB","#32F214"];
+  var startArr = ["#146FF2","#FF95FE","#B64DB5","#ff7f00","#40004b","#6B00B8","#32F214"];
+  var endArr = ["#146FF2","#FABBFA","#B64DB5","#ffffb3","#3E05A8","#C77EFB","#32F214"];
   for(var i=0;i<schemasArr.length;i++){
     	startColors.set(schemasArr[i],startArr[i]);
     	endColors.set(schemasArr[i],endArr[i]);
@@ -121,12 +155,8 @@ export class AnnotationSchemas{
 		}
 	}
 
-
-
-
     }
     this.schemasOrdered.forEach((value,i) => {
-
       this.schemasColorMap.set(value, hexColors.get(value));
       this.schemasObjectArray.push({ "schema" : value, "color" : hexColors.get(value)});
     });
@@ -146,5 +176,12 @@ export class AnnotationSchemas{
   public getSchemasObjectArray(): any[]{
     return this.schemasObjectArray;
   }
+  public getAnnotationsList(): Map<any,any>{
+  	return this.annotationsList;
+  }
+    public getAnnotationsCount(): Map<any,any>{
+  	return this.annotationsCount;
+  }
+ 
 
 }

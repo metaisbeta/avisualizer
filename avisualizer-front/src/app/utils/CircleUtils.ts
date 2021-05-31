@@ -71,7 +71,7 @@ if(String(d3.select(this).attr("name"))==String(d3.select(container).attr("highl
 							else
 								d3.select(this).style("stroke","blue");
 							d3.select(this).style("stroke-width","1px");
-							//d3.select(this).dispatch("click");
+							
 						}
 
 		  			});

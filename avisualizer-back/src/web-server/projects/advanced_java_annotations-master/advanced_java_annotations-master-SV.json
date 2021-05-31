@@ -1,0 +1,52 @@
+{
+  "name": "advanced_java_annotations-master",
+  "children": [
+    {
+      "name": "ua.yet.adv.java.annotation",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "java.lang",
+          "type": "schema",
+          "value": 6,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "java.lang.annotation",
+          "type": "schema",
+          "value": 14,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.processor",
+          "type": "package",
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "ua.yet.adv.java.annotation.services",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "ua.yet.adv.java.annotation",
+              "type": "schema",
+              "value": 10,
+              "properties": {},
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ua.yet.adv.java.reflection",
+      "type": "package",
+      "properties": {},
+      "children": []
+    }
+  ]
+}

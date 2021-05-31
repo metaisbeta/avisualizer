@@ -41,19 +41,37 @@ export class HeaderUtils{
 	}
 
   public static headerUpdate(viewName: string, elementInfo: string){
-    d3.select('#viewName').text(viewName);
-    var color = d3.select('#elementInfo').style("fill");
-    d3.select('#elementInfo').text(elementInfo);
-    // d3.select('#elementInfo').transition().duration(100).style('color','red');
-    // d3.select('#elementInfo').transition().duration(100).style('color',d3.color(color).formatHex());
-    //   // .duration(100)
-    //   // .style("fill","red")
-    //   // .transition()
-    //   // .duration(100)
-    //   // .style("fill",String(d3.color(color).formatHex()))
-    //   // .text(elementInfo);
-  }
 
+	  let annotMetric = 'Annotation Metric: ';
+		console.log(viewName)
+	  if(viewName === 'System View') {
+      annotMetric = annotMetric.concat('Number of Annotations');
+    } else if (viewName === 'Package View'){
+      annotMetric = annotMetric.concat('LOC in Annotation Declaration (LOCAD)');
+    }else{
+      annotMetric = annotMetric.concat('Arguments in Annotations (AA)');
+    }
+	  d3.select('#viewName').text(viewName);
+    var color = d3.select('#elementInfo').style("fill");
+    
+    d3.select('#elementInfo').text(elementInfo);
+    d3.select('#elementInfo').
+             transition().duration(100).style('fill','white')
+             //.transition().duration(100).style('fill',d3.color(color).formatHex());
+             .transition().duration(100).style('fill',d3.color(color).formatHex());
+    d3.select('#annotMetric').text(annotMetric);
+  }
+   public static metricInfoUpdate(metric:string){
+   	if(metric=="aa"){
+   		var metricName = "Annotation Metric: Arguments in Annotation (AA)"
+   	}else if(metric=="locad"){
+   		var metricName= "Annotation Metric: LOC in Annotation Declaration (LOCAD)";
+   	}else{
+   		var metricName = "Annotation Metric: Annotation Nesting Level (ANL)"
+   	}
+
+   	d3.select('#annotMetric').text(metricName);
+   }
   public static setProjectName(projectName: string){
 	  d3.select('#projectUnderAnalysis').text('Project Under Analysis: ' + projectName);
 
