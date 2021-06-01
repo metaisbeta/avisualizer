@@ -2,12 +2,6 @@
   "name": "Shopizer",
   "children": [
     {
-      "name": "",
-      "type": "package",
-      "properties": {},
-      "children": []
-    },
-    {
       "name": "com.salesmanager.core.business.configuration",
       "type": "package",
       "properties": {},
