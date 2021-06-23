@@ -31,7 +31,7 @@ export class AnnotationSchemas{
 
    }
    this.annotationsList = new Map();
-   this.annotationsCount = new Map();	
+   this.annotationsCount = new Map();
     var cors = ['#1f78b4','#33a02c','#fb9a99','#e31a1c','#40004b','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
     var corslight = ['#80b1d3','#B9D48C','#fccde5','#fb8072','#fdb462','#ffffb3','#9970ab','#bc80bd','#ffed6f','#bebada'];
     //Sort the array with the schemas
@@ -46,18 +46,18 @@ export class AnnotationSchemas{
     			if(!arr.includes(d.data.name)){
     				arr.push(d.data.name)
     				this.annotationsCount.set(d.data.name,d.data.value);
-    				
+
     			}else{
     				var value = this.annotationsCount.get(d.data.name);
     				value=value+1;
     				this.annotationsCount.set(d.data.name,value);
     			}
-    				
+
     			this.annotationsList.set(d.data.properties.schema,arr);
-    			
+
     		}
     	});
-    //console.log(this.annotationsCount)	
+    //console.log(this.annotationsCount)
     this.schemasGroups = [];
     this.schemasTotalAnnotations = new Map();
     var somatotal = new Map();
@@ -105,13 +105,13 @@ export class AnnotationSchemas{
 			groupsMap.set(family,[value]);
 		}
 	});
-	
+
 
  	var startColors = new Map();
   var endColors = new Map();
   var schemasArr= ["java.lang","javax.persistence","org.hibernate","org.springframework","org.junit","org.mockito","javax.ejb"];
-  var startArr = ["#146FF2","#FF95FE","#B64DB5","#ff7f00","#40004b","#6B00B8","#32F214"];
-  var endArr = ["#146FF2","#FABBFA","#B64DB5","#ffffb3","#3E05A8","#C77EFB","#32F214"];
+  var startArr = ["#146FF2","#B55DB4","#D7A3D1","#ff7f00","#40004b","#6B00B8","#32F214"];
+  var endArr = ["#146FF2","#F9B9E8","#D7A3D1","#ffffb3","#3E05A8","#C77EFB","#32F214"];
   for(var i=0;i<schemasArr.length;i++){
     	startColors.set(schemasArr[i],startArr[i]);
     	endColors.set(schemasArr[i],endArr[i]);
@@ -171,6 +171,6 @@ export class AnnotationSchemas{
     public getAnnotationsCount(): Map<any,any>{
   	return this.annotationsCount;
   }
- 
+
 
 }
