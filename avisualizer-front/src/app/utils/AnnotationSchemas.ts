@@ -49,7 +49,7 @@ export class AnnotationSchemas{
     				
     			}else{
     				var value = this.annotationsCount.get(d.data.name);
-    				value=value+d.data.value;
+    				value=value+1;
     				this.annotationsCount.set(d.data.name,value);
     			}
     				
