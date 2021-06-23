@@ -70,7 +70,7 @@ export class AnnotationSchemas{
 	if(root.descendants()[i].data.type=="annotation"){
                 var total = this.schemasTotalAnnotations.get(root.descendants()[i].data.properties.schema);
                 var toSum = root.descendants()[i].data.value;
-                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+toSum));
+                this.schemasTotalAnnotations.set(root.descendants()[i].data.properties.schema,(total+1));
 
 	}
 
