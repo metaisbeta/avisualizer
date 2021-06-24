@@ -1,0 +1,1318 @@
+{
+  "name": "graphhopper-master",
+  "children": [
+    {
+      "name": "com.bmw.hmm",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "java.lang",
+          "type": "schema",
+          "value": 10,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.junit.jupiter.api",
+          "type": "schema",
+          "value": 8,
+          "properties": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "com.conveyal.gtfs",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "java.lang",
+          "type": "schema",
+          "value": 1,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "com.conveyal.gtfs.error",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 14,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.conveyal.gtfs.model",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 30,
+              "properties": {},
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "com.graphhopper",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "org.junit.jupiter.params",
+          "type": "schema",
+          "value": 3,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "java.lang",
+          "type": "schema",
+          "value": 25,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.junit.jupiter.api",
+          "type": "schema",
+          "value": 136,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.junit.jupiter.params.provider",
+          "type": "schema",
+          "value": 3,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "com.graphhopper.apache.commons.collections",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 9,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.apache.commons.lang3",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.api",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "org.junit.jupiter.params",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 26,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 14,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.params.provider",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.fasterxml.jackson.annotation",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.api.model",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "com.fasterxml.jackson.annotation",
+                  "type": "schema",
+                  "value": 32,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.coll",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 49,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 39,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.config",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 7,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.debatty.java.stringsimilarity",
+          "type": "package",
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "com.graphhopper.example",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.geohash",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.gpx",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 7,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.gtfs",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 172,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 9,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.inject",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.gtfs.fare",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "org.junit.jupiter.params",
+                  "type": "schema",
+                  "value": 7,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 4,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.params.provider",
+                  "type": "schema",
+                  "value": 7,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.http",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 52,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 23,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.ws.rs.container",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api.extension",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.params.provider",
+              "type": "schema",
+              "value": 7,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.inject",
+              "type": "schema",
+              "value": 10,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.validation",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.params",
+              "type": "schema",
+              "value": 7,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.ws.rs",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.ws.rs.ext",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.annotation",
+              "type": "schema",
+              "value": 10,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.validation.constraints",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.fasterxml.jackson.annotation",
+              "type": "schema",
+              "value": 11,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.http.cli",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 4,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.http.health",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.http.resources",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "javax.ws.rs",
+                  "type": "schema",
+                  "value": 2,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.params",
+                  "type": "schema",
+                  "value": 20,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 2,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 141,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api.extension",
+                  "type": "schema",
+                  "value": 20,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.params.provider",
+                  "type": "schema",
+                  "value": 20,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.http.util",
+              "type": "package",
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.isochrone.algorithm",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 20,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 14,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.jackson",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 16,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 12,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.fasterxml.jackson.dataformat.xml.annotation",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.fasterxml.jackson.annotation",
+              "type": "schema",
+              "value": 12,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.json",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.matching",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 8,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.navigation",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 26,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 22,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.ws.rs.core",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.inject",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.reader",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 14,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.reader.dem",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 61,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 79,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.reader.osm",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 27,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 58,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "com.graphhopper.reader.osm.conditional",
+                  "type": "package",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "java.lang",
+                      "type": "schema",
+                      "value": 6,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "org.junit.jupiter.api",
+                      "type": "schema",
+                      "value": 31,
+                      "properties": {},
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "com.graphhopper.reader.osm.pbf",
+                  "type": "package",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "java.lang",
+                      "type": "schema",
+                      "value": 7,
+                      "properties": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.resources",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "javax.ws.rs",
+              "type": "schema",
+              "value": 5,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.hibernate.validator.constraints",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 153,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.ws.rs.core",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.validation.constraints",
+              "type": "schema",
+              "value": 7,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "javax.inject",
+              "type": "schema",
+              "value": 14,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.fasterxml.jackson.annotation",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.routing",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "org.junit.jupiter.params",
+              "type": "schema",
+              "value": 77,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 191,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.util",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 162,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.params.provider",
+              "type": "schema",
+              "value": 77,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.routing.ch",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "org.junit.jupiter.params",
+                  "type": "schema",
+                  "value": 9,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 126,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 146,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.params.provider",
+                  "type": "schema",
+                  "value": 9,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.routing.ev",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 34,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 28,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.routing.lm",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "org.junit.jupiter.params",
+                  "type": "schema",
+                  "value": 2,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 37,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 22,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.params.provider",
+                  "type": "schema",
+                  "value": 2,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.routing.querygraph",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 143,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 24,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.routing.subnetwork",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 23,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 22,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.routing.util",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 114,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 123,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "com.graphhopper.routing.util.parsers",
+                  "type": "package",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "java.lang",
+                      "type": "schema",
+                      "value": 63,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "org.junit.jupiter.api",
+                      "type": "schema",
+                      "value": 48,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "com.graphhopper.routing.util.parsers.helpers",
+                      "type": "package",
+                      "properties": {},
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "com.graphhopper.routing.util.spatialrules",
+                  "type": "package",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "java.lang",
+                      "type": "schema",
+                      "value": 29,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "org.junit.jupiter.api",
+                      "type": "schema",
+                      "value": 11,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "com.graphhopper.routing.util.spatialrules.countries",
+                      "type": "package",
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "java.lang",
+                          "type": "schema",
+                          "value": 6,
+                          "properties": {},
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "com.graphhopper.routing.util.tour",
+                  "type": "package",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "java.lang",
+                      "type": "schema",
+                      "value": 6,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "org.junit.jupiter.api",
+                      "type": "schema",
+                      "value": 1,
+                      "properties": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.routing.weighting",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 55,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 14,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "com.graphhopper.routing.weighting.custom",
+                  "type": "package",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "java.lang",
+                      "type": "schema",
+                      "value": 11,
+                      "properties": {},
+                      "children": []
+                    },
+                    {
+                      "name": "org.junit.jupiter.api",
+                      "type": "schema",
+                      "value": 29,
+                      "properties": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.search",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 7,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 12,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.storage",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "org.junit.jupiter.params",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 380,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 113,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.storage.index",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "org.junit.jupiter.params",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 17,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 16,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.params.provider",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.tools",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 8,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.ui",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 31,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "com.graphhopper.util",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 232,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.jupiter.api",
+              "type": "schema",
+              "value": 138,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "com.graphhopper.util.details",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 29,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.util.exceptions",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 3,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "com.graphhopper.util.shapes",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "java.lang",
+                  "type": "schema",
+                  "value": 24,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "org.junit.jupiter.api",
+                  "type": "schema",
+                  "value": 14,
+                  "properties": {},
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
