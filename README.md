@@ -1,5 +1,5 @@
 [![AVisualizer-Actions-Build](https://github.com/phillima/avisualizer/workflows/AVisualizer/badge.svg)](https://github.com/phillima/AVisualizer/actions)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](https://avisualizer.herokuapp.com/)
+[![Heroku](https://img.shields.io/badge/heroku-deployed-blueviolet.svg?logo=heroku&)](https://avisualizer.herokuapp.com/)
 
 <h1 align = "center">Annotation Visualizer</h1>
 <h2 align = "center"> A Tool to Visualize Code Annotations Metrics Distribution </h2>
