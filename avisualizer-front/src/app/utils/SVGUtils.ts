@@ -19,7 +19,7 @@ export class SVGUtils{
         .attr('highlightedNode', '')
         .attr('preserveAspectRatio', 'xMidYMid meet')
         .style('display', 'block')
-        .style('margin', '0 -14px')
+        .style('margin', '0 0')
         .style('background', 'lightblue')
         .style('cursor', 'pointer');
 
