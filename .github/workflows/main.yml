@@ -1,12 +1,7 @@
 name: AVisualizer
 
 on: 
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch: {}
 env: 
   HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
 jobs:
