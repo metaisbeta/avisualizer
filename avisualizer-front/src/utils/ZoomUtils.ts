@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as d3 from 'd3'
 
 export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
@@ -24,8 +25,8 @@ export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
     })
 }
 
-export function zoomTo(v: any, svg: any, zoomProp: any, node: any) {
-  const k = 500 / v[2]
+export function zoomTo(v: number[], width: number, zoomProp: any, node: any) {
+  const k = width / v[2]
   zoomProp.view = v
 
   node.attr(

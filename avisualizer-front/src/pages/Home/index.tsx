@@ -11,16 +11,14 @@ import {
 } from './styles'
 
 export const Home = () => {
-  const [title, setTitle] = useState<string>('')
   const [typeAnnotation, setTypeAnnotation] = useState<string>('System View')
-  const [a, setA] = useState<string>('')
   const [annotationMetric, setAnnotationMetric] = useState<string>('')
   const [packageName, setPackageName] = useState<string>('')
   const [data, setData] = useState(jsonData)
 
   return (
     <Container>
-      <h1>{title}</h1>
+      <h1>Project Under Analysis: {data.name}</h1>
 
       <Content>
         <ZoomableCircleContainer>
@@ -33,9 +31,8 @@ export const Home = () => {
 
           <ZoomableCircle
             data={data}
-            setTitle={setTitle}
-            setTypeAnnotation={setA}
-            setAnnotationMetric={setAnnotationMetric}
+            typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
+            annotationMetric={{ annotationMetric, setAnnotationMetric }}
             setPackageName={setPackageName}
           />
 

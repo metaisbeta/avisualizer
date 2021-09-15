@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-import { highlightNode } from './CircleUtils'
+import { highlightNode } from './Circle'
 
 export function getPackagesName(svg: any): string[] {
   const names: string[] = []

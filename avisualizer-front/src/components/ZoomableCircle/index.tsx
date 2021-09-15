@@ -5,19 +5,17 @@ import * as d3 from 'd3'
 
 import { AnnotationSchemas } from '../../utils/AnnotationSchemas'
 import {
-  addCircleDashArray,
+  addCircleDash,
   addCircleStroke,
   colorCircles,
   highlightNode
-} from '../../utils/CircleUtils'
+} from '../../utils/Circle'
 import { updateSelectBoxText } from '../../utils/NavUtils'
+import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
   createNode,
-  createPopUp,
   createSvg,
-  destroyPopUp,
   hide,
-  movePopUp,
   resetView,
   setFocus,
   showView,
@@ -28,12 +26,11 @@ import { ZoomableCircleProps } from './types'
 
 export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
   data,
-  setTitle,
-  setTypeAnnotation,
-  setAnnotationMetric,
+  typeAnnotation: { typeAnnotation, setTypeAnnotation },
+  annotationMetric: { annotationMetric, setAnnotationMetric },
   setPackageName
 }) => {
-  const readPackageView = (data: any) => {
+  const readVisualizer = (data: any) => {
     const width = 500
     const height = 500
 
@@ -71,9 +68,9 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
     )
 
     const node = createNode(svg, root)
-    zoomTo([root.x, root.y, root.r * 2], svg, zoomProp, node)
 
-    setTitle(`Project Under Analysis: ${root.data.name}`)
+    zoomTo([root.x, root.y, root.r * 2], width, zoomProp, node)
+
     setTypeAnnotation('System View')
     setAnnotationMetric('Number of Annotations')
     setPackageName(root.children?.[0].data.name)
@@ -81,8 +78,7 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
     d3.select('.svg-container-sv')
       .selectAll('circle')
       .attr('stroke', (d) => addCircleStroke(d))
-      .attr('stroke-dasharray', (d) => addCircleDashArray(d))
-
+      .attr('stroke-dasharray', (d) => addCircleDash(d))
       .attr('fill', (d) => colorCircles(d, schemasColorMap))
 
     svg
@@ -100,7 +96,8 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
               return d3.select(this).property('selected', true)
             }
           })
-        if (d.data.type == 'schema') {
+
+        if (d.data.type === 'schema') {
           updateSelectBoxText('SelectViewBox', 'packageView')
           hide('.svg-container-pv', d.parent.data.name)
           highlightNode('.svg-container-sv', d.parent.data.name)
@@ -129,19 +126,23 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
         }
       })
       .on('mouseover', (event, d: any) => {
-        createPopUp(d, svg, event)
+        createPopUp(d, event, annotationMetric)
+
         const name = d.data.name
+
         d3.select('.svg-container-sv')
           .selectAll('circle')
           .each(function () {
-            if (d3.select(this).attr('name') == name) {
+            // Highlight table line
+            if (d3.select(this).attr('name') === name) {
               const color = d3.select(this).style('fill')
+
               d3.select('tbody')
                 .selectAll('td')
                 .each(function () {
                   if (
-                    d3.select(this).attr('class') == 'td-schema' &&
-                    d3.select(this).attr('name') == name
+                    d3.select(this).attr('class') === 'td-schema' &&
+                    d3.select(this).attr('name') === name
                   ) {
                     d3.select(this).style('color', color)
                   }
@@ -150,32 +151,38 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
           })
       })
       .on('mouseout', (_, d: any) => {
-        destroyPopUp(svg)
+        destroyPopUp()
+
         const name = d.data.name
+
         d3.select('.svg-container-sv')
           .selectAll('circle')
           .each(function () {
-            if (d3.select(this).attr('name') == name) {
+            if (d3.select(this).attr('name') === name) {
               d3.select('tbody')
                 .selectAll('td')
                 .each(function () {
                   if (
-                    d3.select(this).attr('class') == 'td-schema' &&
-                    d3.select(this).attr('name') == name
+                    d3.select(this).attr('class') === 'td-schema' &&
+                    d3.select(this).attr('name') === name
                   ) {
-                    d3.select(this).style('color', 'black')
+                    d3.select(this).style('color', '#393939')
                   }
                 })
             }
           })
       })
-      .on('mousemove', (event, d) => movePopUp(d, svg, event))
+      .on('mousemove', (event, d: any) => movePopUp(d, event, annotationMetric))
       .on('contextmenu', (event) => {
         event.preventDefault()
       })
   }
 
-  readPackageView(data)
+  readVisualizer(data)
 
-  return <div className="svg-container-sv"></div>
+  return (
+    <div className="tooltip-container">
+      <div className="svg-container-sv"></div>
+    </div>
+  )
 }

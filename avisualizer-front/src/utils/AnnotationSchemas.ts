@@ -159,7 +159,7 @@ export function AnnotationSchemas(root: any, name: string) {
           d3.color(colors(r))?.formatHex()
         )
       }
-    } else if (family == 'javax') {
+    } else if (family === 'javax') {
       const cores = d3
         .scaleSequential(d3.interpolateRgbBasis(['red', '#FEBAB8']))
         .domain([0, groupsMap.get(family).length])

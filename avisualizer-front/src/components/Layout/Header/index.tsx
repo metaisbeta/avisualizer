@@ -1,11 +1,15 @@
 import React from 'react'
 
-import { Container, Content } from './styles'
+import logo from '../../../assets/logo.svg'
+import { Container, Content, LogoContainer } from './styles'
 
 export const Header = () => {
   return (
     <Container>
-      <h1>@Visualizer</h1>
+      <LogoContainer>
+        <img src={logo} />
+        <h1>Visualizer</h1>
+      </LogoContainer>
 
       <Content>
         <button>Select your project</button>
