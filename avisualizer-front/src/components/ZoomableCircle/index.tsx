@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import * as d3 from 'd3'
 
@@ -20,7 +20,7 @@ import {
   setFocus,
   showView,
   viewTransition
-} from '../../utils/SVGUtils'
+} from '../../utils/SVG'
 import { zoom, zoomTo } from '../../utils/ZoomUtils'
 import { ZoomableCircleProps } from './types'
 
@@ -178,7 +178,9 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
       })
   }
 
-  readVisualizer(data)
+  useEffect(() => {
+    readVisualizer(data)
+  }, [])
 
   return (
     <div className="tooltip-container">

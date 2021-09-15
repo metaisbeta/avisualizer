@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { RadioButton } from '../../components/RadioButton'
 import { ZoomableCircle } from '../../components/ZoomableCircle'
-import jsonData from '../../data/SpaceWeatherTSI.json'
+import jsonSV from '../../data/SpaceWeatherTSI.json'
 import {
   Container,
   Content,
@@ -14,11 +14,19 @@ export const Home = () => {
   const [typeAnnotation, setTypeAnnotation] = useState<string>('System View')
   const [annotationMetric, setAnnotationMetric] = useState<string>('')
   const [packageName, setPackageName] = useState<string>('')
-  const [data, setData] = useState(jsonData)
+  const [data, setData] = useState<any>()
+
+  useEffect(() => {
+    if (typeAnnotation === 'System View') setData(jsonSV)
+    else if (typeAnnotation === 'Package View') setData(undefined)
+    else setData(undefined)
+  }, [typeAnnotation])
+
+  console.log(data)
 
   return (
     <Container>
-      <h1>Project Under Analysis: {data.name}</h1>
+      <h1>Project Under Analysis: {data?.name}</h1>
 
       <Content>
         <ZoomableCircleContainer>
@@ -29,17 +37,20 @@ export const Home = () => {
             <b>Package:</b> {packageName}
           </h3>
 
-          <ZoomableCircle
-            data={data}
-            typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
-            annotationMetric={{ annotationMetric, setAnnotationMetric }}
-            setPackageName={setPackageName}
-          />
+          {data && (
+            <ZoomableCircle
+              data={data}
+              typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
+              annotationMetric={{ annotationMetric, setAnnotationMetric }}
+              setPackageName={setPackageName}
+            />
+          )}
 
           <TypeAnnotationContainer
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setData(undefined)
               setTypeAnnotation(e.target.value)
-            }
+            }}
           >
             <RadioButton
               label="System View"
