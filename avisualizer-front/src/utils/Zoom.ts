@@ -1,7 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as d3 from 'd3'
 
-export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
+export function zoom(
+  event: { altKey: boolean },
+  d: any,
+  zoomProp: any,
+  svg: any,
+  node: any
+) {
   if (
     d.data.type == 'annotation' ||
     d.data.type == 'schema' ||
@@ -9,6 +15,7 @@ export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
     d.data.type == 'field'
   )
     return
+
   zoomProp.focus = d
 
   svg

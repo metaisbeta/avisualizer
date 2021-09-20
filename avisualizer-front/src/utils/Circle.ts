@@ -1,7 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as d3 from 'd3'
 
-export function addCircleStroke(node: any): string {
+type NodeProps = {
+  data: {
+    name: string
+    type: string
+    properties: {
+      schema: string
+    }
+  }
+}
+
+export function addCircleStroke(node: NodeProps): string {
   if (node.data.type === 'package') return '#393939'
   else return '#005AA8'
 }
@@ -12,7 +21,7 @@ export function addCircleDash(node: any): string {
 }
 
 export function colorCircles(
-  node: any,
+  node: NodeProps,
   schemasMap: Map<string, string>
 ): string {
   if (node.data.type === 'package') return '#E9E9E9'
@@ -25,48 +34,52 @@ export function colorCircles(
   else return '#FAFAFA'
 }
 
-export function highlightNode(container: any, name: string) {
+export function highlightNode(container: string, name: string) {
   const transitionDur = 150
 
   d3.select(container)
     .selectAll('circle')
     .each(function () {
-      //var splitter = String(d3.select(this).attr("name").split(".");
+      const element = d3.select(this)
+
       if (
-        String(d3.select(this).attr('name')) ===
-        String(d3.select(container).attr('highlightedNode'))
+        element.attr('name') === d3.select(container).attr('highlightedNode')
       ) {
-        if (d3.select(this).attr('class') === 'package')
-          d3.select(this).style('stroke', 'black')
-        else d3.select(this).style('stroke', 'blue')
-        d3.select(this).style('stroke-width', '1px')
-        d3.select(this).style('fill', '')
+        if (element.attr('class') === 'package')
+          element.style('stroke', 'black')
+        else element.style('stroke', 'blue')
+
+        element.style('stroke-width', '1px')
+        element.style('fill', '')
       }
     })
+
   d3.select(container)
     .selectAll('circle')
     .each(function () {
-      if (String(d3.select(this).attr('name')) === name) {
-        d3.select(container).attr(
-          'highlightedNode',
-          String(d3.select(this).attr('name'))
-        )
+      const element = d3.select(this)
 
-        d3.select(this).style('stroke', 'blue')
-        d3.select(this).style('stroke-width', '2px')
-        const color = d3.select(this).style('fill')
-        d3.select(this)
+      if (element.attr('name') === name) {
+        d3.select(container).attr('highlightedNode', element.attr('name'))
+
+        element.style('stroke', 'blue')
+        element.style('stroke-width', '2px')
+
+        const color = element.style('fill')
+
+        element
           .transition()
           .duration(transitionDur)
           .style('fill', 'gray')
           .transition()
           .duration(transitionDur)
-          .style('fill', String(d3.color(color)?.formatHex()))
+          .style('fill', d3.color(color)?.formatHex() ?? '')
 
-        if (d3.select(this).attr('class') === 'package')
-          d3.select(this).style('stroke', 'black')
-        else d3.select(this).style('stroke', 'blue')
-        d3.select(this).style('stroke-width', '1px')
+        if (element.attr('class') === 'package')
+          element.style('stroke', 'black')
+        else element.style('stroke', 'blue')
+
+        element.style('stroke-width', '1px')
       }
     })
 }

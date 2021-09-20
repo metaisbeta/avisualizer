@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 import { RadioButton } from '../../components/RadioButton'
+import { Table } from '../../components/Table'
 import { ZoomableCircle } from '../../components/ZoomableCircle'
-import jsonSV from '../../data/SpaceWeatherTSI.json'
+import packageData from '../../data/SpaceWeatherTSI-PV.json'
+import systemData from '../../data/SpaceWeatherTSI-SV.json'
 import {
   Container,
   Content,
+  InfoContainer,
   TypeAnnotationContainer,
   ZoomableCircleContainer
 } from './styles'
@@ -17,29 +20,30 @@ export const Home = () => {
   const [data, setData] = useState<any>()
 
   useEffect(() => {
-    if (typeAnnotation === 'System View') setData(jsonSV)
+    if (typeAnnotation === 'System View') setData(systemData)
     else if (typeAnnotation === 'Package View') setData(undefined)
     else setData(undefined)
   }, [typeAnnotation])
-
-  console.log(data)
 
   return (
     <Container>
       <h1>Project Under Analysis: {data?.name}</h1>
 
+      <InfoContainer>
+        <h3>
+          <b>Annotation Metric:</b> {annotationMetric}
+        </h3>
+        <h3>
+          <b>Package:</b> {packageName}
+        </h3>
+      </InfoContainer>
+
       <Content>
         <ZoomableCircleContainer>
-          <h3>
-            <b>Annotation Metric:</b> {annotationMetric}
-          </h3>
-          <h3>
-            <b>Package:</b> {packageName}
-          </h3>
-
           {data && (
             <ZoomableCircle
-              data={data}
+              systemData={systemData}
+              packageData={packageData}
               typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
               annotationMetric={{ annotationMetric, setAnnotationMetric }}
               setPackageName={setPackageName}
@@ -61,6 +65,8 @@ export const Home = () => {
             <RadioButton label="Class View" name="typeAnnotation" />
           </TypeAnnotationContainer>
         </ZoomableCircleContainer>
+
+        <Table />
       </Content>
     </Container>
   )

@@ -2,44 +2,69 @@ import * as d3 from 'd3'
 
 import { highlightNode } from './Circle'
 
+type DefaultProps = {
+  type: string
+  name: string
+  value: number
+  children: string[]
+  properties: {
+    schema: string
+  }
+}
+
+type DataProps = {
+  data: DefaultProps
+  parent: {
+    data: DefaultProps
+    parent: {
+      data: DefaultProps
+      parent: { data: DefaultProps }
+    }
+  }
+}
+
 export function getPackagesName(svg: any): string[] {
   const names: string[] = []
-  svg.selectAll('circle').each((d: any) => {
-    if (d.data.type == 'package' && d.data.children.length > 0) {
+
+  svg.selectAll('circle').each((d: DataProps) => {
+    if (d.data.type === 'package' && d.data.children.length > 0) {
       names.push(d.data.name)
     }
   })
+
   return names
 }
+
 export function getClassName(svg: any, pacote: string, div: string): string[] {
   const names: string[] = []
-  svg.selectAll('circle').each((d: any) => {
-    if (div == 'classes') {
-      if (d.data.type == 'class' && d.data.children.length > 0) {
-        //var split =d.data.name.split(".");
+
+  svg.selectAll('circle').each((d: DataProps) => {
+    if (div === 'classes') {
+      if (d.data.type === 'class' && d.data.children.length > 0) {
         if (d.parent.data.name.includes(pacote)) names.push(d.data.name)
       }
-    } else if (div == 'interfaces') {
-      if (d.data.type == 'interface' && d.data.children.length > 0) {
-        //var split =d.data.name.split(".");
+    } else if (div === 'interfaces') {
+      if (d.data.type === 'interface' && d.data.children.length > 0) {
         if (d.parent.data.name.includes(pacote)) names.push(d.data.name)
       }
     }
   })
+
   return names
 }
+
 export function getElementName(
   svg: any,
-  classe: string,
+  name: string,
   element: string
 ): string[] {
   const names: string[] = []
-  svg.selectAll('circle').each((d: any) => {
-    if (d.data.type == element) {
-      //var split =d.data.name.split(".");
-      if (d.parent.data.name == classe) names.push(d.data.name)
-    }
+
+  svg.selectAll('circle').each((d: DataProps) => {
+    if (d.data.type === element)
+      if (d.parent.data.name === name) names.push(d.data.name)
   })
+
   return names
 }
 
@@ -47,10 +72,8 @@ export function createSelectBox(
   divName: string,
   selectBoxId: string,
   defaultBoxText: string,
-  defaultBoxValue: string,
   label: string,
   top: number,
-  width: number,
   svg: string
 ) {
   d3.select('body')
@@ -70,93 +93,54 @@ export function createSelectBox(
     .attr('label', label)
     .style('width', '20vw')
     .style('left', '5vw')
+
   d3.select('#' + divName)
     .select('select')
     .append('option')
     .text(defaultBoxText)
     .attr('value', defaultBoxText)
+
   if (svg == '.svg-container-sv') {
     const options = getPackagesName(d3.select(svg))
-    //console.log(options);
-    insertOptions('.svg-container-sv', divName, selectBoxId, options)
+    insertOptions('.svg-container-sv', divName, options)
   }
+
   d3.select('#' + selectBoxId).on('change', () => {
-    if (
-      d3
-        .select('#' + divName)
-        .select('select option:checked')
-        .attr('value') == 'Select Package'
-    ) {
+    const element = d3.select('#' + divName).select('select option:checked')
+
+    if (element.attr('value') === 'Select Package')
       highlightNode('.svg-container-sv', 'select package')
-    } else if (
-      d3
-        .select('#' + divName)
-        .select('select option:checked')
-        .attr('value') == 'Select Class'
-    ) {
+    else if (element.attr('value') === 'Select Class')
       highlightNode('.svg-container-pv', 'select class')
-    } else if (
-      d3
-        .select('#' + divName)
-        .select('select option:checked')
-        .attr('value') == 'Select Method'
-    ) {
+    else if (element.attr('value') === 'Select Method')
       highlightNode('.svg-container-cv', 'select method')
-    } else if (
-      d3
-        .select('#' + divName)
-        .select('select option:checked')
-        .attr('value') == 'Select Field'
-    ) {
+    else if (element.attr('value') === 'Select Field')
       highlightNode('.svg-container-cv', 'select field')
-    } else if (
-      d3
-        .select('#' + divName)
-        .select('select option:checked')
-        .attr('value') == 'Select Interface'
-    ) {
+    else if (element.attr('value') === 'Select Interface')
       highlightNode('.svg-container-pv', 'select interface')
-    }
+
     d3.select(svg)
       .selectAll('circle')
       .each(function () {
-        if (
-          d3.select(this).attr('name') ==
-          d3
-            .select('#' + divName)
-            .select('select option:checked')
-            .attr('value')
-        ) {
+        if (d3.select(this).attr('name') === element.attr('value'))
           d3.select(this).dispatch('click')
-        }
       })
   })
 }
 
-export function insertOptions(
-  svg: string,
-  div: string,
-  boxId: string,
-  options: string[]
-) {
+export function insertOptions(name: string, div: string, options: string[]) {
   options.sort()
-  if (svg == '.svg-container-sv' || svg == '.svg-container-cv') {
-    for (let i = 0; i < options.length; i++) {
-      d3.select('#' + div)
-        .select('select')
-        .append('option')
-        .text(options[i])
-        .attr('value', options[i])
-    }
-  } else {
-    for (let i = 0; i < options.length; i++) {
-      const text = options[i].split('.')
-      d3.select('#' + div)
-        .select('select')
-        .append('option')
-        .text(text[text.length - 1])
-        .attr('value', options[i])
-    }
+
+  const isSVorCV = name === '.svg-container-sv' || name === '.svg-container-cv'
+
+  for (const option of options) {
+    const text = option.split('.')
+
+    d3.select('#' + div)
+      .select('select')
+      .append('option')
+      .text(isSVorCV ? option : text[text.length - 1])
+      .attr('value', option)
   }
 }
 
@@ -172,18 +156,23 @@ export function refreshBox(
   d3.select('#' + boxName)
     .selectAll('option')
     .remove()
+
   d3.select('#' + divName)
     .select('select')
     .append('option')
     .text(defaultBoxText)
     .attr('value', defaultValue)
+
   let options: string[] = []
-  if (divName == 'fields' || divName == 'methods')
+
+  if (divName === 'fields' || divName === 'methods')
     options = getElementName(d3.select(container), element, component)
-  else if (divName == 'classes' || divName === 'interfaces')
+  else if (divName === 'classes' || divName === 'interfaces')
     options = getClassName(d3.select(container), element, divName)
-  insertOptions(container, divName, boxName, options)
+
+  insertOptions(container, divName, options)
 }
+
 export function resetBox(
   boxName: string,
   divName: string,
@@ -193,6 +182,7 @@ export function resetBox(
   d3.select('#' + boxName)
     .selectAll('option')
     .remove()
+
   d3.select('#' + divName)
     .select('select')
     .append('option')
@@ -204,10 +194,7 @@ export function updateSelectBoxText(boxName: string, option: string) {
   d3.select('#' + boxName)
     .selectAll('option')
     .each(function () {
-      //console.log(d3.select(this).attr("value"))
-      if (d3.select(this).attr('value') == option) {
-        //console.log(d3.select(this).attr("value"))
+      if (d3.select(this).attr('value') == option)
         return d3.select(this).property('selected', true)
-      }
     })
 }

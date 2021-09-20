@@ -53,7 +53,7 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
     if (metrics[metrics.length - 1] === '(ANL)') {
       metric = 'ANL'
       data = d.data.properties.anl
-    } else if (metrics[metrics.length - 1] == '(LOCAD)') {
+    } else if (metrics[metrics.length - 1] === '(LOCAD)') {
       metric = 'LOCAD'
 
       if (Object.keys(d.data.properties).length === pvPropertiesSize) {
@@ -115,19 +115,32 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
       .style('top', event.pageY + 'px')
       .style('padding', '8px')
       .style('font-size', '14px')
+      .style('text-align', 'start')
       .style('border-radius', '4px')
       .style('position', 'absolute')
       .style('background-color', '#BDD9F2')
+      .style('z-index', 1000)
       .html(label)
       .transition()
       .duration(popUpTransition)
+
+  const element: any = document.getElementById(`schema-${d.data.name}`)
+
+  if (element) element.style.background = 'rgba(4, 104, 191, 0.1)'
 }
 
 export function destroyPopUp() {
   d3.selectAll('.tooltip').remove()
+
+  const elements: any = document.getElementsByClassName('schema')
+
+  for (const element of elements) {
+    element.style.background = '#FAFAFA'
+  }
 }
 
 export function movePopUp(d: dProps, event: EventProps, annotMetric: string) {
   destroyPopUp()
+
   createPopUp(d, event, annotMetric)
 }

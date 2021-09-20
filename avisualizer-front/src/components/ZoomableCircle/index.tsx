@@ -3,14 +3,15 @@ import React, { useEffect } from 'react'
 
 import * as d3 from 'd3'
 
-import { AnnotationSchemas } from '../../utils/AnnotationSchemas'
+import { annotMetricUpdate } from '../../utils/AnnotationMetric'
+import { annotationSchemas } from '../../utils/AnnotationSchemas'
 import {
   addCircleDash,
   addCircleStroke,
   colorCircles,
   highlightNode
 } from '../../utils/Circle'
-import { updateSelectBoxText } from '../../utils/NavUtils'
+import { updateSelectBoxText } from '../../utils/Nav'
 import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
   createNode,
@@ -21,11 +22,12 @@ import {
   showView,
   viewTransition
 } from '../../utils/SVG'
-import { zoom, zoomTo } from '../../utils/ZoomUtils'
+import { zoom, zoomTo } from '../../utils/Zoom'
 import { ZoomableCircleProps } from './types'
 
 export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
-  data,
+  systemData,
+  packageData,
   typeAnnotation: { typeAnnotation, setTypeAnnotation },
   annotationMetric: { annotationMetric, setAnnotationMetric },
   setPackageName
@@ -53,7 +55,10 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
 
     zoomProp.focus = root
 
-    const { schemasColorMap } = AnnotationSchemas(root, 'locad')
+    const { schemasColorMap } = annotationSchemas(
+      d3.hierarchy(packageData),
+      'package'
+    )
 
     const svg = createSvg('.svg-container-sv', width, height, 'sistema')
 
@@ -71,15 +76,14 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
 
     zoomTo([root.x, root.y, root.r * 2], width, zoomProp, node)
 
-    setTypeAnnotation('System View')
-    setAnnotationMetric('Number of Annotations')
-    setPackageName(root.children?.[0].data.name)
+    annotMetricUpdate(setAnnotationMetric, 'System View')
+    setPackageName(root.children[0].data.name)
 
     d3.select('.svg-container-sv')
       .selectAll('circle')
-      .attr('stroke', (d) => addCircleStroke(d))
-      .attr('stroke-dasharray', (d) => addCircleDash(d))
-      .attr('fill', (d) => colorCircles(d, schemasColorMap))
+      .attr('stroke', (d: any) => addCircleStroke(d))
+      .attr('stroke-dasharray', (d: any) => addCircleDash(d))
+      .attr('fill', (d: any) => colorCircles(d, schemasColorMap))
 
     svg
       .selectAll('circle')
@@ -101,28 +105,31 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
           updateSelectBoxText('SelectViewBox', 'packageView')
           hide('.svg-container-pv', d.parent.data.name)
           highlightNode('.svg-container-sv', d.parent.data.name)
+
           zoomProp.focus !== d &&
             (zoom(event, d, zoomProp, svg, node),
             event.stopPropagation(),
             setFocus(d.parent.data.name, '.svg-container-sv'))
+
           showView('system-view', 'package-view')
           viewTransition(
-            String(d3.select('.svg-container-sv').attr('lastSelected')),
+            d3.select('.svg-container-sv').attr('lastSelected'),
             '.svg-container-pv'
           )
-          setTypeAnnotation('Package View')
-          setAnnotationMetric('LOC in Annotation Declaration (LOCAD)')
-          setPackageName(root.parent.data.name)
           resetView('.svg-container-sv')
+
+          annotMetricUpdate(setAnnotationMetric, 'Package View')
+          setPackageName(d.parent.data.name)
         } else {
           highlightNode('.svg-container-sv', d.data.name)
+
           zoomProp.focus !== d &&
             (zoom(event, d, zoomProp, svg, node),
             event.stopPropagation(),
             setFocus(d.data.name, '.svg-container-sv'))
-          setTypeAnnotation('System View')
-          setAnnotationMetric('Number of Annotations')
-          setPackageName(root.data.name)
+
+          annotMetricUpdate(setAnnotationMetric, 'System View')
+          setPackageName(d.data.name)
         }
       })
       .on('mouseover', (event, d: any) => {
@@ -179,7 +186,7 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
   }
 
   useEffect(() => {
-    readVisualizer(data)
+    readVisualizer(systemData)
   }, [])
 
   return (
