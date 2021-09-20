@@ -63,18 +63,6 @@
             </goals>
           </execution>
 
-          <!-- code validation -->
-          <!-- <execution>
-            <id>npm run lint</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <phase>test</phase>
-            <configuration>
-              <arguments>run lint</arguments>
-            </configuration>
-          </execution> -->
-
           <!-- build app -->
           <execution>
             <id>npm run build</id>
