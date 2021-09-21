@@ -39,11 +39,14 @@ export const Table = () => {
       setTotalSchema(totalCount)
     }
 
-    const getSubSchema = (allSchemas: any, annotList: any) => {
+    const getSubSchema = (
+      allSchemas: { schema: string; color: string }[],
+      annotList: Map<string, string[]>
+    ) => {
       const allSubSchemas: Record<string, SubSchemaProps> = {}
 
       for (const schema of allSchemas) {
-        const annotations = annotList.get(schema.schema)
+        const annotations = annotList.get(schema.schema) ?? []
 
         allSubSchemas[schema.schema] = {
           annotations: annotations,

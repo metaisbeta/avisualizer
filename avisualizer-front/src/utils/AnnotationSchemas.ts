@@ -53,8 +53,8 @@ export function annotationSchemas(root: any, name: string) {
         arr?.push(d.data.name)
         annotationsCount.set(d.data.name, d.data.value)
       } else {
-        const value = annotationsCount.get(d.data.name) ?? 0 + 1
-        annotationsCount.set(d.data.name, value)
+        const count = annotationsCount.get(d.data.name) ?? 0
+        annotationsCount.set(d.data.name, count + 1)
       }
 
       annotationsList.set(d.data.properties.schema, arr ?? [])

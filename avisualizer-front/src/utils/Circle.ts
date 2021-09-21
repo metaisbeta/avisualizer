@@ -46,8 +46,8 @@ export function highlightNode(container: string, name: string) {
         element.attr('name') === d3.select(container).attr('highlightedNode')
       ) {
         if (element.attr('class') === 'package')
-          element.style('stroke', 'black')
-        else element.style('stroke', 'blue')
+          element.style('stroke', '#393939')
+        else element.style('stroke', '#005AA8')
 
         element.style('stroke-width', '1px')
         element.style('fill', '')
@@ -62,7 +62,7 @@ export function highlightNode(container: string, name: string) {
       if (element.attr('name') === name) {
         d3.select(container).attr('highlightedNode', element.attr('name'))
 
-        element.style('stroke', 'blue')
+        element.style('stroke', '#005AA8')
         element.style('stroke-width', '2px')
 
         const color = element.style('fill')
@@ -70,16 +70,16 @@ export function highlightNode(container: string, name: string) {
         element
           .transition()
           .duration(transitionDur)
-          .style('fill', 'gray')
+          .style('fill', '#ABABAB')
           .transition()
           .duration(transitionDur)
           .style('fill', d3.color(color)?.formatHex() ?? '')
 
         if (element.attr('class') === 'package')
-          element.style('stroke', 'black')
-        else element.style('stroke', 'blue')
+          element.style('stroke', '#393939')
+        else element.style('stroke', '#005AA8')
 
-        element.style('stroke-width', '1px')
+        element.style('stroke-width', '2px')
       }
     })
 }

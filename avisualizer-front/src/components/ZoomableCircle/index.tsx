@@ -12,6 +12,7 @@ import {
   highlightNode
 } from '../../utils/Circle'
 import { updateSelectBoxText } from '../../utils/Nav'
+import { packageVisualizer } from '../../utils/PackageView'
 import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
   createNode,
@@ -106,6 +107,15 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
           hide('.svg-container-pv', d.parent.data.name)
           highlightNode('.svg-container-sv', d.parent.data.name)
 
+          packageVisualizer(
+            packageData,
+            d.parent.data.name,
+            schemasColorMap,
+            annotationMetric,
+            setAnnotationMetric,
+            setPackageName
+          )
+
           zoomProp.focus !== d &&
             (zoom(event, d, zoomProp, svg, node),
             event.stopPropagation(),
@@ -192,6 +202,7 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
   return (
     <div className="tooltip-container">
       <div className="svg-container-sv"></div>
+      <div className="svg-container-pv"></div>
     </div>
   )
 }

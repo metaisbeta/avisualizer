@@ -28,7 +28,7 @@ export function zoom(
         zoomProp.focus.r * 2
       ])
 
-      return (t: any) => zoomTo(i(t), svg, zoomProp, node)
+      return (t: any) => zoomTo(i(t), svg.attr('width'), zoomProp, node)
     })
 }
 
@@ -38,7 +38,8 @@ export function zoomTo(v: number[], width: number, zoomProp: any, node: any) {
 
   node.attr(
     'transform',
-    (d: any) => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`
+    (d: { x: number; y: number }) =>
+      `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`
   )
-  node.attr('r', (d: any) => d.r * k)
+  node.attr('r', (d: { r: number }) => d.r * k)
 }
