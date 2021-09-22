@@ -16,8 +16,7 @@ export const Content = styled.div`
   }
 `
 
-export const ZoomableCircleContainer = styled.div`
-  width: 50%;
+export const InfoContainer = styled.div`
   text-align: left;
   margin-top: 24px;
 
@@ -33,6 +32,10 @@ export const ZoomableCircleContainer = styled.div`
   h3:last-of-type {
     margin-bottom: 16px;
   }
+`
+
+export const ZoomableCircleContainer = styled.div`
+  width: 50%;
 `
 
 export const TypeAnnotationContainer = styled.div`

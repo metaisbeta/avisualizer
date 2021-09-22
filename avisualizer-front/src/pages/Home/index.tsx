@@ -1,48 +1,60 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { RadioButton } from '../../components/RadioButton'
+import { Table } from '../../components/Table'
 import { ZoomableCircle } from '../../components/ZoomableCircle'
-import jsonData from '../../data/SpaceWeatherTSI.json'
+import packageData from '../../data/SpaceWeatherTSI-PV.json'
+import systemData from '../../data/SpaceWeatherTSI-SV.json'
 import {
   Container,
   Content,
+  InfoContainer,
   TypeAnnotationContainer,
   ZoomableCircleContainer
 } from './styles'
 
 export const Home = () => {
-  const [title, setTitle] = useState<string>('')
   const [typeAnnotation, setTypeAnnotation] = useState<string>('System View')
-  const [a, setA] = useState<string>('')
   const [annotationMetric, setAnnotationMetric] = useState<string>('')
   const [packageName, setPackageName] = useState<string>('')
-  const [data, setData] = useState(jsonData)
+  const [data, setData] = useState<any>()
+
+  useEffect(() => {
+    if (typeAnnotation === 'System View') setData(systemData)
+    else if (typeAnnotation === 'Package View') setData(undefined)
+    else setData(undefined)
+  }, [typeAnnotation])
 
   return (
     <Container>
-      <h1>{title}</h1>
+      <h1>Project Under Analysis: {data?.name}</h1>
+
+      <InfoContainer>
+        <h3>
+          <b>Annotation Metric:</b> {annotationMetric}
+        </h3>
+        <h3>
+          <b>Package:</b> {packageName}
+        </h3>
+      </InfoContainer>
 
       <Content>
         <ZoomableCircleContainer>
-          <h3>
-            <b>Annotation Metric:</b> {annotationMetric}
-          </h3>
-          <h3>
-            <b>Package:</b> {packageName}
-          </h3>
-
-          <ZoomableCircle
-            data={data}
-            setTitle={setTitle}
-            setTypeAnnotation={setA}
-            setAnnotationMetric={setAnnotationMetric}
-            setPackageName={setPackageName}
-          />
+          {data && (
+            <ZoomableCircle
+              systemData={systemData}
+              packageData={packageData}
+              typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
+              annotationMetric={{ annotationMetric, setAnnotationMetric }}
+              setPackageName={setPackageName}
+            />
+          )}
 
           <TypeAnnotationContainer
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setData(undefined)
               setTypeAnnotation(e.target.value)
-            }
+            }}
           >
             <RadioButton
               label="System View"
@@ -53,6 +65,8 @@ export const Home = () => {
             <RadioButton label="Class View" name="typeAnnotation" />
           </TypeAnnotationContainer>
         </ZoomableCircleContainer>
+
+        <Table />
       </Content>
     </Container>
   )

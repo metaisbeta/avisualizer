@@ -1,6 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as d3 from 'd3'
 
-export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
+export function zoom(
+  event: { altKey: boolean },
+  d: any,
+  zoomProp: any,
+  svg: any,
+  node: any
+) {
   if (
     d.data.type == 'annotation' ||
     d.data.type == 'schema' ||
@@ -8,6 +15,7 @@ export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
     d.data.type == 'field'
   )
     return
+
   zoomProp.focus = d
 
   svg
@@ -20,17 +28,18 @@ export function zoom(event: any, d: any, zoomProp: any, svg: any, node: any) {
         zoomProp.focus.r * 2
       ])
 
-      return (t: any) => zoomTo(i(t), svg, zoomProp, node)
+      return (t: any) => zoomTo(i(t), svg.attr('width'), zoomProp, node)
     })
 }
 
-export function zoomTo(v: any, svg: any, zoomProp: any, node: any) {
-  const k = 500 / v[2]
+export function zoomTo(v: number[], width: number, zoomProp: any, node: any) {
+  const k = width / v[2]
   zoomProp.view = v
 
   node.attr(
     'transform',
-    (d: any) => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`
+    (d: { x: number; y: number }) =>
+      `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`
   )
-  node.attr('r', (d: any) => d.r * k)
+  node.attr('r', (d: { r: number }) => d.r * k)
 }

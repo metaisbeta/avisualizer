@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as d3 from 'd3'
 import loDash from 'lodash'
 
@@ -13,21 +12,19 @@ type RootValueProps = {
   }
 }
 
-export function AnnotationSchemas(root: any, name: string) {
+export function annotationSchemas(root: any, name: string) {
   const schemasColorMap: Map<string, string> = new Map()
-  const schemasObjectArray: any[] = []
-  const annotationsList: Map<string, any> = new Map()
+  const schemasObjectArray: { schema: string; color: string }[] = []
+  const annotationsList: Map<string, string[]> = new Map()
   const annotationsCount: Map<string, number> = new Map()
-  const schemasTotalAnnotations: Map<any, any> = new Map()
+  const schemasTotalAnnotations: Map<string, number> = new Map()
 
   const allSchemas = new Set()
 
   // Save all schemas
   if (name === 'class') {
     root.descendants().forEach((d: RootValueProps) => {
-      if (d.data.type == 'annotation') {
-        allSchemas.add(d.data.properties.schema)
-      }
+      if (d.data.type === 'annotation') allSchemas.add(d.data.properties.schema)
     })
   } else {
     root.descendants().forEach((d: RootValueProps) => {
@@ -48,19 +45,19 @@ export function AnnotationSchemas(root: any, name: string) {
   root.descendants().forEach((d: RootValueProps) => {
     const schema = d.data.properties?.schema
 
-    if (d.data.type == 'annotation' && schema != null) {
+    if (d.data.type === 'annotation' && schema !== null) {
       // Array of the annotations in schema
       const arr = annotationsList.get(schema)
 
-      if (!arr.includes(d.data.name)) {
-        arr.push(d.data.name)
+      if (!arr?.includes(d.data.name)) {
+        arr?.push(d.data.name)
         annotationsCount.set(d.data.name, d.data.value)
       } else {
-        const value = annotationsCount.get(d.data.name) ?? 0 + 1
-        annotationsCount.set(d.data.name, value)
+        const count = annotationsCount.get(d.data.name) ?? 0
+        annotationsCount.set(d.data.name, count + 1)
       }
 
-      annotationsList.set(d.data.properties.schema, arr)
+      annotationsList.set(d.data.properties.schema, arr ?? [])
     }
   })
 
@@ -69,11 +66,11 @@ export function AnnotationSchemas(root: any, name: string) {
     schemasTotalAnnotations.set(schemas, 0)
   }
 
-  for (let i = 0; i < root.descendants().length; i++) {
-    const data = root.descendants()[i].data
+  for (const descendant of root.descendants()) {
+    const data = descendant.data
 
-    if (data.type == 'annotation') {
-      const total = schemasTotalAnnotations.get(data.properties.schema)
+    if (data.type === 'annotation') {
+      const total = schemasTotalAnnotations.get(data.properties.schema) ?? 0
 
       schemasTotalAnnotations.set(data.properties.schema, total + 1)
     }
@@ -159,7 +156,7 @@ export function AnnotationSchemas(root: any, name: string) {
           d3.color(colors(r))?.formatHex()
         )
       }
-    } else if (family == 'javax') {
+    } else if (family === 'javax') {
       const cores = d3
         .scaleSequential(d3.interpolateRgbBasis(['red', '#FEBAB8']))
         .domain([0, groupsMap.get(family).length])

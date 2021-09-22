@@ -4,7 +4,7 @@ const light: DefaultTheme = {
   colors: {
     primary: '#0468BF',
     primaryDark: '#005AA8',
-    primaryLight: 'rgba(4, 104, 191, 0,05)',
+    primaryLight: 'rgba(4, 104, 191, 0.05)',
     background: '#FAFAFA',
 
     white: '#FFFFFF',
