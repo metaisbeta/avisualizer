@@ -1,47 +1,31 @@
 import * as d3 from 'd3'
 
-import { annotMetricUpdate } from './AnnotationMetric'
+import { annotMetricUpdate } from '../../utils/AnnotationMetric'
 import {
   addCircleDash,
   addCircleStroke,
   colorCircles,
   highlightNode
-} from './Circle'
-import { updateSelectBoxText } from './Nav'
-import { createPopUp, destroyPopUp, movePopUp } from './PopUp'
+} from '../../utils/Circle'
+import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
   createNode,
   createSvg,
   setFocus,
-  showView,
   viewTransition
-} from './SVG'
-import { zoom, zoomTo } from './Zoom'
+} from '../../utils/SVG'
+import { zoom, zoomTo } from '../../utils/Zoom'
 
-const findObjectByLabel = function (objs: any, label: any): any {
-  if (objs.name === label) return objs
-  else {
-    if (objs.children) {
-      for (const child of objs.children) {
-        const found = findObjectByLabel(child, label)
-        if (found) return found
-      }
-    }
-  }
-}
-
-export const packageVisualizer = (
+export const PackageVisualizer = (
   data: any,
-  name: string,
+  width: number,
+  height: number,
   map: any,
+  setTypeAnnotation: (annot: string) => void,
   annotationMetric: string,
   setAnnotationMetric: (annot: string) => void,
   setPackageName: (name: string) => void
 ) => {
-  const obj = findObjectByLabel(data, name)
-  const width = 500
-  const height = 500
-
   const zoomProp: { focus: any } = { focus: null }
 
   const root: any = d3
@@ -70,10 +54,9 @@ export const packageVisualizer = (
   d3.select('.svg-container-pv').attr('lastClass', '')
   d3.select('.svg-container-pv').attr('rootName', root.children?.[0].data.name)
   d3.select('.svg-container-pv').on('click', () => {
-    showView('package-view', 'system-view')
     annotMetricUpdate(setAnnotationMetric, 'Package View')
     setPackageName(d3.select('.svg-container-sv').attr('lastSelected'))
-    updateSelectBoxText('SelectViewBox', 'systemView')
+    setTypeAnnotation('System View')
   })
 
   const node = createNode(svg, root)
@@ -112,12 +95,11 @@ export const packageVisualizer = (
           'lastSelected',
           d.parent.parent.data.name
         )
-        showView('package-view', 'class-view')
         viewTransition(
           String(d3.select('.svg-container-pv').attr('lastSelected')),
           '.svg-container-cv'
         )
-        updateSelectBoxText('SelectViewBox', 'classView')
+        setTypeAnnotation('Class View')
         annotMetricUpdate(setAnnotationMetric, 'Class View')
         setPackageName('Class: ' + d.parent.data.name)
         zoomProp.focus !== d &&

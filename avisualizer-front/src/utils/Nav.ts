@@ -189,12 +189,3 @@ export function resetBox(
     .text(defaultBoxText)
     .attr('value', defaultValue)
 }
-
-export function updateSelectBoxText(boxName: string, option: string) {
-  d3.select('#' + boxName)
-    .selectAll('option')
-    .each(function () {
-      if (d3.select(this).attr('value') == option)
-        return d3.select(this).property('selected', true)
-    })
-}
