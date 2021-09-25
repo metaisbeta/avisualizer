@@ -28,8 +28,7 @@ export const SystemVisualizer = (
   setTypeAnnotation: (type: string) => void,
   annotationMetric: string,
   setAnnotationMetric: (annot: string) => void,
-  setPackageName: (name: string) => void,
-  setSchemasColorMap: (colors: Map<string, string>) => void
+  setPackageName: (name: string) => void
 ) => {
   const zoomProp: { focus: any } = { focus: null }
 
@@ -83,6 +82,10 @@ export const SystemVisualizer = (
     .on('click', (event, d: any) => {
       // Apply zoom to all circles in this specific view
       if (d.data.type === 'schema') {
+        annotMetricUpdate(setAnnotationMetric, 'Package View')
+        setPackageName('Package: ' + d.parent.data.name)
+        setTypeAnnotation('Package View')
+
         hide('.svg-container-pv', d.parent.data.name)
         highlightNode('.svg-container-sv', d.parent.data.name)
 
@@ -90,9 +93,8 @@ export const SystemVisualizer = (
           packageData,
           width,
           height,
-          schemasColorMap,
           setTypeAnnotation,
-          annotationMetric,
+          'LOC in Annotation Declaration (LOCAD)',
           setAnnotationMetric,
           setPackageName
         )
@@ -107,11 +109,6 @@ export const SystemVisualizer = (
           '.svg-container-pv'
         )
         resetView('.svg-container-sv')
-
-        annotMetricUpdate(setAnnotationMetric, 'Package View')
-        setPackageName(d.parent.data.name)
-        setSchemasColorMap(schemasColorMap) // To package view
-        setTypeAnnotation('Package View')
       } else {
         highlightNode('.svg-container-sv', d.data.name)
 
@@ -121,7 +118,7 @@ export const SystemVisualizer = (
           setFocus(d.data.name, '.svg-container-sv'))
 
         annotMetricUpdate(setAnnotationMetric, 'System View')
-        setPackageName(d.data.name)
+        setPackageName('Package: ' + d.data.name)
       }
     })
     .on('mouseover', (event, d: any) => createPopUp(d, event, annotationMetric))

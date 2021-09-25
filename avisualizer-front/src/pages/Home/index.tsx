@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { RadioButton } from '../../components/RadioButton'
 import { Table } from '../../components/Table'
@@ -15,7 +15,9 @@ import {
 
 export const Home = () => {
   const [typeAnnotation, setTypeAnnotation] = useState<string>('System View')
-  const [annotationMetric, setAnnotationMetric] = useState<string>('')
+  const [annotationMetric, setAnnotationMetric] = useState<string>(
+    'Number of Annotations'
+  )
   const [packageName, setPackageName] = useState<string>('')
 
   return (
@@ -27,7 +29,7 @@ export const Home = () => {
           <b>Annotation Metric:</b> {annotationMetric}
         </h3>
         <h3>
-          <b>Package:</b> {packageName}
+          <b>{packageName.split(':')[0]}: </b> {packageName.split(': ')[1]}
         </h3>
       </InfoContainer>
 

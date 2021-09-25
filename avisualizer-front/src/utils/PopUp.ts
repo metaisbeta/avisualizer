@@ -46,7 +46,7 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
     (d.parent.data.type === 'class' || d.parent.data.type === 'interface')
   ) {
     const classname = d.parent.data.name.split('.')
-    const metrics = d3.select('#annotMetric').text().split(' ')
+    const metrics = annotMetric.split(' ')
     let metric = ''
     let data
 
@@ -67,7 +67,7 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
     label = `
         <b>Package Name:</b> ${d.parent.parent.parent.data.name}<br/> 
         <b>Class Name:</b> ${classname[classname.length - 1]}<br/> 
-        <b>Annotation name:</b> ${d.data.name}<br/>
+        <b>Annotation Name:</b> ${d.data.name}<br/>
         <b>${metric}:</b> ${data}
       `
   } else if (

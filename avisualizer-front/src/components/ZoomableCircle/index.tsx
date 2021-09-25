@@ -12,10 +12,6 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
   annotationMetric: { annotationMetric, setAnnotationMetric },
   setPackageName
 }) => {
-  const [schemasColorMap, setSchemasColorMap] = useState<Map<string, string>>(
-    new Map()
-  )
-
   useEffect(() => {
     const width = 500
     const height = 500
@@ -29,8 +25,7 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
         setTypeAnnotation,
         annotationMetric,
         setAnnotationMetric,
-        setPackageName,
-        setSchemasColorMap
+        setPackageName
       )
   }, [typeAnnotation])
 
