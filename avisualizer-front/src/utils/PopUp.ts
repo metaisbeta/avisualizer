@@ -5,6 +5,7 @@ type DataProps = {
   type: string
   value: number
   properties: {
+    schema: string
     anl: string
     locad: string
     aa: string
@@ -103,7 +104,9 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
   } else if (d.data.type == 'class' || d.data.type == 'interface') {
     const classname = d.data.name.split('.')
 
-    label = `<b>${d.data.type} Name:</b> ${classname[classname.length - 1]}`
+    label = `<b>${
+      d.data.type[0].toUpperCase() + d.data.type.substr(1)
+    } Name:</b> ${classname[classname.length - 1]}`
   }
 
   if (label)
@@ -124,7 +127,13 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
       .transition()
       .duration(popUpTransition)
 
-  const element: any = document.getElementById(`schema-${d.data.name}`)
+  let annotName = ''
+
+  if (annotMetric === 'Number of Annotations') annotName = d.data?.name
+  else if (annotMetric.includes('LOCAD')) annotName = d.data?.properties?.schema
+  else annotName = ''
+
+  const element: any = document.getElementById(`schema-${annotName}`)
 
   if (element) element.style.background = 'rgba(4, 104, 191, 0.1)'
 }
