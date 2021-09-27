@@ -97,11 +97,6 @@ export function hideAnnotations(container: string, id: string, show: boolean) {
     })
 }
 
-export function showView(origin: string, view: string) {
-  d3.select(view).attr('hidden', null)
-  d3.select(origin).attr('hidden', '')
-}
-
 // View related methods
 export function viewTransition(origin: string, view: string) {
   d3.select(view)

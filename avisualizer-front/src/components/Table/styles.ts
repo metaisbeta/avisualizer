@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components'
 export const Container = styled.div`
   table {
     border-collapse: collapse;
+    cursor: default;
+    max-height: 500px;
+    overflow-y: auto;
+    display: block;
   }
 
   th {
@@ -23,6 +27,17 @@ export const Container = styled.div`
 
   tbody > tr {
     border-top: ${({ theme }) => `1px solid ${theme.colors.gray2}`};
+  }
+
+  .pagination {
+    display: flex;
+    margin: 25px;
+    justify-content: flex-end;
+  }
+
+  .pagination p {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `
 

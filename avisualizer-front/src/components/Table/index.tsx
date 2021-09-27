@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import * as d3 from 'd3'
+import { min, values } from 'lodash'
 import { CaretDown } from 'phosphor-react'
 
 import jsondata from '../../data/SpaceWeatherTSI-PV.json'
@@ -11,11 +12,16 @@ import { RowProps, SubSchemaProps } from './types'
 
 export const Table = () => {
   const [rowData, setRowData] = useState<RowProps[]>()
+  const [initialRowData, setInitialRowData] = useState<RowProps[]>()
   const [totalSchema, setTotalSchema] = useState<Record<string, number>>()
   const [subSchemas, setSubSchemas] = useState<Record<string, SubSchemaProps>>()
   const [annotationCount, setAnnotationCount] = useState<Map<string, number>>()
   const [allCheckbox, setAllCheckbox] = useState<boolean>(true)
   const [aux, setAux] = useState<boolean>(false)
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [rowsPerPage] = useState<number>(3)
+
+  const totalPages = rowData && Math.ceil(rowData?.length / rowsPerPage)
 
   useEffect(() => {
     const getAllCountAnnotation = (
@@ -72,11 +78,52 @@ export const Table = () => {
     getSubSchema(schemasObjectArray, annotationsList)
 
     setRowData(schemasObjectArray)
+    setInitialRowData(schemasObjectArray)
     setAnnotationCount(annotationsCount)
   }, [])
 
+  const searchAnnotation = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCurrentPage(1)
+    const itemsToShow = initialRowData?.filter((value) => {
+      if (value.schema.includes(e.target.value)) return value
+      return null
+    })
+    setRowData(itemsToShow)
+  }
+  const pagination = () => {
+    const rowMin = (currentPage - 1) * rowsPerPage
+    const rowMax = currentPage * rowsPerPage
+    return rowData?.filter(
+      (value, index) => index >= rowMin && index < rowMax && value
+    )
+  }
+  const pageInfo = () => {
+    const total = rowData?.length
+    const start = currentPage == 1 ? 1 : (currentPage - 1) * rowsPerPage
+    const end = currentPage == totalPages ? total : currentPage * rowsPerPage
+    return `${start} - ${end} of ${total}`
+  }
+
+  const nextPage = () => {
+    if (totalPages && currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+
+  const previousPage = () => {
+    if (rowData && currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
   return (
     <Container>
+      <div className="search">
+        <input
+          type="text"
+          placeholder="Search Annotation by Package Name"
+          onChange={searchAnnotation}
+        />
+      </div>
       <table>
         <thead>
           <tr>
@@ -95,7 +142,7 @@ export const Table = () => {
         </thead>
 
         <tbody>
-          {rowData?.map((value, index: number) => (
+          {pagination()?.map((value, index: number) => (
             <React.Fragment key={index}>
               <tr className="schema" id={`schema-${value.schema}`}>
                 <td>
@@ -142,6 +189,11 @@ export const Table = () => {
           ))}
         </tbody>
       </table>
+      <div className="pagination">
+        <button onClick={() => previousPage()}>Previous</button>
+        <p>{pageInfo()}</p>
+        <button onClick={() => nextPage()}>Next</button>
+      </div>
     </Container>
   )
 }
