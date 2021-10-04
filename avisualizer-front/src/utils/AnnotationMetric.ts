@@ -18,9 +18,9 @@ export function annotMetricUpdate(
 export function metricInfoUpdate(metric: string) {
   let metricName = ''
 
-  if (metric == 'aa')
+  if (metric === 'aa')
     metricName = 'Annotation Metric: Arguments in Annotation (AA)'
-  else if (metric == 'locad')
+  else if (metric === 'locad')
     metricName = 'Annotation Metric: LOC in Annotation Declaration (LOCAD)'
   else metricName = 'Annotation Metric: Annotation Nesting Level (ANL)'
 

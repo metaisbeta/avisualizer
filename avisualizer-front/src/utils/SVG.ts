@@ -118,7 +118,7 @@ export function hide(container: string, name: string) {
   d3.select(container)
     .selectAll('circle')
     .each(function () {
-      if (container == '.svg-container-pv') {
+      if (container === '.svg-container-pv') {
         if (
           (d3.select(this).attr('class') == 'class' ||
             d3.select(this).attr('class') == 'interface') &&

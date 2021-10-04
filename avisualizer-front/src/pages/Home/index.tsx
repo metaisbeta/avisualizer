@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { RadioButton } from '../../components/RadioButton'
 import { Table } from '../../components/Table'
 import { ZoomableCircle } from '../../components/ZoomableCircle'
+import classData from '../../data/SpaceWeatherTSI-CV.json'
 import packageData from '../../data/SpaceWeatherTSI-PV.json'
 import systemData from '../../data/SpaceWeatherTSI-SV.json'
 import {
@@ -38,6 +39,7 @@ export const Home = () => {
           <ZoomableCircle
             systemData={systemData}
             packageData={packageData}
+            classData={classData}
             typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
             annotationMetric={{ annotationMetric, setAnnotationMetric }}
             setPackageName={setPackageName}

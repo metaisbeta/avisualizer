@@ -101,13 +101,16 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
         <b>Annotation Name:</b> ${d.data.name}</br> 
         <b>${metric}:</b> ${data} 
       `
-  } else if (d.data.type == 'class' || d.data.type == 'interface') {
+  } else if (d.data.type === 'class' || d.data.type === 'interface') {
     const classname = d.data.name.split('.')
 
     label = `<b>${
       d.data.type[0].toUpperCase() + d.data.type.substr(1)
     } Name:</b> ${classname[classname.length - 1]}`
   }
+
+  const isClassOrInterface =
+    d.data.type === 'class' || d.data.type === 'interface'
 
   if (label)
     d3.select('.tooltip-container')
@@ -121,7 +124,7 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
       .style('text-align', 'start')
       .style('border-radius', '4px')
       .style('position', 'absolute')
-      .style('background-color', '#BDD9F2')
+      .style('background-color', isClassOrInterface ? '#d2bdf2' : '#BDD9F2')
       .style('z-index', 1000)
       .html(label)
       .transition()

@@ -1,5 +1,6 @@
 import * as d3 from 'd3'
 
+import classData from '../../data/SpaceWeatherTSI-CV.json'
 import { annotMetricUpdate } from '../../utils/AnnotationMetric'
 import { annotationSchemas } from '../../utils/AnnotationSchemas'
 import {
@@ -56,12 +57,6 @@ export const PackageVisualizer = (
   d3.select('.svg-container-pv').attr('lastClass', '')
   d3.select('.svg-container-pv').attr('rootName', root.children?.[0].data.name)
 
-  // d3.select('.svg-container-pv').on('click', () => {
-  //   annotMetricUpdate(setAnnotationMetric, 'Package View')
-  //   setPackageName(d3.select('.svg-container-sv').attr('lastSelected'))
-  //   setTypeAnnotation('System View')
-  // })
-
   const node = createNode(svg, root)
   //Initial Zoom
   zoomTo([root.x, root.y, root.r * 2], width, zoomProp, node)
@@ -103,28 +98,7 @@ export const PackageVisualizer = (
           highlightNode('.svg-container-pv', d.data.name)
 
           d3.select('.svg-container-pv').attr('lastSelected', d.data.name)
-          if (
-            d.data.name === d3.select('.svg-container-sv').attr('lastSelected')
-          ) {
-            // refreshBox(
-            //   'classList',
-            //   'classes',
-            //   'Select Class',
-            //   'select class',
-            //   d.data.name,
-            //   '.svg-container-pv',
-            //   ''
-            // )
-            // refreshBox(
-            //   'interfaceList',
-            //   'interfaces',
-            //   'Select Interface',
-            //   'select interface',
-            //   d.data.name,
-            //   '.svg-container-pv',
-            //   'interface'
-            // )
-          }
+
           annotMetricUpdate(setAnnotationMetric, 'Package View')
           setPackageName('Package: ' + d.data.name)
         }
@@ -142,9 +116,6 @@ export const PackageVisualizer = (
           event.stopPropagation(),
           setFocus(d.parent.data.name, '.svg-container-pv'))
 
-        // if (d.data.type === 'class')
-        //   updateSelectBoxText('classList', d.data.name)
-        // else updateSelectBoxText('interfaceList', d.data.name)
         highlightNode('.svg-container-pv', d.data.name)
       } else if (
         d.data.type === 'package' &&
@@ -157,14 +128,6 @@ export const PackageVisualizer = (
         setPackageName('Package: ' + d.data.name)
         setTypeAnnotation('System View')
 
-        // resetBox(
-        //   'interfaceList',
-        //   'interfaces',
-        //   'Select Interface',
-        //   'select interface'
-        // )
-        // resetBox('classList', 'classes', 'Select Class', 'select class')
-        // updateSelectBoxText('packagesList', d.data.name)
         d3.select('.svg-container-pv').attr('lastSelected', d.data.name)
       } else if (d.data.type === 'annotation') {
         d3.select('.svg-container-pv').attr('lastClicked', d.data.name)
@@ -172,41 +135,16 @@ export const PackageVisualizer = (
 
         highlightNode('.svg-container-sv', d.parent.parent.data.name)
 
-        // if (d.parent.data.type === 'class') {
-        //   updateSelectBoxText('classList', d.parent.data.name)
-        // } else {
-        //   updateSelectBoxText('interfaceList', d.parent.data.name)
-        // }
-
         zoomProp.focus !== d &&
           (zoom(event, d, zoomProp, svg, node),
           event.stopPropagation(),
-          setFocus(String(d.parent.data.name), '.svg-container-pv'))
+          setFocus(d.parent.data.name, '.svg-container-pv'))
         hide('.svg-container-cv', d.parent.data.name)
-        setTypeAnnotation('Class View')
 
         viewTransition(
-          String(d3.select('.svg-container-pv').attr('lastSelected')),
+          d3.select('.svg-container-pv').attr('lastSelected'),
           '.svg-container-cv'
         )
-        // refreshBox(
-        //   'fieldList',
-        //   'fields',
-        //   'Select Field',
-        //   'select field',
-        //   d.parent.data.name,
-        //   '.svg-container-cv',
-        //   'field'
-        // )
-        // refreshBox(
-        //   'methodList',
-        //   'methods',
-        //   'Select Method',
-        //   'select method',
-        //   d.parent.data.name,
-        //   '.svg-container-cv',
-        //   'method'
-        // )
 
         d3.select('.svg-container-pv').attr(
           'lastSelected',
@@ -215,10 +153,9 @@ export const PackageVisualizer = (
 
         annotMetricUpdate(setAnnotationMetric, 'Class View')
         setPackageName('Class: ' + d.parent.data.name)
+        setTypeAnnotation('Class View')
 
         resetView('.svg-container-pv')
-
-        setTypeAnnotation('Class View')
         // updateSelectBoxText('packagesList', d.parent.parent.data.name)
       } else {
         highlightNode('.svg-container-sv', d.data.name)

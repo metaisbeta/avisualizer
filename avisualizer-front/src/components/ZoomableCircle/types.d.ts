@@ -1,6 +1,7 @@
 export type ZoomableCircleProps = {
   systemData: any
   packageData: any
+  classData: any
   typeAnnotation: {
     typeAnnotation: string
     setTypeAnnotation: (title: string) => void

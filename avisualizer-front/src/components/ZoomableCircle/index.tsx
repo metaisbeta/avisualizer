@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
+import { ClassVisualizer } from './ClassView'
 import { PackageVisualizer } from './PackageView'
 import { SystemVisualizer } from './SystemView'
 import { ZoomableCircleProps } from './types'
@@ -8,6 +8,7 @@ import { ZoomableCircleProps } from './types'
 export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
   systemData,
   packageData,
+  classData,
   typeAnnotation: { typeAnnotation, setTypeAnnotation },
   annotationMetric: { annotationMetric, setAnnotationMetric },
   setPackageName
@@ -16,18 +17,39 @@ export const ZoomableCircle: React.FC<ZoomableCircleProps> = ({
     const width = 500
     const height = 500
 
-    if (typeAnnotation === 'System View')
-      SystemVisualizer(
-        systemData,
-        width,
-        height,
-        packageData,
-        setTypeAnnotation,
-        annotationMetric,
-        setAnnotationMetric,
-        setPackageName
-      )
-  }, [typeAnnotation])
+    SystemVisualizer(
+      systemData,
+      width,
+      height,
+      packageData,
+      setTypeAnnotation,
+      annotationMetric,
+      setAnnotationMetric,
+      setPackageName
+    )
+
+    PackageVisualizer(
+      packageData,
+      width,
+      height,
+      setTypeAnnotation,
+      'LOC in Annotation Declaration (LOCAD)',
+      setAnnotationMetric,
+      setPackageName
+    )
+
+    ClassVisualizer(
+      classData,
+      0,
+      '',
+      width,
+      height,
+      setTypeAnnotation,
+      'Annotation Metric: Arguments in Annotation (AA)',
+      setAnnotationMetric,
+      setPackageName
+    )
+  }, [])
 
   return (
     <div className="tooltip-container">
