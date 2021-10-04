@@ -133,8 +133,7 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
   let annotName = ''
 
   if (annotMetric === 'Number of Annotations') annotName = d.data?.name
-  else if (annotMetric.includes('LOCAD')) annotName = d.data?.properties?.schema
-  else annotName = ''
+  else annotName = d.data?.properties?.schema
 
   const element: any = document.getElementById(`schema-${annotName}`)
 

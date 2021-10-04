@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
 import * as d3 from 'd3'
-import { min, values } from 'lodash'
 import { CaretDown } from 'phosphor-react'
 
 import jsondata from '../../data/SpaceWeatherTSI-PV.json'
 import { annotationSchemas } from '../../utils/AnnotationSchemas'
 import { Checkbox } from '../Checkbox'
-import { Color, Container } from './styles'
+import { Color, Container, Pagination } from './styles'
 import { RowProps, SubSchemaProps } from './types'
 
 export const Table = () => {
@@ -19,7 +18,7 @@ export const Table = () => {
   const [allCheckbox, setAllCheckbox] = useState<boolean>(true)
   const [aux, setAux] = useState<boolean>(false)
   const [currentPage, setCurrentPage] = useState<number>(1)
-  const [rowsPerPage] = useState<number>(3)
+  const [rowsPerPage] = useState<number>(10)
 
   const totalPages = rowData && Math.ceil(rowData?.length / rowsPerPage)
 
@@ -84,23 +83,29 @@ export const Table = () => {
 
   const searchAnnotation = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentPage(1)
+
     const itemsToShow = initialRowData?.filter((value) => {
       if (value.schema.includes(e.target.value)) return value
       return null
     })
+
     setRowData(itemsToShow)
   }
+
   const pagination = () => {
     const rowMin = (currentPage - 1) * rowsPerPage
     const rowMax = currentPage * rowsPerPage
+
     return rowData?.filter(
       (value, index) => index >= rowMin && index < rowMax && value
     )
   }
+
   const pageInfo = () => {
     const total = rowData?.length
     const start = currentPage == 1 ? 1 : (currentPage - 1) * rowsPerPage
     const end = currentPage == totalPages ? total : currentPage * rowsPerPage
+
     return `${start} - ${end} of ${total}`
   }
 
@@ -115,15 +120,17 @@ export const Table = () => {
       setCurrentPage(currentPage - 1)
     }
   }
+
   return (
     <Container>
       <div className="search">
         <input
           type="text"
-          placeholder="Search Annotation by Package Name"
+          placeholder="Search annotation by package name"
           onChange={searchAnnotation}
         />
       </div>
+
       <table>
         <thead>
           <tr>
@@ -134,7 +141,7 @@ export const Table = () => {
                 onClick={() => setAllCheckbox(!allCheckbox)}
               />
             </th>
-            <th style={{ width: '350px', textAlign: 'start' }}>Annotation</th>
+            <th style={{ width: '100%', textAlign: 'start' }}>Annotation</th>
             <th>Total</th>
             <th></th>
             <th></th>
@@ -189,11 +196,15 @@ export const Table = () => {
           ))}
         </tbody>
       </table>
-      <div className="pagination">
+
+      <Pagination
+        previousDisabled={currentPage === 1}
+        nextDisabled={currentPage === totalPages}
+      >
         <button onClick={() => previousPage()}>Previous</button>
         <p>{pageInfo()}</p>
         <button onClick={() => nextPage()}>Next</button>
-      </div>
+      </Pagination>
     </Container>
   )
 }

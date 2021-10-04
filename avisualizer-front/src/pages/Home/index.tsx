@@ -25,17 +25,17 @@ export const Home = () => {
     <Container>
       <h1>Project Under Analysis: {systemData.name}</h1>
 
-      <InfoContainer>
-        <h3>
-          <b>Annotation Metric:</b> {annotationMetric}
-        </h3>
-        <h3>
-          <b>{packageName.split(':')[0]}: </b> {packageName.split(': ')[1]}
-        </h3>
-      </InfoContainer>
-
       <Content>
         <ZoomableCircleContainer>
+          <InfoContainer>
+            <h3>
+              <b>Annotation Metric:</b> {annotationMetric}
+            </h3>
+            <h3>
+              <b>{packageName.split(':')[0]}: </b> {packageName.split(': ')[1]}
+            </h3>
+          </InfoContainer>
+
           <ZoomableCircle
             systemData={systemData}
             packageData={packageData}

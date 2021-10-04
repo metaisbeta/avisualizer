@@ -14,8 +14,7 @@ import {
   createSvg,
   hide,
   resetView,
-  setFocus,
-  viewTransition
+  setFocus
 } from '../../utils/SVG'
 import { zoom, zoomTo } from '../../utils/Zoom'
 
