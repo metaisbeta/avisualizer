@@ -54,8 +54,7 @@ export const ClassVisualizer = (
     .sort((a: { value: number }, b: { value: number }) => {
       b.value - a.value
     })
-
-  root.sum((d: { value: number }) => d.value)
+    .sum((d: { value: number }) => d.value)
 
   const pack = d3
     .pack()
@@ -97,34 +96,8 @@ export const ClassVisualizer = (
         d3.select('.svg-container-pv').attr('lastSelected', d.parent.data.name)
       } else if (d.data.type === 'method' || d.data.type === 'field') {
         highlightNode('.svg-container-cv', d.data.name)
-
-        // if (d.data.type == 'method') {
-        //   updateSelectBoxText('methodList', d.data.name)
-        // } else {
-        //   updateSelectBoxText('fieldList', d.data.name)
-        // }
       } else if (d.data.type === 'package') {
         setTypeAnnotation('Package View')
-        // resetBox('methodList', 'methods', 'Select Method', 'select method')
-        // resetBox('fieldList', 'fields', 'Select Field', 'select field')
-        // refreshBox(
-        //   'classList',
-        //   'classes',
-        //   'Select Class',
-        //   'select class',
-        //   d.data.name,
-        //   '.svg-container-pv',
-        //   ''
-        // )
-        // refreshBox(
-        //   'interfaceList',
-        //   'interfaces',
-        //   'Select Interface',
-        //   'select interface',
-        //   d.data.name,
-        //   '.svg-container-pv',
-        //   'interface'
-        // )
         annotMetricUpdate(setAnnotationMetric, 'Package View')
         setPackageName('Package: ' + d.data.name)
 

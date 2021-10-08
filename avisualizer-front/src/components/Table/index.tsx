@@ -5,18 +5,28 @@ import { CaretDown } from 'phosphor-react'
 
 import jsondata from '../../data/SpaceWeatherTSI-PV.json'
 import { annotationSchemas } from '../../utils/AnnotationSchemas'
+import {
+  displayAllCircles,
+  hideAllCircles,
+  hideAnnotations
+} from '../../utils/SVG'
 import { Checkbox } from '../Checkbox'
 import { Color, Container, Pagination } from './styles'
-import { RowProps, SubSchemaProps } from './types'
+import { AnnotationsCheckboxProps, RowProps, SubSchemaProps } from './types'
 
-export const Table = () => {
+export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
   const [rowData, setRowData] = useState<RowProps[]>()
   const [initialRowData, setInitialRowData] = useState<RowProps[]>()
   const [totalSchema, setTotalSchema] = useState<Record<string, number>>()
   const [subSchemas, setSubSchemas] = useState<Record<string, SubSchemaProps>>()
   const [annotationCount, setAnnotationCount] = useState<Map<string, number>>()
-  const [allCheckbox, setAllCheckbox] = useState<boolean>(true)
-  const [aux, setAux] = useState<boolean>(false)
+
+  const [isAllChecked, setIsAllChecked] = useState<boolean>(true)
+  const [annotationsCheckbox, setAnnotationsCheckbox] =
+    useState<Record<string, AnnotationsCheckboxProps>>()
+  const [numberOfChecked, setNumberOfChecked] = useState(0)
+  const [numberOfAnnotation, setNumberOfAnnotation] = useState(0)
+
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [rowsPerPage] = useState<number>(10)
 
@@ -50,10 +60,10 @@ export const Table = () => {
     ) => {
       const allSubSchemas: Record<string, SubSchemaProps> = {}
 
-      for (const schema of allSchemas) {
-        const annotations = annotList.get(schema.schema) ?? []
+      for (const value of allSchemas) {
+        const annotations = annotList.get(value.schema) ?? []
 
-        allSubSchemas[schema.schema] = {
+        allSubSchemas[value.schema] = {
           annotations: annotations,
           isOpen: false
         }
@@ -80,6 +90,28 @@ export const Table = () => {
     setInitialRowData(schemasObjectArray)
     setAnnotationCount(annotationsCount)
   }, [])
+
+  useEffect(() => {
+    if (rowData) {
+      const checked: Record<string, AnnotationsCheckboxProps> = {}
+
+      for (const row of rowData) {
+        checked[row.schema] = {
+          checked: true,
+          annotations: []
+        }
+
+        if (subSchemas?.[row.schema]) {
+          for (const _ of subSchemas[row.schema].annotations)
+            checked[row.schema].annotations.push(true)
+        }
+      }
+
+      setNumberOfAnnotation(rowData.length)
+      setNumberOfChecked(rowData.length)
+      setAnnotationsCheckbox(checked)
+    }
+  }, [rowData])
 
   const searchAnnotation = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentPage(1)
@@ -121,6 +153,144 @@ export const Table = () => {
     }
   }
 
+  const getContainer = () => {
+    switch (typeAnnotation) {
+      case 'System View':
+        return '.svg-container-sv'
+      case 'Package View':
+        return '.svg-container-pv'
+      case 'Class View':
+        return '.svg-container-cv'
+    }
+
+    return ''
+  }
+
+  const handleShowAllAnnotations = (show: boolean) => {
+    const container = getContainer()
+
+    if (show) displayAllCircles(container)
+    else hideAllCircles(container)
+  }
+
+  const handleHideOrShowAnnotation = (schema: string) => {
+    const container = getContainer()
+
+    if (isAllChecked) setIsAllChecked(false)
+
+    if (annotationsCheckbox?.[schema] !== undefined) {
+      if (annotationsCheckbox[schema].checked)
+        setNumberOfChecked((prev) => prev - 1)
+      else setNumberOfChecked((prev) => prev + 1)
+
+      const isChecked = annotationsCheckbox[schema].checked
+
+      hideAnnotations(container, schema, isChecked)
+
+      const annotations = annotationsCheckbox[schema].annotations
+
+      let annot = []
+
+      if (isChecked) annot = new Array(annotations.length).fill(false)
+      else annot = annotations
+
+      setAnnotationsCheckbox({
+        ...annotationsCheckbox,
+        [schema]: {
+          checked: !isChecked,
+          annotations: annot
+        }
+      })
+    } else {
+      hideAnnotations(container, schema, true)
+
+      setNumberOfChecked((prev) => prev - 1)
+
+      setAnnotationsCheckbox({
+        ...annotationsCheckbox,
+        [schema]: {
+          checked: false,
+          annotations: annotationsCheckbox?.[schema].annotations ?? []
+        }
+      })
+    }
+  }
+
+  const handleHideOrShowSubAnnotation = (
+    parentSchema: string,
+    schema: string,
+    index: number
+  ) => {
+    const container = getContainer()
+
+    if (annotationsCheckbox?.[parentSchema]) {
+      const isChecked = annotationsCheckbox[parentSchema].annotations[index]
+
+      hideAnnotations(container, schema, isChecked)
+
+      const subAnnot = [
+        ...(annotationsCheckbox[parentSchema].annotations ?? [])
+      ]
+
+      subAnnot[index] = !subAnnot[index]
+
+      const allSubAnnotIsChecked =
+        subAnnot.filter((value) => value).length === subAnnot.length
+
+      if (allSubAnnotIsChecked) setNumberOfChecked((prev) => prev + 1)
+      else {
+        if (annotationsCheckbox[parentSchema].checked)
+          setNumberOfChecked((prev) => prev - 1)
+      }
+
+      setAnnotationsCheckbox({
+        ...annotationsCheckbox,
+        [parentSchema]: {
+          checked: allSubAnnotIsChecked,
+          annotations: subAnnot
+        }
+      })
+    }
+  }
+
+  useEffect(() => {
+    const setAnnotationsCheckboxValues = (option: boolean) => {
+      const checkbox: Record<string, AnnotationsCheckboxProps> = {}
+
+      for (const annotation of Object.keys(annotationsCheckbox ?? {})) {
+        const annotationsValue =
+          annotationsCheckbox?.[annotation].annotations ?? []
+
+        checkbox[annotation] = {
+          checked: option,
+          annotations: new Array(annotationsValue.length).fill(option)
+        }
+      }
+
+      return checkbox
+    }
+
+    if (isAllChecked) {
+      setNumberOfChecked(numberOfAnnotation)
+      setAnnotationsCheckbox(setAnnotationsCheckboxValues(true))
+    }
+
+    if (!isAllChecked && numberOfChecked === numberOfAnnotation) {
+      setNumberOfChecked(0)
+      setAnnotationsCheckbox(setAnnotationsCheckboxValues(false))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAllChecked])
+
+  useEffect(() => {
+    const checkIfAllCheckboxIsChecked = () => {
+      if (numberOfAnnotation === numberOfChecked) setIsAllChecked(true)
+      else setIsAllChecked(false)
+    }
+
+    checkIfAllCheckboxIsChecked()
+  }, [numberOfAnnotation, numberOfChecked])
+
   return (
     <Container>
       <div className="search">
@@ -137,8 +307,11 @@ export const Table = () => {
             <th>
               <Checkbox
                 label=""
-                checked={allCheckbox}
-                onClick={() => setAllCheckbox(!allCheckbox)}
+                checked={isAllChecked}
+                onClick={() => {
+                  handleShowAllAnnotations(!isAllChecked)
+                  setIsAllChecked(!isAllChecked)
+                }}
               />
             </th>
             <th style={{ width: '100%', textAlign: 'start' }}>Annotation</th>
@@ -153,7 +326,14 @@ export const Table = () => {
             <React.Fragment key={index}>
               <tr className="schema" id={`schema-${value.schema}`}>
                 <td>
-                  <Checkbox label="" checked={allCheckbox} />
+                  <Checkbox
+                    label=""
+                    checked={
+                      isAllChecked ||
+                      annotationsCheckbox?.[value.schema].checked
+                    }
+                    onClick={() => handleHideOrShowAnnotation(value.schema)}
+                  />
                 </td>
                 <td style={{ textAlign: 'start' }}>{value.schema}</td>
                 <td>{totalSchema?.[value.schema]}</td>
@@ -163,9 +343,7 @@ export const Table = () => {
                 <td>
                   <button
                     onClick={() => {
-                      setAux(!aux)
-
-                      const allSub = subSchemas
+                      const allSub = Object.assign({}, subSchemas)
 
                       if (allSub?.[value.schema])
                         allSub[value.schema].isOpen =
@@ -180,18 +358,33 @@ export const Table = () => {
               </tr>
 
               {subSchemas?.[value.schema].isOpen &&
-                subSchemas?.[value.schema].annotations?.map((annot: string) => (
-                  <tr key={annot} style={{ border: 'none' }}>
-                    <td></td>
-                    <td style={{ textAlign: 'start', display: 'flex' }}>
-                      <Checkbox label="" checked={allCheckbox} />
-                      {annot}
-                    </td>
-                    <td>{annotationCount?.get(annot)}</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                ))}
+                subSchemas?.[value.schema].annotations?.map(
+                  (annot: string, i: number) => (
+                    <tr key={annot} style={{ border: 'none' }}>
+                      <td></td>
+                      <td style={{ textAlign: 'start', display: 'flex' }}>
+                        <Checkbox
+                          label=""
+                          checked={
+                            annotationsCheckbox?.[value.schema].checked ||
+                            annotationsCheckbox?.[value.schema].annotations[i]
+                          }
+                          onClick={() =>
+                            handleHideOrShowSubAnnotation(
+                              value.schema,
+                              annot,
+                              i
+                            )
+                          }
+                        />
+                        {annot}
+                      </td>
+                      <td>{annotationCount?.get(annot)}</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  )
+                )}
             </React.Fragment>
           ))}
         </tbody>

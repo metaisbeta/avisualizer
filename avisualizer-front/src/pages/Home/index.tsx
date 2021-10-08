@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { RadioButton } from '../../components/RadioButton'
 import { Table } from '../../components/Table'
-import { ZoomableCircle } from '../../components/ZoomableCircle'
+import { ClassVisualizer } from '../../components/ZoomableCircle/ClassView'
+import { PackageVisualizer } from '../../components/ZoomableCircle/PackageView'
+import { SystemVisualizer } from '../../components/ZoomableCircle/SystemView'
 import classData from '../../data/SpaceWeatherTSI-CV.json'
 import packageData from '../../data/SpaceWeatherTSI-PV.json'
 import systemData from '../../data/SpaceWeatherTSI-SV.json'
+import { RadioButtons } from './RadioButtons'
 import {
   Container,
   Content,
   InfoContainer,
-  TypeAnnotationContainer,
   ZoomableCircleContainer
 } from './styles'
 
@@ -20,6 +21,44 @@ export const Home = () => {
     'Number of Annotations'
   )
   const [packageName, setPackageName] = useState<string>('')
+
+  useEffect(() => {
+    const width = 500
+    const height = 500
+
+    SystemVisualizer(
+      systemData,
+      width,
+      height,
+      packageData,
+      setTypeAnnotation,
+      'Number of Annotations',
+      setAnnotationMetric,
+      setPackageName
+    )
+
+    PackageVisualizer(
+      packageData,
+      width,
+      height,
+      setTypeAnnotation,
+      'LOC in Annotation Declaration (LOCAD)',
+      setAnnotationMetric,
+      setPackageName
+    )
+
+    ClassVisualizer(
+      classData,
+      0,
+      '',
+      width,
+      height,
+      setTypeAnnotation,
+      'Annotation Metric: Arguments in Annotation (AA)',
+      setAnnotationMetric,
+      setPackageName
+    )
+  }, [])
 
   return (
     <Container>
@@ -36,39 +75,34 @@ export const Home = () => {
             </h3>
           </InfoContainer>
 
-          <ZoomableCircle
-            systemData={systemData}
-            packageData={packageData}
-            classData={classData}
-            typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
-            annotationMetric={{ annotationMetric, setAnnotationMetric }}
-            setPackageName={setPackageName}
-          />
+          <div className="tooltip-container">
+            <div
+              className="svg-container-sv"
+              style={{
+                display: typeAnnotation === 'System View' ? 'block' : 'none'
+              }}
+            />
+            <div
+              className="svg-container-pv"
+              style={{
+                display: typeAnnotation === 'Package View' ? 'block' : 'none'
+              }}
+            />
+            <div
+              className="svg-container-cv"
+              style={{
+                display: typeAnnotation === 'Class View' ? 'block' : 'none'
+              }}
+            />
+          </div>
 
-          <TypeAnnotationContainer
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setTypeAnnotation(e.target.value)
-            }
-          >
-            <RadioButton
-              label="System View"
-              name="typeAnnotation"
-              checked={typeAnnotation === 'System View'}
-            />
-            <RadioButton
-              label="Package View"
-              name="typeAnnotation"
-              checked={typeAnnotation === 'Package View'}
-            />
-            <RadioButton
-              label="Class View"
-              name="typeAnnotation"
-              checked={typeAnnotation === 'Class View'}
-            />
-          </TypeAnnotationContainer>
+          <RadioButtons
+            typeAnnotation={typeAnnotation}
+            setTypeAnnotation={setTypeAnnotation}
+          />
         </ZoomableCircleContainer>
 
-        <Table />
+        <Table typeAnnotation={typeAnnotation} />
       </Content>
     </Container>
   )
