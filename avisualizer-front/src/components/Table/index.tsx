@@ -15,8 +15,8 @@ import { Color, Container, Pagination } from './styles'
 import { AnnotationsCheckboxProps, RowProps, SubSchemaProps } from './types'
 
 export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
-  const [rowData, setRowData] = useState<RowProps[]>()
-  const [initialRowData, setInitialRowData] = useState<RowProps[]>()
+  const [rowData, setRowData] = useState<RowProps[]>([])
+  const [initialRowData, setInitialRowData] = useState<RowProps[]>([])
   const [totalSchema, setTotalSchema] = useState<Record<string, number>>()
   const [subSchemas, setSubSchemas] = useState<Record<string, SubSchemaProps>>()
   const [annotationCount, setAnnotationCount] = useState<Map<string, number>>()
@@ -92,10 +92,10 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
   }, [])
 
   useEffect(() => {
-    if (rowData) {
+    const initializeAnnotationsCheckbox = () => {
       const checked: Record<string, AnnotationsCheckboxProps> = {}
 
-      for (const row of rowData) {
+      for (const row of initialRowData) {
         checked[row.schema] = {
           checked: true,
           annotations: []
@@ -107,19 +107,23 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
         }
       }
 
-      setNumberOfAnnotation(rowData.length)
-      setNumberOfChecked(rowData.length)
+      setNumberOfAnnotation(initialRowData.length)
+      setNumberOfChecked(initialRowData.length)
       setAnnotationsCheckbox(checked)
     }
-  }, [rowData])
+
+    initializeAnnotationsCheckbox()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialRowData, typeAnnotation])
 
   const searchAnnotation = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentPage(1)
 
-    const itemsToShow = initialRowData?.filter((value) => {
-      if (value.schema.includes(e.target.value)) return value
-      return null
-    })
+    const itemsToShow =
+      initialRowData?.filter((value) => {
+        if (value.schema.includes(e.target.value)) return value
+        return null
+      }) ?? []
 
     setRowData(itemsToShow)
   }
@@ -176,21 +180,21 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
   const handleHideOrShowAnnotation = (schema: string) => {
     const container = getContainer()
 
-    if (isAllChecked) setIsAllChecked(false)
+    const checkbox = annotationsCheckbox?.[schema]
 
-    if (annotationsCheckbox?.[schema] !== undefined) {
-      if (annotationsCheckbox[schema].checked)
-        setNumberOfChecked((prev) => prev - 1)
+    if (checkbox) {
+      if (checkbox.checked) setNumberOfChecked((prev) => prev - 1)
       else setNumberOfChecked((prev) => prev + 1)
 
-      const isChecked = annotationsCheckbox[schema].checked
+      const isChecked = checkbox.checked
 
       hideAnnotations(container, schema, isChecked)
 
-      const annotations = annotationsCheckbox[schema].annotations
+      const annotations = checkbox.annotations
 
       let annot = []
 
+      // Tf checkbox is disabled, the children's checkbox will also be
       if (isChecked) annot = new Array(annotations.length).fill(false)
       else annot = annotations
 
@@ -199,18 +203,6 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
         [schema]: {
           checked: !isChecked,
           annotations: annot
-        }
-      })
-    } else {
-      hideAnnotations(container, schema, true)
-
-      setNumberOfChecked((prev) => prev - 1)
-
-      setAnnotationsCheckbox({
-        ...annotationsCheckbox,
-        [schema]: {
-          checked: false,
-          annotations: annotationsCheckbox?.[schema].annotations ?? []
         }
       })
     }
@@ -223,14 +215,14 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
   ) => {
     const container = getContainer()
 
-    if (annotationsCheckbox?.[parentSchema]) {
-      const isChecked = annotationsCheckbox[parentSchema].annotations[index]
+    const checkbox = annotationsCheckbox?.[parentSchema]
+
+    if (checkbox) {
+      const isChecked = checkbox.annotations[index]
 
       hideAnnotations(container, schema, isChecked)
 
-      const subAnnot = [
-        ...(annotationsCheckbox[parentSchema].annotations ?? [])
-      ]
+      const subAnnot = [...(checkbox.annotations ?? [])]
 
       subAnnot[index] = !subAnnot[index]
 
@@ -239,8 +231,7 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
 
       if (allSubAnnotIsChecked) setNumberOfChecked((prev) => prev + 1)
       else {
-        if (annotationsCheckbox[parentSchema].checked)
-          setNumberOfChecked((prev) => prev - 1)
+        if (checkbox.checked) setNumberOfChecked((prev) => prev - 1)
       }
 
       setAnnotationsCheckbox({
