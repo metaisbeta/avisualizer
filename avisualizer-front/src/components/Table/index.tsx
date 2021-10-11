@@ -16,7 +16,7 @@ import { AnnotationsCheckboxProps, RowProps, SubSchemaProps } from './types'
 
 export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
   const [rowData, setRowData] = useState<RowProps[]>([])
-  const [initialRowData, setInitialRowData] = useState<RowProps[]>([])
+  const [allTableData, setAllTableData] = useState<RowProps[]>([])
   const [totalSchema, setTotalSchema] = useState<Record<string, number>>()
   const [subSchemas, setSubSchemas] = useState<Record<string, SubSchemaProps>>()
   const [annotationCount, setAnnotationCount] = useState<Map<string, number>>()
@@ -87,7 +87,7 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
     getSubSchema(schemasObjectArray, annotationsList)
 
     setRowData(schemasObjectArray)
-    setInitialRowData(schemasObjectArray)
+    setAllTableData(schemasObjectArray)
     setAnnotationCount(annotationsCount)
   }, [])
 
@@ -95,7 +95,7 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
     const initializeAnnotationsCheckbox = () => {
       const checked: Record<string, AnnotationsCheckboxProps> = {}
 
-      for (const row of initialRowData) {
+      for (const row of allTableData) {
         checked[row.schema] = {
           checked: true,
           annotations: []
@@ -107,21 +107,22 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
         }
       }
 
-      setNumberOfAnnotation(initialRowData.length)
-      setNumberOfChecked(initialRowData.length)
+      setNumberOfAnnotation(allTableData.length)
+      setNumberOfChecked(allTableData.length)
       setAnnotationsCheckbox(checked)
     }
 
     initializeAnnotationsCheckbox()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialRowData, typeAnnotation])
+  }, [allTableData, typeAnnotation])
 
   const searchAnnotation = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentPage(1)
 
     const itemsToShow =
-      initialRowData?.filter((value) => {
-        if (value.schema.includes(e.target.value)) return value
+      allTableData?.filter((value) => {
+        if (value.schema.toLowerCase().includes(e.target.value.toLowerCase()))
+          return value
         return null
       }) ?? []
 
