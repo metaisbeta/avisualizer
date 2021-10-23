@@ -28,11 +28,11 @@ export const RadioButtons = ({
         name="typeAnnotation"
         checked={typeAnnotation === 'Package View'}
       />
-      <RadioButton
+      {/* <RadioButton
         label="Class View"
         name="typeAnnotation"
         checked={typeAnnotation === 'Class View'}
-      />
+      /> */}
     </TypeAnnotationContainer>
   )
 }
