@@ -1,4 +1,0 @@
-language: java
-version: openjdk11
-install: true
-script: mvn clean package
