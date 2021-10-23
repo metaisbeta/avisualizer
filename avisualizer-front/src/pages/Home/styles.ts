@@ -11,6 +11,8 @@ export const Content = styled.div`
 
   display: flex;
 
+  margin-top: 40px;
+
   > div + div {
     margin-left: 24px;
   }
@@ -18,7 +20,6 @@ export const Content = styled.div`
 
 export const InfoContainer = styled.div`
   text-align: left;
-  margin-top: 24px;
 
   h3 {
     font-weight: 400;
@@ -36,10 +37,12 @@ export const InfoContainer = styled.div`
 
 export const ZoomableCircleContainer = styled.div`
   width: 50%;
+
+  margin-right: 80px;
 `
 
 export const TypeAnnotationContainer = styled.div`
-  width: 600px;
+  width: 100%;
 
   display: flex;
   justify-content: space-between;

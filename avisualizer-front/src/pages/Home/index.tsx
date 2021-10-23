@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
-import { RadioButton } from '../../components/RadioButton'
 import { Table } from '../../components/Table'
-import { ZoomableCircle } from '../../components/ZoomableCircle'
+import { ClassVisualizer } from '../../components/ZoomableCircle/ClassView'
+import { PackageVisualizer } from '../../components/ZoomableCircle/PackageView'
+import { SystemVisualizer } from '../../components/ZoomableCircle/SystemView'
+import classData from '../../data/SpaceWeatherTSI-CV.json'
 import packageData from '../../data/SpaceWeatherTSI-PV.json'
 import systemData from '../../data/SpaceWeatherTSI-SV.json'
+import { RadioButtons } from './RadioButtons'
 import {
   Container,
   Content,
   InfoContainer,
-  TypeAnnotationContainer,
   ZoomableCircleContainer
 } from './styles'
 
@@ -20,53 +22,87 @@ export const Home = () => {
   )
   const [packageName, setPackageName] = useState<string>('')
 
+  useEffect(() => {
+    const width = 500
+    const height = 500
+
+    SystemVisualizer(
+      systemData,
+      width,
+      height,
+      packageData,
+      setTypeAnnotation,
+      'Number of Annotations',
+      setAnnotationMetric,
+      setPackageName
+    )
+
+    PackageVisualizer(
+      packageData,
+      width,
+      height,
+      setTypeAnnotation,
+      'LOC in Annotation Declaration (LOCAD)',
+      setAnnotationMetric,
+      setPackageName
+    )
+
+    ClassVisualizer(
+      classData,
+      0,
+      '',
+      width,
+      height,
+      setTypeAnnotation,
+      'Annotation Metric: Arguments in Annotation (AA)',
+      setAnnotationMetric,
+      setPackageName
+    )
+  }, [])
+
   return (
     <Container>
       <h1>Project Under Analysis: {systemData.name}</h1>
 
-      <InfoContainer>
-        <h3>
-          <b>Annotation Metric:</b> {annotationMetric}
-        </h3>
-        <h3>
-          <b>{packageName.split(':')[0]}: </b> {packageName.split(': ')[1]}
-        </h3>
-      </InfoContainer>
-
       <Content>
         <ZoomableCircleContainer>
-          <ZoomableCircle
-            systemData={systemData}
-            packageData={packageData}
-            typeAnnotation={{ typeAnnotation, setTypeAnnotation }}
-            annotationMetric={{ annotationMetric, setAnnotationMetric }}
-            setPackageName={setPackageName}
-          />
+          <InfoContainer>
+            <h3>
+              <b>Annotation Metric:</b> {annotationMetric}
+            </h3>
+            <h3>
+              <b>{packageName.split(':')[0]}: </b> {packageName.split(': ')[1]}
+            </h3>
+          </InfoContainer>
 
-          <TypeAnnotationContainer
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setTypeAnnotation(e.target.value)
-            }
-          >
-            <RadioButton
-              label="System View"
-              name="typeAnnotation"
-              checked={typeAnnotation === 'System View'}
+          <div className="tooltip-container">
+            <div
+              className="svg-container-sv"
+              style={{
+                display: typeAnnotation === 'System View' ? 'block' : 'none'
+              }}
             />
-            <RadioButton
-              label="Package View"
-              name="typeAnnotation"
-              checked={typeAnnotation === 'Package View'}
+            <div
+              className="svg-container-pv"
+              style={{
+                display: typeAnnotation === 'Package View' ? 'block' : 'none'
+              }}
             />
-            <RadioButton
-              label="Class View"
-              name="typeAnnotation"
-              checked={typeAnnotation === 'Class View'}
+            <div
+              className="svg-container-cv"
+              style={{
+                display: typeAnnotation === 'Class View' ? 'block' : 'none'
+              }}
             />
-          </TypeAnnotationContainer>
+          </div>
+
+          <RadioButtons
+            typeAnnotation={typeAnnotation}
+            setTypeAnnotation={setTypeAnnotation}
+          />
         </ZoomableCircleContainer>
 
-        <Table />
+        <Table typeAnnotation={typeAnnotation} />
       </Content>
     </Container>
   )

@@ -82,32 +82,23 @@ export const SystemVisualizer = (
     .on('click', (event, d: any) => {
       // Apply zoom to all circles in this specific view
       if (d.data.type === 'schema') {
-        annotMetricUpdate(setAnnotationMetric, 'Package View')
-        setPackageName('Package: ' + d.parent.data.name)
-        setTypeAnnotation('Package View')
-
         hide('.svg-container-pv', d.parent.data.name)
         highlightNode('.svg-container-sv', d.parent.data.name)
-
-        PackageVisualizer(
-          packageData,
-          width,
-          height,
-          setTypeAnnotation,
-          'LOC in Annotation Declaration (LOCAD)',
-          setAnnotationMetric,
-          setPackageName
-        )
 
         zoomProp.focus !== d &&
           (zoom(event, d, zoomProp, svg, node),
           event.stopPropagation(),
           setFocus(d.parent.data.name, '.svg-container-sv'))
 
+        annotMetricUpdate(setAnnotationMetric, 'Package View')
+        setPackageName('Package: ' + d.parent.data.name)
+        setTypeAnnotation('Package View')
+
         viewTransition(
           d3.select('.svg-container-sv').attr('lastSelected'),
           '.svg-container-pv'
         )
+
         resetView('.svg-container-sv')
       } else {
         highlightNode('.svg-container-sv', d.data.name)

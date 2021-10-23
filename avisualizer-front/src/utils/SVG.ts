@@ -37,7 +37,7 @@ export function createSvg(
     .attr('preserveAspectRatio', 'xMidYMid meet')
     .style('display', 'block')
     .style('margin', '0 0')
-    .style('background', '#F2F2F2')
+    .style('background', '#FAFAFA')
     .style('cursor', 'pointer')
 }
 
@@ -50,48 +50,29 @@ export function createNode(svg: any, root: any) {
     .attr('class', (d: DataProps) => d.data.type)
     .attr('name', (d: DataProps) => d.data.name)
     .attr('schema', (d: DataProps) =>
-      d.data.type == 'annotation' ? d.data.properties.schema : d.data.type
+      d.data.type === 'annotation' ? d.data.properties.schema : d.data.type
     )
     .attr('zoom', 'a')
     .attr('value', (d: DataProps) =>
-      d.data.type == 'schema' ? d.data.value : 0
+      d.data.type === 'schema' ? d.data.value : 0
     )
-    .attr('parent', (d: DataProps) =>
-      d.parent === null ? '' : d.parent.data.name
-    )
+    .attr('parent', (d: DataProps) => (!d.parent ? '' : d.parent.data.name))
     .attr('grandfather', (d: DataProps) => {
-      if (d.parent === null || d.parent?.parent === null) {
-        return ''
-      } else {
-        return d.parent.parent.data.name
-      }
+      if (!d.parent || !d.parent?.parent) return ''
+      else return d.parent.parent.data.name
     })
     .attr('grandgrandfather', (d: DataProps) => {
-      if (
-        d.parent === null ||
-        d.parent?.parent === null ||
-        d.parent?.parent?.parent == null
-      ) {
-        return ''
-      } else {
-        return d.parent.parent.parent.data.name
-      }
+      if (!d.parent || !d.parent?.parent || !d.parent?.parent?.parent) return ''
+      else return d.parent.parent.parent.data.name
     })
 }
 
-export function hideAnnotations(container: string, id: string, show: boolean) {
-  let view = ''
-
-  if (container === 'systemView') view = '.svg-container-sv'
-  else if (container === 'packageView') view = '.svg-container-pv'
-  else view = '.svg-container-cv'
-
-  d3.select(view)
+export function hideAnnotations(container: string, id: string, hide: boolean) {
+  d3.select(container)
     .selectAll('circle')
     .each(function () {
       if (d3.select(this).attr('name') === id) {
-        // schema se for package name se for system
-        if (!show) d3.select(this).style('visibility', 'hidden')
+        if (hide) d3.select(this).style('visibility', 'hidden')
         else d3.select(this).style('visibility', 'visible')
       }
     })
@@ -118,7 +99,7 @@ export function hide(container: string, name: string) {
   d3.select(container)
     .selectAll('circle')
     .each(function () {
-      if (container == '.svg-container-pv') {
+      if (container === '.svg-container-pv') {
         if (
           (d3.select(this).attr('class') == 'class' ||
             d3.select(this).attr('class') == 'interface') &&
@@ -191,15 +172,11 @@ export function hideAllCircles(container: string) {
     .selectAll('circle')
     .each(function () {
       if (container === '.svg-container-sv') {
-        if (d3.select(this).attr('class') === 'schema') {
-          // schema se for package name se for system
+        if (d3.select(this).attr('class') === 'schema')
           d3.select(this).style('visibility', 'hidden')
-        }
       } else {
-        if (d3.select(this).attr('class') === 'annotation') {
-          // schema se for package name se for system
+        if (d3.select(this).attr('class') === 'annotation')
           d3.select(this).style('visibility', 'hidden')
-        }
       }
     })
 }
