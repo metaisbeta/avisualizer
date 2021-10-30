@@ -31,6 +31,13 @@
               "properties": {},
               "children": [
                 {
+                  "name": "javax.annotation",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                },
+                {
                   "name": "java.lang",
                   "type": "schema",
                   "value": 55,
@@ -43,13 +50,6 @@
                   "value": 36,
                   "properties": {},
                   "children": []
-                },
-                {
-                  "name": "javax.annotation",
-                  "type": "schema",
-                  "value": 1,
-                  "properties": {},
-                  "children": []
                 }
               ]
             },
@@ -58,6 +58,13 @@
               "type": "package",
               "properties": {},
               "children": [
+                {
+                  "name": "javax.annotation",
+                  "type": "schema",
+                  "value": 1,
+                  "properties": {},
+                  "children": []
+                },
                 {
                   "name": "java.lang",
                   "type": "schema",
@@ -69,13 +76,6 @@
                   "name": "javax.ejb",
                   "type": "schema",
                   "value": 6,
-                  "properties": {},
-                  "children": []
-                },
-                {
-                  "name": "javax.annotation",
-                  "type": "schema",
-                  "value": 1,
                   "properties": {},
                   "children": []
                 }
@@ -165,16 +165,16 @@
                   "properties": {},
                   "children": [
                     {
-                      "name": "javax.enterprise.context",
+                      "name": "java.lang",
                       "type": "schema",
-                      "value": 7,
+                      "value": 14,
                       "properties": {},
                       "children": []
                     },
                     {
-                      "name": "java.lang",
+                      "name": "javax.enterprise.context",
                       "type": "schema",
-                      "value": 14,
+                      "value": 7,
                       "properties": {},
                       "children": []
                     },
@@ -265,16 +265,16 @@
               "children": []
             },
             {
-              "name": "javax.ejb",
+              "name": "javax.persistence",
               "type": "schema",
-              "value": 16,
+              "value": 2,
               "properties": {},
               "children": []
             },
             {
-              "name": "javax.persistence",
+              "name": "javax.ejb",
               "type": "schema",
-              "value": 2,
+              "value": 16,
               "properties": {},
               "children": []
             },
@@ -369,13 +369,6 @@
               "properties": {},
               "children": [
                 {
-                  "name": "javax.persistence.metamodel",
-                  "type": "schema",
-                  "value": 4,
-                  "properties": {},
-                  "children": []
-                },
-                {
                   "name": "java.lang",
                   "type": "schema",
                   "value": 16,
@@ -386,6 +379,13 @@
                   "name": "javax.persistence",
                   "type": "schema",
                   "value": 159,
+                  "properties": {},
+                  "children": []
+                },
+                {
+                  "name": "javax.persistence.metamodel",
+                  "type": "schema",
+                  "value": 4,
                   "properties": {},
                   "children": []
                 }
@@ -450,6 +450,13 @@
           "properties": {},
           "children": [
             {
+              "name": "javax.annotation",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
               "name": "java.lang",
               "type": "schema",
               "value": 1,
@@ -460,13 +467,6 @@
               "name": "javax.ejb",
               "type": "schema",
               "value": 15,
-              "properties": {},
-              "children": []
-            },
-            {
-              "name": "javax.annotation",
-              "type": "schema",
-              "value": 1,
               "properties": {},
               "children": []
             },
@@ -488,6 +488,13 @@
               "properties": {},
               "children": [
                 {
+                  "name": "javax.annotation",
+                  "type": "schema",
+                  "value": 2,
+                  "properties": {},
+                  "children": []
+                },
+                {
                   "name": "java.lang",
                   "type": "schema",
                   "value": 8,
@@ -498,13 +505,6 @@
                   "name": "javax.ejb",
                   "type": "schema",
                   "value": 12,
-                  "properties": {},
-                  "children": []
-                },
-                {
-                  "name": "javax.annotation",
-                  "type": "schema",
-                  "value": 2,
                   "properties": {},
                   "children": []
                 }
@@ -532,20 +532,6 @@
           "properties": {},
           "children": [
             {
-              "name": "java.lang",
-              "type": "schema",
-              "value": 2,
-              "properties": {},
-              "children": []
-            },
-            {
-              "name": "org.springframework.web.servlet.config.annotation",
-              "type": "schema",
-              "value": 1,
-              "properties": {},
-              "children": []
-            },
-            {
               "name": "javax.annotation",
               "type": "schema",
               "value": 1,
@@ -560,21 +546,35 @@
               "children": []
             },
             {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.springframework.web.servlet.config.annotation",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
               "name": "br.inpe.climaespacial.tsi.viewer.rest",
               "type": "package",
               "properties": {},
               "children": [
                 {
-                  "name": "org.springframework.beans.factory.annotation",
+                  "name": "org.springframework.web.bind.annotation",
                   "type": "schema",
-                  "value": 3,
+                  "value": 7,
                   "properties": {},
                   "children": []
                 },
                 {
-                  "name": "org.springframework.web.bind.annotation",
+                  "name": "org.springframework.beans.factory.annotation",
                   "type": "schema",
-                  "value": 7,
+                  "value": 3,
                   "properties": {},
                   "children": []
                 },
@@ -593,14 +593,14 @@
               "properties": {},
               "children": [
                 {
-                  "name": "org.springframework.beans.factory.annotation",
+                  "name": "org.springframework.stereotype",
                   "type": "schema",
                   "value": 1,
                   "properties": {},
                   "children": []
                 },
                 {
-                  "name": "org.springframework.stereotype",
+                  "name": "org.springframework.beans.factory.annotation",
                   "type": "schema",
                   "value": 1,
                   "properties": {},

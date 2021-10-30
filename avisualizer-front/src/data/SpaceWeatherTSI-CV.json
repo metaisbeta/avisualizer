@@ -89,7 +89,7 @@
               },
               "children": [
                 {
-                  "name": "propertiesBusinessClient",
+                  "name": "Optional[propertiesBusinessClient]",
                   "type": "field",
                   "value": 1,
                   "properties": {},
@@ -343,45 +343,26 @@
                       "children": []
                     },
                     {
-                      "name": "getTsiHmiCoreClient",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "batchInsert",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "batchUpdate",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getTsiHmiCoreClient",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -422,6 +403,25 @@
                           "properties": {
                             "schema": "javax.ejb",
                             "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "batchInsert",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -502,6 +502,44 @@
                         "anl": "0"
                       },
                       "children": []
+                    },
+                    {
+                      "name": "update",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "insert",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
                     },
                     {
                       "name": "getTsiMaskDataSeriesByPeriod",
@@ -589,44 +627,6 @@
                           "children": []
                         }
                       ]
-                    },
-                    {
-                      "name": "insert",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "update",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
                     }
                   ]
                 },
@@ -681,7 +681,7 @@
                       ]
                     },
                     {
-                      "name": "insert",
+                      "name": "getFitsDownloaderCollectorClient",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -700,7 +700,26 @@
                       ]
                     },
                     {
-                      "name": "getTsiFitsCoreClient",
+                      "name": "Optional[queueWriterLocal]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "EJB",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.ejb",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "insert",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -738,26 +757,7 @@
                       ]
                     },
                     {
-                      "name": "queueWriterLocal",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "EJB",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.ejb",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getFitsDownloaderCollectorClient",
+                      "name": "getTsiFitsCoreClient",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -809,7 +809,7 @@
                       "children": []
                     },
                     {
-                      "name": "doLogTsi",
+                      "name": "AuthenticateAndAuthorization",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -828,7 +828,7 @@
                       ]
                     },
                     {
-                      "name": "AuthenticateAndAuthorization",
+                      "name": "doLogTsi",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -880,6 +880,25 @@
                       "children": []
                     },
                     {
+                      "name": "getTsiHMIWithoutErrorCalc",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
                       "name": "getTsiFile",
                       "type": "method",
                       "value": 1,
@@ -900,25 +919,6 @@
                     },
                     {
                       "name": "findTsiHMIbyNominalDate",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getTsiHMIWithoutErrorCalc",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -970,26 +970,7 @@
                       "children": []
                     },
                     {
-                      "name": "getJsonActiveRegionDataByPeriod",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "timDataBusinessReaderLocal",
+                      "name": "Optional[timDataBusinessReaderLocal]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -1008,26 +989,7 @@
                       ]
                     },
                     {
-                      "name": "fitsBusinessReaderLocal",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "EJB",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.ejb",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "tsiHmiBusinessReaderClient",
+                      "name": "Optional[fitsBusinessReaderLocal]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -1084,6 +1046,25 @@
                       ]
                     },
                     {
+                      "name": "getJsonActiveRegionDataByPeriod",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
                       "name": "compare",
                       "type": "method",
                       "value": 1,
@@ -1094,6 +1075,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiHmiBusinessReaderClient]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "EJB",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -1191,7 +1191,83 @@
                       "children": []
                     },
                     {
+                      "name": "getLw2",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
                       "name": "getBias1",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getTimMean",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getConfigProperty",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getTimStd",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -1248,25 +1324,6 @@
                       ]
                     },
                     {
-                      "name": "getTimStd",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "init",
                       "type": "method",
                       "value": 1,
@@ -1277,63 +1334,6 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.annotation",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getTimMean",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getConfigProperty",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getLw2",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -1387,7 +1387,7 @@
                       "children": []
                     },
                     {
-                      "name": "getTsiFitsByPeriodJoinMaskDataJoinRingsAreaJoinTsiHDU",
+                      "name": "getCountTsiFitsByPeriod",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -1406,7 +1406,26 @@
                       ]
                     },
                     {
-                      "name": "compare",
+                      "name": "getTsiFitsByPeriod",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getTsiFitsByPeriodJoinMaskDataJoinRingsAreaJoinTsiHDU",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -1483,44 +1502,6 @@
                     },
                     {
                       "name": "compare",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getCountTsiFitsByPeriod",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getTsiFitsByPeriod",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -1681,7 +1662,7 @@
                       ]
                     },
                     {
-                      "name": "findByStatus",
+                      "name": "remove",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -1719,25 +1700,6 @@
                       ]
                     },
                     {
-                      "name": "update",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "insert",
                       "type": "method",
                       "value": 1,
@@ -1757,7 +1719,26 @@
                       ]
                     },
                     {
-                      "name": "remove",
+                      "name": "update",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "findByStatus",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -1901,25 +1882,6 @@
                       ]
                     },
                     {
-                      "name": "getTempDirPath",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "init",
                       "type": "method",
                       "value": 1,
@@ -1930,6 +1892,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.annotation",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getTempDirPath",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -2698,63 +2679,6 @@
                       },
                       "children": [
                         {
-                          "name": "getInitialDate_WhenCached_ShouldNotCallLastRecordService",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "getFinalDate_WhenCached_ShouldNotCallLastRecordService",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "getFinalDate_WhenNotCached_ShouldCallLastRecordService",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
                           "name": "getInitialDate_WhenCalled_ShouldReturnLastRecordMinusNDays",
                           "type": "method",
                           "value": 1,
@@ -2774,45 +2698,7 @@
                           ]
                         },
                         {
-                          "name": "getInitialDateAndGetFinalDate_WhenCalledInterchanged_ShouldInvalidateCacheAndCallLastRecordService",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "getFinalDate_WhenCalled_ShouldReturnLastRecordMinusOneDay",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "getInitialDate_WhenCachedWasInvalidated_ShouldCallLastRecordService",
+                          "name": "getFinalDate_WhenCachedWasInvalidated_ShouldCallLastRecordService",
                           "type": "method",
                           "value": 1,
                           "properties": {},
@@ -2850,6 +2736,82 @@
                           ]
                         },
                         {
+                          "name": "getInitialDate_WhenCached_ShouldNotCallLastRecordService",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "getFinalDate_WhenNotCached_ShouldCallLastRecordService",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "getInitialDateAndGetFinalDate_WhenCalledInterchanged_ShouldInvalidateCacheAndCallLastRecordService",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "getFinalDate_WhenCached_ShouldNotCallLastRecordService",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
                           "name": "setUp",
                           "type": "method",
                           "value": 1,
@@ -2869,7 +2831,26 @@
                           ]
                         },
                         {
-                          "name": "getFinalDate_WhenCachedWasInvalidated_ShouldCallLastRecordService",
+                          "name": "getInitialDate_WhenCachedWasInvalidated_ShouldCallLastRecordService",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "getFinalDate_WhenCalled_ShouldReturnLastRecordMinusOneDay",
                           "type": "method",
                           "value": 1,
                           "properties": {},
@@ -2898,6 +2879,63 @@
                         "uac": "3"
                       },
                       "children": [
+                        {
+                          "name": "setUpMissingFileIterable",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "SuppressWarnings",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "java.lang",
+                                "aa": "1",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "setUpMissingFileIterator",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "SuppressWarnings",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "java.lang",
+                                "aa": "1",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "setUp",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Before",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
                         {
                           "name": "perform_WithNoMissingFiles_ShouldReturn",
                           "type": "method",
@@ -2935,63 +2973,6 @@
                               "children": []
                             }
                           ]
-                        },
-                        {
-                          "name": "setUpMissingFileIterator",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "SuppressWarnings",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "java.lang",
-                                "aa": "1",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "setUpMissingFileIterable",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "SuppressWarnings",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "java.lang",
-                                "aa": "1",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "setUp",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Before",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
                         }
                       ]
                     },
@@ -3004,6 +2985,44 @@
                         "uac": "2"
                       },
                       "children": [
+                        {
+                          "name": "hasNext_WhenThereAreFiles_ShouldReturnTrue",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "next_WhenThereAreFiles_ShouldReturnThem",
+                          "type": "method",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Test",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "org.junit",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
                         {
                           "name": "hasNext_WhenThereAreNoFiles_ShouldReturnFalse",
                           "type": "method",
@@ -3041,44 +3060,6 @@
                               "children": []
                             }
                           ]
-                        },
-                        {
-                          "name": "next_WhenThereAreFiles_ShouldReturnThem",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
-                          "name": "hasNext_WhenThereAreFiles_ShouldReturnTrue",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Test",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "org.junit",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
                         }
                       ]
                     },
@@ -3103,25 +3084,6 @@
                           "children": []
                         },
                         {
-                          "name": "TsiMissingFilesService",
-                          "type": "method",
-                          "value": 1,
-                          "properties": {},
-                          "children": [
-                            {
-                              "name": "Inject",
-                              "type": "annotation",
-                              "properties": {
-                                "schema": "javax.inject",
-                                "aa": "0",
-                                "locad": "1",
-                                "anl": "0"
-                              },
-                              "children": []
-                            }
-                          ]
-                        },
-                        {
                           "name": "getMissingFiles",
                           "type": "method",
                           "value": 1,
@@ -3132,6 +3094,25 @@
                               "type": "annotation",
                               "properties": {
                                 "schema": "java.lang",
+                                "aa": "0",
+                                "locad": "1",
+                                "anl": "0"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "name": "TsiMissingFilesService",
+                          "type": "constructor",
+                          "value": 1,
+                          "properties": {},
+                          "children": [
+                            {
+                              "name": "Inject",
+                              "type": "annotation",
+                              "properties": {
+                                "schema": "javax.inject",
                                 "aa": "0",
                                 "locad": "1",
                                 "anl": "0"
@@ -3171,7 +3152,7 @@
                           ]
                         },
                         {
-                          "name": "next",
+                          "name": "remove",
                           "type": "method",
                           "value": 1,
                           "properties": {},
@@ -3190,7 +3171,7 @@
                           ]
                         },
                         {
-                          "name": "remove",
+                          "name": "next",
                           "type": "method",
                           "value": 1,
                           "properties": {},
@@ -3273,7 +3254,7 @@
                         },
                         {
                           "name": "JsocPeriodService",
-                          "type": "method",
+                          "type": "constructor",
                           "value": 1,
                           "properties": {},
                           "children": [
@@ -3464,7 +3445,7 @@
                         },
                         {
                           "name": "MissingFitsFileService",
-                          "type": "method",
+                          "type": "constructor",
                           "value": 1,
                           "properties": {},
                           "children": [
@@ -3701,7 +3682,7 @@
               },
               "children": [
                 {
-                  "name": "saveMessage",
+                  "name": "getConfigurationId",
                   "type": "method",
                   "value": 1,
                   "properties": {},
@@ -3720,7 +3701,7 @@
                   ]
                 },
                 {
-                  "name": "getConfigurationId",
+                  "name": "saveMessage",
                   "type": "method",
                   "value": 1,
                   "properties": {},
@@ -4003,22 +3984,49 @@
                   "children": []
                 },
                 {
-                  "name": "insert",
+                  "name": "removeCollection",
                   "type": "method",
-                  "value": 2,
+                  "value": 1,
                   "properties": {},
                   "children": [
                     {
-                      "name": "TransactionAttribute",
+                      "name": "Override",
                       "type": "annotation",
                       "properties": {
-                        "schema": "javax.ejb",
-                        "aa": "1",
+                        "schema": "java.lang",
+                        "aa": "0",
                         "locad": "1",
                         "anl": "0"
                       },
                       "children": []
-                    },
+                    }
+                  ]
+                },
+                {
+                  "name": "remove",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "getEntityManager",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
                     {
                       "name": "Override",
                       "type": "annotation",
@@ -4063,28 +4071,28 @@
                   ]
                 },
                 {
-                  "name": "batchInsertTOModified",
+                  "name": "insert",
                   "type": "method",
                   "value": 2,
                   "properties": {},
                   "children": [
-                    {
-                      "name": "AccessTimeout",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "javax.ejb",
-                        "aa": "2",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    },
                     {
                       "name": "TransactionAttribute",
                       "type": "annotation",
                       "properties": {
                         "schema": "javax.ejb",
                         "aa": "1",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
                         "locad": "1",
                         "anl": "0"
                       },
@@ -4123,45 +4131,7 @@
                   ]
                 },
                 {
-                  "name": "remove",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "removeCollection",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "entityManager",
+                  "name": "Optional[entityManager]",
                   "type": "field",
                   "value": 1,
                   "properties": {},
@@ -4180,17 +4150,28 @@
                   ]
                 },
                 {
-                  "name": "getEntityManager",
+                  "name": "batchInsertTOModified",
                   "type": "method",
-                  "value": 1,
+                  "value": 2,
                   "properties": {},
                   "children": [
                     {
-                      "name": "Override",
+                      "name": "AccessTimeout",
                       "type": "annotation",
                       "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
+                        "schema": "javax.ejb",
+                        "aa": "2",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "TransactionAttribute",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "javax.ejb",
+                        "aa": "1",
                         "locad": "1",
                         "anl": "0"
                       },
@@ -4298,7 +4279,102 @@
                   "children": []
                 },
                 {
+                  "name": "findByColumnsSingleResult",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "findAllByColumnsIn",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "findByColumnsResultListOrderBy",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "findByColumnsSingleResult",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
                   "name": "find",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "findByColumnsResultList",
                   "type": "method",
                   "value": 1,
                   "properties": {},
@@ -4355,82 +4431,6 @@
                   ]
                 },
                 {
-                  "name": "findByColumnsSingleResult",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "findAllByColumnsIn",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "findByColumnsResultList",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "findAllByIdIn",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
                   "name": "count",
                   "type": "method",
                   "value": 1,
@@ -4450,26 +4450,7 @@
                   ]
                 },
                 {
-                  "name": "findByColumnsSingleResult",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "entityManager",
+                  "name": "Optional[entityManager]",
                   "type": "field",
                   "value": 1,
                   "properties": {},
@@ -4488,7 +4469,7 @@
                   ]
                 },
                 {
-                  "name": "findByColumnsResultListOrderBy",
+                  "name": "findAllByIdIn",
                   "type": "method",
                   "value": 1,
                   "properties": {},
@@ -4644,25 +4625,6 @@
                       "children": []
                     },
                     {
-                      "name": "tsiFitsEntityDAOWriter",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "EJB",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.ejb",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "getAbstractEntityDAO",
                       "type": "method",
                       "value": 1,
@@ -4673,6 +4635,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiFitsEntityDAOWriter]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "EJB",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -4745,25 +4726,6 @@
                       "children": []
                     },
                     {
-                      "name": "getTsiFitsByPeriodJoinMaskDataJoinTsiHmi",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "getTsiFitsByPeriodJoinMaskDataJoinRingsAreaJoinTsiHDU",
                       "type": "method",
                       "value": 1,
@@ -4783,7 +4745,26 @@
                       ]
                     },
                     {
-                      "name": "tsiFitsEntityDAOReader",
+                      "name": "find",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiFitsEntityDAOReader]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -4803,6 +4784,25 @@
                     },
                     {
                       "name": "findAllByColumnsIn",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getTsiFitsByPeriodJoinMaskDataJoinTsiHmi",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -4841,25 +4841,6 @@
                     },
                     {
                       "name": "getCountTsiFitsByPeriod",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "find",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -4930,16 +4911,16 @@
                       "children": []
                     },
                     {
-                      "name": "remove",
-                      "type": "method",
+                      "name": "Optional[fitsDownloadEntityDAOWriter]",
+                      "type": "field",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Override",
+                          "name": "EJB",
                           "type": "annotation",
                           "properties": {
-                            "schema": "java.lang",
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -4949,7 +4930,7 @@
                       ]
                     },
                     {
-                      "name": "getAbstractEntityDAO",
+                      "name": "update",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -4987,7 +4968,7 @@
                       ]
                     },
                     {
-                      "name": "update",
+                      "name": "remove",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -5006,16 +4987,16 @@
                       ]
                     },
                     {
-                      "name": "fitsDownloadEntityDAOWriter",
-                      "type": "field",
+                      "name": "getAbstractEntityDAO",
+                      "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "EJB",
+                          "name": "Override",
                           "type": "annotation",
                           "properties": {
-                            "schema": "javax.ejb",
+                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -5110,7 +5091,7 @@
                       "children": []
                     },
                     {
-                      "name": "batchUpdate",
+                      "name": "batchInsert",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -5129,16 +5110,16 @@
                       ]
                     },
                     {
-                      "name": "tsiHmiEntityDAOWriter",
-                      "type": "field",
+                      "name": "batchUpdate",
+                      "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "EJB",
+                          "name": "Override",
                           "type": "annotation",
                           "properties": {
-                            "schema": "javax.ejb",
+                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -5186,16 +5167,16 @@
                       ]
                     },
                     {
-                      "name": "batchInsert",
-                      "type": "method",
+                      "name": "Optional[tsiHmiEntityDAOWriter]",
+                      "type": "field",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Override",
+                          "name": "EJB",
                           "type": "annotation",
                           "properties": {
-                            "schema": "java.lang",
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -5309,25 +5290,6 @@
                       ]
                     },
                     {
-                      "name": "timDataEntityDAOWriter",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "EJB",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.ejb",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "batchInsert",
                       "type": "method",
                       "value": 1,
@@ -5338,6 +5300,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[timDataEntityDAOWriter]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "EJB",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -5519,25 +5500,6 @@
                       "children": []
                     },
                     {
-                      "name": "tsiHmiEntityDAOReader",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "EJB",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.ejb",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "findAll",
                       "type": "method",
                       "value": 1,
@@ -5548,6 +5510,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiHmiEntityDAOReader]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "EJB",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -5609,6 +5590,25 @@
                       "children": []
                     },
                     {
+                      "name": "findByFileName",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
                       "name": "findByStatus",
                       "type": "method",
                       "value": 1,
@@ -5628,7 +5628,7 @@
                       ]
                     },
                     {
-                      "name": "fitsDownloadEntityDAOReader",
+                      "name": "Optional[fitsDownloadEntityDAOReader]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -5638,25 +5638,6 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.ejb",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "findByFileName",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -5729,25 +5710,6 @@
                       "children": []
                     },
                     {
-                      "name": "findByPeriod",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "findByFitsTypeAndTsiHMINull",
                       "type": "method",
                       "value": 1,
@@ -5768,6 +5730,25 @@
                     },
                     {
                       "name": "findTsiMaskDataWithLeftJoinRelations",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "findByPeriod",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -5838,25 +5819,6 @@
                       ]
                     },
                     {
-                      "name": "findAllByColumnsIn",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "findByPeriod",
                       "type": "method",
                       "value": 1,
@@ -5876,7 +5838,7 @@
                       ]
                     },
                     {
-                      "name": "timDataEntityDAOReader",
+                      "name": "Optional[timDataEntityDAOReader]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -5886,6 +5848,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.ejb",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "findAllByColumnsIn",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -6243,6 +6224,25 @@
                   "children": []
                 },
                 {
+                  "name": "preUpdate",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "PreUpdate",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "javax.persistence",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
                   "name": "prePersist",
                   "type": "method",
                   "value": 1,
@@ -6262,7 +6262,7 @@
                   ]
                 },
                 {
-                  "name": "modificationDate",
+                  "name": "Optional[creationDate]",
                   "type": "field",
                   "value": 2,
                   "properties": {},
@@ -6292,26 +6292,7 @@
                   ]
                 },
                 {
-                  "name": "preUpdate",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "PreUpdate",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "javax.persistence",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "creationDate",
+                  "name": "Optional[modificationDate]",
                   "type": "field",
                   "value": 2,
                   "properties": {},
@@ -6402,16 +6383,16 @@
                       "children": []
                     },
                     {
-                      "name": "file",
-                      "type": "field",
+                      "name": "toString",
+                      "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Transient",
+                          "name": "Override",
                           "type": "annotation",
                           "properties": {
-                            "schema": "javax.persistence",
+                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -6440,17 +6421,28 @@
                       ]
                     },
                     {
-                      "name": "hashCode",
-                      "type": "method",
-                      "value": 1,
+                      "name": "Optional[observationDate]",
+                      "type": "field",
+                      "value": 2,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Override",
+                          "name": "Temporal",
                           "type": "annotation",
                           "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -6459,7 +6451,26 @@
                       ]
                     },
                     {
-                      "name": "status",
+                      "name": "Optional[filename]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[type]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -6508,7 +6519,26 @@
                       ]
                     },
                     {
-                      "name": "toString",
+                      "name": "Optional[file]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Transient",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "hashCode",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -6527,26 +6557,7 @@
                       ]
                     },
                     {
-                      "name": "filename",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "id",
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -6598,36 +6609,6 @@
                       ]
                     },
                     {
-                      "name": "observationDate",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Temporal",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "getId",
                       "type": "method",
                       "value": 1,
@@ -6647,7 +6628,7 @@
                       ]
                     },
                     {
-                      "name": "type",
+                      "name": "Optional[status]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -6721,6 +6702,25 @@
                       "children": []
                     },
                     {
+                      "name": "Optional[tsiMaskData]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToOne",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
                       "name": "setId",
                       "type": "method",
                       "value": 1,
@@ -6740,7 +6740,86 @@
                       ]
                     },
                     {
-                      "name": "id",
+                      "name": "Optional[fitsType]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Enumerated",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[observationDate]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Temporal",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiHDUSet]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToMany",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -6792,71 +6871,11 @@
                       ]
                     },
                     {
-                      "name": "tsiHDUSet",
+                      "name": "Optional[filename]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
                       "children": [
-                        {
-                          "name": "OneToMany",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "fitsType",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Enumerated",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "observationDate",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Temporal",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
                         {
                           "name": "Column",
                           "type": "annotation",
@@ -6882,44 +6901,6 @@
                           "properties": {
                             "schema": "java.lang",
                             "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "filename",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "tsiMaskData",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToOne",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -6972,56 +6953,7 @@
                       "children": []
                     },
                     {
-                      "name": "tsiHDU",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToOne",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "JoinColumn",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hduAsJson",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "id",
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -7065,6 +6997,55 @@
                           "properties": {
                             "schema": "javax.persistence",
                             "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiHDU]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToOne",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "JoinColumn",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hduAsJson]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -7139,26 +7120,7 @@
                       "children": []
                     },
                     {
-                      "name": "getId",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryDatarms",
+                      "name": "Optional[hEntryDatarms]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7177,7 +7139,37 @@
                       ]
                     },
                     {
-                      "name": "hEntryDataMin2",
+                      "name": "Optional[tsiFits]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "ManyToOne",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "JoinColumn",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryTRec]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7196,7 +7188,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryDateObs",
+                      "name": "Optional[hEntryCrpix1]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7215,7 +7207,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryDataMin",
+                      "name": "Optional[hEntryRsunRef]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7234,7 +7226,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryCdelt2",
+                      "name": "Optional[hEntryRsunObs]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7253,7 +7245,83 @@
                       ]
                     },
                     {
-                      "name": "hduType",
+                      "name": "Optional[hEntryDataMax2]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryZnaxis1]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryDataMea2]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryCdelt1]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hduType]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -7283,7 +7351,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryZnaxis1",
+                      "name": "Optional[hEntryCrltObs]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7302,7 +7370,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryBzero",
+                      "name": "Optional[hEntryCrval2]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7321,7 +7389,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryRsunRef",
+                      "name": "Optional[hEntryBlank]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7340,7 +7408,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryDataRms2",
+                      "name": "Optional[hEntryBzero]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7359,7 +7427,26 @@
                       ]
                     },
                     {
-                      "name": "hEntryBlank",
+                      "name": "getId",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryDsunRef]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7378,7 +7465,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryDsunRef",
+                      "name": "Optional[hEntryDataMin2]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7397,7 +7484,26 @@
                       ]
                     },
                     {
-                      "name": "tsiData",
+                      "name": "setId",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiData]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7416,7 +7522,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryBscale",
+                      "name": "Optional[hEntryCrpix2]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7435,7 +7541,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryRsunObs",
+                      "name": "Optional[hEntryDataRms2]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7454,7 +7560,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryContent",
+                      "name": "Optional[hEntryContent]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7473,7 +7579,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryQuality",
+                      "name": "Optional[hEntryDateObs]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7492,7 +7598,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryCrpix2",
+                      "name": "Optional[hEntryQuality]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7511,7 +7617,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryDataMax2",
+                      "name": "Optional[hEntryZbitpix]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7530,7 +7636,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryCdelt1",
+                      "name": "Optional[hEntryDataMin]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7549,7 +7655,64 @@
                       ]
                     },
                     {
-                      "name": "id",
+                      "name": "Optional[hEntryBscale]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryCdelt2]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[hEntryDataMean]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -7601,7 +7764,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryDataMax",
+                      "name": "Optional[hEntryDsunObs]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7620,189 +7783,7 @@
                       ]
                     },
                     {
-                      "name": "hEntryTRec",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryDsunObs",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "tsiFits",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "ManyToOne",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "JoinColumn",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryDataMean",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryCrval2",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryCrpix1",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryCrltObs",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "setId",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryDataMea2",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "hEntryZbitpix",
+                      "name": "Optional[hEntryDataMax]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7865,45 +7846,7 @@
                       "children": []
                     },
                     {
-                      "name": "tsiActiveRegion",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToMany",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "setId",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "tsiHMI",
+                      "name": "Optional[tsiHMI]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -7922,75 +7865,7 @@
                       ]
                     },
                     {
-                      "name": "tsiRingsArea",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToMany",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "tsiFits",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToOne",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "JoinColumn",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getId",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "id",
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -8034,6 +7909,112 @@
                           "properties": {
                             "schema": "javax.persistence",
                             "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "setId",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiActiveRegion]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToMany",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiRingsArea]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToMany",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsiFits]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToOne",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "JoinColumn",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getId",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -8149,59 +8130,7 @@
                       ]
                     },
                     {
-                      "name": "id",
-                      "type": "field",
-                      "value": 4,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Id",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "SequenceGenerator",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "GeneratedValue",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "nominalDate",
+                      "name": "Optional[nominalDate]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -8250,11 +8179,63 @@
                       ]
                     },
                     {
-                      "name": "tsi",
+                      "name": "Optional[tsi]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
                       "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[id]",
+                      "type": "field",
+                      "value": 4,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Id",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "SequenceGenerator",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "GeneratedValue",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
                         {
                           "name": "Column",
                           "type": "annotation",
@@ -8321,7 +8302,7 @@
                       "children": []
                     },
                     {
-                      "name": "ring",
+                      "name": "Optional[area]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -8340,7 +8321,7 @@
                       ]
                     },
                     {
-                      "name": "tsiMaskData",
+                      "name": "Optional[tsiMaskData]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -8370,22 +8351,11 @@
                       ]
                     },
                     {
-                      "name": "activeArea",
+                      "name": "Optional[ppm]",
                       "type": "field",
-                      "value": 2,
+                      "value": 1,
                       "properties": {},
                       "children": [
-                        {
-                          "name": "Enumerated",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
                         {
                           "name": "Column",
                           "type": "annotation",
@@ -8400,7 +8370,7 @@
                       ]
                     },
                     {
-                      "name": "id",
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -8452,7 +8422,7 @@
                       ]
                     },
                     {
-                      "name": "ppm",
+                      "name": "Optional[ring]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -8471,11 +8441,22 @@
                       ]
                     },
                     {
-                      "name": "area",
+                      "name": "Optional[activeArea]",
                       "type": "field",
-                      "value": 1,
+                      "value": 2,
                       "properties": {},
                       "children": [
+                        {
+                          "name": "Enumerated",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
                         {
                           "name": "Column",
                           "type": "annotation",
@@ -8534,7 +8515,7 @@
                       "children": []
                     },
                     {
-                      "name": "meanValue",
+                      "name": "Optional[meanValue]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -8553,7 +8534,7 @@
                       ]
                     },
                     {
-                      "name": "layer",
+                      "name": "Optional[neuron]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -8572,7 +8553,7 @@
                       ]
                     },
                     {
-                      "name": "neuron",
+                      "name": "Optional[standardDeviation]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -8591,17 +8572,17 @@
                       ]
                     },
                     {
-                      "name": "prePersist",
-                      "type": "method",
+                      "name": "Optional[layer]",
+                      "type": "field",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "PrePersist",
+                          "name": "Column",
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.persistence",
-                            "aa": "0",
+                            "aa": "2",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -8610,7 +8591,37 @@
                       ]
                     },
                     {
-                      "name": "id",
+                      "name": "Optional[type]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Enumerated",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -8662,55 +8673,6 @@
                       ]
                     },
                     {
-                      "name": "type",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Enumerated",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "standardDeviation",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
                       "name": "preUpdate",
                       "type": "method",
                       "value": 1,
@@ -8730,7 +8692,26 @@
                       ]
                     },
                     {
-                      "name": "value",
+                      "name": "prePersist",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "PrePersist",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[value]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -8793,7 +8774,181 @@
                       "children": []
                     },
                     {
-                      "name": "id",
+                      "name": "Optional[error]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "setId",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[tsi]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[intensityMask]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToOne",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "JoinColumn",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[observationDate]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[magnetogramMask]",
+                      "type": "field",
+                      "value": 2,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "OneToOne",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        },
+                        {
+                          "name": "JoinColumn",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "3",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[nominalDate]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getId",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -8843,180 +8998,6 @@
                           "children": []
                         }
                       ]
-                    },
-                    {
-                      "name": "magnetogramMask",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToOne",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "JoinColumn",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "error",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "getId",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "setId",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "intensityMask",
-                      "type": "field",
-                      "value": 2,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "OneToOne",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        },
-                        {
-                          "name": "JoinColumn",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "3",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "observationDate",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "nominalDate",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "tsi",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
                     }
                   ]
                 },
@@ -9052,7 +9033,26 @@
                       "children": []
                     },
                     {
-                      "name": "activeArea",
+                      "name": "Optional[areaInPixel]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Column",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.persistence",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[activeArea]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -9082,26 +9082,7 @@
                       ]
                     },
                     {
-                      "name": "xLocation",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Column",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.persistence",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "id",
+                      "name": "Optional[id]",
                       "type": "field",
                       "value": 4,
                       "properties": {},
@@ -9153,7 +9134,7 @@
                       ]
                     },
                     {
-                      "name": "areaInPixel",
+                      "name": "Optional[ppm]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -9172,7 +9153,7 @@
                       ]
                     },
                     {
-                      "name": "ppm",
+                      "name": "Optional[xLocation]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -9191,7 +9172,7 @@
                       ]
                     },
                     {
-                      "name": "tsiMaskData",
+                      "name": "Optional[tsiMaskData]",
                       "type": "field",
                       "value": 2,
                       "properties": {},
@@ -9221,7 +9202,7 @@
                       ]
                     },
                     {
-                      "name": "predominantRing",
+                      "name": "Optional[yLocation]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -9240,7 +9221,7 @@
                       ]
                     },
                     {
-                      "name": "yLocation",
+                      "name": "Optional[predominantRing]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -9336,17 +9317,17 @@
                   },
                   "children": [
                     {
-                      "name": "getFitsImageData",
+                      "name": "calcMagneticRegions",
                       "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Override",
+                          "name": "SuppressWarnings",
                           "type": "annotation",
                           "properties": {
                             "schema": "java.lang",
-                            "aa": "0",
+                            "aa": "1",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -9355,7 +9336,7 @@
                       ]
                     },
                     {
-                      "name": "calcMagneticRegions",
+                      "name": "addToMatList",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -9393,17 +9374,17 @@
                       ]
                     },
                     {
-                      "name": "addToMatList",
+                      "name": "getFitsImageData",
                       "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "SuppressWarnings",
+                          "name": "Override",
                           "type": "annotation",
                           "properties": {
                             "schema": "java.lang",
-                            "aa": "1",
+                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -9454,7 +9435,7 @@
                   "children": []
                 },
                 {
-                  "name": "irradianceSchedulerUtils",
+                  "name": "Optional[irradianceSchedulerUtils]",
                   "type": "field",
                   "value": 1,
                   "properties": {},
@@ -9536,7 +9517,7 @@
                   "children": []
                 },
                 {
-                  "name": "irradianceErrorSchedulerUtilsLocal",
+                  "name": "Optional[irradianceErrorSchedulerUtilsLocal]",
                   "type": "field",
                   "value": 1,
                   "properties": {},
@@ -9659,7 +9640,7 @@
                   "children": []
                 },
                 {
-                  "name": "utx",
+                  "name": "Optional[utx]",
                   "type": "field",
                   "value": 1,
                   "properties": {},
@@ -9878,16 +9859,16 @@
                       "children": []
                     },
                     {
-                      "name": "init",
-                      "type": "method",
+                      "name": "Optional[irradianceCommonsLocal]",
+                      "type": "field",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "PostConstruct",
+                          "name": "EJB",
                           "type": "annotation",
                           "properties": {
-                            "schema": "javax.annotation",
+                            "schema": "javax.ejb",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -9916,16 +9897,16 @@
                       ]
                     },
                     {
-                      "name": "irradianceCommonsLocal",
-                      "type": "field",
+                      "name": "init",
+                      "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "EJB",
+                          "name": "PostConstruct",
                           "type": "annotation",
                           "properties": {
-                            "schema": "javax.ejb",
+                            "schema": "javax.annotation",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -10009,7 +9990,7 @@
                       ]
                     },
                     {
-                      "name": "irradianceCommonsLocal",
+                      "name": "Optional[irradianceCommonsLocal]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -10019,6 +10000,25 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.ejb",
+                            "aa": "0",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "compare",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Override",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "java.lang",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -10039,6 +10039,25 @@
                           "properties": {
                             "schema": "javax.ejb",
                             "aa": "1",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "init",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "PostConstruct",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "javax.annotation",
+                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -10069,44 +10088,6 @@
                           "properties": {
                             "schema": "javax.ejb",
                             "aa": "1",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "compare",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Override",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "init",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "PostConstruct",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "javax.annotation",
-                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -10271,44 +10252,6 @@
                   "children": []
                 },
                 {
-                  "name": "init",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "PostConstruct",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "javax.annotation",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "name": "addResourceHandlers",
-                  "type": "method",
-                  "value": 1,
-                  "properties": {},
-                  "children": [
-                    {
-                      "name": "Override",
-                      "type": "annotation",
-                      "properties": {
-                        "schema": "java.lang",
-                        "aa": "0",
-                        "locad": "1",
-                        "anl": "0"
-                      },
-                      "children": []
-                    }
-                  ]
-                },
-                {
                   "name": "graphCacheLocal",
                   "type": "method",
                   "value": 1,
@@ -10319,6 +10262,25 @@
                       "type": "annotation",
                       "properties": {
                         "schema": "org.springframework.context.annotation",
+                        "aa": "0",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "init",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "PostConstruct",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "javax.annotation",
                         "aa": "0",
                         "locad": "1",
                         "anl": "0"
@@ -10339,6 +10301,25 @@
                       "properties": {
                         "schema": "org.springframework.context.annotation",
                         "aa": "1",
+                        "locad": "1",
+                        "anl": "0"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "addResourceHandlers",
+                  "type": "method",
+                  "value": 1,
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "properties": {
+                        "schema": "java.lang",
+                        "aa": "0",
                         "locad": "1",
                         "anl": "0"
                       },
@@ -10423,7 +10404,7 @@
                       "children": []
                     },
                     {
-                      "name": "tsiFileLocal",
+                      "name": "Optional[tsiFileLocal]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -10442,7 +10423,7 @@
                       ]
                     },
                     {
-                      "name": "accessControlBean",
+                      "name": "Optional[accessControlBean]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -10452,25 +10433,6 @@
                           "type": "annotation",
                           "properties": {
                             "schema": "javax.inject",
-                            "aa": "0",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "downloadTsiFileUtils",
-                      "type": "field",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "Autowired",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "org.springframework.beans.factory.annotation",
                             "aa": "0",
                             "locad": "1",
                             "anl": "0"
@@ -10491,6 +10453,25 @@
                           "properties": {
                             "schema": "org.springframework.web.bind.annotation",
                             "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Optional[downloadTsiFileUtils]",
+                      "type": "field",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "Autowired",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "org.springframework.beans.factory.annotation",
+                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -10532,26 +10513,7 @@
                       "children": []
                     },
                     {
-                      "name": "getRegionData",
-                      "type": "method",
-                      "value": 1,
-                      "properties": {},
-                      "children": [
-                        {
-                          "name": "RequestMapping",
-                          "type": "annotation",
-                          "properties": {
-                            "schema": "org.springframework.web.bind.annotation",
-                            "aa": "2",
-                            "locad": "1",
-                            "anl": "0"
-                          },
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "name": "graphCacheLocal",
+                      "name": "Optional[graphCacheLocal]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -10571,6 +10533,25 @@
                     },
                     {
                       "name": "getTSIData",
+                      "type": "method",
+                      "value": 1,
+                      "properties": {},
+                      "children": [
+                        {
+                          "name": "RequestMapping",
+                          "type": "annotation",
+                          "properties": {
+                            "schema": "org.springframework.web.bind.annotation",
+                            "aa": "2",
+                            "locad": "1",
+                            "anl": "0"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "getRegionData",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -10629,7 +10610,7 @@
                       "children": []
                     },
                     {
-                      "name": "downloadTsiFileUtils",
+                      "name": "Optional[downloadTsiFileUtils]",
                       "type": "field",
                       "value": 1,
                       "properties": {},
@@ -10806,7 +10787,7 @@
                       "children": []
                     },
                     {
-                      "name": "loadIrradiance",
+                      "name": "loadPPM",
                       "type": "method",
                       "value": 1,
                       "properties": {},
@@ -10825,17 +10806,17 @@
                       ]
                     },
                     {
-                      "name": "loadPPM",
+                      "name": "getPPMData",
                       "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Schedule",
+                          "name": "Override",
                           "type": "annotation",
                           "properties": {
-                            "schema": "javax.ejb",
-                            "aa": "3",
+                            "schema": "java.lang",
+                            "aa": "0",
                             "locad": "1",
                             "anl": "0"
                           },
@@ -10863,17 +10844,17 @@
                       ]
                     },
                     {
-                      "name": "getPPMData",
+                      "name": "loadIrradiance",
                       "type": "method",
                       "value": 1,
                       "properties": {},
                       "children": [
                         {
-                          "name": "Override",
+                          "name": "Schedule",
                           "type": "annotation",
                           "properties": {
-                            "schema": "java.lang",
-                            "aa": "0",
+                            "schema": "javax.ejb",
+                            "aa": "3",
                             "locad": "1",
                             "anl": "0"
                           },
