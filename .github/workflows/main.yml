@@ -9,6 +9,7 @@ on:
       - main
 env: 
   HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+  CI: false 
 jobs:
   build:
     runs-on: ubuntu-latest
