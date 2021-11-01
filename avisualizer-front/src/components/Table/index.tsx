@@ -298,7 +298,6 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
           <tr>
             <th>
               <Checkbox
-                label=""
                 checked={isAllChecked}
                 onClick={() => {
                   handleShowAllAnnotations(!isAllChecked)
@@ -319,7 +318,6 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
               <tr className="schema" id={`schema-${value.schema}`}>
                 <td>
                   <Checkbox
-                    label=""
                     checked={
                       isAllChecked ||
                       annotationsCheckbox?.[value.schema].checked
@@ -356,7 +354,6 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
                       <td></td>
                       <td style={{ textAlign: 'start', display: 'flex' }}>
                         <Checkbox
-                          label=""
                           checked={
                             annotationsCheckbox?.[value.schema].checked ||
                             annotationsCheckbox?.[value.schema].annotations[i]

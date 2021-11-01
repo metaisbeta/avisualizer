@@ -4,7 +4,6 @@ import { Container } from './styles'
 import { RadioButtonProps } from './types'
 
 export const Checkbox: React.FC<RadioButtonProps> = ({
-  label,
   checked = false,
   ...rest
 }) => {
