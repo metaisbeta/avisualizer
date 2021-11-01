@@ -1,4 +1,4 @@
-[![AVisualizer-Actions-Build](https://github.com/phillima/avisualizer/workflows/AVisualizer/badge.svg)](https://github.com/phillima/AVisualizer/actions)
+[![AVisualizer](https://github.com/metaisbeta/avisualizer/actions/workflows/main.yml/badge.svg)](https://github.com/metaisbeta/avisualizer/actions/workflows/main.yml)
 [![Heroku](https://img.shields.io/badge/heroku-deployed-blueviolet.svg?logo=heroku&)](https://avisualizer.herokuapp.com/)
 
 <h1 align = "center">Annotation Visualizer</h1>
@@ -36,12 +36,12 @@ We are proposing three different polymetrics views for code annotations. They ar
 
 * System View: In this view we are interested in observing how annotation schemas are distributed in the packages. This view has no information of classes.
 
-![System View Example](/images/sv-example.png)
+![System View Example](/images/avisualizer-sv.png)
 *Example of the System View for a Java Software*
 
 * Package View: In this view we are interested in observing how annotations are distributed inside a class, based on their schema. In this view we have no information of how the annotations are distributed between the code elements.
 
-![Package View Example](/images/pv-example.png)
+![Package View Example](/images/avisualizer-pv.png)
 *Example of the Package View for a Java Software*
 
 * Class View: In this view we group the annotation inside a class based on their code elements.
