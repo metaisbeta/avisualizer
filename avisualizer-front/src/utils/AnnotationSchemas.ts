@@ -47,17 +47,19 @@ export function annotationSchemas(root: any, name: string) {
 
     if (d.data.type === 'annotation' && schema !== null) {
       // Array of the annotations in schema
-      const arr = annotationsList.get(schema)
+      const arr = annotationsList.get(schema) ?? []
+
+      if (schema === 'javax.persistence') console.log(arr)
 
       if (!arr?.includes(d.data.name)) {
         arr?.push(d.data.name)
-        annotationsCount.set(d.data.name, d.data.value)
+        annotationsCount.set(d.data.name, 1)
       } else {
         const count = annotationsCount.get(d.data.name) ?? 0
         annotationsCount.set(d.data.name, count + 1)
       }
 
-      annotationsList.set(d.data.properties.schema, arr ?? [])
+      annotationsList.set(d.data.properties.schema, arr)
     }
   })
 
