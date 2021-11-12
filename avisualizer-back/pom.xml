@@ -32,7 +32,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-		<dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.9</version>
+        </dependency>
+        <dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.20</version>
@@ -41,9 +46,14 @@
         <dependency>
             <groupId>io.github.phillima</groupId>
             <artifactId>asniffer</artifactId>
-            <version>2.4.7</version>
+            <version>3.0.0</version>
         </dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.bacoder.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>3.1.0-201309071158-r</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>${artifactId}</finalName>
