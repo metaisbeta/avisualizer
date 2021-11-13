@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import com.github.phillima.asniffer.ASniffer;
 import com.github.phillima.asniffer.model.AMReport;
-import com.github.phillima.asniffer.output.json.d3hierarchy.JSONReportAvisuIMP;
 import com.github.phillima.asniffer.output.json.d3hierarchy.ProjectReport;
 import com.github.phillima.asniffer.output.json.d3hierarchy.classview.JSONReportCV;
 import com.github.phillima.asniffer.output.json.d3hierarchy.packageview.JSONReportPV;
@@ -21,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ASnifferController {
 
-    @GetMapping("/avisualizer")
+    @GetMapping("/avisualizer-report")
     @ResponseBody
     public String getProjectsReportAVisualzer(@RequestParam String projectRepoURL){
 
