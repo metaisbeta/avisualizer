@@ -7,7 +7,6 @@ import { SystemVisualizer } from '../../components/ZoomableCircle/SystemView'
 import classData from '../../data/SpaceWeatherTSI-CV.json'
 import packageData from '../../data/SpaceWeatherTSI-PV.json'
 import systemData from '../../data/SpaceWeatherTSI-SV.json'
-import { RadioButtons } from './RadioButtons'
 import {
   Container,
   Content,
@@ -95,11 +94,6 @@ export const Home = () => {
               }}
             />
           </div>
-
-          <RadioButtons
-            typeAnnotation={typeAnnotation}
-            setTypeAnnotation={setTypeAnnotation}
-          />
         </ZoomableCircleContainer>
 
         <Table typeAnnotation={typeAnnotation} />
