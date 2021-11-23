@@ -67,6 +67,9 @@ export const Home = () => {
         <ZoomableCircleContainer>
           <InfoContainer>
             <h3>
+              <b>Visualization:</b> {typeAnnotation}
+            </h3>
+            <h3>
               <b>Annotation Metric:</b> {annotationMetric}
             </h3>
             <h3>
