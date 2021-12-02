@@ -21,12 +21,12 @@ export const Home = () => {
   )
   const [packageName, setPackageName] = useState<string>('')
 
-  useEffect(() => {
+  function render(sv: any, pv: any, cv: any) {
     const width = 500
     const height = 500
 
     SystemVisualizer(
-      systemData,
+      sv,
       width,
       height,
       packageData,
@@ -37,7 +37,7 @@ export const Home = () => {
     )
 
     PackageVisualizer(
-      packageData,
+      pv,
       width,
       height,
       setTypeAnnotation,
@@ -47,7 +47,7 @@ export const Home = () => {
     )
 
     ClassVisualizer(
-      classData,
+      cv,
       0,
       '',
       width,
@@ -57,6 +57,40 @@ export const Home = () => {
       setAnnotationMetric,
       setPackageName
     )
+  }
+
+  useEffect(() => {
+    const width = 500
+    const height = 500
+
+    let sv: any
+    let pv: any
+    let cv: any
+
+    const search = window.location.search
+    const params = new URLSearchParams(search)
+    const projectID = params.get('projeto')
+
+    if (projectID == null) {
+      sv = systemData
+      pv = packageData
+      cv = classData
+      render(sv, pv, cv)
+    } else {
+      const request = async () => {
+        const response = await fetch(
+          'https://avisualizer-plugin.herokuapp.com/data.json?project=' +
+            projectID
+        )
+        const json = await response.json()
+        sv = JSON.parse(json.sv)
+        cv = JSON.parse(json.cv)
+        pv = JSON.parse(json.pv)
+      }
+      request().then(() => {
+        render(sv, pv, cv)
+      })
+    }
   }, [])
 
   return (
