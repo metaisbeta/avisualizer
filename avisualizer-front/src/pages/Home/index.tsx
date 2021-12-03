@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 
 import { Table } from '../../components/Table'
 import { ClassVisualizer } from '../../components/ZoomableCircle/ClassView'
@@ -15,11 +15,13 @@ import {
 } from './styles'
 
 export const Home = () => {
+  const [appName, setAppName] = useState<string>('Carregando...')
   const [typeAnnotation, setTypeAnnotation] = useState<string>('System View')
   const [annotationMetric, setAnnotationMetric] = useState<string>(
     'Number of Annotations'
   )
   const [packageName, setPackageName] = useState<string>('')
+  let name = null
 
   function render(sv: any, pv: any, cv: any) {
     const width = 500
@@ -75,6 +77,12 @@ export const Home = () => {
       sv = systemData
       pv = packageData
       cv = classData
+      name = systemData.name
+      setAppName(
+        'Project Under Analysis: ' +
+          +name.charAt(0).toUpperCase() +
+          name.slice(1)
+      )
       render(sv, pv, cv)
     } else {
       const request = async () => {
@@ -86,6 +94,12 @@ export const Home = () => {
         sv = JSON.parse(json.sv)
         cv = JSON.parse(json.cv)
         pv = JSON.parse(json.pv)
+        name = json.name
+        setAppName(
+          'Project Under Analysis: ' +
+            name.charAt(0).toUpperCase() +
+            name.slice(1)
+        )
       }
       request().then(() => {
         render(sv, pv, cv)
@@ -95,7 +109,7 @@ export const Home = () => {
 
   return (
     <Container>
-      <h1>Project Under Analysis: {systemData.name}</h1>
+      <h1>{appName}</h1>
 
       <Content>
         <ZoomableCircleContainer>
