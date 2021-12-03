@@ -1,0 +1,334 @@
+{
+  "name": "spring-retry",
+  "children": [
+    {
+      "name": "org.springframework.classify",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "java.lang",
+          "type": "schema",
+          "value": 30,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.junit",
+          "type": "schema",
+          "value": 43,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.springframework.classify.annotation",
+          "type": "schema",
+          "value": 4,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.springframework.classify.annotation",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang.annotation",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.classify.util",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "org.springframework.retry",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "java.lang",
+          "type": "schema",
+          "value": 8,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.junit",
+          "type": "schema",
+          "value": 6,
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "org.springframework.retry.annotation",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 178,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.springframework.beans.factory.annotation",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.springframework.stereotype",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 47,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "java.lang.annotation",
+              "type": "schema",
+              "value": 15,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.springframework.context.annotation",
+              "type": "schema",
+              "value": 52,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.runner",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.backoff",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 16,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.runners.Parameterized",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 15,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.runner",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.context",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 2,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.interceptor",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 46,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 29,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.listener",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 15,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.policy",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 50,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.runners.Parameterized",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 57,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit.runner",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.stats",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 35,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.springframework.retry.annotation",
+              "type": "schema",
+              "value": 3,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 21,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.springframework.context.annotation",
+              "type": "schema",
+              "value": 4,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.support",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 42,
+              "properties": {},
+              "children": []
+            },
+            {
+              "name": "org.junit",
+              "type": "schema",
+              "value": 53,
+              "properties": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "org.springframework.retry.util.test",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "java.lang",
+              "type": "schema",
+              "value": 1,
+              "properties": {},
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

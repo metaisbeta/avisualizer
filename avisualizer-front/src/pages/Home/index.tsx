@@ -78,11 +78,7 @@ export const Home = () => {
       pv = packageData
       cv = classData
       name = systemData.name
-      setAppName(
-        'Project Under Analysis: ' +
-          +name.charAt(0).toUpperCase() +
-          name.slice(1)
-      )
+      setAppName('Project Under Analysis: SpaceWeatherTSI')
       render(sv, pv, cv)
     } else {
       const request = async () => {
