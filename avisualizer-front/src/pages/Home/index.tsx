@@ -4,9 +4,16 @@ import { Table } from '../../components/Table'
 import { ClassVisualizer } from '../../components/ZoomableCircle/ClassView'
 import { PackageVisualizer } from '../../components/ZoomableCircle/PackageView'
 import { SystemVisualizer } from '../../components/ZoomableCircle/SystemView'
-import classData from '../../data/SpaceWeatherTSI-CV.json'
-import packageData from '../../data/SpaceWeatherTSI-PV.json'
-import systemData from '../../data/SpaceWeatherTSI-SV.json'
+import geoClassData from '../../data/Geostore-CV.json'
+import geoPackageData from '../../data/Geostore-PV.json'
+import geoSystemData from '../../data/Geostore-SV.json'
+import gujClassData from '../../data/Guj-CV.json'
+import gujPackageData from '../../data/Guj-PV.json'
+import gujSystemData from '../../data/Guj-SV.json'
+import swClassData from '../../data/SpaceWeatherTSI-CV.json'
+import swPackageData from '../../data/SpaceWeatherTSI-PV.json'
+import swSystemData from '../../data/SpaceWeatherTSI-SV.json'
+import { useProject } from '../../hooks/useProject'
 import {
   Container,
   Content,
@@ -21,9 +28,33 @@ export const Home = () => {
   )
   const [packageName, setPackageName] = useState<string>('')
 
+  const { project } = useProject()
+
   useEffect(() => {
     const width = 500
     const height = 500
+
+    document.getElementsByClassName('svg-container-sv')[0].innerHTML = ''
+    document.getElementsByClassName('svg-container-pv')[0].innerHTML = ''
+    document.getElementsByClassName('svg-container-cv')[0].innerHTML = ''
+
+    let systemData = {}
+    let packageData = {}
+    let classData = {}
+
+    if (project === 'Space Weather TSI') {
+      systemData = swSystemData
+      packageData = swPackageData
+      classData = swClassData
+    } else if (project === 'Guj') {
+      systemData = gujSystemData
+      packageData = gujPackageData
+      classData = gujClassData
+    } else {
+      systemData = geoSystemData
+      packageData = geoPackageData
+      classData = geoClassData
+    }
 
     SystemVisualizer(
       systemData,
@@ -57,11 +88,11 @@ export const Home = () => {
       setAnnotationMetric,
       setPackageName
     )
-  }, [])
+  }, [project])
 
   return (
     <Container>
-      <h1>Project Under Analysis: {systemData.name}</h1>
+      <h1>Project Under Analysis: {project}</h1>
 
       <Content>
         <ZoomableCircleContainer>
@@ -99,7 +130,16 @@ export const Home = () => {
           </div>
         </ZoomableCircleContainer>
 
-        <Table typeAnnotation={typeAnnotation} />
+        <Table
+          typeAnnotation={typeAnnotation}
+          packageJson={
+            project === 'Space Weather TSI'
+              ? swPackageData
+              : project === 'Guj'
+              ? gujPackageData
+              : geoPackageData
+          }
+        />
       </Content>
     </Container>
   )

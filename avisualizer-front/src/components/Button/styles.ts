@@ -7,7 +7,7 @@ type ButtonStyledProps = {
 export const ButtonStyled = styled.button<ButtonStyledProps>`
   height: 40px;
 
-  padding: 12px 42px;
+  padding: 8px 42px;
   border-radius: 8px;
 
   font-size: 16px;
@@ -35,5 +35,11 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    background: ${({ theme }) => theme.colors.gray3};
   }
 `
