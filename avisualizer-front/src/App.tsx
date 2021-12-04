@@ -1,13 +1,16 @@
 import React from 'react'
 
 import { Layout } from './components/Layout'
+import { ProjectProvider } from './hooks/useProject'
 import { Home } from './pages/Home'
 
 function App() {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <ProjectProvider>
+      <Layout>
+        <Home />
+      </Layout>
+    </ProjectProvider>
   )
 }
 

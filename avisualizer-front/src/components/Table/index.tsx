@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import { CaretDown } from 'phosphor-react'
 
-import jsondata from '../../data/SpaceWeatherTSI-PV.json'
 import { annotationSchemas } from '../../utils/AnnotationSchemas'
 import {
   displayAllCircles,
@@ -14,7 +13,13 @@ import { Checkbox } from '../Checkbox'
 import { Color, Container, Pagination } from './styles'
 import { AnnotationsCheckboxProps, RowProps, SubSchemaProps } from './types'
 
-export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
+export const Table = ({
+  typeAnnotation,
+  packageJson
+}: {
+  typeAnnotation: string
+  packageJson: any
+}) => {
   const [rowData, setRowData] = useState<RowProps[]>([])
   const [allTableData, setAllTableData] = useState<RowProps[]>([])
   const [totalSchema, setTotalSchema] = useState<Record<string, number>>()
@@ -73,7 +78,7 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
     }
 
     const root: any = d3
-      .hierarchy(jsondata)
+      .hierarchy(packageJson)
       .sum((d: any) => d.value)
       .sort((a, b) => {
         if (b.value && a.value) return b.value - a.value
@@ -89,7 +94,7 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
     setRowData(schemasObjectArray)
     setAllTableData(schemasObjectArray)
     setAnnotationCount(annotationsCount)
-  }, [])
+  }, [packageJson])
 
   useEffect(() => {
     const initializeAnnotationsCheckbox = () => {
@@ -305,7 +310,9 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
                 }}
               />
             </th>
-            <th style={{ width: '100%', textAlign: 'start' }}>Annotation</th>
+            <th style={{ width: '100%', textAlign: 'start' }}>
+              Annotation Schemas
+            </th>
             <th>Total</th>
             <th></th>
             <th></th>
