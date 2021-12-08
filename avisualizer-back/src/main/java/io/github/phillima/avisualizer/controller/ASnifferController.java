@@ -1,8 +1,6 @@
 package io.github.phillima.avisualizer.controller;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 import com.github.phillima.asniffer.ASniffer;
 import com.github.phillima.asniffer.model.AMReport;
@@ -14,7 +12,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
-import org.springframework.util.FileSystemUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,15 +19,15 @@ public class ASnifferController {
 
     @GetMapping("/avisualizer-report")
     @ResponseBody
-    public String getProjectsReportAVisualzer(@RequestParam String projectRepoURL){
+    public String getProjectsReportAVisualzer(@RequestParam String projectRepoURL) {
 
         String currentUserDirectory = Paths.get("")
-                        .toAbsolutePath()
-                        .toString();
+                .toAbsolutePath()
+                .toString();
         String tempProject = currentUserDirectory + File.separator + "test";
-        cloneRepository(tempProject,projectRepoURL);
+        cloneRepository(tempProject, projectRepoURL);
 
-        ASniffer aSniffer = new ASniffer(tempProject,tempProject);
+        ASniffer aSniffer = new ASniffer(tempProject, tempProject);
 
         AMReport report = aSniffer.collectSingle();
 
@@ -39,12 +36,8 @@ public class ASnifferController {
         projectReports[1] = new JSONReportPV().prepareJson(report);
         projectReports[2] = new JSONReportCV().prepareJson(report);
 
-
-        try {
-            FileSystemUtils.deleteRecursively(Paths.get(tempProject));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        File file = new File(tempProject);
+        removeRecursively(file);
 
         Gson json = new GsonBuilder().setPrettyPrinting().create();
 
@@ -54,20 +47,24 @@ public class ASnifferController {
 
     }
 
+    private void cloneRepository(String tempProject, String gitHubUrl) {
+        try {
+            Git git = Git.cloneRepository()
+                    .setURI(gitHubUrl)
+                    .setDirectory(Paths.get(tempProject).toFile())
+                    .call();
+            git.close();
+        } catch (GitAPIException e) {
+            e.printStackTrace();
+        }
+    }
 
-    private void cloneRepository(String tempProject, String gitHubUrl){
-
-        if(Files.isDirectory(Paths.get(tempProject))){
-            System.out.println("Already Collected!");
-        }else{
-            try {
-                Git.cloneRepository()
-                        .setURI(gitHubUrl)
-                        .setDirectory(Paths.get(tempProject).toFile())
-                        .call();
-            } catch (GitAPIException e) {
-                e.printStackTrace();
+    private void removeRecursively(File file) {
+        if (file.isDirectory()) {
+            for (File f : file.listFiles()) {
+                removeRecursively(f);
             }
         }
+        file.delete();
     }
 }

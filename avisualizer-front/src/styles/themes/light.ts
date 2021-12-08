@@ -12,6 +12,7 @@ const light: DefaultTheme = {
     gray2: '#E9E9E9',
     gray3: '#C4C4C4',
     gray4: '#ABABAB',
+    gray5: 'rgba(93, 93, 93, 0.3)',
     black: '#393939'
   }
 }

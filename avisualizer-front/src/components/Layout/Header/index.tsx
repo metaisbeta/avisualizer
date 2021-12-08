@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 import logo from '../../../assets/logo.svg'
+import { Modal } from '../../Modal'
+import { SelectProjectModal } from '../../Modal/SelectProjectModal'
 import { DemonstrationModal } from '../DemonstrationModal'
 import { InformationModal } from '../InformationModal'
 import { Container, Content, LogoContainer } from './styles'
@@ -8,6 +10,7 @@ import { Container, Content, LogoContainer } from './styles'
 export const Header = () => {
   const [openInformationModal, setOpenInformationModal] = useState(false)
   const [openDemonstrationModal, setOpenDemonstrationModal] = useState(false)
+  const [openProjectModal, setOpenProjectModal] = useState(false)
 
   return (
     <Container>
@@ -17,7 +20,9 @@ export const Header = () => {
       </LogoContainer>
 
       <Content>
-        <button>Select your project</button>
+        <button onClick={() => setOpenProjectModal(true)}>
+          Select your project
+        </button>
 
         <button onClick={() => setOpenDemonstrationModal(true)}>
           Demonstration
@@ -37,6 +42,10 @@ export const Header = () => {
         isOpen={openDemonstrationModal}
         setIsOpen={setOpenDemonstrationModal}
       />
+
+      <Modal isOpen={openProjectModal}>
+        <SelectProjectModal onClose={() => setOpenProjectModal(false)} />
+      </Modal>
     </Container>
   )
 }

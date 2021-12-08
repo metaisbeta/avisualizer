@@ -28,8 +28,8 @@ export const Home = () => {
   )
   const [packageName, setPackageName] = useState<string>('')
 
-  const { project } = useProject()
-
+  const { project, file } = useProject()
+  console.log(file)
   useEffect(() => {
     const width = 500
     const height = 500
@@ -50,10 +50,14 @@ export const Home = () => {
       systemData = gujSystemData
       packageData = gujPackageData
       classData = gujClassData
-    } else {
+    } else if (project === 'Geostore') {
       systemData = geoSystemData
       packageData = geoPackageData
       classData = geoClassData
+    } else {
+      systemData = file[0]
+      packageData = file[1]
+      classData = file[2]
     }
 
     SystemVisualizer(
@@ -88,7 +92,7 @@ export const Home = () => {
       setAnnotationMetric,
       setPackageName
     )
-  }, [project])
+  }, [project, file])
 
   return (
     <Container>
@@ -137,7 +141,9 @@ export const Home = () => {
               ? swPackageData
               : project === 'Guj'
               ? gujPackageData
-              : geoPackageData
+              : project === 'Geostore'
+              ? geoPackageData
+              : file[1]
           }
         />
       </Content>

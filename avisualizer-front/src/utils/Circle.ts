@@ -11,12 +11,12 @@ type NodeProps = {
 }
 
 export function addCircleStroke(node: NodeProps): string {
-  if (node.data.type === 'package') return '#393939'
+  if (node?.data?.type === 'package') return '#393939'
   else return '#005AA8'
 }
 
 export function addCircleDash(node: any): string {
-  if (node.data.type == 'package') return '5,5'
+  if (node?.data?.type == 'package') return '5,5'
   else return ''
 }
 
@@ -24,13 +24,13 @@ export function colorCircles(
   node: NodeProps,
   schemasMap: Map<string, string>
 ): string {
-  if (node.data.type === 'package') return '#E9E9E9'
-  else if (node.data.type === 'annotation')
-    return schemasMap.get(node.data.properties.schema) ?? ''
-  else if (node.data.type === 'schema')
-    return schemasMap.get(node.data.name) ?? ''
-  else if (node.data.type === 'method') return '#C4C4C4'
-  else if (node.data.type === 'field') return '#E3E3E3'
+  if (node?.data?.type === 'package') return '#E9E9E9'
+  else if (node?.data?.type === 'annotation')
+    return schemasMap.get(node?.data?.properties?.schema) ?? ''
+  else if (node?.data?.type === 'schema')
+    return schemasMap.get(node?.data?.name) ?? ''
+  else if (node?.data?.type === 'method') return '#C4C4C4'
+  else if (node?.data?.type === 'field') return '#E3E3E3'
   else return '#FAFAFA'
 }
 
