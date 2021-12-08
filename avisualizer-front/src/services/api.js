@@ -5,5 +5,5 @@ export const apiGithub = axios.create({
 })
 // Change the baseURL to your own Github API
 export const apiAsniffer = axios.create({
-  baseURL: 'http://localhost:8080'
+  baseURL: 'https://avisualizer.herokuapp.com/'
 })
