@@ -75,7 +75,7 @@ export const SelectProjectModal: React.FC<SelectProjectModalProps> = ({
                 </tr>
               </thead>
               <tbody>
-                <div style={{ overflow: 'auto', maxHeight: '500px' }}>
+                <div style={{ overflow: 'auto', maxHeight: '250px' }}>
                   {response?.map((repo) => (
                     <tr
                       style={{
