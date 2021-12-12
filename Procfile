@@ -1,1 +1,0 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar avisualizer-back/target/avisualizer-back.jar

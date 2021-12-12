@@ -83,7 +83,7 @@ export const Home = () => {
     } else {
       const request = async () => {
         const response = await fetch(
-          'https://avisualizer-plugin.herokuapp.com/data.json?project=' +
+          'https://asniffer-web-api.herokuapp.com/data.json?project=' +
             projectID
         )
         const json = await response.json()
