@@ -2,24 +2,83 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>io.github.phillima</groupId>
+		<artifactId>avisualizer</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>io.github.phillima</groupId>
-	<artifactId>avisualizer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>avisualizer</name>
-	<description>Visualizing Code Annotations Distribution</description>
-	<packaging>pom</packaging>
+	<artifactId>avisualizer-front</artifactId>
+	<version>${project.parent.version}</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-	<modules>
-		<module>avisualizer-front</module>
-		<module>avisualizer-back</module>
-	</modules>
+	<build>
 
-	
+    <plugins>
+
+      <!-- clean the dist directory used by Angular -->
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+          </execution>
+        </executions>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${project.basedir}/dist</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.12.0</version>
+
+        <executions>
+
+          <!-- Install node and yarn -->
+          <execution>
+            <id>Install Node and Yarn</id>
+            <goals>
+              <goal>install-node-and-yarn</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v15.11.0</nodeVersion>
+              <yarnVersion>v1.22.17</yarnVersion>
+            </configuration>
+          </execution>
+
+          <!-- clean install -->
+          <execution>
+            <id>yarn install</id>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+          </execution>
+
+          <!-- build app -->
+          <execution>
+            <id>yarn build</id>
+            <goals>
+              <goal>yarn</goal>
+            </goals>
+            <configuration>
+              <arguments>build --prod</arguments>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
+
+
 </project>
