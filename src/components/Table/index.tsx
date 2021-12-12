@@ -32,26 +32,6 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
 
   const totalPages = rowData && Math.ceil(rowData?.length / rowsPerPage)
 
-  /*
-  useEffect(() => {
-    const search = window.location.search
-    const params = new URLSearchParams(search)
-    const projectID = params.get('projeto')
-
-    const request = async () => {
-      const response = await fetch(
-        'https://avisualizer-plugin.herokuapp.com/data.json?project=' +
-          projectID
-      )
-      const json = await response.json()
-    }
-    request().then(() => {
-      render(sv,pv,cv)
-    });
-    
-  }, [])
-*/
-
   useEffect(() => {
     const search = window.location.search
     const params = new URLSearchParams(search)
@@ -60,8 +40,7 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
 
     const request = async () => {
       const response = await fetch(
-        'https://avisualizer-plugin.herokuapp.com/data.json?project=' +
-          projectID
+        'https://asniffer-web-api.herokuapp.com/data.json?project=' + projectID
       )
       jsonData = await response.json()
     }
