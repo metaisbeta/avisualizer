@@ -12,7 +12,7 @@ import {
   Content,
   InfoContainer,
   ZoomableCircleContainer
-} from './styles'
+} from '../../styles/styles'
 
 export const Home = () => {
   const [appName, setAppName] = useState<string>('Carregando...')
