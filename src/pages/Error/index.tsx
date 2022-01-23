@@ -10,7 +10,7 @@ export const Error = () => {
       <h4>This project is not supported by Avisualizer.</h4>
       <br></br>
       <h4>
-        Plase, share some details with us in our Github{' '}
+        Please, share some details with us in our Github{' '}
         <a href={'https://github.com/metaisbeta/avisualizer/issues'}>
           Issues page.
         </a>
