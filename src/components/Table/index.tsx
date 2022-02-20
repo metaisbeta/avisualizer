@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import { CaretDown } from 'phosphor-react'
 
-import jsondata from '../../data/Guj-PV.json'
+import jsondata from '../../data/SpaceWeatherTSI-PV.json'
 import { annotationSchemas } from '../../utils/AnnotationSchemas'
 import {
   displayAllCircles,
@@ -39,10 +39,13 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
     let jsonData: any
 
     const request = async () => {
-      const response = await fetch(
-        'https://asniffer-web-api.herokuapp.com/data.json?project=' + projectID
-      )
-      jsonData = await response.json()
+      if (projectID != null) {
+        const response = await fetch(
+          'https://asniffer-web-api.herokuapp.com/data.json?project=' +
+            projectID
+        )
+        jsonData = await response.json()
+      }
     }
     request().then(() => {
       //render(sv,pv,cv)//});
