@@ -44,87 +44,93 @@ export const Table = ({ typeAnnotation }: { typeAnnotation: string }) => {
           'https://asniffer-web-api.herokuapp.com/data.json?project=' +
             projectID
         )
-        jsonData = await response.json()
+          .then((res) => {
+            if (res.status === 400) {
+              window.location.assign('/error')
+            }
+            return res.json()
+          })
+          .then((json) => {
+            jsonData = json
+          })
       }
     }
 
-    request()
-      .catch((error) => window.location.assign('/error'))
-      .then(() => {
-        //render(sv,pv,cv)//});
+    request().then(() => {
+      //render(sv,pv,cv)//});
 
-        const getAllCountAnnotation = (
-          allSchemas: { schema: string; color: string }[],
-          annotList: Map<string, string[]>,
-          annotCount: Map<string, number>
-        ) => {
-          const totalCount: Record<string, number> = {}
+      const getAllCountAnnotation = (
+        allSchemas: { schema: string; color: string }[],
+        annotList: Map<string, string[]>,
+        annotCount: Map<string, number>
+      ) => {
+        const totalCount: Record<string, number> = {}
 
-          for (const schema of allSchemas) {
-            const annotations = annotList.get(schema.schema) ?? []
-            let total = 0
+        for (const schema of allSchemas) {
+          const annotations = annotList.get(schema.schema) ?? []
+          let total = 0
 
-            for (const annot of annotations) {
-              total += annotCount.get(annot) ?? 0
-            }
-
-            totalCount[schema.schema] = total
+          for (const annot of annotations) {
+            total += annotCount.get(annot) ?? 0
           }
 
-          setTotalSchema(totalCount)
+          totalCount[schema.schema] = total
         }
 
-        const getSubSchema = (
-          allSchemas: { schema: string; color: string }[],
-          annotList: Map<string, string[]>
-        ) => {
-          const allSubSchemas: Record<string, SubSchemaProps> = {}
+        setTotalSchema(totalCount)
+      }
 
-          for (const value of allSchemas) {
-            const annotations = annotList.get(value.schema) ?? []
+      const getSubSchema = (
+        allSchemas: { schema: string; color: string }[],
+        annotList: Map<string, string[]>
+      ) => {
+        const allSubSchemas: Record<string, SubSchemaProps> = {}
 
-            allSubSchemas[value.schema] = {
-              annotations: annotations,
-              isOpen: false
-            }
+        for (const value of allSchemas) {
+          const annotations = annotList.get(value.schema) ?? []
+
+          allSubSchemas[value.schema] = {
+            annotations: annotations,
+            isOpen: false
           }
-
-          setSubSchemas(allSubSchemas)
         }
 
-        let jsonDataInput: any
+        setSubSchemas(allSubSchemas)
+      }
 
-        if (projectID != null) {
-          jsonDataInput = JSON.parse(jsonData.pv)
-          //jsonDataInput = jsondata
-        } else {
-          jsonDataInput = jsondata
-        }
+      let jsonDataInput: any
 
-        console.log(jsonDataInput)
+      if (projectID != null) {
+        jsonDataInput = JSON.parse(jsonData.pv)
+        //jsonDataInput = jsondata
+      } else {
+        jsonDataInput = jsondata
+      }
 
-        const root: any = d3
-          .hierarchy(jsonDataInput)
-          .sum((d: any) => d.value)
-          .sort((a, b) => {
-            if (b.value && a.value) return b.value - a.value
-            else return 0
-          })
+      console.log(jsonDataInput)
 
-        const { annotationsCount, annotationsList, schemasObjectArray } =
-          annotationSchemas(root, 'system')
+      const root: any = d3
+        .hierarchy(jsonDataInput)
+        .sum((d: any) => d.value)
+        .sort((a, b) => {
+          if (b.value && a.value) return b.value - a.value
+          else return 0
+        })
 
-        getAllCountAnnotation(
-          schemasObjectArray,
-          annotationsList,
-          annotationsCount
-        )
-        getSubSchema(schemasObjectArray, annotationsList)
+      const { annotationsCount, annotationsList, schemasObjectArray } =
+        annotationSchemas(root, 'system')
 
-        setRowData(schemasObjectArray)
-        setAllTableData(schemasObjectArray)
-        setAnnotationCount(annotationsCount)
-      })
+      getAllCountAnnotation(
+        schemasObjectArray,
+        annotationsList,
+        annotationsCount
+      )
+      getSubSchema(schemasObjectArray, annotationsList)
+
+      setRowData(schemasObjectArray)
+      setAllTableData(schemasObjectArray)
+      setAnnotationCount(annotationsCount)
+    })
   }, [])
 
   useEffect(() => {
