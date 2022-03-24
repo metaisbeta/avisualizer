@@ -15,7 +15,7 @@ import {
 } from '../../styles/styles'
 
 export const Home = () => {
-  const [appName, setAppName] = useState<string>('Carregando...')
+  const [appName, setAppName] = useState<string>('Loading...')
   const [typeAnnotation, setTypeAnnotation] = useState<string>('System View')
   const [annotationMetric, setAnnotationMetric] = useState<string>(
     'Number of Annotations'
