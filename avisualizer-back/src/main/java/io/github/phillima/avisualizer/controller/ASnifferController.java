@@ -20,33 +20,28 @@ public class ASnifferController {
     @GetMapping("/avisualizer-report")
     @ResponseBody
     public String getProjectsReportAVisualzer(@RequestParam String projectRepoURL) {
-        System.out.println("AEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: " + projectRepoURL);
-//        http://localhost:8080/avisualizer-report/?projectRepoURL=aaaaaa
-//        String currentUserDirectory = Paths.get("")
-//                .toAbsolutePath()
-//                .toString();
-//        String tempProject = currentUserDirectory + File.separator + "test";
-//        cloneRepository(tempProject, projectRepoURL);
-//
-//        ASniffer aSniffer = new ASniffer(tempProject, tempProject);
-//
-//        AMReport report = aSniffer.collectSingle();
-//
-//        ProjectReport[] projectReports = new ProjectReport[3];
-//        projectReports[0] = new JSONReportSV().prepareJson(report);
-//        projectReports[1] = new JSONReportPV().prepareJson(report);
-//        projectReports[2] = new JSONReportCV().prepareJson(report);
-//
-//        File file = new File(tempProject);
-//        removeRecursively(file);
-//
-//        Gson json = new GsonBuilder().setPrettyPrinting().create();
-//
-//        String jsonReturn = json.toJson(projectReports);
-//
-//        return jsonReturn;
+        String currentUserDirectory = Paths.get("")
+                .toAbsolutePath()
+                .toString();
+        //String tempProject = currentUserDirectory + File.separator + "test";
+        //cloneRepository(tempProject, projectRepoURL);
 
-        return projectRepoURL;
+        ASniffer aSniffer = new ASniffer(projectRepoURL, projectRepoURL);
+        AMReport report = aSniffer.collectSingle();
+
+        ProjectReport[] projectReports = new ProjectReport[3];
+        projectReports[0] = new JSONReportSV().prepareJson(report);
+        projectReports[1] = new JSONReportPV().prepareJson(report);
+        projectReports[2] = new JSONReportCV().prepareJson(report);
+
+        //File file = new File(tempProject);
+        //removeRecursively(file);
+
+        Gson json = new GsonBuilder().setPrettyPrinting().create();
+
+        String jsonReturn = json.toJson(projectReports);
+
+        return jsonReturn;
     }
 
     private void cloneRepository(String tempProject, String gitHubUrl) {
