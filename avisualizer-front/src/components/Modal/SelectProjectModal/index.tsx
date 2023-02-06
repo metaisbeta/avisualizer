@@ -43,7 +43,7 @@ export const SelectProjectModal: React.FC<SelectProjectModalProps> = ({
         projectRepoURL: selectedRepo.html_url
       }
     }
-    const res = await apiAsniffer.get('avisualizer-report', config)
+    const res = await apiAsniffer.get('avisualizer-report/', config)
     addFile(res.data)
     changeProject(selectedRepo.name)
     onClose()
@@ -53,16 +53,16 @@ export const SelectProjectModal: React.FC<SelectProjectModalProps> = ({
       <Content>
         <SelectRepoContainer>
           <div className="public-repo">
-            <h3>Public Repository</h3>
+            <h3>Visualize Java Project</h3>
             <div className="search">
               <input
                 type="text"
-                placeholder="Github User"
+                placeholder="Path with the Project"
                 onChange={(event) => setUser(event.target.value)}
               />
-              <button onClick={getResponse}>
+              {/* <button onClick={getResponse}>
                 <MagnifyingGlass weight={'bold'} size={18} />
-              </button>
+              </button> */}
             </div>
           </div>
         </SelectRepoContainer>
@@ -110,7 +110,7 @@ export const SelectProjectModal: React.FC<SelectProjectModalProps> = ({
         </ReposContainer>
         <ActionContainer>
           <button id="btn-open" onClick={getJson}>
-            Open
+            Generate Visualization
           </button>
           <button id="btn-cancel" onClick={onClose}>
             Cancel

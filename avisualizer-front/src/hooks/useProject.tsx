@@ -15,7 +15,7 @@ const ProjectContext = createContext<ProjectContextProps>(
 )
 
 export function ProjectProvider({ children }: ProjectProviderProps) {
-  const [project, setProject] = useState('Space Weather TSI')
+  const [project, setProject] = useState('Geostore')
   const [file, setFile] = useState('')
 
   async function changeProject(project: string) {

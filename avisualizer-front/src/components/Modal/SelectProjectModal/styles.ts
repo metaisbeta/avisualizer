@@ -102,8 +102,8 @@ export const ActionContainer = styled.div`
   justify-content: space-evenly;
 
   button {
-    width: 125px;
-    height: 30px;
+    width: 130px;
+    height: 40px;
 
     font-size: 14px;
     font-weight: bold;
