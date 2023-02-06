@@ -38,14 +38,22 @@ export const SelectProjectModal: React.FC<SelectProjectModalProps> = ({
     setResponse(res.data)
   }
   async function getJson() {
+    // const config = {
+    //   params: {
+    //     projectRepoURL: selectedRepo.html_url
+    //   }
+    // }
     const config = {
       params: {
-        projectRepoURL: selectedRepo.html_url
+        projectRepoURL: user //hacking the local path to project to be the 'user'
       }
     }
     const res = await apiAsniffer.get('avisualizer-report/', config)
     addFile(res.data)
-    changeProject(selectedRepo.name)
+    const projectName = user.split(/[/]|[\\]/).pop() as string
+    console.log(projectName) //obtain the last word in the path to be project name
+    changeProject(projectName) //hacking the name of the project from the local path
+    //changeProject(selectedRepo.name)
     onClose()
   }
   return (

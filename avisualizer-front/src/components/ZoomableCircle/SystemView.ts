@@ -69,7 +69,6 @@ export const SystemVisualizer = (
 
   annotMetricUpdate(setAnnotationMetric, 'System View')
   setPackageName('Package: ' + root.children[0].data.name)
-  console.log(node)
   // Circle stylization
   d3.select('.svg-container-sv')
     .selectAll('circle')
