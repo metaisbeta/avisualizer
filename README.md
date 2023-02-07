@@ -33,7 +33,7 @@ Basic Building Blocks
 ![Building Blocks](/images/avisualizer-blocks.png)
 *Basic Building Blocks of AVisualizer*
 
-The backend of AVisualizer is mostly concernd with extracting the metrics values and serving the frontend. The extraction of the metrics values is performed by the [Annotation Sniffer (ASniffer)](https://github.com/phillima/asniffer). The generated JSON report is used as input for the AVisualizer frontend.
+The backend of AVisualizer is mostly concernd with extracting the metrics values and serving the frontend. The extraction of the metrics values is performed by the [Annotation Sniffer (ASniffer)](https://github.com/phillima/asniffer). The generated JSON report is used as input for the AVisualizer frontend. The backend is wrapped as a [Spring Boot App](https://spring.io)
 
 The frontend of AVisualizer is build using the React library [React Library](https://reactjs.org) and [D3.js](https://d3js.org).
 
