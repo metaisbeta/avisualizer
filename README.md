@@ -4,10 +4,13 @@
 <h1 align = "center">Annotation Visualizer</h1>
 <h2 align = "center"> A Tool to Visualize Code Annotations Metrics Distribution </h2>
 
-Annotation Metrics
-==================
 
-The Annotation Visualizer (AVisualizer) is a software visualization tool that aims to aid researches and developers in analyzing and comprehending code annotations distributions. The visualization is generated based on a suite software metrics dedicated to code annotations.
+The Annotation Visualizer (AVisualizer) is a software visualization tool that aims to aid researches and developers in analyzing and comprehending code annotations distributions. This tool was used to support our research paper [CADV - Code Annotations Distribution Visualization](https://www.sciencedirect.com/science/article/abs/pii/S0950584922001987).
+
+Code Annotation Metrics
+=======================
+
+The visualization is generated based on a suite software metrics dedicated to code annotations.
 
 The suite is composed of 9 metrics proposed and defined in the the paper [A Metrics Suite for Code Annoation Assessment](https://www.sciencedirect.com/science/article/pii/S016412121730273X)
 
@@ -23,10 +26,16 @@ The suite is composed of 9 metrics proposed and defined in the the paper [A Metr
 * NEC: Number of Elements in Class
 * NAEC: Number of Annotated Elements in Class
 
-Collecting the Metrics
-==================
 
-The collection of the metrics values is performed by the [Annotation Sniffer (ASniffer)](https://github.com/phillima/asniffer). The generated JSON report is used as input for the AVisualizer.
+Basic Building Blocks
+=======================
+
+![Building Blocks](/images/avisualizer-blocks.png)
+*Basic Building Blocks of AVisualizer*
+
+The backend of AVisualizer is mostly concernd with extracting the metrics values and serving the frontend. The extraction of the metrics values is performed by the [Annotation Sniffer (ASniffer)](https://github.com/phillima/asniffer). The generated JSON report is used as input for the AVisualizer frontend.
+
+The frontend of AVisualizer is build using the React library [React Library](https://reactjs.org) and [D3.js](https://d3js.org).
 
 
 Annotations Visualization
@@ -44,11 +53,27 @@ We are proposing three different polymetrics views for code annotations. They ar
 ![Package View Example](/images/avisualizer-pv.png)
 *Example of the Package View for a Java Software*
 
+![Class View Example](/images/avisualizer-pv.png)
 * Class View: In this view we group the annotation inside a class based on their code elements.
 
 
-<h2> Status </h2>
- <p> 🚧 Work In Progress... 🚧</p>
+Executing AVisualizer
+==================
+
+The first step is to build the application using Maven
+
+
+```
+mvn clean package
+```
+The executable jar file will be located in the folder ```avisualizer-back/target```.
+
+Run it with the command
+
+```
+java -jar avisualizer-back/target/avisualizer-back.jar
+```
+The application will available on ```http://localhost:8080```
  
 <h2> License </h2>
 <img alt="GitHub" src="https://img.shields.io/github/license/phillima/avisualizer">
