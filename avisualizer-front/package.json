@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "lint": "node_modules/eslint/bin/eslint.js src --max-warnings=0 --fix",
     "prettier": "node_modules/prettier/bin-prettier.js --write src"
@@ -70,6 +70,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.4.0"
+    "faker": "^6.6.6",
+    "jest": "^26.6.0",
+    "jest-cli": "^29.4.2",
+    "prettier": "^2.4.0",
+    "puppeteer": "^19.6.3"
   }
 }
