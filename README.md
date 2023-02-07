@@ -41,20 +41,23 @@ The frontend of AVisualizer is build using the React library [React Library](htt
 Annotations Visualization
 ==================
 
-We are proposing three different polymetrics views for code annotations. They are all hierarchical view based on circle packs.
+The CADV is a software visualization approach based on circle packing. It is composed of three different views for code annotations. The System View, Package View and, Class View.
 
-* System View: In this view we are interested in observing how annotation schemas are distributed in the packages. This view has no information of classes.
+* System View: In this view we observe how annotation schemas are distributed in the packages. This view has no information of classes.
 
 ![System View Example](/images/avisualizer-sv.png)
-*Example of the System View for a Java Software*
+*Example of the System View for project GeoStore*
 
-* Package View: In this view we are interested in observing how annotations are distributed inside a class, based on their schema. In this view we have no information of how the annotations are distributed between the code elements.
+* Package View: In this view we observe how annotations are distributed inside classes of a package. In this view we have no information of how the annotations are distributed between the code elements of a class.
 
 ![Package View Example](/images/avisualizer-pv.png)
-*Example of the Package View for a Java Software*
+*Example of the Package View*
 
-![Class View Example](/images/avisualizer-pv.png)
-* Class View: In this view we group the annotation inside a class based on their code elements.
+* Class View: In this view we observe how annotations are distributed by code elements declared in the observed class. The annotations are grouped by code elements.
+
+![Class View Example](/images/avisualizer-cv.png)
+*Example of the Class View*
+
 
 
 Executing AVisualizer
