@@ -20,7 +20,10 @@ export const Header = () => {
       </LogoContainer>
 
       <Content>
-        <button onClick={() => setOpenProjectModal(true)}>
+        <button
+          onClick={() => setOpenProjectModal(true)}
+          id="select-project-btn"
+        >
           Select your project
         </button>
 
