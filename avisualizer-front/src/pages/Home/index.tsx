@@ -29,7 +29,7 @@ export const Home = () => {
   const [packageName, setPackageName] = useState<string>('')
 
   const { project, file } = useProject()
-  console.log(file)
+
   useEffect(() => {
     const width = 500
     const height = 500
@@ -70,7 +70,6 @@ export const Home = () => {
       setAnnotationMetric,
       setPackageName
     )
-
     PackageVisualizer(
       packageData,
       width,

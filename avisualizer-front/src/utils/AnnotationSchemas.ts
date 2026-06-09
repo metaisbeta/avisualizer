@@ -6,6 +6,7 @@ type RootValueProps = {
     name: string
     type: string
     value: number
+    annotation: any
     properties: {
       schema: string
     }
@@ -24,7 +25,9 @@ export function annotationSchemas(root: any, name: string) {
   // Save all schemas
   if (name === 'class') {
     root.descendants().forEach((d: RootValueProps) => {
-      if (d.data.type === 'annotation') allSchemas.add(d.data.properties.schema)
+      if (d.data.type === 'annotation' || d.data.type === 'convention') {
+        allSchemas.add(d.data.properties.schema)
+      }
     })
   } else {
     root.descendants().forEach((d: RootValueProps) => {
@@ -36,7 +39,7 @@ export function annotationSchemas(root: any, name: string) {
   // Sort the array with the schemas
   const schemasOrdered = Array.from(allSchemas) as string[]
   schemasOrdered.sort()
-
+  let conventionAnnotation: string
   // Initialization of annotation list (schema: [annotations])
   for (const schema of schemasOrdered) {
     annotationsList.set(schema, [])
@@ -45,15 +48,27 @@ export function annotationSchemas(root: any, name: string) {
   root.descendants().forEach((d: RootValueProps) => {
     const schema = d.data.properties?.schema
 
-    if (d.data.type === 'annotation' && schema !== null) {
+    if (
+      (d.data.type === 'annotation' || d.data.type === 'convention') &&
+      schema !== null
+    ) {
       // Array of the annotations in schema
       const arr = annotationsList.get(schema) ?? []
-
+      if (d.data.type === 'convention')
+        conventionAnnotation = d.data.annotation.name.substring(
+          d.data.annotation.name.lastIndexOf('.') + 1
+        )
       if (!arr?.includes(d.data.name)) {
         arr?.push(d.data.name)
         annotationsCount.set(d.data.name, 1)
+      } else if (!arr?.includes(conventionAnnotation)) {
+        arr?.push(conventionAnnotation)
+        annotationsCount.set(conventionAnnotation, 1)
       } else {
-        const count = annotationsCount.get(d.data.name) ?? 0
+        const count =
+          (annotationsCount.get(d.data.name) ||
+            annotationsCount.get(conventionAnnotation)) ??
+          0
         annotationsCount.set(d.data.name, count + 1)
       }
 

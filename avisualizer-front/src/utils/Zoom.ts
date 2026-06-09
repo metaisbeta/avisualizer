@@ -12,7 +12,8 @@ export function zoom(
     d.data.type == 'annotation' ||
     d.data.type == 'schema' ||
     d.data.type == 'method' ||
-    d.data.type == 'field'
+    d.data.type == 'field' ||
+    d.data.type == 'convention'
   )
     return
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import logo from '../../../assets/logo.svg'
+import { visible } from '../../../utils/Visible'
 import { Modal } from '../../Modal'
 import { SelectProjectModal } from '../../Modal/SelectProjectModal'
 import { DemonstrationModal } from '../DemonstrationModal'
@@ -26,7 +27,9 @@ export const Header = () => {
         >
           Select your project
         </button>
-
+        <button onClick={() => visible()} id="hide-annotations-btn">
+          Hide Annotations
+        </button>
         <button onClick={() => setOpenDemonstrationModal(true)}>
           Demonstration
         </button>

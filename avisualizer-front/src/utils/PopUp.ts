@@ -4,6 +4,7 @@ type DataProps = {
   name: string
   type: string
   value: number
+  places: string[]
   properties: {
     schema: string
     anl: string
@@ -107,6 +108,13 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
     label = `<b>${
       d.data.type[0].toUpperCase() + d.data.type.substr(1)
     } Name:</b> ${classname[classname.length - 1]}`
+  } else if (d.data.type === 'convention') {
+    label = `
+        <b>Schema Name:</b> ${d.data.name}<br/>
+        <b>Package Name:</b> ${d.parent.data.name}<br/>
+        <b>Number of Convention Occurrence:</b> ${d.data.value}<br/>
+        <b>Matching elements:</b><br>${d.data.places.join('<br>')}
+      `
   }
 
   const isClassOrInterface =

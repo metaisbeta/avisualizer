@@ -6,7 +6,8 @@ import {
   addCircleDash,
   addCircleStroke,
   colorCircles,
-  highlightNode
+  highlightNode,
+  pulse
 } from '../../utils/Circle'
 import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
@@ -75,12 +76,16 @@ export const SystemVisualizer = (
     .attr('stroke', (d: any) => addCircleStroke(d))
     .attr('stroke-dasharray', (d: any) => addCircleDash(d))
     .attr('fill', (d: any) => colorCircles(d, schemasColorMap))
-
+  // Start pulsing only specific circles
+  d3.select('.svg-container-sv')
+    .selectAll('circle')
+    .filter((d: any) => d.data.type === 'convention')
+    .call(pulse)
   svg
     .selectAll('circle')
     .on('click', (event, d: any) => {
       // Apply zoom to all circles in this specific view
-      if (d.data.type === 'schema') {
+      if (d.data.type === 'schema' || d.data.type === 'convention') {
         hide('.svg-container-pv', d.parent.data.name)
         highlightNode('.svg-container-sv', d.parent.data.name)
 

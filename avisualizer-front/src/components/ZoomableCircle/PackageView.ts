@@ -7,7 +7,8 @@ import {
   addCircleDash,
   addCircleStroke,
   colorCircles,
-  highlightNode
+  highlightNode,
+  pulse
 } from '../../utils/Circle'
 import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
@@ -38,7 +39,6 @@ export const PackageVisualizer = (
       if (b.value && a.value) return b.value - a.value
       else return 0
     })
-
   const pack = d3
     .pack()
     .size([width - 2, height - 10])
@@ -60,13 +60,15 @@ export const PackageVisualizer = (
   const node = createNode(svg, root)
   //Initial Zoom
   zoomTo([root.x, root.y, root.r * 2], width, zoomProp, node)
-
-  //Color all circles
-  d3.selectAll('circle')
+  d3.select('.svg-container-pv')
+    .selectAll('circle')
     .attr('stroke', (d: any) => addCircleStroke(d))
     .attr('stroke-dasharray', (d: any) => addCircleDash(d))
     .attr('fill', (d: any) => colorCircles(d, schemasColorMap))
-
+  d3.select('.svg-container-pv')
+    .selectAll('circle')
+    .filter((d: any) => d.data.type === 'convention')
+    .call(pulse)
   svg
     .selectAll('circle')
     .on('click', (event: any, d: any) => {
@@ -129,7 +131,7 @@ export const PackageVisualizer = (
         setTypeAnnotation('System View')
 
         d3.select('.svg-container-pv').attr('lastSelected', d.data.name)
-      } else if (d.data.type === 'annotation') {
+      } else if (d.data.type === 'annotation' || d.data.type === 'convention') {
         d3.select('.svg-container-pv').attr('lastClicked', d.data.name)
         d3.select('.svg-container-pv').attr('lastClass', d.parent.data.name)
 

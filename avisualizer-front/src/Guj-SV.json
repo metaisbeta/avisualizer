@@ -1,0 +1,359 @@
+{
+  "name" : "Guj",
+  "value" : 0,
+  "children" : [ {
+    "name" : "br.com.caelum.guj",
+    "type" : "package",
+    "value" : 0,
+    "properties" : { },
+    "children" : [ {
+      "name" : "br.com.caelum.guj.newsletter",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "javax.annotation",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "convention",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ],
+        "places" : [ "br.com.caelum.guj.newsletter.NewsletterURIBuilderTest" ],
+        "annotation" : {
+          "name" : "org.junit.Test",
+          "parameters" : [ ]
+        },
+        "occurrences" : 1
+      }, {
+        "name" : "br.com.caelum.guj.newsletter.request",
+        "type" : "package",
+        "value" : 0,
+        "properties" : { },
+        "children" : [ {
+          "name" : "br.com.caelum.vraptor.ioc",
+          "type" : "schema",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.vraptor.ioc",
+        "type" : "schema",
+        "value" : 6,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.uri",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 10,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.bookmarkable",
+        "type" : "package",
+        "value" : 0,
+        "properties" : { },
+        "children" : [ {
+          "name" : "java.lang",
+          "type" : "schema",
+          "value" : 6,
+          "properties" : { },
+          "children" : [ ]
+        }, {
+          "name" : "org.junit",
+          "type" : "convention",
+          "value" : 4,
+          "properties" : { },
+          "children" : [ ],
+          "places" : [ "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverterTest", "br.com.caelum.guj.uri.bookmarkable.ConverterMatcherTest", "br.com.caelum.guj.uri.bookmarkable.BookmarkableShortPostToCompatibleURIConverterTest", "br.com.caelum.guj.uri.bookmarkable.BookmarkablePostToCompatibleURIConverterTest" ],
+          "annotation" : {
+            "name" : "org.junit.Test",
+            "parameters" : [ ]
+          },
+          "occurrences" : 4
+        }, {
+          "name" : "org.junit",
+          "type" : "schema",
+          "value" : 9,
+          "properties" : { },
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.compatible",
+        "type" : "package",
+        "value" : 0,
+        "properties" : { },
+        "children" : [ {
+          "name" : "java.lang",
+          "type" : "schema",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ ]
+        }, {
+          "name" : "org.junit",
+          "type" : "convention",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ ],
+          "places" : [ "br.com.caelum.guj.uri.compatible.CompatibleToBookmarkablePostConverterTest" ],
+          "annotation" : {
+            "name" : "org.junit.Test",
+            "parameters" : [ ]
+          },
+          "occurrences" : 1
+        }, {
+          "name" : "org.junit",
+          "type" : "schema",
+          "value" : 3,
+          "properties" : { },
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "org.junit",
+        "type" : "convention",
+        "value" : 3,
+        "properties" : { },
+        "children" : [ ],
+        "places" : [ "br.com.caelum.guj.uri.DefaultCompatibleURIBuilderTest", "br.com.caelum.guj.uri.BBCodeHandlerTest", "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilderTest" ],
+        "annotation" : {
+          "name" : "org.junit.Test",
+          "parameters" : [ ]
+        },
+        "occurrences" : 3
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 22,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.vraptor.ioc",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.controller",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 4,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.vraptor",
+        "type" : "schema",
+        "value" : 39,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "convention",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ],
+        "places" : [ "br.com.caelum.guj.controller.NewsletterControllerTest" ],
+        "annotation" : {
+          "name" : "org.junit.Test",
+          "parameters" : [ ]
+        },
+        "occurrences" : 1
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 2,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.repositories",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.dao",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.vraptor.ioc",
+        "type" : "schema",
+        "value" : 2,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "javax.annotation",
+      "type" : "schema",
+      "value" : 1,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "java.lang",
+      "type" : "schema",
+      "value" : 4,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.guj.feeds",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.vraptor",
+      "type" : "schema",
+      "value" : 2,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.guj.util",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.vraptor.filter",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 11,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "convention",
+        "value" : 2,
+        "properties" : { },
+        "children" : [ ],
+        "places" : [ "br.com.caelum.guj.vraptor.filter.CompatibleURIFilterTest", "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilterTest" ],
+        "annotation" : {
+          "name" : "org.junit.Test",
+          "parameters" : [ ]
+        },
+        "occurrences" : 2
+      }, {
+        "name" : "org.junit.runner",
+        "type" : "schema",
+        "value" : 2,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.mockito",
+        "type" : "schema",
+        "value" : 11,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 15,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.configuration",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.vraptor.ioc",
+      "type" : "schema",
+      "value" : 2,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.guj.view",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "org.junit",
+        "type" : "convention",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ],
+        "places" : [ "br.com.caelum.guj.view.SluggerTest" ],
+        "annotation" : {
+          "name" : "org.junit.Test",
+          "parameters" : [ ]
+        },
+        "occurrences" : 1
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.model",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 2,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "javax.persistence",
+        "type" : "schema",
+        "value" : 41,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.hibernate.annotations",
+        "type" : "schema",
+        "value" : 8,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}

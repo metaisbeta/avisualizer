@@ -6,7 +6,8 @@ import {
   addCircleDash,
   addCircleStroke,
   colorCircles,
-  highlightNode
+  highlightNode,
+  pulse
 } from '../../utils/Circle'
 import { createPopUp, destroyPopUp, movePopUp } from '../../utils/PopUp'
 import {
@@ -82,6 +83,10 @@ export const ClassVisualizer = (
     .attr('stroke', (d: any) => addCircleStroke(d))
     .attr('stroke-dasharray', (d: any) => addCircleDash(d))
     .attr('fill', (d: any) => colorCircles(d, schemasColorMap))
+  d3.select('.svg-container-cv')
+    .selectAll('circle')
+    .filter((d: any) => d.data.type === 'convention')
+    .call(pulse)
 
   svg
     .selectAll('circle')

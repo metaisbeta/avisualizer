@@ -54,7 +54,9 @@ export function createNode(svg: any, root: any) {
     )
     .attr('zoom', 'a')
     .attr('value', (d: DataProps) =>
-      d.data.type === 'schema' ? d.data.value : 0
+      d.data.type === 'schema' || d.data.type === 'convention'
+        ? d.data.value
+        : 0
     )
     .attr('parent', (d: DataProps) => (!d.parent ? '' : d.parent.data.name))
     .attr('grandfather', (d: DataProps) => {
@@ -109,7 +111,8 @@ export function hide(container: string, name: string) {
         } else if (d3.select(this).attr('name').includes(name)) {
           d3.select(this).style('visibility', 'visible')
         } else if (
-          d3.select(this).attr('class') == 'annotation' &&
+          (d3.select(this).attr('class') == 'annotation' ||
+            d3.select(this).attr('class') == 'convention') &&
           d3.select(this).attr('grandfather').includes(name)
         ) {
           d3.select(this).style('visibility', 'visible')
@@ -147,7 +150,7 @@ export function hide(container: string, name: string) {
         } else if (parentElement === name) {
           element.style('visibility', 'visible')
         } else if (
-          classElement === 'annotation' &&
+          (classElement === 'annotation' || classElement === 'convention') &&
           grandfatherElement === name
         ) {
           element.style('visibility', 'visible')
@@ -172,7 +175,10 @@ export function hideAllCircles(container: string) {
     .selectAll('circle')
     .each(function () {
       if (container === '.svg-container-sv') {
-        if (d3.select(this).attr('class') === 'schema')
+        if (
+          d3.select(this).attr('class') === 'schema' ||
+          d3.select(this).attr('class') === 'convention'
+        )
           d3.select(this).style('visibility', 'hidden')
       } else {
         if (d3.select(this).attr('class') === 'annotation')
@@ -186,7 +192,10 @@ export function displayAllCircles(container: string) {
     .selectAll('circle')
     .each(function () {
       if (container === '.svg-container-sv') {
-        if (d3.select(this).attr('class') === 'schema') {
+        if (
+          d3.select(this).attr('class') === 'schema' ||
+          d3.select(this).attr('class') === 'convention'
+        ) {
           // schema se for package name se for system
           d3.select(this).style('visibility', 'visible')
         }
@@ -227,7 +236,8 @@ export function hideCircles(id: string, show: boolean) {
 
     view.selectAll('circle').each(function () {
       if (
-        d3.select(this).attr('schema') === id &&
+        (d3.select(this).attr('schema') === id ||
+          d3.select(this).attr('convention') === id) &&
         d3
           .select(this)
           .attr('grandfather')

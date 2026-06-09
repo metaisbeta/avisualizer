@@ -171,6 +171,8 @@ export const Table = ({
         return '.svg-container-pv'
       case 'Class View':
         return '.svg-container-cv'
+      case 'System View - Conventions':
+        return '.svg-container-convention-sv'
     }
 
     return ''

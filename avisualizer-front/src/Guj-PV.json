@@ -1,0 +1,2390 @@
+{
+  "name": "Guj",
+  "children": [
+    {
+      "name": "br.com.caelum.guj",
+      "type": "package",
+      "properties": {},
+      "children": [
+        {
+          "name": "br.com.caelum.guj.GlobalInterceptor",
+          "type": "class",
+          "properties": {},
+          "children": [
+            {
+              "name": "Override",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Override",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Intercepts",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "br.com.caelum.vraptor"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.Agregators",
+          "type": "class",
+          "properties": {},
+          "children": [
+            {
+              "name": "PostConstruct",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "javax.annotation"
+              },
+              "children": []
+            },
+            {
+              "name": "Component",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "br.com.caelum.vraptor.ioc"
+              },
+              "children": []
+            },
+            {
+              "name": "ApplicationScoped",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "br.com.caelum.vraptor.ioc"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.AgregatorsInterceptor",
+          "type": "class",
+          "properties": {},
+          "children": [
+            {
+              "name": "Override",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Override",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "java.lang"
+              },
+              "children": []
+            },
+            {
+              "name": "Intercepts",
+              "type": "annotation",
+              "value": 1,
+              "properties": {
+                "schema": "br.com.caelum.vraptor"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.configuration",
+          "type": "package",
+          "properties": {},
+          "children": []
+        },
+        {
+          "name": "br.com.caelum.guj.controller",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.controller.NewsletterControllerTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.NewsletterController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Post",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Post",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.CategoryController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Get",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Post",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.HotTopicsController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.HomeController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.OldUrlsController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.JobsController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.ApproveController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "SuppressWarnings",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "SuppressWarnings",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.SearchController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Get",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.ArticleController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Get",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Post",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "SuppressWarnings",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "SuppressWarnings",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Get",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.controller.JsonFeedController",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Resource",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Path",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.dao",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.dao.GUJUserDAO",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Component",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "RequestScoped",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.feeds",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.feeds.Agregator",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.model",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.model.Post",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "ManyToOne",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "JoinColumn",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Entity",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Table",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Id",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "GeneratedValue",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.model.Tag",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Entity",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Table",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "ManyToMany",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "JoinTable",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Id",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "GeneratedValue",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.model.NewsletterParticipant",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Entity",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Id",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.model.Blog",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Entity",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Table",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Id",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "GeneratedValue",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.model.Category",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "OneToMany",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Id",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "GeneratedValue",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Entity",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Table",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.model.Article",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "ManyToOne",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "JoinColumn",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Id",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "GeneratedValue",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Entity",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Table",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "ManyToMany",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cascade",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "JoinTable",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Cache",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.hibernate.annotations"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Enumerated",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Column",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Lob",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.persistence"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.newsletter",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.newsletter.NewsletterURIBuilderTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.newsletter.NewsletterConfigs",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "PostConstruct",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "javax.annotation"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Component",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "ApplicationScoped",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.newsletter.NewsletterSubscriber",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Component",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "RequestScoped",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.newsletter.NewsletterURIBuilder",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Component",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "RequestScoped",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.newsletter.request",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "br.com.caelum.guj.newsletter.request.NewsletterRequest",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Component",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "br.com.caelum.vraptor.ioc"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "RequestScoped",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "br.com.caelum.vraptor.ioc"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.repositories",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.repositories.TopicRepositoryWrapper",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.uri",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilderTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.DefaultCompatibleURIBuilderTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.BBCodeHandlerTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Before",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "BeforeClass",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilder",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Component",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "br.com.caelum.vraptor.ioc"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.DefaultURICache",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.DefaultCompatibleURIBuilder",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.bookmarkable",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.ConverterMatcherTest",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.BookmarkableShortPostToCompatibleURIConverterTest",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverterTest",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.BookmarkablePostToCompatibleURIConverterTest",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverter",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.BookmarkablePostToCompatibleURIConverter",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.bookmarkable.BookmarkableShortPostToCompatibleURIConverter",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.uri.compatible",
+              "type": "package",
+              "properties": {},
+              "children": [
+                {
+                  "name": "br.com.caelum.guj.uri.compatible.CompatibleToBookmarkablePostConverterTest",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Test",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "org.junit"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "br.com.caelum.guj.uri.compatible.CompatibleToBookmarkablePostConverter",
+                  "type": "class",
+                  "properties": {},
+                  "children": [
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    },
+                    {
+                      "name": "Override",
+                      "type": "annotation",
+                      "value": 1,
+                      "properties": {
+                        "schema": "java.lang"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.util",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.util.FileUtil",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "SuppressWarnings",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.view",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.view.SluggerTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "br.com.caelum.guj.vraptor.filter",
+          "type": "package",
+          "properties": {},
+          "children": [
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.CompatibleURIFilterTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "After",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Before",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "RunWith",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit.runner"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilterTest",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "After",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Before",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Test",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Mock",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.mockito"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "RunWith",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "org.junit.runner"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.TopicRepositoryStub",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.URICacheStub",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.VRaptorFilter",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilter",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "br.com.caelum.guj.vraptor.filter.CompatibleURIFilter",
+              "type": "class",
+              "properties": {},
+              "children": [
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Override",
+                  "type": "annotation",
+                  "value": 1,
+                  "properties": {
+                    "schema": "java.lang"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

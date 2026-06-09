@@ -4,6 +4,7 @@ type NodeProps = {
   data: {
     name: string
     type: string
+    annotation: any
     properties: {
       schema: string
     }
@@ -12,11 +13,13 @@ type NodeProps = {
 
 export function addCircleStroke(node: NodeProps): string {
   if (node?.data?.type === 'package') return '#393939'
+  else if (node?.data?.type === 'convention') return 'gold'
   else return '#005AA8'
 }
 
 export function addCircleDash(node: any): string {
   if (node?.data?.type == 'package') return '5,5'
+  else if (node?.data?.type == 'convention') return '4'
   else return ''
 }
 
@@ -27,11 +30,31 @@ export function colorCircles(
   if (node?.data?.type === 'package') return '#E9E9E9'
   else if (node?.data?.type === 'annotation')
     return schemasMap.get(node?.data?.properties?.schema) ?? ''
-  else if (node?.data?.type === 'schema')
-    return schemasMap.get(node?.data?.name) ?? ''
-  else if (node?.data?.type === 'method') return '#C4C4C4'
+  else if (node?.data?.type === 'schema' || node?.data?.type === 'convention') {
+    console.log(node.data?.type, schemasMap.get(node?.data?.properties.schema))
+    return (
+      (schemasMap.get(node?.data?.name) ||
+        schemasMap.get(node?.data?.properties.schema)) ??
+      '#000000'
+    )
+  } else if (node?.data?.type === 'method') return '#C4C4C4'
   else if (node?.data?.type === 'field') return '#E3E3E3'
   else return '#FAFAFA'
+}
+
+export function pulse(
+  selection: d3.Selection<d3.BaseType, any, any, any>
+): void {
+  selection
+    .transition()
+    .duration(800)
+    .attr('opacity', 0.2)
+    .transition()
+    .duration(800)
+    .attr('opacity', 1)
+    .on('end', function () {
+      pulse(d3.select(this))
+    })
 }
 
 export function highlightNode(container: string, name: string) {

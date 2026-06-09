@@ -51,7 +51,7 @@ export const SelectProjectModal: React.FC<SelectProjectModalProps> = ({
     const res = await apiAsniffer.get('avisualizer-report/', config)
     addFile(res.data)
     const projectName = user.split(/[/]|[\\]/).pop() as string
-    console.log(projectName) //obtain the last word in the path to be project name
+    //console.log(projectName) //obtain the last word in the path to be project name
     changeProject(projectName) //hacking the name of the project from the local path
     //changeProject(selectedRepo.name)
     onClose()
