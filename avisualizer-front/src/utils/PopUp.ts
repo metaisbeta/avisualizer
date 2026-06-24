@@ -3,7 +3,10 @@ import * as d3 from 'd3'
 type DataProps = {
   name: string
   type: string
+  scope: string
   value: number
+  conditions: any
+  annotation: any
   places: string[]
   properties: {
     schema: string
@@ -109,9 +112,26 @@ export function createPopUp(d: dProps, event: EventProps, annotMetric: string) {
       d.data.type[0].toUpperCase() + d.data.type.substr(1)
     } Name:</b> ${classname[classname.length - 1]}`
   } else if (d.data.type === 'convention') {
+    const parentElementText = d.parent.data.name
+    let labelText = ''
+    if (d.parent.data.type == 'package') {
+      labelText = 'Package Name: '
+    } else if (
+      d.parent.data.type === 'class' ||
+      d.parent.data.type === 'interface'
+    )
+      labelText = 'Class Name: '
+    else if (d.parent.data.type === 'field') labelText = 'Field Name: '
+    else if (d.parent.data.type === 'method') labelText = 'Method Name:'
     label = `
-        <b>Schema Name:</b> ${d.data.name}<br/>
-        <b>Package Name:</b> ${d.parent.data.name}<br/>
+        <b>Convention for Annotation:</b> ${d.data.annotation.name}<br/>
+        <b>Convention Scope:</b> ${d.data.scope}<br/>
+        <b>Convention conditions:</b><br/>
+${Object.entries(d.data.conditions)
+  .map(([key, value]) => `${key}: ${value}`)
+  .join('<br>')}
+<br/>
+        <b>${labelText}</b> ${d.parent.data.name}<br/>
         <b>Number of Convention Occurrence:</b> ${d.data.value}<br/>
         <b>Matching elements:</b><br>${d.data.places.join('<br>')}
       `

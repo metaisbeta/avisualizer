@@ -4,6 +4,7 @@ type DefaultProps = {
   type: string
   name: string
   value: number
+  annotation: any
   properties: {
     schema: string
   }
@@ -52,6 +53,11 @@ export function createNode(svg: any, root: any) {
     .attr('schema', (d: DataProps) =>
       d.data.type === 'annotation' ? d.data.properties.schema : d.data.type
     )
+    .attr('annotation', (d: DataProps) =>
+      d.data.type === 'convention'
+        ? d.data.name + ' for ' + d.data.annotation.name
+        : null
+    )
     .attr('zoom', 'a')
     .attr('value', (d: DataProps) =>
       d.data.type === 'schema' || d.data.type === 'convention'
@@ -70,13 +76,21 @@ export function createNode(svg: any, root: any) {
 }
 
 export function hideAnnotations(container: string, id: string, hide: boolean) {
+  const annotationName = id.substring(id.lastIndexOf('.') + 1)
+  const schemaName = id.substring(0, id.lastIndexOf('.'))
+
   d3.select(container)
     .selectAll('circle')
     .each(function () {
       if (d3.select(this).attr('name') === id) {
         if (hide) d3.select(this).style('visibility', 'hidden')
         else d3.select(this).style('visibility', 'visible')
-      }
+      } else if (
+        d3.select(this).attr('schema') === 'convention' &&
+        d3.select(this).attr('annotation') == id
+      )
+        if (hide) d3.select(this).style('visibility', 'hidden')
+        else d3.select(this).style('visibility', 'visible')
     })
 }
 

@@ -47,32 +47,36 @@ export function annotationSchemas(root: any, name: string) {
 
   root.descendants().forEach((d: RootValueProps) => {
     const schema = d.data.properties?.schema
-
-    if (
-      (d.data.type === 'annotation' || d.data.type === 'convention') &&
-      schema !== null
-    ) {
+    if (d.data.type === 'annotation' && schema !== null) {
       // Array of the annotations in schema
       const arr = annotationsList.get(schema) ?? []
-      if (d.data.type === 'convention')
-        conventionAnnotation = d.data.annotation.name.substring(
-          d.data.annotation.name.lastIndexOf('.') + 1
-        )
       if (!arr?.includes(d.data.name)) {
         arr?.push(d.data.name)
         annotationsCount.set(d.data.name, 1)
-      } else if (!arr?.includes(conventionAnnotation)) {
-        arr?.push(conventionAnnotation)
-        annotationsCount.set(conventionAnnotation, 1)
       } else {
-        const count =
-          (annotationsCount.get(d.data.name) ||
-            annotationsCount.get(conventionAnnotation)) ??
-          0
+        const count = annotationsCount.get(d.data.name) ?? 0
         annotationsCount.set(d.data.name, count + 1)
       }
 
       annotationsList.set(d.data.properties.schema, arr)
+    } else if (d.data.type === 'convention') {
+      const arr = annotationsList.get(schema) ?? []
+      if (!arr?.includes(d.data.name + ' for ' + d.data.annotation.name)) {
+        arr?.push(d.data.name + ' for ' + d.data.annotation.name)
+        annotationsCount.set(
+          d.data.name + ' for ' + d.data.annotation.name,
+          d.data.value
+        )
+      } else {
+        const count =
+          annotationsCount.get(
+            d.data.name + ' for ' + d.data.annotation.name
+          ) ?? 0
+        annotationsCount.set(
+          d.data.name + ' for ' + d.data.annotation.name,
+          count + d.data.value
+        )
+      }
     }
   })
 

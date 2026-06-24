@@ -7,101 +7,35 @@
     "value" : 0,
     "properties" : { },
     "children" : [ {
-      "name" : "br.com.caelum.guj.newsletter",
-      "type" : "package",
-      "value" : 0,
+      "name" : "javax.annotation",
+      "type" : "schema",
+      "value" : 1,
       "properties" : { },
-      "children" : [ {
-        "name" : "javax.annotation",
-        "type" : "schema",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "br.com.caelum.guj.newsletter.request",
-        "type" : "package",
-        "value" : 0,
-        "properties" : { },
-        "children" : [ {
-          "name" : "br.com.caelum.vraptor.ioc",
-          "type" : "schema",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "org.junit",
-        "type" : "schema",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "br.com.caelum.vraptor.ioc",
-        "type" : "schema",
-        "value" : 6,
-        "properties" : { },
-        "children" : [ ]
-      } ]
+      "children" : [ ]
     }, {
-      "name" : "br.com.caelum.guj.uri",
+      "name" : "java.lang",
+      "type" : "schema",
+      "value" : 4,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.vraptor",
+      "type" : "schema",
+      "value" : 2,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.vraptor.ioc",
+      "type" : "schema",
+      "value" : 2,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.guj.configuration",
       "type" : "package",
       "value" : 0,
       "properties" : { },
-      "children" : [ {
-        "name" : "java.lang",
-        "type" : "schema",
-        "value" : 10,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.bookmarkable",
-        "type" : "package",
-        "value" : 0,
-        "properties" : { },
-        "children" : [ {
-          "name" : "java.lang",
-          "type" : "schema",
-          "value" : 6,
-          "properties" : { },
-          "children" : [ ]
-        }, {
-          "name" : "org.junit",
-          "type" : "schema",
-          "value" : 9,
-          "properties" : { },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.compatible",
-        "type" : "package",
-        "value" : 0,
-        "properties" : { },
-        "children" : [ {
-          "name" : "java.lang",
-          "type" : "schema",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ ]
-        }, {
-          "name" : "org.junit",
-          "type" : "schema",
-          "value" : 3,
-          "properties" : { },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "org.junit",
-        "type" : "schema",
-        "value" : 22,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "br.com.caelum.vraptor.ioc",
-        "type" : "schema",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ ]
-      } ]
+      "children" : [ ]
     }, {
       "name" : "br.com.caelum.guj.controller",
       "type" : "package",
@@ -127,18 +61,6 @@
         "children" : [ ]
       } ]
     }, {
-      "name" : "br.com.caelum.guj.repositories",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "java.lang",
-        "type" : "schema",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ ]
-      } ]
-    }, {
       "name" : "br.com.caelum.guj.dao",
       "type" : "package",
       "value" : 0,
@@ -151,96 +73,12 @@
         "children" : [ ]
       } ]
     }, {
-      "name" : "javax.annotation",
-      "type" : "schema",
-      "value" : 1,
-      "properties" : { },
-      "children" : [ ]
-    }, {
-      "name" : "java.lang",
-      "type" : "schema",
-      "value" : 4,
-      "properties" : { },
-      "children" : [ ]
-    }, {
       "name" : "br.com.caelum.guj.feeds",
       "type" : "package",
       "value" : 0,
       "properties" : { },
       "children" : [ {
         "name" : "java.lang",
-        "type" : "schema",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.vraptor",
-      "type" : "schema",
-      "value" : 2,
-      "properties" : { },
-      "children" : [ ]
-    }, {
-      "name" : "br.com.caelum.guj.util",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "java.lang",
-        "type" : "schema",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.vraptor.filter",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "java.lang",
-        "type" : "schema",
-        "value" : 11,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "org.junit.runner",
-        "type" : "schema",
-        "value" : 2,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "org.mockito",
-        "type" : "schema",
-        "value" : 11,
-        "properties" : { },
-        "children" : [ ]
-      }, {
-        "name" : "org.junit",
-        "type" : "schema",
-        "value" : 15,
-        "properties" : { },
-        "children" : [ ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.configuration",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ ]
-    }, {
-      "name" : "br.com.caelum.vraptor.ioc",
-      "type" : "schema",
-      "value" : 2,
-      "properties" : { },
-      "children" : [ ]
-    }, {
-      "name" : "br.com.caelum.guj.view",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "org.junit",
         "type" : "schema",
         "value" : 1,
         "properties" : { },
@@ -279,11 +117,173 @@
         "conditions" : {
           "suffix" : "id]"
         },
-        "places" : [ "Optional[id]", "Optional[id]", "Optional[gujUserId]", "Optional[id]", "Optional[id]", "Optional[userId]", "Optional[id]", "Optional[moderatorId]" ],
+        "places" : [ "Optional[id]", "Optional[id]", "Optional[gujUserId]", "Optional[id]", "Optional[id]", "Optional[id]", "Optional[userId]", "Optional[moderatorId]" ],
         "annotation" : {
           "name" : "javax.persistence.Id",
           "parameters" : [ ]
         }
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.newsletter",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "javax.annotation",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.vraptor.ioc",
+        "type" : "schema",
+        "value" : 6,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.guj.newsletter.request",
+        "type" : "package",
+        "value" : 0,
+        "properties" : { },
+        "children" : [ {
+          "name" : "br.com.caelum.vraptor.ioc",
+          "type" : "schema",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.repositories",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.uri",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 10,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 22,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.vraptor.ioc",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.bookmarkable",
+        "type" : "package",
+        "value" : 0,
+        "properties" : { },
+        "children" : [ {
+          "name" : "java.lang",
+          "type" : "schema",
+          "value" : 6,
+          "properties" : { },
+          "children" : [ ]
+        }, {
+          "name" : "org.junit",
+          "type" : "schema",
+          "value" : 9,
+          "properties" : { },
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.compatible",
+        "type" : "package",
+        "value" : 0,
+        "properties" : { },
+        "children" : [ {
+          "name" : "java.lang",
+          "type" : "schema",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ ]
+        }, {
+          "name" : "org.junit",
+          "type" : "schema",
+          "value" : 3,
+          "properties" : { },
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.util",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.view",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.vraptor.filter",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "java.lang",
+        "type" : "schema",
+        "value" : 11,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.mockito",
+        "type" : "schema",
+        "value" : 11,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit.runner",
+        "type" : "schema",
+        "value" : 2,
+        "properties" : { },
+        "children" : [ ]
+      }, {
+        "name" : "org.junit",
+        "type" : "schema",
+        "value" : 15,
+        "properties" : { },
+        "children" : [ ]
       } ]
     } ]
   } ]

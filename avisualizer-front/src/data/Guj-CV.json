@@ -8,7 +8,7 @@
     "value" : 0,
     "properties" : { },
     "children" : [ {
-      "name" : "br.com.caelum.guj.AgregatorsInterceptor",
+      "name" : "br.com.caelum.guj.GlobalInterceptor",
       "type" : "class",
       "value" : 0,
       "properties" : {
@@ -63,12 +63,320 @@
         } ]
       } ]
     }, {
-      "name" : "br.com.caelum.guj.newsletter",
+      "name" : "br.com.caelum.guj.Agregators",
+      "type" : "class",
+      "value" : 0,
+      "properties" : {
+        "asc" : "2",
+        "ac" : "3",
+        "uac" : "3"
+      },
+      "children" : [ {
+        "name" : "Component",
+        "type" : "annotation",
+        "value" : 0,
+        "properties" : {
+          "schema" : "br.com.caelum.vraptor.ioc",
+          "aa" : "0",
+          "locad" : "1",
+          "anl" : "0"
+        },
+        "children" : [ ]
+      }, {
+        "name" : "ApplicationScoped",
+        "type" : "annotation",
+        "value" : 0,
+        "properties" : {
+          "schema" : "br.com.caelum.vraptor.ioc",
+          "aa" : "0",
+          "locad" : "1",
+          "anl" : "0"
+        },
+        "children" : [ ]
+      }, {
+        "name" : "init",
+        "type" : "method",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ {
+          "name" : "PostConstruct",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.annotation",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.AgregatorsInterceptor",
+      "type" : "class",
+      "value" : 0,
+      "properties" : {
+        "asc" : "2",
+        "ac" : "3",
+        "uac" : "2"
+      },
+      "children" : [ {
+        "name" : "Intercepts",
+        "type" : "annotation",
+        "value" : 0,
+        "properties" : {
+          "schema" : "br.com.caelum.vraptor",
+          "aa" : "0",
+          "locad" : "1",
+          "anl" : "0"
+        },
+        "children" : [ ]
+      }, {
+        "name" : "intercept",
+        "type" : "method",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ {
+          "name" : "Override",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "java.lang",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "accepts",
+        "type" : "method",
+        "value" : 1,
+        "properties" : { },
+        "children" : [ {
+          "name" : "Override",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "java.lang",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.configuration",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ ]
+    }, {
+      "name" : "br.com.caelum.guj.controller",
       "type" : "package",
       "value" : 0,
       "properties" : { },
       "children" : [ {
-        "name" : "br.com.caelum.guj.newsletter.NewsletterSubscriber",
+        "name" : "br.com.caelum.guj.controller.NewsletterControllerTest",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "should_register_the_given_user_if_its_not_a_participant_yet",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "should_not_register_the_given_user_if_its_already_a_participant",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.NewsletterController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "5",
+          "uac" : "4"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "register",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Post",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "register",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Post",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.CategoryController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "5",
+          "uac" : "4"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "save",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Get",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "add",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Post",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.HotTopicsController",
         "type" : "class",
         "value" : 0,
         "properties" : {
@@ -77,17 +385,575 @@
           "uac" : "2"
         },
         "children" : [ {
-          "name" : "RequestScoped",
+          "name" : "Resource",
           "type" : "annotation",
           "value" : 0,
           "properties" : {
-            "schema" : "br.com.caelum.vraptor.ioc",
+            "schema" : "br.com.caelum.vraptor",
             "aa" : "0",
             "locad" : "1",
             "anl" : "0"
           },
           "children" : [ ]
         }, {
+          "name" : "index",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.HomeController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "index",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.OldUrlsController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "9",
+          "uac" : "9"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "noticias",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "articlesList",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "jobsList",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "articleShow",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "articleListByTag",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shortTopicURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "mundoJTopicURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "home",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.JobsController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "list",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.ApproveController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "3",
+          "uac" : "2"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "getAllArticles",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "SuppressWarnings",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "getAllCategories",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "SuppressWarnings",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.SearchController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "3",
+          "uac" : "3"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "search",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Get",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.ArticleController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "10",
+          "uac" : "8"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "list",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Get",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "addTag",
+          "type" : "method",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Post",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "show",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "getAllCategories",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "SuppressWarnings",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "listByTag",
+          "type" : "method",
+          "value" : 3,
+          "properties" : { },
+          "children" : [ {
+            "name" : "SuppressWarnings",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Get",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.controller.JsonFeedController",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
+          "name" : "Resource",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "topics",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Path",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.dao",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.guj.dao.GUJUserDAO",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
           "name" : "Component",
           "type" : "annotation",
           "value" : 0,
@@ -98,8 +964,959 @@
             "anl" : "0"
           },
           "children" : [ ]
+        }, {
+          "name" : "RequestScoped",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor.ioc",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.feeds",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.guj.feeds.Agregator",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "1",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "run",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.model",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.guj.model.Post",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "8",
+          "uac" : "8"
+        },
+        "children" : [ {
+          "name" : "Entity",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Table",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Cache",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.hibernate.annotations",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Optional[blog]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "ManyToOne",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "JoinColumn",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[date]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[id]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Id",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "GeneratedValue",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[id]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
         } ]
       }, {
+        "name" : "br.com.caelum.guj.model.Tag",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "3",
+          "ac" : "10",
+          "uac" : "9"
+        },
+        "children" : [ {
+          "name" : "Entity",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Table",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Cache",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.hibernate.annotations",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "equals",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[name]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "2",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "hashCode",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[articles]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "ManyToMany",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "JoinTable",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[id]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Id",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "GeneratedValue",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[id]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.model.NewsletterParticipant",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
+          "name" : "Entity",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Optional[gujUserId]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Id",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[gujUserId]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.model.Blog",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "6",
+          "uac" : "6"
+        },
+        "children" : [ {
+          "name" : "Entity",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Table",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Cache",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.hibernate.annotations",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Optional[date]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[id]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Id",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "GeneratedValue",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[id]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.model.Category",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "8",
+          "uac" : "7"
+        },
+        "children" : [ {
+          "name" : "Entity",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Table",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Cache",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.hibernate.annotations",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Optional[articles]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "OneToMany",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Cache",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.hibernate.annotations",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[name]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[id]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Id",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "GeneratedValue",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[id]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.model.Article",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "17",
+          "uac" : "16"
+        },
+        "children" : [ {
+          "name" : "Entity",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Table",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "javax.persistence",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Cache",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.hibernate.annotations",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Optional[category]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "ManyToOne",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "JoinColumn",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[id]",
+          "type" : "field",
+          "value" : 2,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Id",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "GeneratedValue",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[id]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        }, {
+          "name" : "Optional[userId]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[userId]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        }, {
+          "name" : "Optional[date]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[tags]",
+          "type" : "field",
+          "value" : 4,
+          "properties" : { },
+          "children" : [ {
+            "name" : "ManyToMany",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Cascade",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.hibernate.annotations",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "JoinTable",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "Cache",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.hibernate.annotations",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[level]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Enumerated",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[authorEmail]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[moderatorId]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Column",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "1",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          }, {
+            "name" : "SuffixConvention",
+            "type" : "convention",
+            "value" : 1,
+            "properties" : {
+              "schema" : "javax.persistence"
+            },
+            "children" : [ ],
+            "scope" : "field",
+            "conditions" : {
+              "suffix" : "id]"
+            },
+            "places" : [ "Optional[moderatorId]" ],
+            "annotation" : {
+              "name" : "javax.persistence.Id",
+              "parameters" : [ ]
+            }
+          } ]
+        }, {
+          "name" : "Optional[content]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Lob",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "javax.persistence",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.newsletter",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
         "name" : "br.com.caelum.guj.newsletter.NewsletterURIBuilderTest",
         "type" : "class",
         "value" : 0,
@@ -136,6 +1953,17 @@
           "uac" : "3"
         },
         "children" : [ {
+          "name" : "Component",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor.ioc",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
           "name" : "ApplicationScoped",
           "type" : "annotation",
           "value" : 0,
@@ -163,8 +1991,61 @@
             },
             "children" : [ ]
           } ]
-        }, {
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.newsletter.NewsletterSubscriber",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
           "name" : "Component",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor.ioc",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "RequestScoped",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor.ioc",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.newsletter.NewsletterURIBuilder",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "2"
+        },
+        "children" : [ {
+          "name" : "Component",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "br.com.caelum.vraptor.ioc",
+            "aa" : "0",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "RequestScoped",
           "type" : "annotation",
           "value" : 0,
           "properties" : {
@@ -190,17 +2071,6 @@
             "uac" : "2"
           },
           "children" : [ {
-            "name" : "RequestScoped",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor.ioc",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
             "name" : "Component",
             "type" : "annotation",
             "value" : 0,
@@ -211,29 +2081,472 @@
               "anl" : "0"
             },
             "children" : [ ]
+          }, {
+            "name" : "RequestScoped",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "br.com.caelum.vraptor.ioc",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
           } ]
         } ]
-      }, {
-        "name" : "br.com.caelum.guj.newsletter.NewsletterURIBuilder",
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.repositories",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.guj.repositories.TopicRepositoryWrapper",
         "type" : "class",
         "value" : 0,
         "properties" : {
           "asc" : "1",
-          "ac" : "2",
+          "ac" : "1",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "getById",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.uri",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilderTest",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "6",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "shouldGenerateSimpleURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldGenerateCompletePrePostURIFromACompleteURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldGeneratePaginatedURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldGeneratePaginatedURIWithAnchor",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTheOriginalCompleteURIWhenItsNotAPrePostURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldGeneratePrePostURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.DefaultCompatibleURIBuilderTest",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "3",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "shouldGenerateACompatibleURLWithPagination",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldGenerateACompatibleURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldGenerateACompatiblePrePostURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.BBCodeHandlerTest",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "13",
+          "uac" : "3"
+        },
+        "children" : [ {
+          "name" : "shouldReturnTrueForUrlContainingCasaDoCodigo",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnMatchedUrl",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "initCode",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Before",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnFalseForUrlWithoutKeywords",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForUrlContainingCaelum",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForCaelumSite",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnMatchedUrlIfSurroundedWithUrl",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "init",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "BeforeClass",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForBigCompaniesUrl",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForUrlContainingMundoJ",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForUrlConexaoJava",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForUrlBetweenTagsContainingKeywords",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldReturnTrueForUrlContainingQCon",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilder",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "2",
+          "ac" : "6",
           "uac" : "2"
         },
         "children" : [ {
-          "name" : "RequestScoped",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor.ioc",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
           "name" : "Component",
           "type" : "annotation",
           "value" : 0,
@@ -244,151 +2557,203 @@
             "anl" : "0"
           },
           "children" : [ ]
+        }, {
+          "name" : "bookmarkableURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "bookmarkableURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "bookmarkablePrePostURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "bookmarkableURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "bookmarkableCompletePrePostURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
         } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.uri",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
+      }, {
+        "name" : "br.com.caelum.guj.uri.DefaultURICache",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "2",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "getBookmarkableURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "put",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.uri.DefaultCompatibleURIBuilder",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "3",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "compatibleURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "compatiblePrePostURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "compatibleURL",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
         "name" : "br.com.caelum.guj.uri.bookmarkable",
         "type" : "package",
         "value" : 0,
         "properties" : { },
         "children" : [ {
-          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverter",
-          "type" : "class",
-          "value" : 0,
-          "properties" : {
-            "asc" : "1",
-            "ac" : "2",
-            "uac" : "1"
-          },
-          "children" : [ {
-            "name" : "convert",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Override",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "java.lang",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          }, {
-            "name" : "isConvertable",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Override",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "java.lang",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          } ]
-        }, {
-          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkablePostToCompatibleURIConverter",
-          "type" : "class",
-          "value" : 0,
-          "properties" : {
-            "asc" : "1",
-            "ac" : "2",
-            "uac" : "1"
-          },
-          "children" : [ {
-            "name" : "convert",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Override",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "java.lang",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          }, {
-            "name" : "isConvertable",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Override",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "java.lang",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          } ]
-        }, {
-          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverterTest",
-          "type" : "class",
-          "value" : 0,
-          "properties" : {
-            "asc" : "1",
-            "ac" : "2",
-            "uac" : "1"
-          },
-          "children" : [ {
-            "name" : "shouldReturnCompatibleURI",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Test",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "org.junit",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          }, {
-            "name" : "shouldBeAPostBookmarkableURI",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Test",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "org.junit",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          } ]
-        }, {
           "name" : "br.com.caelum.guj.uri.bookmarkable.ConverterMatcherTest",
           "type" : "class",
           "value" : 0,
@@ -477,7 +2842,7 @@
             } ]
           } ]
         }, {
-          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkableShortPostToCompatibleURIConverter",
+          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverterTest",
           "type" : "class",
           "value" : 0,
           "properties" : {
@@ -486,16 +2851,16 @@
             "uac" : "1"
           },
           "children" : [ {
-            "name" : "convert",
+            "name" : "shouldReturnCompatibleURI",
             "type" : "method",
             "value" : 1,
             "properties" : { },
             "children" : [ {
-              "name" : "Override",
+              "name" : "Test",
               "type" : "annotation",
               "value" : 0,
               "properties" : {
-                "schema" : "java.lang",
+                "schema" : "org.junit",
                 "aa" : "0",
                 "locad" : "1",
                 "anl" : "0"
@@ -503,16 +2868,16 @@
               "children" : [ ]
             } ]
           }, {
-            "name" : "isConvertable",
+            "name" : "shouldBeAPostBookmarkableURI",
             "type" : "method",
             "value" : 1,
             "properties" : { },
             "children" : [ {
-              "name" : "Override",
+              "name" : "Test",
               "type" : "annotation",
               "value" : 0,
               "properties" : {
-                "schema" : "java.lang",
+                "schema" : "org.junit",
                 "aa" : "0",
                 "locad" : "1",
                 "anl" : "0"
@@ -574,6 +2939,138 @@
               "value" : 0,
               "properties" : {
                 "schema" : "org.junit",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
+          } ]
+        }, {
+          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkablePrePostToCompatibleURIConverter",
+          "type" : "class",
+          "value" : 0,
+          "properties" : {
+            "asc" : "1",
+            "ac" : "2",
+            "uac" : "1"
+          },
+          "children" : [ {
+            "name" : "convert",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "isConvertable",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
+          } ]
+        }, {
+          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkablePostToCompatibleURIConverter",
+          "type" : "class",
+          "value" : 0,
+          "properties" : {
+            "asc" : "1",
+            "ac" : "2",
+            "uac" : "1"
+          },
+          "children" : [ {
+            "name" : "convert",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "isConvertable",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
+          } ]
+        }, {
+          "name" : "br.com.caelum.guj.uri.bookmarkable.BookmarkableShortPostToCompatibleURIConverter",
+          "type" : "class",
+          "value" : 0,
+          "properties" : {
+            "asc" : "1",
+            "ac" : "2",
+            "uac" : "1"
+          },
+          "children" : [ {
+            "name" : "convert",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "isConvertable",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
                 "aa" : "0",
                 "locad" : "1",
                 "anl" : "0"
@@ -658,23 +3155,6 @@
             "uac" : "1"
           },
           "children" : [ {
-            "name" : "convert",
-            "type" : "method",
-            "value" : 1,
-            "properties" : { },
-            "children" : [ {
-              "name" : "Override",
-              "type" : "annotation",
-              "value" : 0,
-              "properties" : {
-                "schema" : "java.lang",
-                "aa" : "0",
-                "locad" : "1",
-                "anl" : "0"
-              },
-              "children" : [ ]
-            } ]
-          }, {
             "name" : "isConvertable",
             "type" : "method",
             "value" : 1,
@@ -691,1517 +3171,23 @@
               },
               "children" : [ ]
             } ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.DefaultURICache",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "getBookmarkableURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "put",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.DefaultCompatibleURIBuilderTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "3",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "shouldGenerateACompatibleURLWithPagination",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldGenerateACompatiblePrePostURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldGenerateACompatibleURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilder",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "6",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "bookmarkableURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "bookmarkableCompletePrePostURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "bookmarkablePrePostURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Component",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor.ioc",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.DefaultCompatibleURIBuilder",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "3",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "compatiblePrePostURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "compatibleURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.BBCodeHandlerTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "13",
-          "uac" : "3"
-        },
-        "children" : [ {
-          "name" : "shouldReturnFalseForUrlWithoutKeywords",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "initCode",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Before",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnMatchedUrlIfSurroundedWithUrl",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForUrlContainingQCon",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForCaelumSite",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForUrlBetweenTagsContainingKeywords",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForUrlContainingMundoJ",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnMatchedUrl",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForUrlConexaoJava",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForBigCompaniesUrl",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForUrlContainingCasaDoCodigo",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "init",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "BeforeClass",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTrueForUrlContainingCaelum",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.uri.DefaultBookmarkableURIBuilderTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "6",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "shouldGeneratePaginatedURIWithAnchor",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldGenerateCompletePrePostURIFromACompleteURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldGeneratePaginatedURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldGeneratePrePostURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldGenerateSimpleURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldReturnTheOriginalCompleteURIWhenItsNotAPrePostURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.controller",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "br.com.caelum.guj.controller.NewsletterControllerTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "should_not_register_the_given_user_if_its_already_a_participant",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "should_register_the_given_user_if_its_not_a_participant_yet",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.SearchController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "3",
-          "uac" : "3"
-        },
-        "children" : [ {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "search",
-          "type" : "method",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
           }, {
-            "name" : "Get",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.HotTopicsController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "index",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.JobsController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "list",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.CategoryController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "5",
-          "uac" : "4"
-        },
-        "children" : [ {
-          "name" : "add",
-          "type" : "method",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Post",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "save",
-          "type" : "method",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Get",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.ArticleController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "10",
-          "uac" : "8"
-        },
-        "children" : [ {
-          "name" : "listByTag",
-          "type" : "method",
-          "value" : 3,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuppressWarnings",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Get",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "show",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "addTag",
-          "type" : "method",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Post",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "getAllCategories",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuppressWarnings",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "list",
-          "type" : "method",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Get",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.HomeController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "index",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.OldUrlsController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "9",
-          "uac" : "9"
-        },
-        "children" : [ {
-          "name" : "noticias",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "jobsList",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "articleShow",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shortTopicURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "articleListByTag",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "articlesList",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "mundoJTopicURL",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "home",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.NewsletterController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "5",
-          "uac" : "4"
-        },
-        "children" : [ {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "register",
-          "type" : "method",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Post",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.ApproveController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "3",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "getAllArticles",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuppressWarnings",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "getAllCategories",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuppressWarnings",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.controller.JsonFeedController",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "topics",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Path",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "br.com.caelum.vraptor",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Resource",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.repositories",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "br.com.caelum.guj.repositories.TopicRepositoryWrapper",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "1",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "getById",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.dao",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "br.com.caelum.guj.dao.GUJUserDAO",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "RequestScoped",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor.ioc",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Component",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "br.com.caelum.vraptor.ioc",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.GlobalInterceptor",
-      "type" : "class",
-      "value" : 0,
-      "properties" : {
-        "asc" : "2",
-        "ac" : "3",
-        "uac" : "2"
-      },
-      "children" : [ {
-        "name" : "Intercepts",
-        "type" : "annotation",
-        "value" : 0,
-        "properties" : {
-          "schema" : "br.com.caelum.vraptor",
-          "aa" : "0",
-          "locad" : "1",
-          "anl" : "0"
-        },
-        "children" : [ ]
-      }, {
-        "name" : "accepts",
-        "type" : "method",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ {
-          "name" : "Override",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "java.lang",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      }, {
-        "name" : "intercept",
-        "type" : "method",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ {
-          "name" : "Override",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "java.lang",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.Agregators",
-      "type" : "class",
-      "value" : 0,
-      "properties" : {
-        "asc" : "2",
-        "ac" : "3",
-        "uac" : "3"
-      },
-      "children" : [ {
-        "name" : "ApplicationScoped",
-        "type" : "annotation",
-        "value" : 0,
-        "properties" : {
-          "schema" : "br.com.caelum.vraptor.ioc",
-          "aa" : "0",
-          "locad" : "1",
-          "anl" : "0"
-        },
-        "children" : [ ]
-      }, {
-        "name" : "Component",
-        "type" : "annotation",
-        "value" : 0,
-        "properties" : {
-          "schema" : "br.com.caelum.vraptor.ioc",
-          "aa" : "0",
-          "locad" : "1",
-          "anl" : "0"
-        },
-        "children" : [ ]
-      }, {
-        "name" : "init",
-        "type" : "method",
-        "value" : 1,
-        "properties" : { },
-        "children" : [ {
-          "name" : "PostConstruct",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.annotation",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.feeds",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "br.com.caelum.guj.feeds.Agregator",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "1",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "run",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
+            "name" : "convert",
+            "type" : "method",
+            "value" : 1,
+            "properties" : { },
+            "children" : [ {
+              "name" : "Override",
+              "type" : "annotation",
+              "value" : 0,
+              "properties" : {
+                "schema" : "java.lang",
+                "aa" : "0",
+                "locad" : "1",
+                "anl" : "0"
+              },
+              "children" : [ ]
+            } ]
           } ]
         } ]
       } ]
@@ -2239,12 +3225,12 @@
         } ]
       } ]
     }, {
-      "name" : "br.com.caelum.guj.vraptor.filter",
+      "name" : "br.com.caelum.guj.view",
       "type" : "package",
       "value" : 0,
       "properties" : { },
       "children" : [ {
-        "name" : "br.com.caelum.guj.vraptor.filter.VRaptorFilter",
+        "name" : "br.com.caelum.guj.view.SluggerTest",
         "type" : "class",
         "value" : 0,
         "properties" : {
@@ -2253,16 +3239,506 @@
           "uac" : "1"
         },
         "children" : [ {
-          "name" : "doFilter",
+          "name" : "shouldSluggerize",
           "type" : "method",
           "value" : 1,
           "properties" : { },
           "children" : [ {
-            "name" : "Override",
+            "name" : "Test",
             "type" : "annotation",
             "value" : 0,
             "properties" : {
-              "schema" : "java.lang",
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "br.com.caelum.guj.vraptor.filter",
+      "type" : "package",
+      "value" : 0,
+      "properties" : { },
+      "children" : [ {
+        "name" : "br.com.caelum.guj.vraptor.filter.CompatibleURIFilterTest",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "3",
+          "ac" : "14",
+          "uac" : "5"
+        },
+        "children" : [ {
+          "name" : "RunWith",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.junit.runner",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "shouldCacheBookmarkableURIConvertion",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[filterConfig]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "tearDown",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "After",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldInvokeDoFilterIfBookmarkableURIChanged",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldInvokeDoFilterIfURIIsBookmarkableAndCorrectUsingCacheIfCached",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldInvokeDoFilterIfURIIsBookmarkableAndCorrect",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "setup",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Before",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldInvokeDoFilterIfRequestURLIsNotToForum",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[servletContext]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[request]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[chain]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldRedirectToBookmarkableURIIfRequestURIIsCompatibleURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[response]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilterTest",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "3",
+          "ac" : "14",
+          "uac" : "5"
+        },
+        "children" : [ {
+          "name" : "RunWith",
+          "type" : "annotation",
+          "value" : 0,
+          "properties" : {
+            "schema" : "org.junit.runner",
+            "aa" : "1",
+            "locad" : "1",
+            "anl" : "0"
+          },
+          "children" : [ ]
+        }, {
+          "name" : "Optional[filterConfig]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "tearDown",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "After",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldRedirectToCachedIfURIIsShortBookmarkableURI",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldInvokeDoFilterIfRequestURLIsNotToForum",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[servletContext]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[request]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[chain]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "setup",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Before",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldCacheBookmarkableURIConvertion",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[requestDispatcher]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldRedirectToCachedIfURIIsShortBookmarkableURIAndCached",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "shouldInvokeDoFilterIfURIIsBookmarkableAndCorrect",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Test",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.junit",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "Optional[response]",
+          "type" : "field",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Mock",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "org.mockito",
               "aa" : "0",
               "locad" : "1",
               "anl" : "0"
@@ -2307,6 +3783,23 @@
           "uac" : "1"
         },
         "children" : [ {
+          "name" : "put",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
           "name" : "removeCache",
           "type" : "method",
           "value" : 1,
@@ -2340,8 +3833,79 @@
             },
             "children" : [ ]
           } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.vraptor.filter.VRaptorFilter",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "1",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "doFilter",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilter",
+        "type" : "class",
+        "value" : 0,
+        "properties" : {
+          "asc" : "1",
+          "ac" : "3",
+          "uac" : "1"
+        },
+        "children" : [ {
+          "name" : "destroy",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
         }, {
-          "name" : "put",
+          "name" : "init",
+          "type" : "method",
+          "value" : 1,
+          "properties" : { },
+          "children" : [ {
+            "name" : "Override",
+            "type" : "annotation",
+            "value" : 0,
+            "properties" : {
+              "schema" : "java.lang",
+              "aa" : "0",
+              "locad" : "1",
+              "anl" : "0"
+            },
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "doFilter",
           "type" : "method",
           "value" : 1,
           "properties" : { },
@@ -2368,23 +3932,6 @@
           "uac" : "1"
         },
         "children" : [ {
-          "name" : "doFilter",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
           "name" : "destroy",
           "type" : "method",
           "value" : 1,
@@ -2418,259 +3965,7 @@
             },
             "children" : [ ]
           } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.vraptor.filter.CompatibleURIFilterTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "3",
-          "ac" : "14",
-          "uac" : "5"
-        },
-        "children" : [ {
-          "name" : "shouldInvokeDoFilterIfRequestURLIsNotToForum",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
         }, {
-          "name" : "Optional[request]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldInvokeDoFilterIfURIIsBookmarkableAndCorrectUsingCacheIfCached",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldInvokeDoFilterIfBookmarkableURIChanged",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldCacheBookmarkableURIConvertion",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "tearDown",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "After",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[servletContext]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "RunWith",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.junit.runner",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[filterConfig]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[response]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "setup",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Before",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldInvokeDoFilterIfURIIsBookmarkableAndCorrect",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[chain]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldRedirectToBookmarkableURIIfRequestURIIsCompatibleURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilter",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "3",
-          "uac" : "1"
-        },
-        "children" : [ {
           "name" : "doFilter",
           "type" : "method",
           "value" : 1,
@@ -2682,1222 +3977,6 @@
             "properties" : {
               "schema" : "java.lang",
               "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "destroy",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "init",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.vraptor.filter.BookmarkableURIFilterTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "3",
-          "ac" : "14",
-          "uac" : "5"
-        },
-        "children" : [ {
-          "name" : "shouldInvokeDoFilterIfRequestURLIsNotToForum",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[request]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldRedirectToCachedIfURIIsShortBookmarkableURI",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "tearDown",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "After",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldCacheBookmarkableURIConvertion",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[servletContext]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "RunWith",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.junit.runner",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[filterConfig]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[response]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldRedirectToCachedIfURIIsShortBookmarkableURIAndCached",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[requestDispatcher]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "setup",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Before",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "shouldInvokeDoFilterIfURIIsBookmarkableAndCorrect",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[chain]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Mock",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.mockito",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.configuration",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ ]
-    }, {
-      "name" : "br.com.caelum.guj.view",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "br.com.caelum.guj.view.SluggerTest",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "1",
-          "uac" : "1"
-        },
-        "children" : [ {
-          "name" : "shouldSluggerize",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Test",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.junit",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      } ]
-    }, {
-      "name" : "br.com.caelum.guj.model",
-      "type" : "package",
-      "value" : 0,
-      "properties" : { },
-      "children" : [ {
-        "name" : "br.com.caelum.guj.model.Category",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "8",
-          "uac" : "7"
-        },
-        "children" : [ {
-          "name" : "Entity",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Table",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[name]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[articles]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "OneToMany",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Cache",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.hibernate.annotations",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Cache",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.hibernate.annotations",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[id]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "GeneratedValue",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[id]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Id",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.model.Post",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "8",
-          "uac" : "8"
-        },
-        "children" : [ {
-          "name" : "Entity",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Table",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[date]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Cache",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.hibernate.annotations",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[blog]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "ManyToOne",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "JoinColumn",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[id]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "GeneratedValue",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[id]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Id",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.model.NewsletterParticipant",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "1",
-          "ac" : "2",
-          "uac" : "2"
-        },
-        "children" : [ {
-          "name" : "Entity",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[gujUserId]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[gujUserId]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Id",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.model.Blog",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "6",
-          "uac" : "6"
-        },
-        "children" : [ {
-          "name" : "Entity",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Table",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[date]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Cache",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.hibernate.annotations",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[id]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "GeneratedValue",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[id]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Id",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.model.Tag",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "3",
-          "ac" : "10",
-          "uac" : "9"
-        },
-        "children" : [ {
-          "name" : "Entity",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Table",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[name]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "2",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "equals",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "hashCode",
-          "type" : "method",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Override",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "java.lang",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[articles]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "ManyToMany",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "JoinTable",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Cache",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.hibernate.annotations",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[id]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "GeneratedValue",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[id]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Id",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        } ]
-      }, {
-        "name" : "br.com.caelum.guj.model.Article",
-        "type" : "class",
-        "value" : 0,
-        "properties" : {
-          "asc" : "2",
-          "ac" : "17",
-          "uac" : "16"
-        },
-        "children" : [ {
-          "name" : "Entity",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "0",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Table",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "javax.persistence",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[authorEmail]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[tags]",
-          "type" : "field",
-          "value" : 4,
-          "properties" : { },
-          "children" : [ {
-            "name" : "ManyToMany",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "JoinTable",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Cascade",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.hibernate.annotations",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "Cache",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "org.hibernate.annotations",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[level]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Enumerated",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[content]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Lob",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[date]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[userId]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[userId]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Cache",
-          "type" : "annotation",
-          "value" : 0,
-          "properties" : {
-            "schema" : "org.hibernate.annotations",
-            "aa" : "1",
-            "locad" : "1",
-            "anl" : "0"
-          },
-          "children" : [ ]
-        }, {
-          "name" : "Optional[category]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "ManyToOne",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "JoinColumn",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[id]",
-          "type" : "field",
-          "value" : 2,
-          "properties" : { },
-          "children" : [ {
-            "name" : "GeneratedValue",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          }, {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[id]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Id",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "0",
-              "locad" : "1",
-              "anl" : "0"
-            },
-            "children" : [ ]
-          } ]
-        }, {
-          "name" : "Optional[moderatorId]",
-          "type" : "field",
-          "value" : 1,
-          "properties" : { },
-          "children" : [ {
-            "name" : "SuffixConvention",
-            "type" : "convention",
-            "value" : 1,
-            "properties" : {
-              "schema" : "javax.persistence"
-            },
-            "children" : [ ],
-            "scope" : "field",
-            "conditions" : {
-              "suffix" : "id]"
-            },
-            "places" : [ "Optional[moderatorId]" ],
-            "annotation" : {
-              "name" : "javax.persistence.Id",
-              "parameters" : [ ]
-            }
-          }, {
-            "name" : "Column",
-            "type" : "annotation",
-            "value" : 0,
-            "properties" : {
-              "schema" : "javax.persistence",
-              "aa" : "1",
               "locad" : "1",
               "anl" : "0"
             },
